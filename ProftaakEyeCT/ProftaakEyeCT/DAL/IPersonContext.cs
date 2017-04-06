@@ -13,6 +13,7 @@ namespace ProftaakEyectEvents.DAL
         Person GetByName(string Name);
         Person Insert(Person person);
         bool Delete(int id);
+        bool Update(Person person);
 
 
 
