@@ -84,6 +84,7 @@ namespace ProftaakEyectEvents.DAL
                 return person;
             }
         }
+
         public bool Update(Person person)
         {
             using (SqlConnection connection = Database.Connection)

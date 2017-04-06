@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using ProftaakEyectEvents.DAL;
 using ProftaakEyectEvents.Prensentation_Layer;
 using ProftaakEyectEvents;
+using ProftaakEyeCT.Presentation_Layer;
+using ProftaakEyeCT.DAL;
 
 namespace ProftaakEyeCT
 {
@@ -17,10 +19,13 @@ namespace ProftaakEyeCT
     {
         private PersonRepository personrepo;
         private Person updatePerson;
+        private MediaRepository mediarepo;
+        private Media updateMedia;
         public Form1()
         {
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
+            mediarepo = new MediaRepository(new MediaSQLContext());
             UpdateControls();
 
 
@@ -42,10 +47,11 @@ namespace ProftaakEyeCT
 
         private void InsertPerson()
         {
+            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
             Person person = null;
             try
             {
-                person = new Person(txtPersonName.Text, txtPersonZipcode.Text, txtPersonCity.Text, txtPersonStreet.Text, (int)nudPersonHousenumber.Value, (int)nudPersonPhonenumber.Value);
+                person = new Person(txtPersonName.Text, txtPersonZipcode.Text, txtPersonCity.Text, txtPersonStreet.Text, (int)nudPersonHousenumber.Value, phonenumber);
             }
             catch (FormatException)
             {
@@ -61,7 +67,7 @@ namespace ProftaakEyeCT
                 txtPersonCity.Text = "";
                 txtPersonStreet.Text = "";
                 nudPersonHousenumber.Value = 0;
-                nudPersonPhonenumber.Value = 0;
+                txtPersonPhonenumber.Text = "";
             }
             else
             {
@@ -71,26 +77,62 @@ namespace ProftaakEyeCT
 
         private void UpdatePerson()
         {
+            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
             updatePerson.Name = txtPersonName.Text;
             updatePerson.Zipcode = txtPersonZipcode.Text;
             updatePerson.City = txtPersonCity.Text;
             updatePerson.Street = txtPersonStreet.Text;
             updatePerson.Number = (int)nudPersonHousenumber.Value;
-            updatePerson.Phonenumber = (int)nudPersonPhonenumber.Value;
+            updatePerson.Phonenumber = phonenumber;
 
-            if (personrepo.Update(updateUser))
+            if (personrepo.Update(updatePerson))
             {
                 UpdateControls();
-                txtUsername.Text = "";
-                txtEmail.Text = "";
-                txtPassword.Text = "";
-                nudRating.Value = 0;
-                updateUser = null;
+                txtPersonName.Text = "";
+                txtPersonZipcode.Text = "";
+                txtPersonCity.Text = "";
+                txtPersonStreet.Text = "";
+                nudPersonHousenumber.Value = 0;
+                txtPersonPhonenumber.Text = "";
+                updatePerson = null;
             }
             else
             {
-                MessageBox.Show("Updating student failed. Check if the email address is valid.");
+                MessageBox.Show("Updating person failed. Check if the email address is valid.");
             }
         }
+
+        private void lbAllPersons_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnPersonEdit.Enabled = lbAllPersons.SelectedItem != null;
+            btnPersonRemove.Enabled = lbAllPersons.SelectedItem != null;
+            btnPersonUpdate.Enabled = lbAllPersons.SelectedItem != null;
+        }
+
+        private void btnPersonUpdate_Click(object sender, EventArgs e)
+        {
+            updatePerson = (Person)lbAllPersons.SelectedItem;
+            UpdatePerson();
+        }
+
+        private void btnPersonRemove_Click(object sender, EventArgs e)
+        {
+            personrepo.Delete(((Person)lbAllPersons.SelectedItem).Id);
+            UpdateControls();
+        }
+
+        private void btnPersonEdit_Click(object sender, EventArgs e)
+        {
+            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
+            updatePerson = (Person)lbAllPersons.SelectedItem;
+            txtPersonName.Text = updatePerson.Name;
+            txtPersonZipcode.Text = updatePerson.Zipcode;
+            txtPersonCity.Text = updatePerson.City;
+            txtPersonStreet.Text = updatePerson.Street;
+            nudPersonHousenumber.Value = updatePerson.Number;
+            phonenumber = updatePerson.Phonenumber;
+        }
+
+       
     }
 }

@@ -8,12 +8,20 @@ namespace ProftaakEyectEvents.DAL
 {
     public interface IAccountContext
     {
-        List<Student> GetAllStudents();
+        List<Account> GetAllAccounts();
 
-        List<Admin> GetAllAdmins();
+        List<Account> GetAllStudents();
 
-        Student GetStudentByUsername(string Username);
+        List<Account> GetAllAdmins();
 
-        Admin GetAdminByUsername(string Username);
+        Account InsertStudent(Student student);
+
+        Account InsertAdmin(Admin admin);
+
+        void DeleteAccount(Account account);
+
+        void UpdateAccount(Account account);
+
+        List<Account> GetAllAccountInformation();
     }
 }

@@ -25,7 +25,11 @@ namespace ProftaakEyectEvents.Prensentation_Layer
         {
             return context.GetAll();
         }
-        
+        public bool Update(Person person)
+        {
+            return context.Update(person);
+        }
+
         public bool Delete(int id)
         {
             return context.Delete(id);
