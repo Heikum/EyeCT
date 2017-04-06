@@ -8,13 +8,13 @@ namespace ProftaakEyectEvents
 {
     public class Reservation
     {
-        private int price;
-        private int personAmount;
-        private DateTime date;
-        private string location;
-        private bool paymentstatus;
-        private Account mainreservator;
-        private Account otherreservator;
+        private int price { get; set; }
+        private int personAmount { get; set; }
+        private DateTime date { get; set; }
+        private string location { get; set; }
+        private bool paymentstatus { get; set; }
+        private Account mainreservator { get; set; }
+        private Account otherreservator { get; set; }
         
         public Reservation(int Price, int Personamount, DateTime Date, string Location, string Paymentstatus, string Mainreservator, int room)
         {
