@@ -58,9 +58,12 @@
     <Compile Include="DAL\Database.cs" />
     <Compile Include="DAL\EventSQLContext.cs" />
     <Compile Include="DAL\IAccountContext.cs" />
+    <Compile Include="DAL\IMediaContext.cs" />
     <Compile Include="DAL\IPersonContext.cs" />
+    <Compile Include="DAL\MediaSQLContext.cs" />
     <Compile Include="DAL\PersonSQLContext.cs" />
     <Compile Include="DAL\IReservationContext.cs" />
+    <Compile Include="Presentation Layer\MediaRepository.cs" />
     <Compile Include="Presentation Layer\PersonRepository.cs" />
     <Compile Include="Presentation Layer\Form1.cs">
       <SubType>Form</SubType>
