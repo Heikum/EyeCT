@@ -47,10 +47,11 @@ namespace ProftaakEyeCT
 
         private void InsertPerson()
         {
+            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
             Person person = null;
             try
             {
-                person = new Person(txtPersonName.Text, txtPersonZipcode.Text, txtPersonCity.Text, txtPersonStreet.Text, (int)nudPersonHousenumber.Value, (int)nudPersonPhonenumber.Value);
+                person = new Person(txtPersonName.Text, txtPersonZipcode.Text, txtPersonCity.Text, txtPersonStreet.Text, (int)nudPersonHousenumber.Value, phonenumber);
             }
             catch (FormatException)
             {
@@ -66,7 +67,7 @@ namespace ProftaakEyeCT
                 txtPersonCity.Text = "";
                 txtPersonStreet.Text = "";
                 nudPersonHousenumber.Value = 0;
-                nudPersonPhonenumber.Value = 0;
+                txtPersonPhonenumber.Text = "";
             }
             else
             {
@@ -76,12 +77,13 @@ namespace ProftaakEyeCT
 
         private void UpdatePerson()
         {
+            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
             updatePerson.Name = txtPersonName.Text;
             updatePerson.Zipcode = txtPersonZipcode.Text;
             updatePerson.City = txtPersonCity.Text;
             updatePerson.Street = txtPersonStreet.Text;
             updatePerson.Number = (int)nudPersonHousenumber.Value;
-            updatePerson.Phonenumber = (int)nudPersonPhonenumber.Value;
+            updatePerson.Phonenumber = phonenumber;
 
             if (personrepo.Update(updatePerson))
             {
@@ -91,7 +93,7 @@ namespace ProftaakEyeCT
                 txtPersonCity.Text = "";
                 txtPersonStreet.Text = "";
                 nudPersonHousenumber.Value = 0;
-                nudPersonPhonenumber.Value = 0;
+                txtPersonPhonenumber.Text = "";
                 updatePerson = null;
             }
             else
@@ -121,18 +123,16 @@ namespace ProftaakEyeCT
 
         private void btnPersonEdit_Click(object sender, EventArgs e)
         {
+            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
             updatePerson = (Person)lbAllPersons.SelectedItem;
             txtPersonName.Text = updatePerson.Name;
             txtPersonZipcode.Text = updatePerson.Zipcode;
             txtPersonCity.Text = updatePerson.City;
             txtPersonStreet.Text = updatePerson.Street;
             nudPersonHousenumber.Value = updatePerson.Number;
-            nudPersonPhonenumber.Value = updatePerson.Phonenumber;
+            phonenumber = updatePerson.Phonenumber;
         }
 
-        private void btnPersonAdd_Click(object sender, EventArgs e)
-        {
-            InsertPerson();
-        }
+       
     }
 }

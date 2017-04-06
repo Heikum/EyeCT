@@ -8,7 +8,7 @@ namespace ProftaakEyectEvents
 {
     public class Student : Account
     {
-        public Student(string Username, String Password, string Emailadress, bool Rights, Person person) : base(Username, Password, Emailadress, Rights, person)
+        public Student(int Id, string Username, string Password, string Emailadress, int Rights) : base(Id, Username, Password, Emailadress, Rights)
         {
 
         }

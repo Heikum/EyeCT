@@ -10,12 +10,13 @@ namespace ProftaakEyectEvents
     {
 
 
-        private string username;
-        private string password;
-        private string emailadress;
-        private bool rights;
+        public int id;
+        public string username;
+        public string password;
+        public string emailadress;
+        public int rights;
 
-        public Account(string Username, string Password, string Emailadress, bool Rights, Person person)
+        public Account(int Id, string Username, string Password, string Emailadress, int Rights)
         {
 
         }
