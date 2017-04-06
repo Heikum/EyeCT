@@ -10,6 +10,8 @@ using System.Windows.Forms;
 using ProftaakEyectEvents.DAL;
 using ProftaakEyectEvents.Prensentation_Layer;
 using ProftaakEyectEvents;
+using ProftaakEyeCT.Presentation_Layer;
+using ProftaakEyeCT.DAL;
 
 namespace ProftaakEyeCT
 {
@@ -17,10 +19,13 @@ namespace ProftaakEyeCT
     {
         private PersonRepository personrepo;
         private Person updatePerson;
+        private MediaRepository mediarepo;
+        private Media updateMedia;
         public Form1()
         {
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
+            mediarepo = new MediaRepository(new MediaSQLContext());
             UpdateControls();
 
 

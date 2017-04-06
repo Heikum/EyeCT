@@ -190,6 +190,17 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
+            this.tpNewMedia = new System.Windows.Forms.TabPage();
+            this.lblMediaImageLink = new System.Windows.Forms.Label();
+            this.lblMediaImageName = new System.Windows.Forms.Label();
+            this.lblMediaVideoLink = new System.Windows.Forms.Label();
+            this.lblMediaVideoName = new System.Windows.Forms.Label();
+            this.rbMediaImage = new System.Windows.Forms.RadioButton();
+            this.rbMediaVideo = new System.Windows.Forms.RadioButton();
+            this.txtMediaImageLink = new System.Windows.Forms.TextBox();
+            this.txtMediaImageName = new System.Windows.Forms.TextBox();
+            this.txtMediaVideoLink = new System.Windows.Forms.TextBox();
+            this.txtMediaVideoName = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpNewAccount.SuspendLayout();
@@ -209,6 +220,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.tpAccess.SuspendLayout();
             this.tpLogout.SuspendLayout();
+            this.tpNewMedia.SuspendLayout();
             this.SuspendLayout();
             // 
             // tcCamping
@@ -218,6 +230,7 @@
             this.tcCamping.Controls.Add(this.tpManage);
             this.tcCamping.Controls.Add(this.tpNewEvents);
             this.tcCamping.Controls.Add(this.tbEvents);
+            this.tcCamping.Controls.Add(this.tpNewMedia);
             this.tcCamping.Controls.Add(this.tpMedia);
             this.tcCamping.Controls.Add(this.tpReserve);
             this.tcCamping.Controls.Add(this.tpMaterials);
@@ -239,7 +252,7 @@
             this.tpLogin.Controls.Add(this.tbUsername);
             this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Name = "tpLogin";
-            this.tpLogin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
             this.tpLogin.Size = new System.Drawing.Size(939, 538);
             this.tpLogin.TabIndex = 0;
             this.tpLogin.Text = "Login";
@@ -498,7 +511,7 @@
             this.tpManage.Controls.Add(this.tbSearch);
             this.tpManage.Location = new System.Drawing.Point(4, 22);
             this.tpManage.Name = "tpManage";
-            this.tpManage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpManage.Padding = new System.Windows.Forms.Padding(3);
             this.tpManage.Size = new System.Drawing.Size(939, 538);
             this.tpManage.TabIndex = 1;
             this.tpManage.Text = "Manage";
@@ -1071,7 +1084,7 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.74049F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.25951F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 250F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel1.Controls.Add(this.lbReaction, 2, 1);
@@ -1093,7 +1106,7 @@
             // lbReaction
             // 
             this.lbReaction.FormattingEnabled = true;
-            this.lbReaction.Location = new System.Drawing.Point(442, 48);
+            this.lbReaction.Location = new System.Drawing.Point(441, 48);
             this.lbReaction.Name = "lbReaction";
             this.lbReaction.Size = new System.Drawing.Size(212, 485);
             this.lbReaction.TabIndex = 1;
@@ -1101,7 +1114,7 @@
             // lbPost
             // 
             this.lbPost.FormattingEnabled = true;
-            this.lbPost.Location = new System.Drawing.Point(125, 48);
+            this.lbPost.Location = new System.Drawing.Point(124, 48);
             this.lbPost.Name = "lbPost";
             this.lbPost.Size = new System.Drawing.Size(311, 485);
             this.lbPost.TabIndex = 0;
@@ -1110,7 +1123,7 @@
             // 
             this.tbTimeline.BackColor = System.Drawing.Color.Purple;
             this.tbTimeline.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimeline.Location = new System.Drawing.Point(125, 3);
+            this.tbTimeline.Location = new System.Drawing.Point(124, 3);
             this.tbTimeline.Multiline = true;
             this.tbTimeline.Name = "tbTimeline";
             this.tbTimeline.ReadOnly = true;
@@ -1123,7 +1136,7 @@
             // 
             this.tbReaction.BackColor = System.Drawing.Color.Purple;
             this.tbReaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReaction.Location = new System.Drawing.Point(442, 3);
+            this.tbReaction.Location = new System.Drawing.Point(441, 3);
             this.tbReaction.Multiline = true;
             this.tbReaction.Name = "tbReaction";
             this.tbReaction.ReadOnly = true;
@@ -1140,7 +1153,7 @@
             this.tbForum.Multiline = true;
             this.tbForum.Name = "tbForum";
             this.tbForum.ReadOnly = true;
-            this.tbForum.Size = new System.Drawing.Size(116, 39);
+            this.tbForum.Size = new System.Drawing.Size(115, 39);
             this.tbForum.TabIndex = 5;
             this.tbForum.Text = "Forums";
             this.tbForum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -1149,7 +1162,7 @@
             // 
             this.tbFriends.BackColor = System.Drawing.Color.Purple;
             this.tbFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFriends.Location = new System.Drawing.Point(660, 3);
+            this.tbFriends.Location = new System.Drawing.Point(659, 3);
             this.tbFriends.Multiline = true;
             this.tbFriends.Name = "tbFriends";
             this.tbFriends.ReadOnly = true;
@@ -1161,7 +1174,7 @@
             // lbFriends
             // 
             this.lbFriends.FormattingEnabled = true;
-            this.lbFriends.Location = new System.Drawing.Point(660, 48);
+            this.lbFriends.Location = new System.Drawing.Point(659, 48);
             this.lbFriends.Name = "lbFriends";
             this.lbFriends.Size = new System.Drawing.Size(237, 485);
             this.lbFriends.TabIndex = 6;
@@ -1171,7 +1184,7 @@
             this.lbForums.FormattingEnabled = true;
             this.lbForums.Location = new System.Drawing.Point(3, 48);
             this.lbForums.Name = "lbForums";
-            this.lbForums.Size = new System.Drawing.Size(116, 485);
+            this.lbForums.Size = new System.Drawing.Size(115, 485);
             this.lbForums.TabIndex = 7;
             // 
             // tpReserve
@@ -1801,13 +1814,122 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // tpNewMedia
+            // 
+            this.tpNewMedia.Controls.Add(this.lblMediaImageLink);
+            this.tpNewMedia.Controls.Add(this.lblMediaImageName);
+            this.tpNewMedia.Controls.Add(this.lblMediaVideoLink);
+            this.tpNewMedia.Controls.Add(this.lblMediaVideoName);
+            this.tpNewMedia.Controls.Add(this.rbMediaImage);
+            this.tpNewMedia.Controls.Add(this.rbMediaVideo);
+            this.tpNewMedia.Controls.Add(this.txtMediaImageLink);
+            this.tpNewMedia.Controls.Add(this.txtMediaImageName);
+            this.tpNewMedia.Controls.Add(this.txtMediaVideoLink);
+            this.tpNewMedia.Controls.Add(this.txtMediaVideoName);
+            this.tpNewMedia.Location = new System.Drawing.Point(4, 22);
+            this.tpNewMedia.Name = "tpNewMedia";
+            this.tpNewMedia.Size = new System.Drawing.Size(939, 538);
+            this.tpNewMedia.TabIndex = 10;
+            this.tpNewMedia.Text = "New media";
+            this.tpNewMedia.UseVisualStyleBackColor = true;
+            // 
+            // lblMediaImageLink
+            // 
+            this.lblMediaImageLink.AutoSize = true;
+            this.lblMediaImageLink.Location = new System.Drawing.Point(39, 250);
+            this.lblMediaImageLink.Name = "lblMediaImageLink";
+            this.lblMediaImageLink.Size = new System.Drawing.Size(55, 13);
+            this.lblMediaImageLink.TabIndex = 19;
+            this.lblMediaImageLink.Text = "Imagelink:";
+            // 
+            // lblMediaImageName
+            // 
+            this.lblMediaImageName.AutoSize = true;
+            this.lblMediaImageName.Location = new System.Drawing.Point(39, 192);
+            this.lblMediaImageName.Name = "lblMediaImageName";
+            this.lblMediaImageName.Size = new System.Drawing.Size(65, 13);
+            this.lblMediaImageName.TabIndex = 18;
+            this.lblMediaImageName.Text = "Imagename:";
+            // 
+            // lblMediaVideoLink
+            // 
+            this.lblMediaVideoLink.AutoSize = true;
+            this.lblMediaVideoLink.Location = new System.Drawing.Point(39, 137);
+            this.lblMediaVideoLink.Name = "lblMediaVideoLink";
+            this.lblMediaVideoLink.Size = new System.Drawing.Size(53, 13);
+            this.lblMediaVideoLink.TabIndex = 17;
+            this.lblMediaVideoLink.Text = "Videolink:";
+            // 
+            // lblMediaVideoName
+            // 
+            this.lblMediaVideoName.AutoSize = true;
+            this.lblMediaVideoName.Location = new System.Drawing.Point(39, 83);
+            this.lblMediaVideoName.Name = "lblMediaVideoName";
+            this.lblMediaVideoName.Size = new System.Drawing.Size(63, 13);
+            this.lblMediaVideoName.TabIndex = 16;
+            this.lblMediaVideoName.Text = "Videoname:";
+            // 
+            // rbMediaImage
+            // 
+            this.rbMediaImage.AutoSize = true;
+            this.rbMediaImage.Location = new System.Drawing.Point(154, 53);
+            this.rbMediaImage.Name = "rbMediaImage";
+            this.rbMediaImage.Size = new System.Drawing.Size(54, 17);
+            this.rbMediaImage.TabIndex = 15;
+            this.rbMediaImage.TabStop = true;
+            this.rbMediaImage.Text = "Image";
+            this.rbMediaImage.UseVisualStyleBackColor = true;
+            // 
+            // rbMediaVideo
+            // 
+            this.rbMediaVideo.AutoSize = true;
+            this.rbMediaVideo.Location = new System.Drawing.Point(39, 53);
+            this.rbMediaVideo.Name = "rbMediaVideo";
+            this.rbMediaVideo.Size = new System.Drawing.Size(52, 17);
+            this.rbMediaVideo.TabIndex = 14;
+            this.rbMediaVideo.TabStop = true;
+            this.rbMediaVideo.Text = "Video";
+            this.rbMediaVideo.UseVisualStyleBackColor = true;
+            // 
+            // txtMediaImageLink
+            // 
+            this.txtMediaImageLink.Enabled = false;
+            this.txtMediaImageLink.Location = new System.Drawing.Point(39, 269);
+            this.txtMediaImageLink.Name = "txtMediaImageLink";
+            this.txtMediaImageLink.Size = new System.Drawing.Size(224, 20);
+            this.txtMediaImageLink.TabIndex = 13;
+            // 
+            // txtMediaImageName
+            // 
+            this.txtMediaImageName.Enabled = false;
+            this.txtMediaImageName.Location = new System.Drawing.Point(39, 211);
+            this.txtMediaImageName.Name = "txtMediaImageName";
+            this.txtMediaImageName.Size = new System.Drawing.Size(224, 20);
+            this.txtMediaImageName.TabIndex = 12;
+            // 
+            // txtMediaVideoLink
+            // 
+            this.txtMediaVideoLink.Enabled = false;
+            this.txtMediaVideoLink.Location = new System.Drawing.Point(39, 156);
+            this.txtMediaVideoLink.Name = "txtMediaVideoLink";
+            this.txtMediaVideoLink.Size = new System.Drawing.Size(224, 20);
+            this.txtMediaVideoLink.TabIndex = 11;
+            // 
+            // txtMediaVideoName
+            // 
+            this.txtMediaVideoName.Enabled = false;
+            this.txtMediaVideoName.Location = new System.Drawing.Point(39, 102);
+            this.txtMediaVideoName.Name = "txtMediaVideoName";
+            this.txtMediaVideoName.Size = new System.Drawing.Size(224, 20);
+            this.txtMediaVideoName.TabIndex = 10;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(795, 454);
             this.Controls.Add(this.tcCamping);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tcCamping.ResumeLayout(false);
@@ -1838,6 +1960,8 @@
             this.tpAccess.ResumeLayout(false);
             this.tpAccess.PerformLayout();
             this.tpLogout.ResumeLayout(false);
+            this.tpNewMedia.ResumeLayout(false);
+            this.tpNewMedia.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2006,6 +2130,17 @@
         private System.Windows.Forms.DateTimePicker dtpDateNow;
         private System.Windows.Forms.TabPage tpLogout;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TabPage tpNewMedia;
+        private System.Windows.Forms.Label lblMediaImageLink;
+        private System.Windows.Forms.Label lblMediaImageName;
+        private System.Windows.Forms.Label lblMediaVideoLink;
+        private System.Windows.Forms.Label lblMediaVideoName;
+        private System.Windows.Forms.RadioButton rbMediaImage;
+        private System.Windows.Forms.RadioButton rbMediaVideo;
+        private System.Windows.Forms.TextBox txtMediaImageLink;
+        private System.Windows.Forms.TextBox txtMediaImageName;
+        private System.Windows.Forms.TextBox txtMediaVideoLink;
+        private System.Windows.Forms.TextBox txtMediaVideoName;
     }
 }
 
