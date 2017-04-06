@@ -8,23 +8,33 @@ namespace ProftaakEyectEvents
 {
     public class Post
     {
-        private string text;
+        private string text { get; set; }
+        private int postID { get; set; }
+        private int accountID { get; set; }
+        private Media media { get; set; }
 
-        public Post(string Text)
+        public Post(string text, int postID, int accountID)
         {
-
+            this.text = text;
+            this.postID = postID;
+            this.accountID = accountID;
+            this.media = null; 
         }
-        public void makePost()
-        {
 
+        public Post(string text, int postID, int accountID, Media placedmedia)
+        {
+            this.text = text;
+            this.postID = postID;
+            this.accountID = accountID;
+            this.media = placedmedia; 
         }
-        public void addMedia()
+        //onder aanpassing, via DAL post deleten uit database. 
+        private void DeletePost(int postID)
         {
-
-        }
-        public void addReaction()
-        {
-
+            this.text = null;
+            this.postID = 0;
+            this.accountID = 0;
+            this.media = null;
         }
     }
 }
