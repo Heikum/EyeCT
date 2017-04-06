@@ -78,19 +78,56 @@ namespace ProftaakEyeCT
             updatePerson.Number = (int)nudPersonHousenumber.Value;
             updatePerson.Phonenumber = (int)nudPersonPhonenumber.Value;
 
-            if (personrepo.Update(updateUser))
+            if (personrepo.Update(updatePerson))
             {
                 UpdateControls();
-                txtUsername.Text = "";
-                txtEmail.Text = "";
-                txtPassword.Text = "";
-                nudRating.Value = 0;
-                updateUser = null;
+                txtPersonName.Text = "";
+                txtPersonZipcode.Text = "";
+                txtPersonCity.Text = "";
+                txtPersonStreet.Text = "";
+                nudPersonHousenumber.Value = 0;
+                nudPersonPhonenumber.Value = 0;
+                updatePerson = null;
             }
             else
             {
-                MessageBox.Show("Updating student failed. Check if the email address is valid.");
+                MessageBox.Show("Updating person failed. Check if the email address is valid.");
             }
+        }
+
+        private void lbAllPersons_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            btnPersonEdit.Enabled = lbAllPersons.SelectedItem != null;
+            btnPersonRemove.Enabled = lbAllPersons.SelectedItem != null;
+            btnPersonUpdate.Enabled = lbAllPersons.SelectedItem != null;
+        }
+
+        private void btnPersonUpdate_Click(object sender, EventArgs e)
+        {
+            updatePerson = (Person)lbAllPersons.SelectedItem;
+            UpdatePerson();
+        }
+
+        private void btnPersonRemove_Click(object sender, EventArgs e)
+        {
+            personrepo.Delete(((Person)lbAllPersons.SelectedItem).Id);
+            UpdateControls();
+        }
+
+        private void btnPersonEdit_Click(object sender, EventArgs e)
+        {
+            updatePerson = (Person)lbAllPersons.SelectedItem;
+            txtPersonName.Text = updatePerson.Name;
+            txtPersonZipcode.Text = updatePerson.Zipcode;
+            txtPersonCity.Text = updatePerson.City;
+            txtPersonStreet.Text = updatePerson.Street;
+            nudPersonHousenumber.Value = updatePerson.Number;
+            nudPersonPhonenumber.Value = updatePerson.Phonenumber;
+        }
+
+        private void btnPersonAdd_Click(object sender, EventArgs e)
+        {
+            InsertPerson();
         }
     }
 }
