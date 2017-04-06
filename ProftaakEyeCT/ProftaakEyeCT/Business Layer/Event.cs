@@ -8,13 +8,15 @@ namespace ProftaakEyectEvents
 {
     public class Event
     {
-        private string description;
-        private string name;
-        private string location;
-        private DateTime date;
+        public int id;
+        public string description;
+        public string name;
+        public string location;
+        public DateTime date;
 
-        public Event(string Description, string Name, string Location, DateTime Date)
+        public Event(int id, string Description, string Name, string Location, DateTime Date)
         {
+            this.id = id;
             this.description = Description;
             this.name = Name;
             this.location = Location;

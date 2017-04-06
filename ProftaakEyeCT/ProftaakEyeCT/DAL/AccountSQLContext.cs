@@ -5,18 +5,19 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.Sql;
+using System.Windows.Forms;
 
 namespace ProftaakEyectEvents.DAL
 {
     public class AccountSQLContext:IAccountContext
     {
         //Get all the students
-        public List<Student> GetAllStudents()
+        public List<Account> GetAllAccounts()
         {
-            List<Student> students = new List<Student>();
+            List<Account> accounts = new List<Account>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Account ORDER BY Username";
+                string query = "SELECT * FROM Account ORDER BY ID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -24,21 +25,20 @@ namespace ProftaakEyectEvents.DAL
                     {
                         while (reader.Read())
                         {
-                            students.Add(CreateStudentFromReader(reader));
+                            accounts.Add(CreateAccountFromReader(reader));
                         }
                     }
                 }
             }
-            return students;
+            return accounts;
         }
 
-        //Get all the admins
-        public List<Admin> GetAllAdmins()
+        public List<Account> GetAllStudents()
         {
-            List<Admin> admins = new List<Admin>();
+            List<Account> accounts = new List<Account>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Account ORDER BY Username";
+                string query = "SELECT * FROM Account WHERE Rights = 0 ORDER BY ID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -46,79 +46,160 @@ namespace ProftaakEyectEvents.DAL
                     {
                         while (reader.Read())
                         {
-                            admins.Add(CreateAdminFromReader(reader));
+                            accounts.Add(CreateAccountFromReader(reader));
                         }
                     }
                 }
             }
-            return admins;
+            return accounts;
         }
 
-        //Check for student with exact username
-        public Student GetStudentByUsername(string Username)
+        public List<Account> GetAllAdmins()
         {
+            List<Account> accounts = new List<Account>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Account Where Username = username LIMIT 1";
+                string query = "SELECT * FROM Account WHERE Rights = 1 ORDER BY ID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("Username", Username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            return CreateStudentFromReader(reader);
+                            accounts.Add(CreateAccountFromReader(reader));
                         }
                     }
                 }
             }
-            return null;
+            return accounts;
         }
 
-        //Check for admin with exact username
-        public Admin GetAdminByUsername(string Username)
+        public Account InsertStudent(Student student)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Account Where Username = username LIMIT 1";
+                string query = "INSERT INTO Account (Username, Password, Emailadress, Rights)" +
+                    "VALUES (@username, @password, @emailadress, @rights)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", student.username);
+                    command.Parameters.AddWithValue("@password", student.password);
+                    command.Parameters.AddWithValue("@emailadress", student.emailadress);
+                    command.Parameters.AddWithValue("@rights", student.rights = 0);
+
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(Convert.ToString(e));
+                    }
+                }
+                return student;
+            }
+        }
+
+        public Account InsertAdmin(Admin admin)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO Account (Username, Password, Emailadress, Rights)" +
+                    "VALUES (@username, @password, @emailadress, @rights)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", admin.username);
+                    command.Parameters.AddWithValue("@password", admin.password);
+                    command.Parameters.AddWithValue("@emailadress", admin.emailadress);
+                    command.Parameters.AddWithValue("@rights", admin.rights = 1);
+
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(Convert.ToString(e));
+                    }
+                }
+                return admin;
+            }
+        }
+
+        public void DeleteAccount(Account account)
+        {
+            string query = "DELETE FROM Account WHERE ID = @id";
+            using (SqlConnection connection = Database.Connection)
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("@id", account.id);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public void UpdateAccount(Account account)
+        {
+            string query = "UPDATE Account SET Username = @username, Password = @password, Emailadress = @emailadress, Rights = @rights WHERE Id = @id";
+            using (SqlConnection connection = Database.Connection)
+            {
+                SqlCommand command = new SqlCommand(query, connection);
+                command.Parameters.AddWithValue("id", account.id);
+                command.Parameters.AddWithValue("username", account.username);
+                command.Parameters.AddWithValue("password", account.password);
+                command.Parameters.AddWithValue("emailadress", account.emailadress);
+                command.Parameters.AddWithValue("rights", account.rights);
+                command.ExecuteNonQuery();
+            }
+        }
+
+        public List<Account> GetAllAccountInformation()
+        {
+            List<Account> accounts = new List<Account>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT A.*, P.Name AS OwnerName, P.Phonenumber" +
+                " FROM Account A LEFT JOIN Person P ON P.Id = A.Id";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("Username", Username);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        if (reader.Read())
+                        while (reader.Read())
                         {
-                            return CreateAdminFromReader(reader);
+                            accounts.Add(CreateAccountFromReader(reader));
                         }
                     }
                 }
             }
+            return accounts;
+        }
+
+        private Account CreateAccountFromReader(SqlDataReader reader)
+        {
+            switch (Convert.ToString(reader["Type"]))
+            {
+                case "Student":
+                    return new Student(
+                        Convert.ToInt32(reader["Id"]),
+                        Convert.ToString(reader["Username"]),
+                        Convert.ToString(reader["Password"]),
+                        Convert.ToString(reader["Emailadress"]),
+                        Convert.ToInt32(reader["Rights"]));
+
+                case "Admin":
+                    return new Admin(
+                         Convert.ToInt32(reader["Id"]),
+                        Convert.ToString(reader["Username"]),
+                        Convert.ToString(reader["Password"]),
+                        Convert.ToString(reader["Emailadress"]),
+                        Convert.ToInt32(reader["Rights"]));
+
+            }
+
             return null;
-        }
-
-
-        private Student CreateStudentFromReader(SqlDataReader reader)
-        {
-            return new Student(
-                Convert.ToString(reader["Username"]),
-                Convert.ToString(reader["Password"]),
-                Convert.ToString(reader["E-mailadress"]),
-                Convert.ToBoolean(reader["Rights"]));
-            //Moet nog het persoon object bij
-
-        }
-
-        private Admin CreateAdminFromReader(SqlDataReader reader)
-        {
-            return new Admin(
-                Convert.ToString(reader["Username"]),
-                Convert.ToString(reader["Password"]),
-                Convert.ToString(reader["E-mailadress"]),
-                Convert.ToBoolean(reader["Rights"]));
-            //Moet nog het persoon object bij
-
         }
     }
 }

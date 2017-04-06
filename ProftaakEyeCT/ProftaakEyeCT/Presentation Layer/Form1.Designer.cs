@@ -41,14 +41,12 @@
             this.lbAllPersons = new System.Windows.Forms.ListBox();
             this.btnPersonUpdate = new System.Windows.Forms.Button();
             this.btnPersonEdit = new System.Windows.Forms.Button();
-            this.btnPersonAdd = new System.Windows.Forms.Button();
             this.lblPersonPhonenumber = new System.Windows.Forms.Label();
             this.lblPersonHousenumber = new System.Windows.Forms.Label();
             this.lblPersonStreet = new System.Windows.Forms.Label();
             this.lblPersonCity = new System.Windows.Forms.Label();
             this.lblPersonZipcode = new System.Windows.Forms.Label();
             this.lblPersonName = new System.Windows.Forms.Label();
-            this.nudPersonPhonenumber = new System.Windows.Forms.NumericUpDown();
             this.nudPersonHousenumber = new System.Windows.Forms.NumericUpDown();
             this.txtPersonStreet = new System.Windows.Forms.TextBox();
             this.txtPersonCity = new System.Windows.Forms.TextBox();
@@ -115,16 +113,6 @@
             this.tbSearchEvent = new System.Windows.Forms.TextBox();
             this.lblSearchEvents = new System.Windows.Forms.Label();
             this.lbEvents = new System.Windows.Forms.ListBox();
-            this.tpMedia = new System.Windows.Forms.TabPage();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.lbReaction = new System.Windows.Forms.ListBox();
-            this.lbPost = new System.Windows.Forms.ListBox();
-            this.tbTimeline = new System.Windows.Forms.TextBox();
-            this.tbReaction = new System.Windows.Forms.TextBox();
-            this.tbForum = new System.Windows.Forms.TextBox();
-            this.tbFriends = new System.Windows.Forms.TextBox();
-            this.lbFriends = new System.Windows.Forms.ListBox();
-            this.lbForums = new System.Windows.Forms.ListBox();
             this.tpReserve = new System.Windows.Forms.TabPage();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.label18 = new System.Windows.Forms.Label();
@@ -190,29 +178,44 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.tpNewMedia = new System.Windows.Forms.TabPage();
-            this.lblMediaImageLink = new System.Windows.Forms.Label();
-            this.lblMediaImageName = new System.Windows.Forms.Label();
-            this.lblMediaVideoLink = new System.Windows.Forms.Label();
-            this.lblMediaVideoName = new System.Windows.Forms.Label();
-            this.rbMediaImage = new System.Windows.Forms.RadioButton();
-            this.rbMediaVideo = new System.Windows.Forms.RadioButton();
-            this.txtMediaImageLink = new System.Windows.Forms.TextBox();
-            this.txtMediaImageName = new System.Windows.Forms.TextBox();
-            this.txtMediaVideoLink = new System.Windows.Forms.TextBox();
-            this.txtMediaVideoName = new System.Windows.Forms.TextBox();
+            this.btnRegistreren = new System.Windows.Forms.Button();
+            this.tpRegistreren = new System.Windows.Forms.TabPage();
+            this.txtAccountUsername = new System.Windows.Forms.TextBox();
+            this.txtAccountEmail = new System.Windows.Forms.TextBox();
+            this.txtAccountPassword = new System.Windows.Forms.TextBox();
+            this.lblAccountUsername = new System.Windows.Forms.Label();
+            this.lblAccountPassword = new System.Windows.Forms.Label();
+            this.lblAccountEmail = new System.Windows.Forms.Label();
+            this.btnAccountConfirm = new System.Windows.Forms.Button();
+            this.btnAccountCancel = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
+            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
+            this.textBox16 = new System.Windows.Forms.TextBox();
+            this.textBox17 = new System.Windows.Forms.TextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.txtPersonPhonenumber = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpNewAccount.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.nudPersonPhonenumber)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonHousenumber)).BeginInit();
             this.tpManage.SuspendLayout();
             this.tpNewEvents.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.tbEvents.SuspendLayout();
-            this.tpMedia.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
             this.tpReserve.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -220,18 +223,19 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             this.tpAccess.SuspendLayout();
             this.tpLogout.SuspendLayout();
-            this.tpNewMedia.SuspendLayout();
+            this.tpRegistreren.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
             this.SuspendLayout();
             // 
             // tcCamping
             // 
             this.tcCamping.Controls.Add(this.tpLogin);
+            this.tcCamping.Controls.Add(this.tpRegistreren);
             this.tcCamping.Controls.Add(this.tpNewAccount);
             this.tcCamping.Controls.Add(this.tpManage);
             this.tcCamping.Controls.Add(this.tpNewEvents);
             this.tcCamping.Controls.Add(this.tbEvents);
-            this.tcCamping.Controls.Add(this.tpNewMedia);
-            this.tcCamping.Controls.Add(this.tpMedia);
             this.tcCamping.Controls.Add(this.tpReserve);
             this.tcCamping.Controls.Add(this.tpMaterials);
             this.tcCamping.Controls.Add(this.tpAccess);
@@ -245,6 +249,7 @@
             // tpLogin
             // 
             this.tpLogin.BackColor = System.Drawing.Color.Purple;
+            this.tpLogin.Controls.Add(this.btnRegistreren);
             this.tpLogin.Controls.Add(this.lblPassword);
             this.tpLogin.Controls.Add(this.lblUsername);
             this.tpLogin.Controls.Add(this.btnLogin);
@@ -261,7 +266,7 @@
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(351, 260);
+            this.lblPassword.Location = new System.Drawing.Point(242, 172);
             this.lblPassword.Name = "lblPassword";
             this.lblPassword.Size = new System.Drawing.Size(73, 17);
             this.lblPassword.TabIndex = 4;
@@ -271,7 +276,7 @@
             // 
             this.lblUsername.AutoSize = true;
             this.lblUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(351, 216);
+            this.lblUsername.Location = new System.Drawing.Point(242, 128);
             this.lblUsername.Name = "lblUsername";
             this.lblUsername.Size = new System.Drawing.Size(77, 17);
             this.lblUsername.TabIndex = 3;
@@ -279,7 +284,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(483, 315);
+            this.btnLogin.Location = new System.Drawing.Point(295, 226);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 2;
@@ -288,29 +293,34 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.Location = new System.Drawing.Point(469, 259);
+            this.tbPassword.Location = new System.Drawing.Point(360, 171);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 1;
             // 
             // tbUsername
             // 
-            this.tbUsername.Location = new System.Drawing.Point(469, 215);
+            this.tbUsername.Location = new System.Drawing.Point(360, 127);
             this.tbUsername.Name = "tbUsername";
             this.tbUsername.Size = new System.Drawing.Size(100, 20);
             this.tbUsername.TabIndex = 0;
             // 
             // tpNewAccount
             // 
+            this.tpNewAccount.Controls.Add(this.txtPersonPhonenumber);
+            this.tpNewAccount.Controls.Add(this.label26);
+            this.tpNewAccount.Controls.Add(this.label27);
+            this.tpNewAccount.Controls.Add(this.label28);
+            this.tpNewAccount.Controls.Add(this.textBox20);
+            this.tpNewAccount.Controls.Add(this.textBox21);
+            this.tpNewAccount.Controls.Add(this.textBox22);
             this.tpNewAccount.Controls.Add(this.groupBox1);
-            this.tpNewAccount.Controls.Add(this.btnPersonAdd);
             this.tpNewAccount.Controls.Add(this.lblPersonPhonenumber);
             this.tpNewAccount.Controls.Add(this.lblPersonHousenumber);
             this.tpNewAccount.Controls.Add(this.lblPersonStreet);
             this.tpNewAccount.Controls.Add(this.lblPersonCity);
             this.tpNewAccount.Controls.Add(this.lblPersonZipcode);
             this.tpNewAccount.Controls.Add(this.lblPersonName);
-            this.tpNewAccount.Controls.Add(this.nudPersonPhonenumber);
             this.tpNewAccount.Controls.Add(this.nudPersonHousenumber);
             this.tpNewAccount.Controls.Add(this.txtPersonStreet);
             this.tpNewAccount.Controls.Add(this.txtPersonCity);
@@ -329,7 +339,7 @@
             this.groupBox1.Controls.Add(this.lbAllPersons);
             this.groupBox1.Controls.Add(this.btnPersonUpdate);
             this.groupBox1.Controls.Add(this.btnPersonEdit);
-            this.groupBox1.Location = new System.Drawing.Point(199, 23);
+            this.groupBox1.Location = new System.Drawing.Point(394, 23);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(359, 367);
             this.groupBox1.TabIndex = 16;
@@ -375,20 +385,10 @@
             this.btnPersonEdit.UseVisualStyleBackColor = true;
             this.btnPersonEdit.Click += new System.EventHandler(this.btnPersonEdit_Click);
             // 
-            // btnPersonAdd
-            // 
-            this.btnPersonAdd.Location = new System.Drawing.Point(37, 308);
-            this.btnPersonAdd.Name = "btnPersonAdd";
-            this.btnPersonAdd.Size = new System.Drawing.Size(120, 23);
-            this.btnPersonAdd.TabIndex = 12;
-            this.btnPersonAdd.Text = "Add";
-            this.btnPersonAdd.UseVisualStyleBackColor = true;
-            this.btnPersonAdd.Click += new System.EventHandler(this.btnPersonAdd_Click);
-            // 
             // lblPersonPhonenumber
             // 
             this.lblPersonPhonenumber.AutoSize = true;
-            this.lblPersonPhonenumber.Location = new System.Drawing.Point(37, 249);
+            this.lblPersonPhonenumber.Location = new System.Drawing.Point(66, 267);
             this.lblPersonPhonenumber.Name = "lblPersonPhonenumber";
             this.lblPersonPhonenumber.Size = new System.Drawing.Size(76, 13);
             this.lblPersonPhonenumber.TabIndex = 11;
@@ -397,7 +397,7 @@
             // lblPersonHousenumber
             // 
             this.lblPersonHousenumber.AutoSize = true;
-            this.lblPersonHousenumber.Location = new System.Drawing.Point(37, 203);
+            this.lblPersonHousenumber.Location = new System.Drawing.Point(66, 221);
             this.lblPersonHousenumber.Name = "lblPersonHousenumber";
             this.lblPersonHousenumber.Size = new System.Drawing.Size(76, 13);
             this.lblPersonHousenumber.TabIndex = 10;
@@ -406,7 +406,7 @@
             // lblPersonStreet
             // 
             this.lblPersonStreet.AutoSize = true;
-            this.lblPersonStreet.Location = new System.Drawing.Point(37, 155);
+            this.lblPersonStreet.Location = new System.Drawing.Point(66, 173);
             this.lblPersonStreet.Name = "lblPersonStreet";
             this.lblPersonStreet.Size = new System.Drawing.Size(38, 13);
             this.lblPersonStreet.TabIndex = 9;
@@ -415,7 +415,7 @@
             // lblPersonCity
             // 
             this.lblPersonCity.AutoSize = true;
-            this.lblPersonCity.Location = new System.Drawing.Point(37, 111);
+            this.lblPersonCity.Location = new System.Drawing.Point(66, 129);
             this.lblPersonCity.Name = "lblPersonCity";
             this.lblPersonCity.Size = new System.Drawing.Size(27, 13);
             this.lblPersonCity.TabIndex = 8;
@@ -424,7 +424,7 @@
             // lblPersonZipcode
             // 
             this.lblPersonZipcode.AutoSize = true;
-            this.lblPersonZipcode.Location = new System.Drawing.Point(37, 69);
+            this.lblPersonZipcode.Location = new System.Drawing.Point(66, 87);
             this.lblPersonZipcode.Name = "lblPersonZipcode";
             this.lblPersonZipcode.Size = new System.Drawing.Size(49, 13);
             this.lblPersonZipcode.TabIndex = 7;
@@ -433,50 +433,43 @@
             // lblPersonName
             // 
             this.lblPersonName.AutoSize = true;
-            this.lblPersonName.Location = new System.Drawing.Point(37, 23);
+            this.lblPersonName.Location = new System.Drawing.Point(66, 41);
             this.lblPersonName.Name = "lblPersonName";
             this.lblPersonName.Size = new System.Drawing.Size(38, 13);
             this.lblPersonName.TabIndex = 6;
             this.lblPersonName.Text = "Name:";
             // 
-            // nudPersonPhonenumber
-            // 
-            this.nudPersonPhonenumber.Location = new System.Drawing.Point(37, 269);
-            this.nudPersonPhonenumber.Name = "nudPersonPhonenumber";
-            this.nudPersonPhonenumber.Size = new System.Drawing.Size(120, 20);
-            this.nudPersonPhonenumber.TabIndex = 5;
-            // 
             // nudPersonHousenumber
             // 
-            this.nudPersonHousenumber.Location = new System.Drawing.Point(37, 222);
+            this.nudPersonHousenumber.Location = new System.Drawing.Point(66, 240);
             this.nudPersonHousenumber.Name = "nudPersonHousenumber";
             this.nudPersonHousenumber.Size = new System.Drawing.Size(120, 20);
             this.nudPersonHousenumber.TabIndex = 4;
             // 
             // txtPersonStreet
             // 
-            this.txtPersonStreet.Location = new System.Drawing.Point(37, 175);
+            this.txtPersonStreet.Location = new System.Drawing.Point(66, 193);
             this.txtPersonStreet.Name = "txtPersonStreet";
             this.txtPersonStreet.Size = new System.Drawing.Size(120, 20);
             this.txtPersonStreet.TabIndex = 3;
             // 
             // txtPersonCity
             // 
-            this.txtPersonCity.Location = new System.Drawing.Point(37, 128);
+            this.txtPersonCity.Location = new System.Drawing.Point(66, 146);
             this.txtPersonCity.Name = "txtPersonCity";
             this.txtPersonCity.Size = new System.Drawing.Size(120, 20);
             this.txtPersonCity.TabIndex = 2;
             // 
             // txtPersonZipcode
             // 
-            this.txtPersonZipcode.Location = new System.Drawing.Point(37, 84);
+            this.txtPersonZipcode.Location = new System.Drawing.Point(66, 102);
             this.txtPersonZipcode.Name = "txtPersonZipcode";
             this.txtPersonZipcode.Size = new System.Drawing.Size(120, 20);
             this.txtPersonZipcode.TabIndex = 1;
             // 
             // txtPersonName
             // 
-            this.txtPersonName.Location = new System.Drawing.Point(37, 42);
+            this.txtPersonName.Location = new System.Drawing.Point(66, 60);
             this.txtPersonName.Name = "txtPersonName";
             this.txtPersonName.Size = new System.Drawing.Size(120, 20);
             this.txtPersonName.TabIndex = 0;
@@ -1067,125 +1060,6 @@
             this.lbEvents.Name = "lbEvents";
             this.lbEvents.Size = new System.Drawing.Size(176, 407);
             this.lbEvents.TabIndex = 0;
-            // 
-            // tpMedia
-            // 
-            this.tpMedia.BackColor = System.Drawing.Color.Purple;
-            this.tpMedia.Controls.Add(this.tableLayoutPanel1);
-            this.tpMedia.Location = new System.Drawing.Point(4, 22);
-            this.tpMedia.Name = "tpMedia";
-            this.tpMedia.Size = new System.Drawing.Size(939, 538);
-            this.tpMedia.TabIndex = 3;
-            this.tpMedia.Text = "Media";
-            // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 4;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 27.74049F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 72.25951F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 218F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 251F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Controls.Add(this.lbReaction, 2, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbPost, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.tbTimeline, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbReaction, 2, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbForum, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.tbFriends, 3, 0);
-            this.tableLayoutPanel1.Controls.Add(this.lbFriends, 3, 1);
-            this.tableLayoutPanel1.Controls.Add(this.lbForums, 0, 1);
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 3);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 8.241758F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 91.75824F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(908, 546);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // lbReaction
-            // 
-            this.lbReaction.FormattingEnabled = true;
-            this.lbReaction.Location = new System.Drawing.Point(441, 48);
-            this.lbReaction.Name = "lbReaction";
-            this.lbReaction.Size = new System.Drawing.Size(212, 485);
-            this.lbReaction.TabIndex = 1;
-            // 
-            // lbPost
-            // 
-            this.lbPost.FormattingEnabled = true;
-            this.lbPost.Location = new System.Drawing.Point(124, 48);
-            this.lbPost.Name = "lbPost";
-            this.lbPost.Size = new System.Drawing.Size(311, 485);
-            this.lbPost.TabIndex = 0;
-            // 
-            // tbTimeline
-            // 
-            this.tbTimeline.BackColor = System.Drawing.Color.Purple;
-            this.tbTimeline.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbTimeline.Location = new System.Drawing.Point(124, 3);
-            this.tbTimeline.Multiline = true;
-            this.tbTimeline.Name = "tbTimeline";
-            this.tbTimeline.ReadOnly = true;
-            this.tbTimeline.Size = new System.Drawing.Size(311, 39);
-            this.tbTimeline.TabIndex = 2;
-            this.tbTimeline.Text = "Timeline";
-            this.tbTimeline.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbReaction
-            // 
-            this.tbReaction.BackColor = System.Drawing.Color.Purple;
-            this.tbReaction.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbReaction.Location = new System.Drawing.Point(441, 3);
-            this.tbReaction.Multiline = true;
-            this.tbReaction.Name = "tbReaction";
-            this.tbReaction.ReadOnly = true;
-            this.tbReaction.Size = new System.Drawing.Size(212, 39);
-            this.tbReaction.TabIndex = 3;
-            this.tbReaction.Text = "Reaction";
-            this.tbReaction.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbForum
-            // 
-            this.tbForum.BackColor = System.Drawing.Color.Purple;
-            this.tbForum.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbForum.Location = new System.Drawing.Point(3, 3);
-            this.tbForum.Multiline = true;
-            this.tbForum.Name = "tbForum";
-            this.tbForum.ReadOnly = true;
-            this.tbForum.Size = new System.Drawing.Size(115, 39);
-            this.tbForum.TabIndex = 5;
-            this.tbForum.Text = "Forums";
-            this.tbForum.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbFriends
-            // 
-            this.tbFriends.BackColor = System.Drawing.Color.Purple;
-            this.tbFriends.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFriends.Location = new System.Drawing.Point(659, 3);
-            this.tbFriends.Multiline = true;
-            this.tbFriends.Name = "tbFriends";
-            this.tbFriends.ReadOnly = true;
-            this.tbFriends.Size = new System.Drawing.Size(239, 39);
-            this.tbFriends.TabIndex = 4;
-            this.tbFriends.Text = "Friends";
-            this.tbFriends.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // lbFriends
-            // 
-            this.lbFriends.FormattingEnabled = true;
-            this.lbFriends.Location = new System.Drawing.Point(659, 48);
-            this.lbFriends.Name = "lbFriends";
-            this.lbFriends.Size = new System.Drawing.Size(237, 485);
-            this.lbFriends.TabIndex = 6;
-            // 
-            // lbForums
-            // 
-            this.lbForums.FormattingEnabled = true;
-            this.lbForums.Location = new System.Drawing.Point(3, 48);
-            this.lbForums.Name = "lbForums";
-            this.lbForums.Size = new System.Drawing.Size(115, 485);
-            this.lbForums.TabIndex = 7;
             // 
             // tpReserve
             // 
@@ -1814,114 +1688,260 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // tpNewMedia
+            // btnRegistreren
             // 
-            this.tpNewMedia.Controls.Add(this.lblMediaImageLink);
-            this.tpNewMedia.Controls.Add(this.lblMediaImageName);
-            this.tpNewMedia.Controls.Add(this.lblMediaVideoLink);
-            this.tpNewMedia.Controls.Add(this.lblMediaVideoName);
-            this.tpNewMedia.Controls.Add(this.rbMediaImage);
-            this.tpNewMedia.Controls.Add(this.rbMediaVideo);
-            this.tpNewMedia.Controls.Add(this.txtMediaImageLink);
-            this.tpNewMedia.Controls.Add(this.txtMediaImageName);
-            this.tpNewMedia.Controls.Add(this.txtMediaVideoLink);
-            this.tpNewMedia.Controls.Add(this.txtMediaVideoName);
-            this.tpNewMedia.Location = new System.Drawing.Point(4, 22);
-            this.tpNewMedia.Name = "tpNewMedia";
-            this.tpNewMedia.Size = new System.Drawing.Size(939, 538);
-            this.tpNewMedia.TabIndex = 10;
-            this.tpNewMedia.Text = "New media";
-            this.tpNewMedia.UseVisualStyleBackColor = true;
+            this.btnRegistreren.Location = new System.Drawing.Point(408, 226);
+            this.btnRegistreren.Name = "btnRegistreren";
+            this.btnRegistreren.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistreren.TabIndex = 5;
+            this.btnRegistreren.Text = "Registreren";
+            this.btnRegistreren.UseVisualStyleBackColor = true;
             // 
-            // lblMediaImageLink
+            // tpRegistreren
             // 
-            this.lblMediaImageLink.AutoSize = true;
-            this.lblMediaImageLink.Location = new System.Drawing.Point(39, 250);
-            this.lblMediaImageLink.Name = "lblMediaImageLink";
-            this.lblMediaImageLink.Size = new System.Drawing.Size(55, 13);
-            this.lblMediaImageLink.TabIndex = 19;
-            this.lblMediaImageLink.Text = "Imagelink:";
+            this.tpRegistreren.Controls.Add(this.label20);
+            this.tpRegistreren.Controls.Add(this.label21);
+            this.tpRegistreren.Controls.Add(this.label22);
+            this.tpRegistreren.Controls.Add(this.label23);
+            this.tpRegistreren.Controls.Add(this.label24);
+            this.tpRegistreren.Controls.Add(this.label25);
+            this.tpRegistreren.Controls.Add(this.numericUpDown4);
+            this.tpRegistreren.Controls.Add(this.numericUpDown5);
+            this.tpRegistreren.Controls.Add(this.textBox16);
+            this.tpRegistreren.Controls.Add(this.textBox17);
+            this.tpRegistreren.Controls.Add(this.textBox18);
+            this.tpRegistreren.Controls.Add(this.textBox19);
+            this.tpRegistreren.Controls.Add(this.btnAccountCancel);
+            this.tpRegistreren.Controls.Add(this.btnAccountConfirm);
+            this.tpRegistreren.Controls.Add(this.lblAccountEmail);
+            this.tpRegistreren.Controls.Add(this.lblAccountPassword);
+            this.tpRegistreren.Controls.Add(this.lblAccountUsername);
+            this.tpRegistreren.Controls.Add(this.txtAccountPassword);
+            this.tpRegistreren.Controls.Add(this.txtAccountEmail);
+            this.tpRegistreren.Controls.Add(this.txtAccountUsername);
+            this.tpRegistreren.Location = new System.Drawing.Point(4, 22);
+            this.tpRegistreren.Name = "tpRegistreren";
+            this.tpRegistreren.Size = new System.Drawing.Size(939, 538);
+            this.tpRegistreren.TabIndex = 11;
+            this.tpRegistreren.Text = "Registreren";
+            this.tpRegistreren.UseVisualStyleBackColor = true;
             // 
-            // lblMediaImageName
+            // txtAccountUsername
             // 
-            this.lblMediaImageName.AutoSize = true;
-            this.lblMediaImageName.Location = new System.Drawing.Point(39, 192);
-            this.lblMediaImageName.Name = "lblMediaImageName";
-            this.lblMediaImageName.Size = new System.Drawing.Size(65, 13);
-            this.lblMediaImageName.TabIndex = 18;
-            this.lblMediaImageName.Text = "Imagename:";
+            this.txtAccountUsername.Location = new System.Drawing.Point(59, 62);
+            this.txtAccountUsername.Name = "txtAccountUsername";
+            this.txtAccountUsername.Size = new System.Drawing.Size(175, 20);
+            this.txtAccountUsername.TabIndex = 0;
             // 
-            // lblMediaVideoLink
+            // txtAccountEmail
             // 
-            this.lblMediaVideoLink.AutoSize = true;
-            this.lblMediaVideoLink.Location = new System.Drawing.Point(39, 137);
-            this.lblMediaVideoLink.Name = "lblMediaVideoLink";
-            this.lblMediaVideoLink.Size = new System.Drawing.Size(53, 13);
-            this.lblMediaVideoLink.TabIndex = 17;
-            this.lblMediaVideoLink.Text = "Videolink:";
+            this.txtAccountEmail.Location = new System.Drawing.Point(59, 185);
+            this.txtAccountEmail.Name = "txtAccountEmail";
+            this.txtAccountEmail.Size = new System.Drawing.Size(175, 20);
+            this.txtAccountEmail.TabIndex = 1;
             // 
-            // lblMediaVideoName
+            // txtAccountPassword
             // 
-            this.lblMediaVideoName.AutoSize = true;
-            this.lblMediaVideoName.Location = new System.Drawing.Point(39, 83);
-            this.lblMediaVideoName.Name = "lblMediaVideoName";
-            this.lblMediaVideoName.Size = new System.Drawing.Size(63, 13);
-            this.lblMediaVideoName.TabIndex = 16;
-            this.lblMediaVideoName.Text = "Videoname:";
+            this.txtAccountPassword.Location = new System.Drawing.Point(59, 121);
+            this.txtAccountPassword.Name = "txtAccountPassword";
+            this.txtAccountPassword.Size = new System.Drawing.Size(175, 20);
+            this.txtAccountPassword.TabIndex = 2;
             // 
-            // rbMediaImage
+            // lblAccountUsername
             // 
-            this.rbMediaImage.AutoSize = true;
-            this.rbMediaImage.Location = new System.Drawing.Point(154, 53);
-            this.rbMediaImage.Name = "rbMediaImage";
-            this.rbMediaImage.Size = new System.Drawing.Size(54, 17);
-            this.rbMediaImage.TabIndex = 15;
-            this.rbMediaImage.TabStop = true;
-            this.rbMediaImage.Text = "Image";
-            this.rbMediaImage.UseVisualStyleBackColor = true;
+            this.lblAccountUsername.AutoSize = true;
+            this.lblAccountUsername.Location = new System.Drawing.Point(56, 46);
+            this.lblAccountUsername.Name = "lblAccountUsername";
+            this.lblAccountUsername.Size = new System.Drawing.Size(58, 13);
+            this.lblAccountUsername.TabIndex = 3;
+            this.lblAccountUsername.Text = "Username:";
             // 
-            // rbMediaVideo
+            // lblAccountPassword
             // 
-            this.rbMediaVideo.AutoSize = true;
-            this.rbMediaVideo.Location = new System.Drawing.Point(39, 53);
-            this.rbMediaVideo.Name = "rbMediaVideo";
-            this.rbMediaVideo.Size = new System.Drawing.Size(52, 17);
-            this.rbMediaVideo.TabIndex = 14;
-            this.rbMediaVideo.TabStop = true;
-            this.rbMediaVideo.Text = "Video";
-            this.rbMediaVideo.UseVisualStyleBackColor = true;
+            this.lblAccountPassword.AutoSize = true;
+            this.lblAccountPassword.Location = new System.Drawing.Point(56, 105);
+            this.lblAccountPassword.Name = "lblAccountPassword";
+            this.lblAccountPassword.Size = new System.Drawing.Size(56, 13);
+            this.lblAccountPassword.TabIndex = 4;
+            this.lblAccountPassword.Text = "Password:";
             // 
-            // txtMediaImageLink
+            // lblAccountEmail
             // 
-            this.txtMediaImageLink.Enabled = false;
-            this.txtMediaImageLink.Location = new System.Drawing.Point(39, 269);
-            this.txtMediaImageLink.Name = "txtMediaImageLink";
-            this.txtMediaImageLink.Size = new System.Drawing.Size(224, 20);
-            this.txtMediaImageLink.TabIndex = 13;
+            this.lblAccountEmail.AutoSize = true;
+            this.lblAccountEmail.Location = new System.Drawing.Point(56, 169);
+            this.lblAccountEmail.Name = "lblAccountEmail";
+            this.lblAccountEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblAccountEmail.TabIndex = 5;
+            this.lblAccountEmail.Text = "Email:";
             // 
-            // txtMediaImageName
+            // btnAccountConfirm
             // 
-            this.txtMediaImageName.Enabled = false;
-            this.txtMediaImageName.Location = new System.Drawing.Point(39, 211);
-            this.txtMediaImageName.Name = "txtMediaImageName";
-            this.txtMediaImageName.Size = new System.Drawing.Size(224, 20);
-            this.txtMediaImageName.TabIndex = 12;
+            this.btnAccountConfirm.Location = new System.Drawing.Point(59, 225);
+            this.btnAccountConfirm.Name = "btnAccountConfirm";
+            this.btnAccountConfirm.Size = new System.Drawing.Size(175, 23);
+            this.btnAccountConfirm.TabIndex = 6;
+            this.btnAccountConfirm.Text = "Confirm";
+            this.btnAccountConfirm.UseVisualStyleBackColor = true;
             // 
-            // txtMediaVideoLink
+            // btnAccountCancel
             // 
-            this.txtMediaVideoLink.Enabled = false;
-            this.txtMediaVideoLink.Location = new System.Drawing.Point(39, 156);
-            this.txtMediaVideoLink.Name = "txtMediaVideoLink";
-            this.txtMediaVideoLink.Size = new System.Drawing.Size(224, 20);
-            this.txtMediaVideoLink.TabIndex = 11;
+            this.btnAccountCancel.Location = new System.Drawing.Point(59, 255);
+            this.btnAccountCancel.Name = "btnAccountCancel";
+            this.btnAccountCancel.Size = new System.Drawing.Size(175, 23);
+            this.btnAccountCancel.TabIndex = 7;
+            this.btnAccountCancel.Text = "Cancel";
+            this.btnAccountCancel.UseVisualStyleBackColor = true;
             // 
-            // txtMediaVideoName
+            // label20
             // 
-            this.txtMediaVideoName.Enabled = false;
-            this.txtMediaVideoName.Location = new System.Drawing.Point(39, 102);
-            this.txtMediaVideoName.Name = "txtMediaVideoName";
-            this.txtMediaVideoName.Size = new System.Drawing.Size(224, 20);
-            this.txtMediaVideoName.TabIndex = 10;
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(292, 272);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(76, 13);
+            this.label20.TabIndex = 24;
+            this.label20.Text = "Phonenumber:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(292, 226);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(76, 13);
+            this.label21.TabIndex = 23;
+            this.label21.Text = "Housenumber:";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(292, 178);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(38, 13);
+            this.label22.TabIndex = 22;
+            this.label22.Text = "Street:";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Location = new System.Drawing.Point(292, 134);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(27, 13);
+            this.label23.TabIndex = 21;
+            this.label23.Text = "City:";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Location = new System.Drawing.Point(292, 92);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(49, 13);
+            this.label24.TabIndex = 20;
+            this.label24.Text = "Zipcode:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(289, 46);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(38, 13);
+            this.label25.TabIndex = 19;
+            this.label25.Text = "Name:";
+            // 
+            // numericUpDown4
+            // 
+            this.numericUpDown4.Location = new System.Drawing.Point(292, 292);
+            this.numericUpDown4.Name = "numericUpDown4";
+            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown4.TabIndex = 18;
+            // 
+            // numericUpDown5
+            // 
+            this.numericUpDown5.Location = new System.Drawing.Point(292, 245);
+            this.numericUpDown5.Name = "numericUpDown5";
+            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
+            this.numericUpDown5.TabIndex = 17;
+            // 
+            // textBox16
+            // 
+            this.textBox16.Location = new System.Drawing.Point(292, 198);
+            this.textBox16.Name = "textBox16";
+            this.textBox16.Size = new System.Drawing.Size(120, 20);
+            this.textBox16.TabIndex = 16;
+            // 
+            // textBox17
+            // 
+            this.textBox17.Location = new System.Drawing.Point(292, 151);
+            this.textBox17.Name = "textBox17";
+            this.textBox17.Size = new System.Drawing.Size(120, 20);
+            this.textBox17.TabIndex = 15;
+            // 
+            // textBox18
+            // 
+            this.textBox18.Location = new System.Drawing.Point(292, 107);
+            this.textBox18.Name = "textBox18";
+            this.textBox18.Size = new System.Drawing.Size(120, 20);
+            this.textBox18.TabIndex = 14;
+            // 
+            // textBox19
+            // 
+            this.textBox19.Location = new System.Drawing.Point(292, 65);
+            this.textBox19.Name = "textBox19";
+            this.textBox19.Size = new System.Drawing.Size(120, 20);
+            this.textBox19.TabIndex = 13;
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Location = new System.Drawing.Point(208, 129);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(35, 13);
+            this.label26.TabIndex = 22;
+            this.label26.Text = "Email:";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Location = new System.Drawing.Point(210, 87);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(56, 13);
+            this.label27.TabIndex = 21;
+            this.label27.Text = "Password:";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(208, 41);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(58, 13);
+            this.label28.TabIndex = 20;
+            this.label28.Text = "Username:";
+            // 
+            // textBox20
+            // 
+            this.textBox20.Location = new System.Drawing.Point(211, 103);
+            this.textBox20.Name = "textBox20";
+            this.textBox20.Size = new System.Drawing.Size(175, 20);
+            this.textBox20.TabIndex = 19;
+            // 
+            // textBox21
+            // 
+            this.textBox21.Location = new System.Drawing.Point(211, 146);
+            this.textBox21.Name = "textBox21";
+            this.textBox21.Size = new System.Drawing.Size(175, 20);
+            this.textBox21.TabIndex = 18;
+            // 
+            // textBox22
+            // 
+            this.textBox22.Location = new System.Drawing.Point(211, 60);
+            this.textBox22.Name = "textBox22";
+            this.textBox22.Size = new System.Drawing.Size(175, 20);
+            this.textBox22.TabIndex = 17;
+            // 
+            // txtPersonPhonenumber
+            // 
+            this.txtPersonPhonenumber.Location = new System.Drawing.Point(66, 283);
+            this.txtPersonPhonenumber.Name = "txtPersonPhonenumber";
+            this.txtPersonPhonenumber.Size = new System.Drawing.Size(120, 20);
+            this.txtPersonPhonenumber.TabIndex = 23;
             // 
             // Form1
             // 
@@ -1938,7 +1958,6 @@
             this.tpNewAccount.ResumeLayout(false);
             this.tpNewAccount.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.nudPersonPhonenumber)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonHousenumber)).EndInit();
             this.tpManage.ResumeLayout(false);
             this.tpManage.PerformLayout();
@@ -1947,9 +1966,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
             this.tbEvents.ResumeLayout(false);
             this.tbEvents.PerformLayout();
-            this.tpMedia.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
             this.tpReserve.ResumeLayout(false);
             this.tpReserve.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
@@ -1960,8 +1976,10 @@
             this.tpAccess.ResumeLayout(false);
             this.tpAccess.PerformLayout();
             this.tpLogout.ResumeLayout(false);
-            this.tpNewMedia.ResumeLayout(false);
-            this.tpNewMedia.PerformLayout();
+            this.tpRegistreren.ResumeLayout(false);
+            this.tpRegistreren.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1981,14 +1999,12 @@
         private System.Windows.Forms.ListBox lbAllPersons;
         private System.Windows.Forms.Button btnPersonUpdate;
         private System.Windows.Forms.Button btnPersonEdit;
-        private System.Windows.Forms.Button btnPersonAdd;
         private System.Windows.Forms.Label lblPersonPhonenumber;
         private System.Windows.Forms.Label lblPersonHousenumber;
         private System.Windows.Forms.Label lblPersonStreet;
         private System.Windows.Forms.Label lblPersonCity;
         private System.Windows.Forms.Label lblPersonZipcode;
         private System.Windows.Forms.Label lblPersonName;
-        private System.Windows.Forms.NumericUpDown nudPersonPhonenumber;
         private System.Windows.Forms.NumericUpDown nudPersonHousenumber;
         private System.Windows.Forms.TextBox txtPersonStreet;
         private System.Windows.Forms.TextBox txtPersonCity;
@@ -2055,16 +2071,6 @@
         private System.Windows.Forms.TextBox tbSearchEvent;
         private System.Windows.Forms.Label lblSearchEvents;
         private System.Windows.Forms.ListBox lbEvents;
-        private System.Windows.Forms.TabPage tpMedia;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.ListBox lbReaction;
-        private System.Windows.Forms.ListBox lbPost;
-        private System.Windows.Forms.TextBox tbTimeline;
-        private System.Windows.Forms.TextBox tbReaction;
-        private System.Windows.Forms.TextBox tbForum;
-        private System.Windows.Forms.TextBox tbFriends;
-        private System.Windows.Forms.ListBox lbFriends;
-        private System.Windows.Forms.ListBox lbForums;
         private System.Windows.Forms.TabPage tpReserve;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
         private System.Windows.Forms.Label label18;
@@ -2130,17 +2136,35 @@
         private System.Windows.Forms.DateTimePicker dtpDateNow;
         private System.Windows.Forms.TabPage tpLogout;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TabPage tpNewMedia;
-        private System.Windows.Forms.Label lblMediaImageLink;
-        private System.Windows.Forms.Label lblMediaImageName;
-        private System.Windows.Forms.Label lblMediaVideoLink;
-        private System.Windows.Forms.Label lblMediaVideoName;
-        private System.Windows.Forms.RadioButton rbMediaImage;
-        private System.Windows.Forms.RadioButton rbMediaVideo;
-        private System.Windows.Forms.TextBox txtMediaImageLink;
-        private System.Windows.Forms.TextBox txtMediaImageName;
-        private System.Windows.Forms.TextBox txtMediaVideoLink;
-        private System.Windows.Forms.TextBox txtMediaVideoName;
+        private System.Windows.Forms.Button btnRegistreren;
+        private System.Windows.Forms.TabPage tpRegistreren;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.NumericUpDown numericUpDown4;
+        private System.Windows.Forms.NumericUpDown numericUpDown5;
+        private System.Windows.Forms.TextBox textBox16;
+        private System.Windows.Forms.TextBox textBox17;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Button btnAccountCancel;
+        private System.Windows.Forms.Button btnAccountConfirm;
+        private System.Windows.Forms.Label lblAccountEmail;
+        private System.Windows.Forms.Label lblAccountPassword;
+        private System.Windows.Forms.Label lblAccountUsername;
+        private System.Windows.Forms.TextBox txtAccountPassword;
+        private System.Windows.Forms.TextBox txtAccountEmail;
+        private System.Windows.Forms.TextBox txtAccountUsername;
+        private System.Windows.Forms.TextBox txtPersonPhonenumber;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.TextBox textBox22;
     }
 }
 
