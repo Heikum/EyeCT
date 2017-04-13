@@ -6,17 +6,26 @@ using System.Threading.Tasks;
 
 namespace ProftaakEyectEvents
 {
-    public class Video
+    public class Video : Media
     {
-        private int lenght;
 
-        public Video(string Name, int Size, int Length)
-        {
+        private string VideoName { get; set; }
+        private string VideoLink { get; set; }
 
-        }
-        public int getDuration()
+        public Video(string videoName, string videoLink, int MediaID, int MediaType) : base(MediaID, MediaType)
         {
-            return 0;
+            VideoName = videoName;
+            VideoLink = videoLink;
         }
+        public string GetVideoLink()
+        {
+            return VideoLink;
+        }
+
+        public override string ToString()
+        {
+            return base.ToString();
+        }
+
     }
-}
+    }
