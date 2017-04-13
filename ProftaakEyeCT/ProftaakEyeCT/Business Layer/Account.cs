@@ -17,10 +17,10 @@ namespace ProftaakEyectEvents
         private int rights;
         public int Id { get; set; }
 
-        public string Username { get; set; }
-        public string Password { get; set; }
-        public string Emailadress { get; set; }
-        public int Rights { get; set; }
+        public string Username { get { return username; } set { username = value; } }
+        public string Password { get { return password; } set { password = value; } }
+        public string Emailadress { get { return emailadress; } set { emailadress = value; } }
+        public int Rights { get {return rights;} set{rights =  value; }}
 
         public Account(int id, string username, string password, string emailadress, int rights)
         {
@@ -50,6 +50,10 @@ namespace ProftaakEyectEvents
         public void showReservation()
         {
 
+        }
+        public override string ToString()
+        {
+            return username + " " + password + " " + emailadress;
         }
     }
 

@@ -16,13 +16,13 @@ namespace ProftaakEyectEvents
         private string zipcode;
         private string city;
 
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Phonenumber { get; set; }
-        public string Street { get; set; }
-        public int Number { get; set; }
-        public string Zipcode { get; set; }
-        public string City { get; set; }
+        public int Id { get { return id; } set { id = value; } }
+        public string Name { get { return name; } set { name = value; } }
+        public string Phonenumber { get { return phonenumber; } set { phonenumber = value; } }
+        public string Street { get { return street; } set { street = value; } }
+        public int Number { get { return number; } set { number = value; } }
+        public string Zipcode { get {return zipcode; } set {zipcode = value; } }
+        public string City { get { return city; } set { city = value; } }
 
         public Person(int id, string name, string zipcode, string city, string street, int number, string phonenumber)
         {
@@ -44,7 +44,7 @@ namespace ProftaakEyectEvents
 
         public override string ToString()
         {
-            return name + zipcode + city + street + number + phonenumber;
+            return name + " " + zipcode +  " " + city +  " " + street + " " + number + " " + Phonenumber;
         }
     }
 }

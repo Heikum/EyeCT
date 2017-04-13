@@ -19,6 +19,8 @@ namespace ProftaakEyeCT
     {
         private PersonRepository personrepo;
         private Person updatePerson;
+        private AccountRepository accountrepo;
+        private Account updateAccount;
         private MediaRepository mediarepo;
         private Media updateMedia;
         public Form1()
@@ -26,6 +28,7 @@ namespace ProftaakEyeCT
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
             mediarepo = new MediaRepository(new MediaSQLContext());
+            accountrepo = new AccountRepository(new AccountSQLContext());
             UpdateControls();
 
 
@@ -34,9 +37,9 @@ namespace ProftaakEyeCT
         private void UpdateControls()
         {
             lbAllPersons.Items.Clear();
-            foreach (Person person in personrepo.GetAll())
+            foreach (Account account in accountrepo.GetAllAccounts())
             {
-                lbAllPersons.Items.Add(person);
+                lbAllPersons.Items.Add(account);
             }
 
             // It is only possible to edit and delete students when one is selected
@@ -47,7 +50,7 @@ namespace ProftaakEyeCT
 
         private void InsertPerson()
         {
-            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
+            
             Person person = null;
             try
             {
@@ -77,7 +80,7 @@ namespace ProftaakEyeCT
 
         private void UpdatePerson()
         {
-            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
+            
             updatePerson.Name = txtPersonName.Text;
             updatePerson.Zipcode = txtPersonZipcode.Text;
             updatePerson.City = txtPersonCity.Text;
@@ -107,6 +110,7 @@ namespace ProftaakEyeCT
             btnPersonEdit.Enabled = lbAllPersons.SelectedItem != null;
             btnPersonRemove.Enabled = lbAllPersons.SelectedItem != null;
             btnPersonUpdate.Enabled = lbAllPersons.SelectedItem != null;
+            updatePerson = personrepo.GetById(((Account)lbAllPersons.SelectedItem).Id);
         }
 
         private void btnPersonUpdate_Click(object sender, EventArgs e)
@@ -123,16 +127,32 @@ namespace ProftaakEyeCT
 
         private void btnPersonEdit_Click(object sender, EventArgs e)
         {
-            int phonenumber = Convert.ToInt32(txtPersonPhonenumber.Text);
-            updatePerson = (Person)lbAllPersons.SelectedItem;
+            updateAccount = (Account)lbAllPersons.SelectedItem;
+            
+            txtAccountUsername.Text = updateAccount.Username;
+            txtAccountPassword.Text = updateAccount.Password;
+            txtAccountEmail.Text = updateAccount.Emailadress;
             txtPersonName.Text = updatePerson.Name;
             txtPersonZipcode.Text = updatePerson.Zipcode;
             txtPersonCity.Text = updatePerson.City;
             txtPersonStreet.Text = updatePerson.Street;
             nudPersonHousenumber.Value = updatePerson.Number;
-            phonenumber = Convert.ToInt32(updatePerson.Phonenumber);
+            txtPersonPhonenumber.Text = updatePerson.Phonenumber;
+
+
+            //updatePerson = (Person)lbAllPersons.SelectedItem;
+            //txtPersonName.Text = updatePerson.Name;
+            //txtPersonZipcode.Text = updatePerson.Zipcode;
+            //txtPersonCity.Text = updatePerson.City;
+            //txtPersonStreet.Text = updatePerson.Street;
+            //nudPersonHousenumber.Value = updatePerson.Number;
+            //txtPersonPhonenumber.Text = updatePerson.Phonenumber;
         }
 
-       
+        private void btnAccountConfirm_Click(object sender, EventArgs e)
+        {
+            InsertPerson();
+            UpdateControls();
+        }
     }
 }

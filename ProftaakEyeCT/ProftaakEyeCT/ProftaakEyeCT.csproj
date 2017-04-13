@@ -62,6 +62,7 @@
     <Compile Include="DAL\MediaSQLContext.cs" />
     <Compile Include="DAL\PersonSQLContext.cs" />
     <Compile Include="DAL\IReservationContext.cs" />
+    <Compile Include="Presentation Layer\AccountRepository.cs" />
     <Compile Include="Presentation Layer\MediaPlatform.cs">
       <SubType>Form</SubType>
     </Compile>
