@@ -13,7 +13,7 @@ namespace ProftaakEyectEvents
     {
         // De bestandsnaam voor de database
         private static readonly string databaseFilename = "Hier komt de file naam van de database";
-        private static readonly string connectionString = "connectionString" + databaseFilename;
+        private static readonly string connectionString = "Data Source=proftaakserver.database.windows.net;Initial Catalog=Proftaak;Integrated Security=False;User ID=Admininistrator;Password=Hosting123;Connect Timeout=15;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
 
         // For reference check: https://support.microsoft.com/en-us/help/307283/how-to-create-a-sql-server-database-programmatically-by-using-ado.net-and-visual-c-.net
         private static string str = "CREATE DATABASE" + databaseFilename;

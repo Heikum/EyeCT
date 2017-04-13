@@ -8,15 +8,36 @@ namespace ProftaakEyectEvents
 {
     public class Reservation
     {
-        private int price { get; set; }
-        private int personAmount { get; set; }
-        private DateTime date { get; set; }
-        private string location { get; set; }
-        private bool paymentstatus { get; set; }
-        private Account mainreservator { get; set; }
-        private Account otherreservator { get; set; }
-        
-        public Reservation(int Price, int Personamount, DateTime Date, string Location, string Paymentstatus, string Mainreservator, int room)
+        private readonly int id = -1;
+        private int price;
+        private int personAmount;
+        private DateTime date;
+        private string location;
+        private bool paymentstatus;
+        private Account mainreservator;
+        private Account otherreservator;
+
+        public int Id { get; set; }
+        public int Price { get; set; }
+        public int PersonAmount { get; set; }
+        public DateTime Date { get; set; }
+        public string Location { get; set; }
+        public bool Paymentstatus { get; set; }
+        public Account Mainreservator { get; set; }
+        public Account Otherreservator { get; set; }
+
+        public Reservation(int id, int price, int personAmount, DateTime date, string location, bool paymentstatus)
+        {
+            this.price = price;
+            this.personAmount = personAmount;
+            this.date = date;
+            this.location = location;
+            this.paymentstatus = paymentstatus;
+            this.mainreservator = mainreservator;
+            this.otherreservator = otherreservator;
+        }
+        public Reservation(int price, int personAmount, DateTime date, string location, bool paymentstatus)
+            : this(-1, price, personAmount, date, location, paymentstatus)
         {
 
         }
@@ -38,3 +59,4 @@ namespace ProftaakEyectEvents
         }
     }
 }
+

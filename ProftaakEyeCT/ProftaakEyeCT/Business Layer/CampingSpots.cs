@@ -6,20 +6,36 @@ using System.Threading.Tasks;
 
 namespace ProftaakEyectEvents
 {
-    public class CampingSpots
+    public class CampingSpot
     {
-        private int room;
-        private string location;
-        private bool avalibillity;
-        private string catagory;
+        private int room { get; set; }
+        private string location { get; set; }
+        private bool avalibillity { get; set; }
+        private int price { get; set; }
 
-        public CampingSpots(int Room, string Location, bool Avalibillity)
+        public CampingSpot(int room, string location, bool avalibillity)
         {
-
+            this.room = room;
+            this.location = location;
+            this.avalibillity = avalibillity;
         }
-        public bool Avalibillity()
+        public bool Avalibillity(int ID)
         {
-            return true;
+            //get avalibillity from database for the given ID
+            //set avalibillity
+            return avalibillity;
+        }
+        public int getRoom(int ID)
+        {
+            //get room from database for the given ID
+            //set room
+            return room;
+        }
+        public int getPrice(int ID)
+        {
+            //get price from database for the given ID
+            //set price
+            return room;
         }
     }
 }

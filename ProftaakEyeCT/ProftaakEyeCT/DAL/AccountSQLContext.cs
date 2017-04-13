@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ProftaakEyectEvents.DAL
 {
-    public class AccountSQLContext:IAccountContext
+    public class AccountSQLContext : IAccountContext
     {
         //Get all the students
         public List<Account> GetAllAccounts()
@@ -83,10 +83,10 @@ namespace ProftaakEyectEvents.DAL
                     "VALUES (@username, @password, @emailadress, @rights)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@username", student.username);
-                    command.Parameters.AddWithValue("@password", student.password);
-                    command.Parameters.AddWithValue("@emailadress", student.emailadress);
-                    command.Parameters.AddWithValue("@rights", student.rights = 0);
+                    command.Parameters.AddWithValue("@username", student.Username);
+                    command.Parameters.AddWithValue("@password", student.Password);
+                    command.Parameters.AddWithValue("@emailadress", student.Emailadress);
+                    command.Parameters.AddWithValue("@rights", student.Rights = 0);
 
 
                     try
@@ -110,10 +110,10 @@ namespace ProftaakEyectEvents.DAL
                     "VALUES (@username, @password, @emailadress, @rights)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@username", admin.username);
-                    command.Parameters.AddWithValue("@password", admin.password);
-                    command.Parameters.AddWithValue("@emailadress", admin.emailadress);
-                    command.Parameters.AddWithValue("@rights", admin.rights = 1);
+                    command.Parameters.AddWithValue("@username", admin.Username);
+                    command.Parameters.AddWithValue("@password", admin.Password);
+                    command.Parameters.AddWithValue("@emailadress", admin.Emailadress);
+                    command.Parameters.AddWithValue("@rights", admin.Rights = 1);
 
 
                     try
@@ -135,7 +135,7 @@ namespace ProftaakEyectEvents.DAL
             using (SqlConnection connection = Database.Connection)
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@id", account.id);
+                command.Parameters.AddWithValue("@id", account.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -146,11 +146,11 @@ namespace ProftaakEyectEvents.DAL
             using (SqlConnection connection = Database.Connection)
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("id", account.id);
-                command.Parameters.AddWithValue("username", account.username);
-                command.Parameters.AddWithValue("password", account.password);
-                command.Parameters.AddWithValue("emailadress", account.emailadress);
-                command.Parameters.AddWithValue("rights", account.rights);
+                command.Parameters.AddWithValue("id", account.Id);
+                command.Parameters.AddWithValue("username", account.Username);
+                command.Parameters.AddWithValue("password", account.Password);
+                command.Parameters.AddWithValue("emailadress", account.Emailadress);
+                command.Parameters.AddWithValue("rights", account.Rights);
                 command.ExecuteNonQuery();
             }
         }

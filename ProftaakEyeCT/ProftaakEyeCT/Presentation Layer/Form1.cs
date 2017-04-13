@@ -51,7 +51,7 @@ namespace ProftaakEyeCT
             Person person = null;
             try
             {
-                person = new Person(txtPersonName.Text, txtPersonZipcode.Text, txtPersonCity.Text, txtPersonStreet.Text, (int)nudPersonHousenumber.Value, phonenumber);
+                person = new Person(txtPersonName.Text, txtPersonZipcode.Text, txtPersonCity.Text, txtPersonStreet.Text, (int)nudPersonHousenumber.Value, txtPersonPhonenumber.Text);
             }
             catch (FormatException)
             {
@@ -83,7 +83,7 @@ namespace ProftaakEyeCT
             updatePerson.City = txtPersonCity.Text;
             updatePerson.Street = txtPersonStreet.Text;
             updatePerson.Number = (int)nudPersonHousenumber.Value;
-            updatePerson.Phonenumber = phonenumber;
+            updatePerson.Phonenumber = txtPersonPhonenumber.Text;
 
             if (personrepo.Update(updatePerson))
             {
@@ -130,7 +130,7 @@ namespace ProftaakEyeCT
             txtPersonCity.Text = updatePerson.City;
             txtPersonStreet.Text = updatePerson.Street;
             nudPersonHousenumber.Value = updatePerson.Number;
-            phonenumber = updatePerson.Phonenumber;
+            phonenumber = Convert.ToInt32(updatePerson.Phonenumber);
         }
 
        

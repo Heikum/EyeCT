@@ -51,9 +51,7 @@
     <Compile Include="Business Layer\Account.cs" />
     <Compile Include="Business Layer\Admin.cs" />
     <Compile Include="Business Layer\Adminstration.cs" />
-    <Compile Include="Business Layer\Budgetspot.cs" />
     <Compile Include="Business Layer\CampingSpots.cs" />
-    <Compile Include="Business Layer\Comfortspot.cs" />
     <Compile Include="Business Layer\Event.cs" />
     <Compile Include="DAL\Database.cs" />
     <Compile Include="DAL\EventSQLContext.cs" />

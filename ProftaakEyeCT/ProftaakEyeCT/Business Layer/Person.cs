@@ -10,7 +10,7 @@ namespace ProftaakEyectEvents
     {
         private int id;
         private string name;
-        private int phonenumber;
+        private string phonenumber;
         private string street;
         private int number;
         private string zipcode;
@@ -18,13 +18,13 @@ namespace ProftaakEyectEvents
 
         public int Id { get; set; }
         public string Name { get; set; }
-        public int Phonenumber { get; set; }
+        public string Phonenumber { get; set; }
         public string Street { get; set; }
         public int Number { get; set; }
         public string Zipcode { get; set; }
         public string City { get; set; }
 
-        public Person(int id, string name, string zipcode, string city, string street, int number, int phonenumber)
+        public Person(int id, string name, string zipcode, string city, string street, int number, string phonenumber)
         {
             this.id = id;
             this.name = name;
@@ -33,11 +33,11 @@ namespace ProftaakEyectEvents
             this.street = street;
             this.number = number;
             this.phonenumber = phonenumber;
-            
+
         }
 
-        public Person(string name, string zipcode, string city, string street, int number, int phonenumber)
-            :this(-1,name,zipcode,city,street,number,phonenumber)
+        public Person(string name, string zipcode, string city, string street, int number, string phonenumber)
+            : this(-1, name, zipcode, city, street, number, phonenumber)
         {
 
         }
@@ -48,3 +48,4 @@ namespace ProftaakEyectEvents
         }
     }
 }
+

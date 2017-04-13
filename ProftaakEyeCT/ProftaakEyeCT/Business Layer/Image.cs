@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace ProftaakEyectEvents
 {
-    public class Image: Media
+    public class Image
     {
-        public Image(string Name, int Size): base(Name, Size)
+        public Image(string Name, int Size)
         {
 
         }

@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace ProftaakEyectEvents
 {
-    public class Video: Media
+    public class Video
     {
         private int lenght;
 
-        public Video(string Name, int Size, int Length): base(Name,Size)
+        public Video(string Name, int Size, int Length)
         {
 
         }

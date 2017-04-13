@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace ProftaakEyectEvents.DAL
 {
-    public class PersonSQLContext:IPersonContext
+    public class PersonSQLContext : IPersonContext
     {
 
         public List<Person> GetAll()
@@ -20,6 +20,7 @@ namespace ProftaakEyectEvents.DAL
             {
                 string query = "SELECT * FROM Person ORDER BY ID";
 
+                //commit
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -41,7 +42,7 @@ namespace ProftaakEyectEvents.DAL
             {
                 string query = "SELECT * FROM Person Where Name=@name LIMIT 1";
 
-                using (SqlCommand command = new SqlCommand(query,connection))
+                using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("name", Name);
                     using (SqlDataReader reader = command.ExecuteReader())
@@ -55,12 +56,12 @@ namespace ProftaakEyectEvents.DAL
             }
             return null;
         }
-       
+
         public Person Insert(Person person)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO Person (Name,Zipcode,PlaceOfResidence,Street,Number,Phonenumber)"+
+                string query = "INSERT INTO Person (Name,Zipcode,PlaceOfResidence,Street,Number,Phonenumber)" +
                     "VALUES (@name,@zipcode,@placeofresidence,@street,@number,@phonenumber)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -75,9 +76,9 @@ namespace ProftaakEyectEvents.DAL
                     {
                         command.ExecuteNonQuery();
                     }
-                    catch(SqlException e)
+                    catch (SqlException e)
                     {
-                        MessageBox.Show("Error:"+e.Message);
+                        MessageBox.Show("Error:" + e.Message);
                         return null;
                     }
                 }
@@ -146,7 +147,7 @@ namespace ProftaakEyectEvents.DAL
                 Convert.ToString(reader["PlaceOfResidence"]),
                 Convert.ToString(reader["Street"]),
                 Convert.ToInt32(reader["Number"]),
-                Convert.ToInt32(reader["Phonenumber"]));
+                Convert.ToString(reader["Phonenumber"]));
 
         }
 

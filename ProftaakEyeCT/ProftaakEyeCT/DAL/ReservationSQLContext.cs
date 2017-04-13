@@ -28,7 +28,7 @@ namespace ProftaakEyectEvents.DAL
                     {
                         while (reader.Read())
                         {
-                           reservations.Add(CreateReservationFromReader(reader));
+                            reservations.Add(CreateReservationFromReader(reader));
                         }
                     }
                 }
@@ -67,14 +67,14 @@ namespace ProftaakEyectEvents.DAL
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@id", reservation.id);
-                    command.Parameters.AddWithValue("@price", reservation.price);
-                    command.Parameters.AddWithValue("@personamount", reservation.personAmount);
-                    command.Parameters.AddWithValue("@date", reservation.date);
-                    command.Parameters.AddWithValue("@location", reservation.location);
-                    command.Parameters.AddWithValue("@paymentstatus", reservation.paymentstatus);
-                    command.Parameters.AddWithValue("@mainreservator", reservation.mainreservator);
-                    command.Parameters.AddWithValue("@otherreservator", reservation.otherreservator);
+                    command.Parameters.AddWithValue("@id", reservation.Id);
+                    command.Parameters.AddWithValue("@price", reservation.Price);
+                    command.Parameters.AddWithValue("@personamount", reservation.PersonAmount);
+                    command.Parameters.AddWithValue("@date", reservation.Date);
+                    command.Parameters.AddWithValue("@location", reservation.Location);
+                    command.Parameters.AddWithValue("@paymentstatus", reservation.Paymentstatus);
+                    command.Parameters.AddWithValue("@mainreservator", reservation.Mainreservator);
+                    command.Parameters.AddWithValue("@otherreservator", reservation.Otherreservator);
 
                     try
                     {
@@ -95,14 +95,14 @@ namespace ProftaakEyectEvents.DAL
             using (SqlConnection connection = Database.Connection)
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("id", reservation.id);
-                command.Parameters.AddWithValue("price", reservation.price);
-                command.Parameters.AddWithValue("personamount", reservation.personAmount);
-                command.Parameters.AddWithValue("date", reservation.date);
-                command.Parameters.AddWithValue("location", reservation.location);
-                command.Parameters.AddWithValue("paymentstatus", reservation.paymentstatus);
-                command.Parameters.AddWithValue("mainreservator", reservation.mainreservator);
-                command.Parameters.AddWithValue("otherreservator", reservation.otherreservator);
+                command.Parameters.AddWithValue("id", reservation.Id);
+                command.Parameters.AddWithValue("price", reservation.Price);
+                command.Parameters.AddWithValue("personamount", reservation.PersonAmount);
+                command.Parameters.AddWithValue("date", reservation.Date);
+                command.Parameters.AddWithValue("location", reservation.Location);
+                command.Parameters.AddWithValue("paymentstatus", reservation.Paymentstatus);
+                command.Parameters.AddWithValue("mainreservator", reservation.Mainreservator);
+                command.Parameters.AddWithValue("otherreservator", reservation.Otherreservator);
                 command.ExecuteNonQuery();
             }
         }
@@ -113,7 +113,7 @@ namespace ProftaakEyectEvents.DAL
             using (SqlConnection connection = Database.Connection)
             {
                 SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@id", reservation.id);
+                command.Parameters.AddWithValue("@id", reservation.Id);
                 command.ExecuteNonQuery();
             }
         }
@@ -126,9 +126,8 @@ namespace ProftaakEyectEvents.DAL
                 Convert.ToInt32(reader["Personamount"]),
                 Convert.ToDateTime(reader["Date"]),
                 Convert.ToString(reader["Location"]),
-                Convert.ToString(reader["Paymentstatus"]),
-                Convert.ToString(reader["Mainreservator"]),
-                Convert.ToInt32(reader["Otherreservator"]));
+                Convert.ToBoolean(reader["Paymentstatus"]));
+
         }
     }
 }
