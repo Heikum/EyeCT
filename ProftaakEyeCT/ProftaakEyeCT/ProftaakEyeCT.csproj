@@ -57,12 +57,14 @@
     <Compile Include="DAL\EventSQLContext.cs" />
     <Compile Include="DAL\IAccountContext.cs" />
     <Compile Include="DAL\IEventContext.cs" />
+    <Compile Include="DAL\IMaterialContext.cs" />
     <Compile Include="DAL\IMediaContext.cs" />
     <Compile Include="DAL\IPersonContext.cs" />
+    <Compile Include="DAL\MaterialSQLContext.cs" />
     <Compile Include="DAL\MediaSQLContext.cs" />
     <Compile Include="DAL\PersonSQLContext.cs" />
     <Compile Include="DAL\IReservationContext.cs" />
-    <Compile Include="Presentation Layer\AccountRepository.cs" />
+    <Compile Include="Presentation Layer\MaterialRepository.cs" />
     <Compile Include="Presentation Layer\MediaPlatform.cs">
       <SubType>Form</SubType>
     </Compile>

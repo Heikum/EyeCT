@@ -9,26 +9,79 @@ namespace ProftaakEyectEvents
 {
     public class Material
     {
+        //fields uit db
+        private int id;
         private string name;
         private decimal price;
         private int stock;
-        private int ammount;
+
+
+        //fields niet uit db
         private bool reserved;
         private bool available;
 
-        public string Name { get; set; }
-        public decimal Price { get; set; }
-        public int Stock { get; set; }
-        public int Ammount { get; set; }
+        public Material(int id, string name, decimal price, int stock)
+        {
+            this.Id = id;
+            this.Name = name;
+            this.Price = price;
+            this.Stock = stock;
+        }
+
+        
         public bool Reserved { get; set; }
         public bool Available { get; set; }
 
-        public Material(string name, decimal price, int stock, int ammount)
+        public int Id
         {
-            this.name = name;
-            this.price = price;
-            this.stock = stock;
-            this.ammount = ammount;
+            get
+            {
+                return id;
+            }
+
+            set
+            {
+                id = value;
+            }
+        }
+
+        public string Name
+        {
+            get
+            {
+                return name;
+            }
+
+            set
+            {
+                name = value;
+            }
+        }
+
+        public decimal Price
+        {
+            get
+            {
+                return price;
+            }
+
+            set
+            {
+                price = value;
+            }
+        }
+
+        public int Stock
+        {
+            get
+            {
+                return stock;
+            }
+
+            set
+            {
+                stock = value;
+            }
         }
 
         public bool reserve(Account account, string name, int ammountreserve)
@@ -36,21 +89,21 @@ namespace ProftaakEyectEvents
             //haal voor item met de naam die wordt meegegeven de hoeveelheid available op
             //set stock
 
-            stock = stock - ammountreserve;
+            Stock = Stock - ammountreserve;
 
-            if (stock < 0)
+            if (Stock < 0)
             {
                 //Messagebox moet nog een exception worden
-                MessageBox.Show("Could not reserve " + name + ", there are " + stock + " items avalable while you try to reserve " + ammountreserve);
+                MessageBox.Show("Could not reserve " + name + ", there are " + Stock + " items avalable while you try to reserve " + ammountreserve);
                 reserved = false;
             }
-            else if (stock == 0)
+            else if (Stock == 0)
             {
                 //set de bool avalable in de database naar false (alle items zijn dan gereserveerd)
                 //set de amountavalable in de database naar de nieuwe hoeveelheid beschikbaar
                 reserved = true;
             }
-            else if (stock > 0)
+            else if (Stock > 0)
             {
                 //set de amountavalable in de database naar de nieuwe hoeveelheid beschikbaar
                 reserved = true;
@@ -63,15 +116,20 @@ namespace ProftaakEyectEvents
             //haal voor item met de naam die wordt meegegeven de hoeveelheid available op
             //set stock
 
-            if (stock <= 0)
+            if (Stock <= 0)
             {
                 available = false;
             }
-            else if (stock > 0)
+            else if (Stock > 0)
             {
                 available = true;
             }
             return available;
+        }
+
+        public override string ToString()
+        {
+            return name + " " + price + " " + stock; 
         }
     }
 }
