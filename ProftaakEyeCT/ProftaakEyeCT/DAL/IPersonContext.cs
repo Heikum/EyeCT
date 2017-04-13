@@ -10,7 +10,7 @@ namespace ProftaakEyectEvents.DAL
     {
 
         List<Person> GetAll();
-        Person GetByName(string Name);
+        Person GetById(int id);
         Person Insert(Person person);
         bool Delete(int id);
         bool Update(Person person);

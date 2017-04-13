@@ -18,9 +18,9 @@ namespace ProftaakEyectEvents.DAL
 
         Account InsertAdmin(Admin admin);
 
-        void DeleteAccount(Account account);
+        bool DeleteAccount(int id);
 
-        void UpdateAccount(Account account);
+        bool UpdateAccount(Account account);
 
         List<Account> GetAllAccountInformation();
     }

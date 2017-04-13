@@ -36,15 +36,15 @@ namespace ProftaakEyectEvents.DAL
         }
 
 
-        public Person GetByName(string Name)
+        public Person GetById(int id)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Person Where Name=@name LIMIT 1";
+                string query = "SELECT * FROM Person Where ID=@id";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("name", Name);
+                    command.Parameters.AddWithValue("id", id);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())

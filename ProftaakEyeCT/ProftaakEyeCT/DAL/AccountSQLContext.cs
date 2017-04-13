@@ -129,31 +129,56 @@ namespace ProftaakEyectEvents.DAL
             }
         }
 
-        public void DeleteAccount(Account account)
+        public bool DeleteAccount(int id)
         {
-            string query = "DELETE FROM Account WHERE ID = @id";
             using (SqlConnection connection = Database.Connection)
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@id", account.Id);
-                command.ExecuteNonQuery();
+                string query = "DELETE FROM Account WHERE ID=@id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", id);
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                    {
+                        return true;
+                    }
+                }
             }
+
+            return false;
         }
 
-        public void UpdateAccount(Account account)
+        public bool UpdateAccount(Account account)
         {
-            string query = "UPDATE Account SET Username = @username, Password = @password, Emailadress = @emailadress, Rights = @rights WHERE Id = @id";
             using (SqlConnection connection = Database.Connection)
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("id", account.Id);
-                command.Parameters.AddWithValue("username", account.Username);
-                command.Parameters.AddWithValue("password", account.Password);
-                command.Parameters.AddWithValue("emailadress", account.Emailadress);
-                command.Parameters.AddWithValue("rights", account.Rights);
-                command.ExecuteNonQuery();
+                string query = "UPDATE Account SET Username = @username, Password = @password, Emailadress = @emailadress, Rights = @rights WHERE Id = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    
+                    command.Parameters.AddWithValue("id", account.Id);
+                    command.Parameters.AddWithValue("username", account.Username);
+                    command.Parameters.AddWithValue("password", account.Password);
+                    command.Parameters.AddWithValue("emailadress", account.Emailadress);
+                    command.Parameters.AddWithValue("rights", account.Rights);
+                    command.ExecuteNonQuery();
+                    try
+                    {
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                }
             }
+
+            return false;
         }
+          
 
         public List<Account> GetAllAccountInformation()
         {
@@ -179,7 +204,7 @@ namespace ProftaakEyectEvents.DAL
 
         private Account CreateAccountFromReader(SqlDataReader reader)
         {
-            switch (Convert.ToString(reader["Type"]))
+           switch (Convert.ToString(reader["Kind"]))
             {
                 case "Student":
                     return new Student(

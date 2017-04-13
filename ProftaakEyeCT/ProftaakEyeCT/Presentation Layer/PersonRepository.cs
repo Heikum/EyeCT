@@ -34,6 +34,10 @@ namespace ProftaakEyectEvents.Prensentation_Layer
         {
             return context.Delete(id);
         }
+        public Person GetById(int id)
+        {
+            return context.GetById(id + 1);
+        }
 
     }
 }
