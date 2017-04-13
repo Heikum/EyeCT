@@ -10,29 +10,35 @@ namespace ProftaakEyectEvents
     {
 
 
-        private readonly int id = -1;
+        private int id;
+        private string kind;
+        private int personid;
         private string username;
         private string password;
         private string emailadress;
         private int rights;
-        public int Id { get; set; }
+        public int Id { get { return id; } set { id = value; } }
+        public int Personid { get { return personid; } set { personid =value; } }
 
+        public string Kind { get { return kind; } set { kind = value; } }
         public string Username { get { return username; } set { username = value; } }
         public string Password { get { return password; } set { password = value; } }
         public string Emailadress { get { return emailadress; } set { emailadress = value; } }
         public int Rights { get {return rights;} set{rights =  value; }}
 
-        public Account(int id, string username, string password, string emailadress, int rights)
+        public Account(int id, string kind, int personid,  string username, string password, string emailadress, int rights)
         {
             this.id = id;
+            this.kind = kind;
+            this.personid = personid;
             this.username = username;
             this.password = password;
             this.emailadress = emailadress;
             this.rights = rights;
 
         }
-        public Account(string username, string password, string emailadress, int rights)
-            : this(-1, username, password, emailadress, rights)
+        public Account(string kind,string username, string password, string emailadress, int rights)
+            : this(-1 ,kind,-1, username, password, emailadress, rights)
         {
 
         }

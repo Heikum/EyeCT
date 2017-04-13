@@ -28,7 +28,7 @@ namespace ProftaakEyeCT
         {
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
-            mediarepo = new MediaRepository(new MediaSQLContext());
+            //mediarepo = new MediaRepository(new MediaSQLContext());
             accountrepo = new AccountRepository(new AccountSQLContext());
             materialrepo = new MaterialRepository(new MaterialSQLContext());
             UpdateControls();
@@ -118,7 +118,7 @@ namespace ProftaakEyeCT
             btnPersonEdit.Enabled = lbAllPersons.SelectedItem != null;
             btnPersonRemove.Enabled = lbAllPersons.SelectedItem != null;
             btnPersonUpdate.Enabled = lbAllPersons.SelectedItem != null;
-            updatePerson = personrepo.GetById(((Account)lbAllPersons.SelectedItem).Id);
+            
         }
 
         private void btnPersonUpdate_Click(object sender, EventArgs e)
@@ -136,7 +136,7 @@ namespace ProftaakEyeCT
         private void btnPersonEdit_Click(object sender, EventArgs e)
         {
             updateAccount = (Account)lbAllPersons.SelectedItem;
-            
+            updatePerson = personrepo.GetById(updateAccount.Personid);
             txtAccountUsername.Text = updateAccount.Username;
             txtAccountPassword.Text = updateAccount.Password;
             txtAccountEmail.Text = updateAccount.Emailadress;

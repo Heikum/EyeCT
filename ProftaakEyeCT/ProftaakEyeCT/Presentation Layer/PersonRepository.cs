@@ -36,7 +36,7 @@ namespace ProftaakEyectEvents.Prensentation_Layer
         }
         public Person GetById(int id)
         {
-            return context.GetById(id + 1);
+            return context.GetById(id );
         }
 
     }

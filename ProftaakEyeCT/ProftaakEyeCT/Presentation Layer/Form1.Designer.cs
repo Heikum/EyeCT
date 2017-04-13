@@ -166,6 +166,9 @@
             this.lbAvailable = new System.Windows.Forms.ListBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tpMaterials = new System.Windows.Forms.TabPage();
+            this.txtMaterialName = new System.Windows.Forms.TextBox();
+            this.txtMaterialPrice = new System.Windows.Forms.TextBox();
+            this.label29 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.nudMaterialStock = new System.Windows.Forms.NumericUpDown();
             this.btnReservation = new System.Windows.Forms.Button();
@@ -206,9 +209,6 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.label29 = new System.Windows.Forms.Label();
-            this.txtMaterialPrice = new System.Windows.Forms.TextBox();
-            this.txtMaterialName = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpRegistreren.SuspendLayout();
@@ -260,7 +260,7 @@
             this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Name = "tpLogin";
             this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
-            this.tpLogin.Size = new System.Drawing.Size(776, 416);
+            this.tpLogin.Size = new System.Drawing.Size(809, 416);
             this.tpLogin.TabIndex = 0;
             this.tpLogin.Text = "Login";
             // 
@@ -340,7 +340,7 @@
             this.tpRegistreren.Controls.Add(this.txtNewAccountUsername);
             this.tpRegistreren.Location = new System.Drawing.Point(4, 22);
             this.tpRegistreren.Name = "tpRegistreren";
-            this.tpRegistreren.Size = new System.Drawing.Size(776, 416);
+            this.tpRegistreren.Size = new System.Drawing.Size(809, 416);
             this.tpRegistreren.TabIndex = 11;
             this.tpRegistreren.Text = "Registreren";
             this.tpRegistreren.UseVisualStyleBackColor = true;
@@ -531,7 +531,7 @@
             this.tpNewAccount.Controls.Add(this.txtPersonName);
             this.tpNewAccount.Location = new System.Drawing.Point(4, 22);
             this.tpNewAccount.Name = "tpNewAccount";
-            this.tpNewAccount.Size = new System.Drawing.Size(776, 416);
+            this.tpNewAccount.Size = new System.Drawing.Size(809, 416);
             this.tpNewAccount.TabIndex = 9;
             this.tpNewAccount.Text = "New account";
             this.tpNewAccount.UseVisualStyleBackColor = true;
@@ -700,6 +700,11 @@
             // nudPersonHousenumber
             // 
             this.nudPersonHousenumber.Location = new System.Drawing.Point(66, 240);
+            this.nudPersonHousenumber.Maximum = new decimal(new int[] {
+            10000000,
+            0,
+            0,
+            0});
             this.nudPersonHousenumber.Name = "nudPersonHousenumber";
             this.nudPersonHousenumber.Size = new System.Drawing.Size(120, 20);
             this.nudPersonHousenumber.TabIndex = 4;
@@ -763,7 +768,7 @@
             this.tpManage.Location = new System.Drawing.Point(4, 22);
             this.tpManage.Name = "tpManage";
             this.tpManage.Padding = new System.Windows.Forms.Padding(3);
-            this.tpManage.Size = new System.Drawing.Size(776, 416);
+            this.tpManage.Size = new System.Drawing.Size(809, 416);
             this.tpManage.TabIndex = 1;
             this.tpManage.Text = "Manage";
             // 
@@ -1004,7 +1009,7 @@
             this.tpNewEvents.Controls.Add(this.tbNameEvent);
             this.tpNewEvents.Location = new System.Drawing.Point(4, 22);
             this.tpNewEvents.Name = "tpNewEvents";
-            this.tpNewEvents.Size = new System.Drawing.Size(776, 416);
+            this.tpNewEvents.Size = new System.Drawing.Size(809, 416);
             this.tpNewEvents.TabIndex = 2;
             this.tpNewEvents.Text = "New events";
             // 
@@ -1185,7 +1190,7 @@
             this.tbEvents.Controls.Add(this.lbEvents);
             this.tbEvents.Location = new System.Drawing.Point(4, 22);
             this.tbEvents.Name = "tbEvents";
-            this.tbEvents.Size = new System.Drawing.Size(776, 416);
+            this.tbEvents.Size = new System.Drawing.Size(809, 416);
             this.tbEvents.TabIndex = 7;
             this.tbEvents.Text = "Events";
             // 
@@ -1346,7 +1351,7 @@
             this.tpReserve.Controls.Add(this.pictureBox1);
             this.tpReserve.Location = new System.Drawing.Point(4, 22);
             this.tpReserve.Name = "tpReserve";
-            this.tpReserve.Size = new System.Drawing.Size(776, 416);
+            this.tpReserve.Size = new System.Drawing.Size(809, 416);
             this.tpReserve.TabIndex = 4;
             this.tpReserve.Text = "Reserve";
             // 
@@ -1572,6 +1577,30 @@
             this.tpMaterials.TabIndex = 5;
             this.tpMaterials.Text = "Materials";
             // 
+            // txtMaterialName
+            // 
+            this.txtMaterialName.Location = new System.Drawing.Point(403, 77);
+            this.txtMaterialName.Name = "txtMaterialName";
+            this.txtMaterialName.Size = new System.Drawing.Size(200, 20);
+            this.txtMaterialName.TabIndex = 24;
+            // 
+            // txtMaterialPrice
+            // 
+            this.txtMaterialPrice.Location = new System.Drawing.Point(403, 103);
+            this.txtMaterialPrice.Name = "txtMaterialPrice";
+            this.txtMaterialPrice.Size = new System.Drawing.Size(200, 20);
+            this.txtMaterialPrice.TabIndex = 23;
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(227, 102);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(44, 17);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "Price:";
+            // 
             // label19
             // 
             this.label19.AutoSize = true;
@@ -1760,7 +1789,7 @@
             this.tpAccess.Controls.Add(this.dtpDateNow);
             this.tpAccess.Location = new System.Drawing.Point(4, 22);
             this.tpAccess.Name = "tpAccess";
-            this.tpAccess.Size = new System.Drawing.Size(776, 416);
+            this.tpAccess.Size = new System.Drawing.Size(809, 416);
             this.tpAccess.TabIndex = 6;
             this.tpAccess.Text = "Access";
             // 
@@ -1928,7 +1957,7 @@
             this.tpLogout.Controls.Add(this.button2);
             this.tpLogout.Location = new System.Drawing.Point(4, 22);
             this.tpLogout.Name = "tpLogout";
-            this.tpLogout.Size = new System.Drawing.Size(776, 416);
+            this.tpLogout.Size = new System.Drawing.Size(809, 416);
             this.tpLogout.TabIndex = 8;
             this.tpLogout.Text = "Logout";
             // 
@@ -1941,30 +1970,6 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // label29
-            // 
-            this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(227, 102);
-            this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(44, 17);
-            this.label29.TabIndex = 22;
-            this.label29.Text = "Price:";
-            // 
-            // txtMaterialPrice
-            // 
-            this.txtMaterialPrice.Location = new System.Drawing.Point(403, 103);
-            this.txtMaterialPrice.Name = "txtMaterialPrice";
-            this.txtMaterialPrice.Size = new System.Drawing.Size(200, 20);
-            this.txtMaterialPrice.TabIndex = 23;
-            // 
-            // txtMaterialName
-            // 
-            this.txtMaterialName.Location = new System.Drawing.Point(403, 77);
-            this.txtMaterialName.Name = "txtMaterialName";
-            this.txtMaterialName.Size = new System.Drawing.Size(200, 20);
-            this.txtMaterialName.TabIndex = 24;
             // 
             // Form1
             // 

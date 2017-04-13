@@ -8,13 +8,15 @@ namespace ProftaakEyectEvents
 {
     public abstract class Media
     {
-        private int MediaID { get; set; }
-        private int MediaType { get; set; }
+        private int mediaID;
+        private int mediaType;
+        public int MediaID { get { return mediaID; } set { mediaID = value; } }
+        public int MediaType { get { return mediaType; } set{ mediaType = value; } }
 
         public Media(int mediaID, int mediaType)
         {
-            MediaID = mediaID;
-            MediaType = mediaType;
+            this.mediaID = mediaID;
+            this.mediaType = mediaType;
         }
 
 

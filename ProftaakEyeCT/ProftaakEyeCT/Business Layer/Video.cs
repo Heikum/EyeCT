@@ -8,9 +8,10 @@ namespace ProftaakEyectEvents
 {
     public class Video : Media
     {
-
-        private string VideoName { get; set; }
-        private string VideoLink { get; set; }
+        private string videoName;
+        private string videoLink;
+        public string VideoName { get { return VideoName; } set { VideoName = value; } }
+        public string VideoLink { get { return VideoLink; } set { VideoLink = value; } }
 
         public Video(string videoName, string videoLink, int MediaID, int MediaType) : base(MediaID, MediaType)
         {

@@ -75,18 +75,20 @@ namespace ProftaakEyectEvents.DAL
             return accounts;
         }
 
-        public Account InsertStudent(Student student)
+        public void InsertAccount(Account account, Person person)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO Account (Username, Password, Emailadress, Rights)" +
-                    "VALUES (@username, @password, @emailadress, @rights)";
+                string query = "INSERT INTO Account (Kind, PersonID, Username, Password, Emailadress, Rights)" +
+                    "VALUES (@Kind,@username, @password, @emailadress, @rights)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@username", student.Username);
-                    command.Parameters.AddWithValue("@password", student.Password);
-                    command.Parameters.AddWithValue("@emailadress", student.Emailadress);
-                    command.Parameters.AddWithValue("@rights", student.Rights = 0);
+                    command.Parameters.AddWithValue("@Kind", account.Kind);
+                    command.Parameters.AddWithValue("@PersonID", person.Id);
+                    command.Parameters.AddWithValue("@username", account.Username);
+                    command.Parameters.AddWithValue("@password", account.Password);
+                    command.Parameters.AddWithValue("@emailadress", account.Emailadress);
+                    command.Parameters.AddWithValue("@rights", account.Rights);
 
 
                     try
@@ -98,36 +100,11 @@ namespace ProftaakEyectEvents.DAL
                         MessageBox.Show(Convert.ToString(e));
                     }
                 }
-                return student;
+                
             }
         }
 
-        public Account InsertAdmin(Admin admin)
-        {
-            using (SqlConnection connection = Database.Connection)
-            {
-                string query = "INSERT INTO Account (Username, Password, Emailadress, Rights)" +
-                    "VALUES (@username, @password, @emailadress, @rights)";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@username", admin.Username);
-                    command.Parameters.AddWithValue("@password", admin.Password);
-                    command.Parameters.AddWithValue("@emailadress", admin.Emailadress);
-                    command.Parameters.AddWithValue("@rights", admin.Rights = 1);
-
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch (SqlException e)
-                    {
-                        MessageBox.Show(Convert.ToString(e));
-                    }
-                }
-                return admin;
-            }
-        }
+        
 
         public bool DeleteAccount(int id)
         {
@@ -208,7 +185,9 @@ namespace ProftaakEyectEvents.DAL
             {
                 case "Student":
                     return new Student(
-                        Convert.ToInt32(reader["Id"]),
+                        Convert.ToInt32(reader["ID"]),
+                        Convert.ToString(reader["Kind"]),
+                        Convert.ToInt32(reader["PersonID"]),
                         Convert.ToString(reader["Username"]),
                         Convert.ToString(reader["Password"]),
                         Convert.ToString(reader["Emailadress"]),
@@ -216,7 +195,9 @@ namespace ProftaakEyectEvents.DAL
 
                 case "Admin":
                     return new Admin(
-                         Convert.ToInt32(reader["Id"]),
+                         Convert.ToInt32(reader["ID"]),
+                         Convert.ToString(reader["Kind"]),
+                         Convert.ToInt32(reader["PersonID"]),
                         Convert.ToString(reader["Username"]),
                         Convert.ToString(reader["Password"]),
                         Convert.ToString(reader["Emailadress"]),

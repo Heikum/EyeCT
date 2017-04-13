@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ProftaakEyeCT.DAL
 {
-    public class MediaSQLContext:IMediaContext
+    public class MediaSQLContext
     {
         public List<Media> GetAll()
         {
@@ -54,67 +54,7 @@ namespace ProftaakEyeCT.DAL
             return null;
         }
 
-        public Media Insert(Media media)
-        {
-            using (SqlConnection connection = Database.Connection)
-            {
-                string query = "INSERT INTO Media (VideoName, VideoLink, ImageName, ImageLink, MediaType)" +
-                    "VALUES (@videoname,@videolink,@imagename,@imagelink,@mediatype)";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("id", media.Id);
-                    command.Parameters.AddWithValue("videoname", media.Videoname);
-                    command.Parameters.AddWithValue("videolink", media.Videolink);
-                    command.Parameters.AddWithValue("imagename", media.Imagename);
-                    command.Parameters.AddWithValue("imagelink", media.Imagelink);
-                    command.Parameters.AddWithValue("mediatype", media.Mediatype);
-
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch (SqlException e)
-                    {
-                        MessageBox.Show("Error:" + e.Message);
-                        return null;
-                    }
-                }
-                return media;
-            }
-        }
-        public bool Update(Media media)
-        {
-            using (SqlConnection connection = Database.Connection)
-            {
-                string query = "UPDATE Media" +
-                    " SET VideoName=@videoname, VideoLink=@videolink, ImageName=@imagename, ImageLink=@imagelink, MediaType=@mediatype" +
-                    " WHERE ID=@id";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("id", media.Id);
-                    command.Parameters.AddWithValue("videoname", media.Videoname);
-                    command.Parameters.AddWithValue("videolink", media.Videolink);
-                    command.Parameters.AddWithValue("imagename", media.Imagename);
-                    command.Parameters.AddWithValue("imagelink", media.Imagelink);
-                    command.Parameters.AddWithValue("mediatype", media.Mediatype);
-                    
-                    try
-                    {
-                        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
-                        {
-                            return true;
-                        }
-                    }
-                    catch (SqlException e)
-                    {
-                        MessageBox.Show(e.Message);
-                    }
-
-                }
-            }
-
-            return false;
-        }
+        
 
         public bool Delete(int id)
         {
@@ -136,13 +76,7 @@ namespace ProftaakEyeCT.DAL
 
         private Media CreateMediaFromReader(SqlDataReader reader)
         {
-            return new Media(
-                Convert.ToInt32(reader["ID"]),
-                Convert.ToString(reader["VideoName"]),
-                Convert.ToString(reader["VideoLink"]),
-                Convert.ToString(reader["ImageName"]),
-                Convert.ToString(reader["ImageLink"]),
-                Convert.ToInt32(reader["MediaType"]));
+            return null;
 
         }
     }
