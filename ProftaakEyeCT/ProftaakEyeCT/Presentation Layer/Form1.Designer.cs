@@ -167,7 +167,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tpMaterials = new System.Windows.Forms.TabPage();
             this.label19 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
+            this.nudMaterialStock = new System.Windows.Forms.NumericUpDown();
             this.btnReservation = new System.Windows.Forms.Button();
             this.lblReservorName = new System.Windows.Forms.Label();
             this.tbNameReservor = new System.Windows.Forms.TextBox();
@@ -182,7 +182,6 @@
             this.lbAllMaterials = new System.Windows.Forms.ListBox();
             this.btnAddMaterial = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
-            this.cbMaterialEvent = new System.Windows.Forms.ComboBox();
             this.tbSearchInEvents = new System.Windows.Forms.TextBox();
             this.lblSearchInEvents = new System.Windows.Forms.Label();
             this.lbAllEvents = new System.Windows.Forms.ListBox();
@@ -207,6 +206,9 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
+            this.label29 = new System.Windows.Forms.Label();
+            this.txtMaterialPrice = new System.Windows.Forms.TextBox();
+            this.txtMaterialName = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpRegistreren.SuspendLayout();
@@ -223,7 +225,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.tpMaterials.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaterialStock)).BeginInit();
             this.tpAccess.SuspendLayout();
             this.tpLogout.SuspendLayout();
             this.SuspendLayout();
@@ -243,7 +245,7 @@
             this.tcCamping.Location = new System.Drawing.Point(4, 4);
             this.tcCamping.Name = "tcCamping";
             this.tcCamping.SelectedIndex = 0;
-            this.tcCamping.Size = new System.Drawing.Size(784, 442);
+            this.tcCamping.Size = new System.Drawing.Size(817, 442);
             this.tcCamping.TabIndex = 1;
             // 
             // tpLogin
@@ -257,7 +259,7 @@
             this.tpLogin.Controls.Add(this.tbUsername);
             this.tpLogin.Location = new System.Drawing.Point(4, 22);
             this.tpLogin.Name = "tpLogin";
-            this.tpLogin.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpLogin.Padding = new System.Windows.Forms.Padding(3);
             this.tpLogin.Size = new System.Drawing.Size(776, 416);
             this.tpLogin.TabIndex = 0;
             this.tpLogin.Text = "Login";
@@ -760,7 +762,7 @@
             this.tpManage.Controls.Add(this.tbSearch);
             this.tpManage.Location = new System.Drawing.Point(4, 22);
             this.tpManage.Name = "tpManage";
-            this.tpManage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpManage.Padding = new System.Windows.Forms.Padding(3);
             this.tpManage.Size = new System.Drawing.Size(776, 416);
             this.tpManage.TabIndex = 1;
             this.tpManage.Text = "Manage";
@@ -1542,8 +1544,11 @@
             // tpMaterials
             // 
             this.tpMaterials.BackColor = System.Drawing.Color.Purple;
+            this.tpMaterials.Controls.Add(this.txtMaterialName);
+            this.tpMaterials.Controls.Add(this.txtMaterialPrice);
+            this.tpMaterials.Controls.Add(this.label29);
             this.tpMaterials.Controls.Add(this.label19);
-            this.tpMaterials.Controls.Add(this.numericUpDown2);
+            this.tpMaterials.Controls.Add(this.nudMaterialStock);
             this.tpMaterials.Controls.Add(this.btnReservation);
             this.tpMaterials.Controls.Add(this.lblReservorName);
             this.tpMaterials.Controls.Add(this.tbNameReservor);
@@ -1558,13 +1563,12 @@
             this.tpMaterials.Controls.Add(this.lbAllMaterials);
             this.tpMaterials.Controls.Add(this.btnAddMaterial);
             this.tpMaterials.Controls.Add(this.label8);
-            this.tpMaterials.Controls.Add(this.cbMaterialEvent);
             this.tpMaterials.Controls.Add(this.tbSearchInEvents);
             this.tpMaterials.Controls.Add(this.lblSearchInEvents);
             this.tpMaterials.Controls.Add(this.lbAllEvents);
             this.tpMaterials.Location = new System.Drawing.Point(4, 22);
             this.tpMaterials.Name = "tpMaterials";
-            this.tpMaterials.Size = new System.Drawing.Size(776, 416);
+            this.tpMaterials.Size = new System.Drawing.Size(809, 416);
             this.tpMaterials.TabIndex = 5;
             this.tpMaterials.Text = "Materials";
             // 
@@ -1572,22 +1576,22 @@
             // 
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(228, 103);
+            this.label19.Location = new System.Drawing.Point(227, 131);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(60, 17);
+            this.label19.Size = new System.Drawing.Size(47, 17);
             this.label19.TabIndex = 21;
-            this.label19.Text = "Amount:";
+            this.label19.Text = "Stock:";
             // 
-            // numericUpDown2
+            // nudMaterialStock
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(404, 101);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(200, 20);
-            this.numericUpDown2.TabIndex = 20;
+            this.nudMaterialStock.Location = new System.Drawing.Point(403, 129);
+            this.nudMaterialStock.Name = "nudMaterialStock";
+            this.nudMaterialStock.Size = new System.Drawing.Size(200, 20);
+            this.nudMaterialStock.TabIndex = 20;
             // 
             // btnReservation
             // 
-            this.btnReservation.Location = new System.Drawing.Point(447, 320);
+            this.btnReservation.Location = new System.Drawing.Point(446, 348);
             this.btnReservation.Name = "btnReservation";
             this.btnReservation.Size = new System.Drawing.Size(115, 23);
             this.btnReservation.TabIndex = 19;
@@ -1598,7 +1602,7 @@
             // 
             this.lblReservorName.AutoSize = true;
             this.lblReservorName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservorName.Location = new System.Drawing.Point(227, 161);
+            this.lblReservorName.Location = new System.Drawing.Point(226, 189);
             this.lblReservorName.Name = "lblReservorName";
             this.lblReservorName.Size = new System.Drawing.Size(106, 17);
             this.lblReservorName.TabIndex = 18;
@@ -1606,21 +1610,21 @@
             // 
             // tbNameReservor
             // 
-            this.tbNameReservor.Location = new System.Drawing.Point(404, 158);
+            this.tbNameReservor.Location = new System.Drawing.Point(403, 186);
             this.tbNameReservor.Name = "tbNameReservor";
             this.tbNameReservor.Size = new System.Drawing.Size(200, 20);
             this.tbNameReservor.TabIndex = 17;
             // 
             // dateTimePicker3
             // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(404, 275);
+            this.dateTimePicker3.Location = new System.Drawing.Point(403, 303);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker3.TabIndex = 16;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(404, 233);
+            this.dateTimePicker2.Location = new System.Drawing.Point(403, 261);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 15;
@@ -1629,7 +1633,7 @@
             // 
             this.lblReturnDate.AutoSize = true;
             this.lblReturnDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReturnDate.Location = new System.Drawing.Point(227, 279);
+            this.lblReturnDate.Location = new System.Drawing.Point(226, 307);
             this.lblReturnDate.Name = "lblReturnDate";
             this.lblReturnDate.Size = new System.Drawing.Size(87, 17);
             this.lblReturnDate.TabIndex = 14;
@@ -1639,7 +1643,7 @@
             // 
             this.lblDateMaterials.AutoSize = true;
             this.lblDateMaterials.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateMaterials.Location = new System.Drawing.Point(227, 237);
+            this.lblDateMaterials.Location = new System.Drawing.Point(226, 265);
             this.lblDateMaterials.Name = "lblDateMaterials";
             this.lblDateMaterials.Size = new System.Drawing.Size(42, 17);
             this.lblDateMaterials.TabIndex = 11;
@@ -1647,7 +1651,7 @@
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(404, 195);
+            this.textBox3.Location = new System.Drawing.Point(403, 223);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(200, 20);
             this.textBox3.TabIndex = 10;
@@ -1656,7 +1660,7 @@
             // 
             this.lblReservationPlace.AutoSize = true;
             this.lblReservationPlace.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationPlace.Location = new System.Drawing.Point(227, 196);
+            this.lblReservationPlace.Location = new System.Drawing.Point(226, 224);
             this.lblReservationPlace.Name = "lblReservationPlace";
             this.lblReservationPlace.Size = new System.Drawing.Size(126, 17);
             this.lblReservationPlace.TabIndex = 9;
@@ -1666,7 +1670,7 @@
             // 
             this.lblEventsMaterials.AutoSize = true;
             this.lblEventsMaterials.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEventsMaterials.Location = new System.Drawing.Point(227, 41);
+            this.lblEventsMaterials.Location = new System.Drawing.Point(227, 49);
             this.lblEventsMaterials.Name = "lblEventsMaterials";
             this.lblEventsMaterials.Size = new System.Drawing.Size(87, 17);
             this.lblEventsMaterials.TabIndex = 8;
@@ -1674,10 +1678,11 @@
             // 
             // tbEventsMaterials
             // 
-            this.tbEventsMaterials.Location = new System.Drawing.Point(404, 38);
+            this.tbEventsMaterials.Location = new System.Drawing.Point(403, 51);
             this.tbEventsMaterials.Name = "tbEventsMaterials";
             this.tbEventsMaterials.Size = new System.Drawing.Size(200, 20);
             this.tbEventsMaterials.TabIndex = 7;
+            this.tbEventsMaterials.Text = "werkt nog niet";
             // 
             // lbAllMaterials
             // 
@@ -1689,12 +1694,13 @@
             // 
             // btnAddMaterial
             // 
-            this.btnAddMaterial.Location = new System.Drawing.Point(404, 127);
+            this.btnAddMaterial.Location = new System.Drawing.Point(403, 155);
             this.btnAddMaterial.Name = "btnAddMaterial";
             this.btnAddMaterial.Size = new System.Drawing.Size(200, 23);
             this.btnAddMaterial.TabIndex = 5;
             this.btnAddMaterial.Text = "Add material -->";
             this.btnAddMaterial.UseVisualStyleBackColor = true;
+            this.btnAddMaterial.Click += new System.EventHandler(this.btnAddMaterial_Click);
             // 
             // label8
             // 
@@ -1702,17 +1708,9 @@
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.Location = new System.Drawing.Point(227, 75);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(62, 17);
+            this.label8.Size = new System.Drawing.Size(101, 17);
             this.label8.TabIndex = 4;
-            this.label8.Text = "Material:";
-            // 
-            // cbMaterialEvent
-            // 
-            this.cbMaterialEvent.FormattingEnabled = true;
-            this.cbMaterialEvent.Location = new System.Drawing.Point(404, 74);
-            this.cbMaterialEvent.Name = "cbMaterialEvent";
-            this.cbMaterialEvent.Size = new System.Drawing.Size(200, 21);
-            this.cbMaterialEvent.TabIndex = 3;
+            this.label8.Text = "Material name:";
             // 
             // tbSearchInEvents
             // 
@@ -1944,13 +1942,37 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(227, 102);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(44, 17);
+            this.label29.TabIndex = 22;
+            this.label29.Text = "Price:";
+            // 
+            // txtMaterialPrice
+            // 
+            this.txtMaterialPrice.Location = new System.Drawing.Point(403, 103);
+            this.txtMaterialPrice.Name = "txtMaterialPrice";
+            this.txtMaterialPrice.Size = new System.Drawing.Size(200, 20);
+            this.txtMaterialPrice.TabIndex = 23;
+            // 
+            // txtMaterialName
+            // 
+            this.txtMaterialName.Location = new System.Drawing.Point(403, 77);
+            this.txtMaterialName.Name = "txtMaterialName";
+            this.txtMaterialName.Size = new System.Drawing.Size(200, 20);
+            this.txtMaterialName.TabIndex = 24;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(795, 454);
+            this.ClientSize = new System.Drawing.Size(823, 454);
             this.Controls.Add(this.tcCamping);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.tcCamping.ResumeLayout(false);
@@ -1977,7 +1999,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.tpMaterials.ResumeLayout(false);
             this.tpMaterials.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMaterialStock)).EndInit();
             this.tpAccess.ResumeLayout(false);
             this.tpAccess.PerformLayout();
             this.tpLogout.ResumeLayout(false);
@@ -2097,7 +2119,7 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TabPage tpMaterials;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
+        private System.Windows.Forms.NumericUpDown nudMaterialStock;
         private System.Windows.Forms.Button btnReservation;
         private System.Windows.Forms.Label lblReservorName;
         private System.Windows.Forms.TextBox tbNameReservor;
@@ -2112,7 +2134,6 @@
         private System.Windows.Forms.ListBox lbAllMaterials;
         private System.Windows.Forms.Button btnAddMaterial;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.ComboBox cbMaterialEvent;
         private System.Windows.Forms.TextBox tbSearchInEvents;
         private System.Windows.Forms.Label lblSearchInEvents;
         private System.Windows.Forms.ListBox lbAllEvents;
@@ -2166,6 +2187,9 @@
         private System.Windows.Forms.TextBox txtAccountPassword;
         private System.Windows.Forms.TextBox txtAccountEmail;
         private System.Windows.Forms.TextBox txtAccountUsername;
+        private System.Windows.Forms.TextBox txtMaterialName;
+        private System.Windows.Forms.TextBox txtMaterialPrice;
+        private System.Windows.Forms.Label label29;
     }
 }
 

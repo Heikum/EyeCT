@@ -23,12 +23,14 @@ namespace ProftaakEyeCT
         private Account updateAccount;
         private MediaRepository mediarepo;
         private Media updateMedia;
+        private MaterialRepository materialrepo;
         public Form1()
         {
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
             mediarepo = new MediaRepository(new MediaSQLContext());
             accountrepo = new AccountRepository(new AccountSQLContext());
+            materialrepo = new MaterialRepository(new MaterialSQLContext());
             UpdateControls();
 
 
@@ -44,6 +46,12 @@ namespace ProftaakEyeCT
 
             // It is only possible to edit and delete students when one is selected
             bool userSelected = lbAllPersons.SelectedItem != null;
+
+            lbAllMaterials.Items.Clear();
+            foreach (Material material in materialrepo.GetAll())
+            {
+                lbAllMaterials.Items.Add(material);
+            }
 
 
         }
@@ -153,6 +161,18 @@ namespace ProftaakEyeCT
         {
             InsertPerson();
             UpdateControls();
+        }
+
+        private void btnAddMaterial_Click(object sender, EventArgs e)
+        {
+            InsertMaterial();
+        }
+
+        private void InsertMaterial()
+        {
+            materialrepo.Insert(new Material(txtMaterialName.Text, Convert.ToDecimal(txtMaterialPrice.Text), Convert.ToInt32(nudMaterialStock.Value)));
+            UpdateControls();
+
         }
     }
 }

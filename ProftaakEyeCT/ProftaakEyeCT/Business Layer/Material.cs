@@ -28,7 +28,15 @@ namespace ProftaakEyectEvents
             this.Stock = stock;
         }
 
-        
+        public Material(string name, decimal price, int stock)
+        {
+            
+            this.Name = name;
+            this.Price = price;
+            this.Stock = stock;
+        }
+
+
         public bool Reserved { get; set; }
         public bool Available { get; set; }
 
