@@ -38,6 +38,9 @@ namespace ProftaakEyectEvents.Prensentation_Layer
         {
             return context.GetById(id );
         }
-
+        public Person GetByName(string Name)
+        {
+            return context.GetByName(Name);
+        }
     }
 }

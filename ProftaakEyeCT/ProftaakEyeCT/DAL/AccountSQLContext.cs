@@ -75,20 +75,20 @@ namespace ProftaakEyectEvents.DAL
             return accounts;
         }
 
-        public Account InsertAccount(Account account)
+        public Account InsertAccount(Account account, Person person)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO Account (Kind, PersonID, Username, Password, Emailadress, Rights)" +
-                    "VALUES (@Kind,@username, @password, @emailadress, @rights)";
+                string query = "INSERT INTO Account (Kind, PersonID, Username, Emailadress, Password, Rights)" +
+                    "VALUES (@kind, @personid, @username, @emailadress, @password, @rights)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                    
-                    command.Parameters.AddWithValue("@Kind", account.Kind);
-                    command.Parameters.AddWithValue("@PersonID", account.Id);
+                    command.Parameters.AddWithValue("@kind", account.Kind);
+                    command.Parameters.AddWithValue("@personid", person.Id);
                     command.Parameters.AddWithValue("@username", account.Username);
-                    command.Parameters.AddWithValue("@password", account.Password);
-                    command.Parameters.AddWithValue("@emailadress", account.Emailadress);
+                    command.Parameters.AddWithValue("@emailadress", account.Password);
+                    command.Parameters.AddWithValue("@password", account.Emailadress);
                     command.Parameters.AddWithValue("@rights", account.Rights);
 
 
@@ -183,31 +183,16 @@ namespace ProftaakEyectEvents.DAL
 
         private Account CreateAccountFromReader(SqlDataReader reader)
         {
-           switch (Convert.ToString(reader["Kind"]))
-            {
-                case "Student":
-                    return new Student(
-                        Convert.ToInt32(reader["ID"]),
-                        Convert.ToString(reader["Kind"]),
-                        Convert.ToInt32(reader["PersonID"]),
-                        Convert.ToString(reader["Username"]),
-                        Convert.ToString(reader["Password"]),
-                        Convert.ToString(reader["Emailadress"]),
-                        Convert.ToInt32(reader["Rights"]));
+            return new Account(
+                 Convert.ToInt32(reader["ID"]),
+                 Convert.ToString(reader["Kind"]),
+                 Convert.ToInt32(reader["PersonID"]),
+                 Convert.ToString(reader["Username"]),
+                 Convert.ToString(reader["Emailadress"]),
+                 Convert.ToString(reader["Password"]),
+                 Convert.ToBoolean(reader["Rights"]));
 
-                case "Admin":
-                    return new Admin(
-                         Convert.ToInt32(reader["ID"]),
-                         Convert.ToString(reader["Kind"]),
-                         Convert.ToInt32(reader["PersonID"]),
-                        Convert.ToString(reader["Username"]),
-                        Convert.ToString(reader["Password"]),
-                        Convert.ToString(reader["Emailadress"]),
-                        Convert.ToInt32(reader["Rights"]));
-
-            }
-
-            return null;
+            
         }
     }
 }

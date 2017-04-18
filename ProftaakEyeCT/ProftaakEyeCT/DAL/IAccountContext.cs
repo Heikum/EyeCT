@@ -14,7 +14,7 @@ namespace ProftaakEyectEvents.DAL
 
         List<Account> GetAllAdmins();
 
-        Account InsertAccount(Account account);
+        Account InsertAccount(Account account, Person person);
 
         
 

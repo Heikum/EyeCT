@@ -37,6 +37,7 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tpRegistreren = new System.Windows.Forms.TabPage();
+            this.txtNewPersonPhonenumber = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -66,7 +67,7 @@
             this.txtAccountUsername = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnPersonRemove = new System.Windows.Forms.Button();
-            this.lbAllPersons = new System.Windows.Forms.ListBox();
+            this.lbAllAccounts = new System.Windows.Forms.ListBox();
             this.btnPersonUpdate = new System.Windows.Forms.Button();
             this.btnPersonEdit = new System.Windows.Forms.Button();
             this.lblPersonPhonenumber = new System.Windows.Forms.Label();
@@ -208,7 +209,6 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtNewPersonPhonenumber = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpRegistreren.SuspendLayout();
@@ -343,6 +343,13 @@
             this.tpRegistreren.TabIndex = 11;
             this.tpRegistreren.Text = "Registreren";
             this.tpRegistreren.UseVisualStyleBackColor = true;
+            // 
+            // txtNewPersonPhonenumber
+            // 
+            this.txtNewPersonPhonenumber.Location = new System.Drawing.Point(292, 288);
+            this.txtNewPersonPhonenumber.Name = "txtNewPersonPhonenumber";
+            this.txtNewPersonPhonenumber.Size = new System.Drawing.Size(120, 20);
+            this.txtNewPersonPhonenumber.TabIndex = 25;
             // 
             // label20
             // 
@@ -538,7 +545,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(208, 129);
+            this.label26.Location = new System.Drawing.Point(208, 87);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(35, 13);
             this.label26.TabIndex = 22;
@@ -547,7 +554,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(210, 87);
+            this.label27.Location = new System.Drawing.Point(208, 129);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(56, 13);
             this.label27.TabIndex = 21;
@@ -564,14 +571,14 @@
             // 
             // txtAccountPassword
             // 
-            this.txtAccountPassword.Location = new System.Drawing.Point(211, 103);
+            this.txtAccountPassword.Location = new System.Drawing.Point(211, 146);
             this.txtAccountPassword.Name = "txtAccountPassword";
             this.txtAccountPassword.Size = new System.Drawing.Size(175, 20);
             this.txtAccountPassword.TabIndex = 19;
             // 
             // txtAccountEmail
             // 
-            this.txtAccountEmail.Location = new System.Drawing.Point(211, 146);
+            this.txtAccountEmail.Location = new System.Drawing.Point(211, 103);
             this.txtAccountEmail.Name = "txtAccountEmail";
             this.txtAccountEmail.Size = new System.Drawing.Size(175, 20);
             this.txtAccountEmail.TabIndex = 18;
@@ -586,7 +593,7 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.btnPersonRemove);
-            this.groupBox1.Controls.Add(this.lbAllPersons);
+            this.groupBox1.Controls.Add(this.lbAllAccounts);
             this.groupBox1.Controls.Add(this.btnPersonUpdate);
             this.groupBox1.Controls.Add(this.btnPersonEdit);
             this.groupBox1.Location = new System.Drawing.Point(394, 23);
@@ -606,14 +613,14 @@
             this.btnPersonRemove.UseVisualStyleBackColor = true;
             this.btnPersonRemove.Click += new System.EventHandler(this.btnPersonRemove_Click);
             // 
-            // lbAllPersons
+            // lbAllAccounts
             // 
-            this.lbAllPersons.FormattingEnabled = true;
-            this.lbAllPersons.Location = new System.Drawing.Point(6, 18);
-            this.lbAllPersons.Name = "lbAllPersons";
-            this.lbAllPersons.Size = new System.Drawing.Size(347, 290);
-            this.lbAllPersons.TabIndex = 13;
-            this.lbAllPersons.SelectedIndexChanged += new System.EventHandler(this.lbAllPersons_SelectedIndexChanged);
+            this.lbAllAccounts.FormattingEnabled = true;
+            this.lbAllAccounts.Location = new System.Drawing.Point(6, 18);
+            this.lbAllAccounts.Name = "lbAllAccounts";
+            this.lbAllAccounts.Size = new System.Drawing.Size(347, 290);
+            this.lbAllAccounts.TabIndex = 13;
+            this.lbAllAccounts.SelectedIndexChanged += new System.EventHandler(this.lbAllPersons_SelectedIndexChanged);
             // 
             // btnPersonUpdate
             // 
@@ -1963,13 +1970,6 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // txtNewPersonPhonenumber
-            // 
-            this.txtNewPersonPhonenumber.Location = new System.Drawing.Point(292, 288);
-            this.txtNewPersonPhonenumber.Name = "txtNewPersonPhonenumber";
-            this.txtNewPersonPhonenumber.Size = new System.Drawing.Size(120, 20);
-            this.txtNewPersonPhonenumber.TabIndex = 25;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2022,7 +2022,7 @@
         private System.Windows.Forms.TabPage tpNewAccount;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnPersonRemove;
-        private System.Windows.Forms.ListBox lbAllPersons;
+        private System.Windows.Forms.ListBox lbAllAccounts;
         private System.Windows.Forms.Button btnPersonUpdate;
         private System.Windows.Forms.Button btnPersonEdit;
         private System.Windows.Forms.Label lblPersonPhonenumber;

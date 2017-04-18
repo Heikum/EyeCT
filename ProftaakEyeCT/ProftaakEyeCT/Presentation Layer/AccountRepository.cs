@@ -20,10 +20,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetAllAccounts();
         }
-        public Account InsertAccount(Account account)
+        public Account InsertAccount(Account account, Person person)
         {
 
-            return context.InsertAccount(account);
+            return context.InsertAccount(account, person);
 
         }
         
