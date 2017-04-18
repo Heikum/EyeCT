@@ -37,6 +37,7 @@
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.tbUsername = new System.Windows.Forms.TextBox();
             this.tpRegistreren = new System.Windows.Forms.TabPage();
+            this.txtNewPersonPhonenumber = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
@@ -208,7 +209,6 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.txtNewPersonPhonenumber = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpRegistreren.SuspendLayout();
@@ -343,6 +343,13 @@
             this.tpRegistreren.TabIndex = 11;
             this.tpRegistreren.Text = "Registreren";
             this.tpRegistreren.UseVisualStyleBackColor = true;
+            // 
+            // txtNewPersonPhonenumber
+            // 
+            this.txtNewPersonPhonenumber.Location = new System.Drawing.Point(292, 288);
+            this.txtNewPersonPhonenumber.Name = "txtNewPersonPhonenumber";
+            this.txtNewPersonPhonenumber.Size = new System.Drawing.Size(120, 20);
+            this.txtNewPersonPhonenumber.TabIndex = 25;
             // 
             // label20
             // 
@@ -1962,13 +1969,6 @@
             this.button2.TabIndex = 0;
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
-            // 
-            // txtNewPersonPhonenumber
-            // 
-            this.txtNewPersonPhonenumber.Location = new System.Drawing.Point(292, 288);
-            this.txtNewPersonPhonenumber.Name = "txtNewPersonPhonenumber";
-            this.txtNewPersonPhonenumber.Size = new System.Drawing.Size(120, 20);
-            this.txtNewPersonPhonenumber.TabIndex = 25;
             // 
             // Form1
             // 

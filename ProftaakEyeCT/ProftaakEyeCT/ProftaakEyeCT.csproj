@@ -60,10 +60,12 @@
     <Compile Include="DAL\IMaterialContext.cs" />
     <Compile Include="DAL\IMediaContext.cs" />
     <Compile Include="DAL\IPersonContext.cs" />
+    <Compile Include="DAL\IPostContext.cs" />
     <Compile Include="DAL\MaterialSQLContext.cs" />
     <Compile Include="DAL\MediaSQLContext.cs" />
     <Compile Include="DAL\PersonSQLContext.cs" />
     <Compile Include="DAL\IReservationContext.cs" />
+    <Compile Include="DAL\PostSQLContext.cs" />
     <Compile Include="Presentation Layer\AccountRepository.cs" />
     <Compile Include="Presentation Layer\EventPlatform.cs">
       <SubType>Form</SubType>
@@ -93,6 +95,7 @@
     <Compile Include="Business Layer\Person.cs" />
     <Compile Include="Business Layer\Post.cs" />
     <Compile Include="DAL\ReservationSQLContext.cs" />
+    <Compile Include="Presentation Layer\PostRepository.cs" />
     <Compile Include="Presentation Layer\ReactionPlatform.cs">
       <SubType>Form</SubType>
     </Compile>

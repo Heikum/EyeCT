@@ -8,13 +8,39 @@ namespace ProftaakEyectEvents
 {
     public class Image : Media
     {
-        private string ImageLink { get; set; }
-        private string ImageType { get; set; }
+        private string imageLink;
+        private string imageName;
 
-        public Image(string imagelink, string imageType, int MediaID, int MediaType) : base(MediaID, MediaType)
+        public Image(int Id, string imageLink, string imageName): base (Id)
         {
-            ImageLink = imagelink;
-            ImageType = imageType;
+            this.imageLink = imageLink;
+            this.imageName = imageName;
+        }
+
+        public string ImageLink
+        {
+            get
+            {
+                return imageLink;
+            }
+
+            set
+            {
+                imageLink = value;
+            }
+        }
+
+        public string ImageName
+        {
+            get
+            {
+                return imageName;
+            }
+
+            set
+            {
+                imageName = value;
+            }
         }
 
         public string GetImageLink()

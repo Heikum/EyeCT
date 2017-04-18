@@ -76,7 +76,23 @@ namespace ProftaakEyeCT.DAL
 
         private Media CreateMediaFromReader(SqlDataReader reader)
         {
+            switch (Convert.ToInt32(reader["MediaType"]))
+            {
+                case 1:
+                    return new Image(
+                        Convert.ToInt32(reader["Id"]),
+                        Convert.ToString(reader["ImageName"]),
+                        Convert.ToString(reader["ImageLink"]));
+
+                case 2:
+                    return new Video(
+                        Convert.ToInt32(reader["Id"]),
+                        Convert.ToString(reader["VideoName"]),
+                        Convert.ToString(reader["VideoLink"]));
+            }
+
             return null;
+
 
         }
     }

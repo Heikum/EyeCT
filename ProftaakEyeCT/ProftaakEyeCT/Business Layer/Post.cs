@@ -8,33 +8,118 @@ namespace ProftaakEyectEvents
 {
     public class Post
     {
-        private string text { get; set; }
-        private int postID { get; set; }
-        private int accountID { get; set; }
-        private Media media { get; set; }
+        private string text;
+        private int postID;
+        private DateTime postdatetime;
+        private Video videolink;
+        private Image imagelink;
+        private Account postedby;
 
-        public Post(string text, int postID, int accountID)
+        public Post(int postID, string text, DateTime postdatetime)
         {
             this.text = text;
             this.postID = postID;
-            this.accountID = accountID;
-            this.media = null; 
+            this.Postdatetime = postdatetime;
+         
         }
 
-        public Post(string text, int postID, int accountID, Media placedmedia)
+        public bool AddImage(Image image)
         {
-            this.text = text;
-            this.postID = postID;
-            this.accountID = accountID;
-            this.media = placedmedia; 
+            if (this.Imagelink == null)
+            {
+                this.Imagelink = image;
+                return true;
+            }
+            return false;
         }
-        //onder aanpassing, via DAL post deleten uit database. 
-        private void DeletePost(int postID)
+
+        public bool AddVideo(Video video)
         {
-            this.text = null;
-            this.postID = 0;
-            this.accountID = 0;
-            this.media = null;
+            if (this.Videolink == null)
+            {
+                this.Videolink = video;
+                return true;
+            }
+            return false;
+        }
+
+        public string Text
+        {
+            get
+            {
+                return text;
+            }
+
+            set
+            {
+                text = value;
+            }
+        }
+
+        public int PostID
+        {
+            get
+            {
+                return postID;
+            }
+
+            set
+            {
+                postID = value;
+            }
+        }
+
+
+        public DateTime Postdatetime
+        {
+            get
+            {
+                return postdatetime;
+            }
+
+            set
+            {
+                postdatetime = value;
+            }
+        }
+
+        public Account Postedby
+        {
+            get
+            {
+                return postedby;
+            }
+
+            set
+            {
+                postedby = value;
+            }
+        }
+
+        public Video Videolink
+        {
+            get
+            {
+                return videolink;
+            }
+
+            set
+            {
+                videolink = value;
+            }
+        }
+
+        public Image Imagelink
+        {
+            get
+            {
+                return imagelink;
+            }
+
+            set
+            {
+                imagelink = value;
+            }
         }
     }
 }
