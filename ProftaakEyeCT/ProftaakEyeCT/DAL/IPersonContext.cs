@@ -11,6 +11,7 @@ namespace ProftaakEyectEvents.DAL
 
         List<Person> GetAll();
         Person GetById(int id);
+        Person GetByName(string Name);
         Person Insert(Person person);
         bool Delete(int id);
         bool Update(Person person);

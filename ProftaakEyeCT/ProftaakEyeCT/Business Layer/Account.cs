@@ -16,7 +16,7 @@ namespace ProftaakEyectEvents
         private string username;
         private string password;
         private string emailadress;
-        private int rights;
+        private bool rights;
         public int Id { get { return id; } set { id = value; } }
         public int Personid { get { return personid; } set { personid =value; } }
 
@@ -24,9 +24,9 @@ namespace ProftaakEyectEvents
         public string Username { get { return username; } set { username = value; } }
         public string Password { get { return password; } set { password = value; } }
         public string Emailadress { get { return emailadress; } set { emailadress = value; } }
-        public int Rights { get {return rights;} set{rights =  value; }}
+        public bool Rights { get {return rights;} set{rights =  value; }}
 
-        public Account(int id, string kind, int personid,  string username, string password, string emailadress, int rights)
+        public Account(int id, string kind, int personid,  string username, string emailadress, string password, bool rights)
         {
             this.id = id;
             this.kind = kind;
@@ -37,8 +37,8 @@ namespace ProftaakEyectEvents
             this.rights = rights;
 
         }
-        public Account(string kind,string username, string password, string emailadress, int rights)
-            : this(-1 ,kind,-1, username, password, emailadress, rights)
+        public Account(string kind,string username, string emailadress, string password, bool rights)
+            : this(-1 ,kind,-1, username, emailadress, password, rights)
         {
 
         }

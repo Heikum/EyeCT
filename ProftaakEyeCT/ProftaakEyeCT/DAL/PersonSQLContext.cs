@@ -56,6 +56,27 @@ namespace ProftaakEyectEvents.DAL
             }
             return null;
         }
+        public Person GetByName(string Name)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Person Where Name = @name";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("name", Name);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return CreatePersonFromReader(reader);
+                        }
+                    }
+                }
+            }
+            return null;
+
+        }
 
         public Person Insert(Person person)
         {
