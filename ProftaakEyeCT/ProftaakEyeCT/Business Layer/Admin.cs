@@ -13,10 +13,7 @@ namespace ProftaakEyectEvents
 
         }
 
-        public override void showEvents()
-        {
-
-        }
+       
 
         public void removeEvent()
         {

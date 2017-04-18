@@ -13,8 +13,9 @@ namespace ProftaakEyeCT.DAL
 
         Event InsertEvent(Event events);
 
-        void UpdateEvents(Event events);
+        bool UpdateEvents(Event events);
 
-        void DeleteEvent(Event events);
+        bool DeleteEvent(int id);
+
     }
 }

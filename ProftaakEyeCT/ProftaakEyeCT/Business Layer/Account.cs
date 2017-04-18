@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ProftaakEyectEvents
 {
-    public abstract class Account
+    public class Account
     {
 
 
@@ -50,7 +50,7 @@ namespace ProftaakEyectEvents
 
         }
 
-        public abstract void showEvents();
+        
 
 
         public void showReservation()

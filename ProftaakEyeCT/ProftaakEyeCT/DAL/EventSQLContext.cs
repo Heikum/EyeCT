@@ -9,89 +9,117 @@ using ProftaakEyeCT.DAL;
 
 namespace ProftaakEyectEvents.DAL
 {
-    public class EventSQLContext: IEventContext
-    {
-        public List<Event> GetAllEvents()
+        public class EventSQLContext : IEventContext
         {
-            List<Event> events = new List<Event>();
-            using (SqlConnection connection = Database.Connection)
+            public List<Event> GetAllEvents()
             {
-                string query = "SELECT * FROM Event ORDER BY ID";
-
-                using (SqlCommand command = new SqlCommand(query, connection))
+                List<Event> events = new List<Event>();
+                using (SqlConnection connection = Database.Connection)
                 {
-                    using (SqlDataReader reader = command.ExecuteReader())
+                    string query = "SELECT * FROM Event ORDER BY ID";
+
+                    using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        while (reader.Read())
+                        using (SqlDataReader reader = command.ExecuteReader())
                         {
-                            events.Add(CreateEventFromReader(reader));
+                            while (reader.Read())
+                            {
+                                events.Add(CreateEventFromReader(reader));
+                            }
                         }
-                    }
-                }
-            }
-            return events;
-        }
-
-        public Event InsertEvent(Event events)
-        {
-            using (SqlConnection connection = Database.Connection)
-            {
-                string query = "INSERT INTO Event (Description, Name, Location, Date)" +
-                    "VALUES (@description, @name, @location, @date)";
-                using (SqlCommand command = new SqlCommand(query, connection))
-                {
-                    command.Parameters.AddWithValue("@description", events.name);
-                    command.Parameters.AddWithValue("@name", events.name);
-                    command.Parameters.AddWithValue("@location", events.location);
-                    command.Parameters.AddWithValue("@date", events.date);
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch (SqlException e)
-                    {
-                        MessageBox.Show(Convert.ToString(e));
                     }
                 }
                 return events;
             }
-        }
 
-        public void UpdateEvents(Event events)
-        {
-            string query = "UPDATE Event SET Description = @description, Name = @name, Location = @location, Date = @date WHERE Id = @id";
-            using (SqlConnection connection = Database.Connection)
+            public Event InsertEvent(Event events)
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@id", events.id);
-                command.Parameters.AddWithValue("@description", events.description);
-                command.Parameters.AddWithValue("@name", events.name);
-                command.Parameters.AddWithValue("@location", events.location);
-                command.Parameters.AddWithValue("@date", events.date);
-                command.ExecuteNonQuery();
+                using (SqlConnection connection = Database.Connection)
+                {
+                    string query = "INSERT INTO Event (Description, Name, Location, EventStartDate, EventEndDate)" +
+                        "VALUES (@description, @name, @location, @eventstartdate, @eventenddate)";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("@description", events.name);
+                        command.Parameters.AddWithValue("@name", events.name);
+                        command.Parameters.AddWithValue("@location", events.location);
+                        command.Parameters.AddWithValue("@eventstartdate", events.eventstartdate);
+                        command.Parameters.AddWithValue("@eventenddate", events.eventenddate);
+                        try
+                        {
+                            command.ExecuteNonQuery();
+                        }
+                        catch (SqlException e)
+                        {
+                            MessageBox.Show(Convert.ToString(e));
+                        }
+                    }
+                    return events;
+                }
             }
-        }
 
-        public void DeleteEvent(Event events)
-        {
-            string query = "DELETE FROM Event WHERE Id = @id";
-            using (SqlConnection connection = Database.Connection)
+            public bool UpdateEvents(Event events)
             {
-                SqlCommand command = new SqlCommand(query, connection);
-                command.Parameters.AddWithValue("@id", events.id);
-                command.ExecuteNonQuery();
+                using (SqlConnection connection = Database.Connection)
+                {
+                    string query = "UPDATE Event" +
+                        " SET Name=@name, Description=@description, Name=@name, Location=@location, EventStartDate=@eventstartdate, EventEndDate=@eventenddate" +
+                        " WHERE ID=@id";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("id", events.id);
+                        command.Parameters.AddWithValue("description", events.description);
+                        command.Parameters.AddWithValue("name", events.name);
+                        command.Parameters.AddWithValue("location", events.location);
+                        command.Parameters.AddWithValue("eventstartdate", events.eventstartdate);
+                        command.Parameters.AddWithValue("eventenddate", events.eventenddate);
+                        try
+                        {
+                            if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                            {
+                                return true;
+                            }
+                        }
+                        catch (SqlException e)
+                        {
+                            MessageBox.Show(e.Message);
+                        }
+
+                    }
+                }
+
+                return false;
             }
-        }
 
-        private Event CreateEventFromReader(SqlDataReader reader)
-        {
-            return new Event(
-                Convert.ToInt32(reader["Id"]),
-                Convert.ToString(reader["Description"]),
-                Convert.ToString(reader["Name"]),
-                Convert.ToString(reader["Location"]),
-                Convert.ToDateTime(reader["Date"]));
+            public bool DeleteEvent(int id)
+            {
+                using (SqlConnection connection = Database.Connection)
+                {
+                    string query = "DELETE FROM Event WHERE ID=@id";
+                    using (SqlCommand command = new SqlCommand(query, connection))
+                    {
+                        command.Parameters.AddWithValue("id", id);
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                        {
+                            return true;
+                        }
+                    }
+                }
 
+                return false;
+            }
+
+            private Event CreateEventFromReader(SqlDataReader reader)
+            {
+                return new Event(
+                    Convert.ToInt32(reader["Id"]),
+                    Convert.ToString(reader["Description"]),
+                    Convert.ToString(reader["Name"]),
+                    Convert.ToString(reader["Location"]),
+                    Convert.ToDateTime(reader["EventStartDate"]),
+                    Convert.ToDateTime(reader["EventEndDate"]));
+
+            }
         }
     }
-}
+
