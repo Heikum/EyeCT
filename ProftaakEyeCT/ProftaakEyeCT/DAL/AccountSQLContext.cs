@@ -75,7 +75,7 @@ namespace ProftaakEyectEvents.DAL
             return accounts;
         }
 
-        public void InsertAccount(Account account, Person person)
+        public Account InsertAccount(Account account)
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -83,8 +83,9 @@ namespace ProftaakEyectEvents.DAL
                     "VALUES (@Kind,@username, @password, @emailadress, @rights)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
+                   
                     command.Parameters.AddWithValue("@Kind", account.Kind);
-                    command.Parameters.AddWithValue("@PersonID", person.Id);
+                    command.Parameters.AddWithValue("@PersonID", account.Id);
                     command.Parameters.AddWithValue("@username", account.Username);
                     command.Parameters.AddWithValue("@password", account.Password);
                     command.Parameters.AddWithValue("@emailadress", account.Emailadress);
@@ -99,6 +100,7 @@ namespace ProftaakEyectEvents.DAL
                     {
                         MessageBox.Show(Convert.ToString(e));
                     }
+                    return account;
                 }
                 
             }

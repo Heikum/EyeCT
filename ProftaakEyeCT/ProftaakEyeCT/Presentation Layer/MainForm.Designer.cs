@@ -43,12 +43,11 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
-            this.numericUpDown4 = new System.Windows.Forms.NumericUpDown();
-            this.numericUpDown5 = new System.Windows.Forms.NumericUpDown();
-            this.textBox16 = new System.Windows.Forms.TextBox();
-            this.textBox17 = new System.Windows.Forms.TextBox();
-            this.textBox18 = new System.Windows.Forms.TextBox();
-            this.textBox19 = new System.Windows.Forms.TextBox();
+            this.nudNewPersonHousenumber = new System.Windows.Forms.NumericUpDown();
+            this.txtNewPersonStreet = new System.Windows.Forms.TextBox();
+            this.txtNewPersonCity = new System.Windows.Forms.TextBox();
+            this.txtNewPersonZipcode = new System.Windows.Forms.TextBox();
+            this.txtNewPersonName = new System.Windows.Forms.TextBox();
             this.btnAccountCancel = new System.Windows.Forms.Button();
             this.btnAccountConfirm = new System.Windows.Forms.Button();
             this.lblAccountEmail = new System.Windows.Forms.Label();
@@ -209,11 +208,11 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
+            this.txtNewPersonPhonenumber = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpRegistreren.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNewPersonHousenumber)).BeginInit();
             this.tpNewAccount.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudPersonHousenumber)).BeginInit();
@@ -318,18 +317,18 @@
             // 
             // tpRegistreren
             // 
+            this.tpRegistreren.Controls.Add(this.txtNewPersonPhonenumber);
             this.tpRegistreren.Controls.Add(this.label20);
             this.tpRegistreren.Controls.Add(this.label21);
             this.tpRegistreren.Controls.Add(this.label22);
             this.tpRegistreren.Controls.Add(this.label23);
             this.tpRegistreren.Controls.Add(this.label24);
             this.tpRegistreren.Controls.Add(this.label25);
-            this.tpRegistreren.Controls.Add(this.numericUpDown4);
-            this.tpRegistreren.Controls.Add(this.numericUpDown5);
-            this.tpRegistreren.Controls.Add(this.textBox16);
-            this.tpRegistreren.Controls.Add(this.textBox17);
-            this.tpRegistreren.Controls.Add(this.textBox18);
-            this.tpRegistreren.Controls.Add(this.textBox19);
+            this.tpRegistreren.Controls.Add(this.nudNewPersonHousenumber);
+            this.tpRegistreren.Controls.Add(this.txtNewPersonStreet);
+            this.tpRegistreren.Controls.Add(this.txtNewPersonCity);
+            this.tpRegistreren.Controls.Add(this.txtNewPersonZipcode);
+            this.tpRegistreren.Controls.Add(this.txtNewPersonName);
             this.tpRegistreren.Controls.Add(this.btnAccountCancel);
             this.tpRegistreren.Controls.Add(this.btnAccountConfirm);
             this.tpRegistreren.Controls.Add(this.lblAccountEmail);
@@ -399,47 +398,40 @@
             this.label25.TabIndex = 19;
             this.label25.Text = "Name:";
             // 
-            // numericUpDown4
+            // nudNewPersonHousenumber
             // 
-            this.numericUpDown4.Location = new System.Drawing.Point(292, 292);
-            this.numericUpDown4.Name = "numericUpDown4";
-            this.numericUpDown4.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown4.TabIndex = 18;
+            this.nudNewPersonHousenumber.Location = new System.Drawing.Point(292, 245);
+            this.nudNewPersonHousenumber.Name = "nudNewPersonHousenumber";
+            this.nudNewPersonHousenumber.Size = new System.Drawing.Size(120, 20);
+            this.nudNewPersonHousenumber.TabIndex = 17;
             // 
-            // numericUpDown5
+            // txtNewPersonStreet
             // 
-            this.numericUpDown5.Location = new System.Drawing.Point(292, 245);
-            this.numericUpDown5.Name = "numericUpDown5";
-            this.numericUpDown5.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown5.TabIndex = 17;
+            this.txtNewPersonStreet.Location = new System.Drawing.Point(292, 198);
+            this.txtNewPersonStreet.Name = "txtNewPersonStreet";
+            this.txtNewPersonStreet.Size = new System.Drawing.Size(120, 20);
+            this.txtNewPersonStreet.TabIndex = 16;
             // 
-            // textBox16
+            // txtNewPersonCity
             // 
-            this.textBox16.Location = new System.Drawing.Point(292, 198);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(120, 20);
-            this.textBox16.TabIndex = 16;
+            this.txtNewPersonCity.Location = new System.Drawing.Point(292, 151);
+            this.txtNewPersonCity.Name = "txtNewPersonCity";
+            this.txtNewPersonCity.Size = new System.Drawing.Size(120, 20);
+            this.txtNewPersonCity.TabIndex = 15;
             // 
-            // textBox17
+            // txtNewPersonZipcode
             // 
-            this.textBox17.Location = new System.Drawing.Point(292, 151);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(120, 20);
-            this.textBox17.TabIndex = 15;
+            this.txtNewPersonZipcode.Location = new System.Drawing.Point(292, 107);
+            this.txtNewPersonZipcode.Name = "txtNewPersonZipcode";
+            this.txtNewPersonZipcode.Size = new System.Drawing.Size(120, 20);
+            this.txtNewPersonZipcode.TabIndex = 14;
             // 
-            // textBox18
+            // txtNewPersonName
             // 
-            this.textBox18.Location = new System.Drawing.Point(292, 107);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(120, 20);
-            this.textBox18.TabIndex = 14;
-            // 
-            // textBox19
-            // 
-            this.textBox19.Location = new System.Drawing.Point(292, 65);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(120, 20);
-            this.textBox19.TabIndex = 13;
+            this.txtNewPersonName.Location = new System.Drawing.Point(292, 65);
+            this.txtNewPersonName.Name = "txtNewPersonName";
+            this.txtNewPersonName.Size = new System.Drawing.Size(120, 20);
+            this.txtNewPersonName.TabIndex = 13;
             // 
             // btnAccountCancel
             // 
@@ -1971,6 +1963,13 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // txtNewPersonPhonenumber
+            // 
+            this.txtNewPersonPhonenumber.Location = new System.Drawing.Point(292, 288);
+            this.txtNewPersonPhonenumber.Name = "txtNewPersonPhonenumber";
+            this.txtNewPersonPhonenumber.Size = new System.Drawing.Size(120, 20);
+            this.txtNewPersonPhonenumber.TabIndex = 25;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1985,8 +1984,7 @@
             this.tpLogin.PerformLayout();
             this.tpRegistreren.ResumeLayout(false);
             this.tpRegistreren.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudNewPersonHousenumber)).EndInit();
             this.tpNewAccount.ResumeLayout(false);
             this.tpNewAccount.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -2171,12 +2169,11 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.NumericUpDown numericUpDown4;
-        private System.Windows.Forms.NumericUpDown numericUpDown5;
-        private System.Windows.Forms.TextBox textBox16;
-        private System.Windows.Forms.TextBox textBox17;
-        private System.Windows.Forms.TextBox textBox18;
-        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.NumericUpDown nudNewPersonHousenumber;
+        private System.Windows.Forms.TextBox txtNewPersonStreet;
+        private System.Windows.Forms.TextBox txtNewPersonCity;
+        private System.Windows.Forms.TextBox txtNewPersonZipcode;
+        private System.Windows.Forms.TextBox txtNewPersonName;
         private System.Windows.Forms.Button btnAccountCancel;
         private System.Windows.Forms.Button btnAccountConfirm;
         private System.Windows.Forms.Label lblAccountEmail;
@@ -2195,6 +2192,7 @@
         private System.Windows.Forms.TextBox txtMaterialName;
         private System.Windows.Forms.TextBox txtMaterialPrice;
         private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox txtNewPersonPhonenumber;
     }
 }
 

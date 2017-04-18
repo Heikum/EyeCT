@@ -65,6 +65,13 @@
     <Compile Include="DAL\PersonSQLContext.cs" />
     <Compile Include="DAL\IReservationContext.cs" />
     <Compile Include="Presentation Layer\AccountRepository.cs" />
+    <Compile Include="Presentation Layer\EventPlatform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\EventPlatform.Designer.cs">
+      <DependentUpon>EventPlatform.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\EventRepository.cs" />
     <Compile Include="Presentation Layer\MaterialRepository.cs" />
     <Compile Include="Presentation Layer\MediaPlatform.cs">
       <SubType>Form</SubType>
@@ -74,11 +81,11 @@
     </Compile>
     <Compile Include="Presentation Layer\MediaRepository.cs" />
     <Compile Include="Presentation Layer\PersonRepository.cs" />
-    <Compile Include="Presentation Layer\Form1.cs">
+    <Compile Include="Presentation Layer\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentation Layer\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Presentation Layer\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Business Layer\Image.cs" />
     <Compile Include="Business Layer\Material.cs" />
@@ -98,8 +105,11 @@
     <Compile Include="Business Layer\Reservation.cs" />
     <Compile Include="Business Layer\Student.cs" />
     <Compile Include="Business Layer\Video.cs" />
-    <EmbeddedResource Include="Presentation Layer\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Presentation Layer\EventPlatform.resx">
+      <DependentUpon>EventPlatform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\MediaPlatform.resx">
       <DependentUpon>MediaPlatform.cs</DependentUpon>

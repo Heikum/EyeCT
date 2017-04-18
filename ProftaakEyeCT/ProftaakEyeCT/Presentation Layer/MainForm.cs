@@ -62,7 +62,7 @@ namespace ProftaakEyeCT
             Person person = null;
             try
             {
-                person = new Person(txtPersonName.Text, txtPersonZipcode.Text, txtPersonCity.Text, txtPersonStreet.Text, (int)nudPersonHousenumber.Value, txtPersonPhonenumber.Text);
+                person = new Person(txtNewPersonName.Text, txtNewPersonZipcode.Text, txtNewPersonCity.Text, txtNewPersonStreet.Text, (int)nudNewPersonHousenumber.Value, txtNewPersonPhonenumber.Text);
             }
             catch (FormatException)
             {
@@ -79,6 +79,33 @@ namespace ProftaakEyeCT
                 txtPersonStreet.Text = "";
                 nudPersonHousenumber.Value = 0;
                 txtPersonPhonenumber.Text = "";
+            }
+            else
+            {
+                MessageBox.Show("Adding person failed. Check if the number is unique.");
+            }
+        }
+        private void InsertAccount()
+        {
+
+            Account account = null;
+            try
+            {
+                account = new Account("Student",txtNewAccountUsername.Text,txtNewAccountPassword.Text,txtNewAccountEmail.Text,0);
+            }
+            catch (FormatException)
+            {
+                MessageBox.Show("Adding person failed. Check if the field is valid.");
+                return;
+            }
+
+            if (accountrepo.InsertAccount(account) != null)
+            {
+                UpdateControls();
+                txtAccountUsername.Text = "";
+                txtAccountPassword.Text = "";
+                txtAccountEmail.Text = "";
+
             }
             else
             {
@@ -112,6 +139,26 @@ namespace ProftaakEyeCT
                 MessageBox.Show("Updating person failed. Check if the email address is valid.");
             }
         }
+        private void UpdateAccount()
+        {
+
+            updateAccount.Username = txtAccountUsername.Text;
+            updateAccount.Password = txtAccountPassword.Text;
+            updateAccount.Emailadress = txtAccountEmail.Text;
+
+            if (accountrepo.UpdateAccount(updateAccount))
+            {
+                txtAccountUsername.Text = "";
+                txtAccountPassword.Text = "";
+                txtAccountEmail.Text = "";
+                updateAccount = null;
+            }
+            else
+            {
+                MessageBox.Show("Updating person failed. Check if the email address is valid.");
+            }
+        }
+
 
         private void lbAllPersons_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -123,8 +170,10 @@ namespace ProftaakEyeCT
 
         private void btnPersonUpdate_Click(object sender, EventArgs e)
         {
-            updatePerson = (Person)lbAllPersons.SelectedItem;
+            updatePerson = personrepo.GetById(updateAccount.Personid);
+            updateAccount = (Account)lbAllPersons.SelectedItem;
             UpdatePerson();
+            UpdateAccount();
         }
 
         private void btnPersonRemove_Click(object sender, EventArgs e)
@@ -160,6 +209,7 @@ namespace ProftaakEyeCT
         private void btnAccountConfirm_Click(object sender, EventArgs e)
         {
             InsertPerson();
+            InsertAccount();
             UpdateControls();
         }
 

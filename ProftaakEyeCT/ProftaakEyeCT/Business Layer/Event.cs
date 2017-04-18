@@ -12,15 +12,29 @@ namespace ProftaakEyectEvents
         public string description;
         public string name;
         public string location;
-        public DateTime date;
+        public DateTime eventstartdate;
+        public DateTime eventenddate;
 
-        public Event(int id, string Description, string Name, string Location, DateTime Date)
+
+
+        public Event(int id, string Description, string Name, string Location, DateTime EventStartDate, DateTime EventEndDate)
         {
             this.id = id;
             this.description = Description;
             this.name = Name;
             this.location = Location;
-            this.date = Date;
+            this.eventstartdate = EventStartDate.Date;
+            this.eventenddate = EventEndDate.Date;
+
+        }
+
+        public Event(string Description, string Name, string Location, DateTime EventStartDate, DateTime EventEndDate)
+        {
+            this.description = Description;
+            this.name = Name;
+            this.location = Location;
+            this.eventstartdate = EventStartDate.Date;
+            this.eventenddate = EventEndDate.Date;
 
         }
 
@@ -44,7 +58,10 @@ namespace ProftaakEyectEvents
 
         }
 
+        public override string ToString()
+        {
+            return name + " | " + "Location: " + location + " | " + "Start Date: " + eventstartdate.ToString("dd/MM/yyyy") + " | " + "End Date: " + eventenddate.ToString("dd/MM/yyyy");
+        }
 
-        //geen createEvent method, omdat Event al een constructor heeft waar een Event wordt aangemaakt.
     }
 }
