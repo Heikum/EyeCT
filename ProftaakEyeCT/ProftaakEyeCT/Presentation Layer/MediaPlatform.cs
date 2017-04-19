@@ -16,23 +16,38 @@ namespace ProftaakEyeCT
     public partial class MediaPlatform : Form
     {
         private PostRepository postrepo;
+        private ReactionRepository reactionrepo;
         public MediaPlatform()
         {
             InitializeComponent();
             postrepo = new PostRepository(new PostSQLContext());
-            UpdateControls();
+            reactionrepo = new ReactionRepository(new ReactionSQLContext());
+            UpdatePosts();
 
         }
 
-        private void UpdateControls()
+        private void UpdatePosts()
         {
-            lbMediaPosts.Items.Clear();
-            foreach (Post post in postrepo.GetAll())
-            {
-                lbMediaPosts.Items.Add(post);
-            }
+            //posts inladen
+            lbMediaPosts.DataSource = postrepo.GetAll();
+        }
 
+        private void UpdateReactions()
+        {
+            //reacties inladen
+            var selectedpost = lbMediaPosts.SelectedItem as Post;
+            lbMediaReactions.DataSource = reactionrepo.GetByPost(selectedpost);
+            
+        }
 
+        private void MediaPlatform_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbMediaPosts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            UpdateReactions();
         }
     }
 }

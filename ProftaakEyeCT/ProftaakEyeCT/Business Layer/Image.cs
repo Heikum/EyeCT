@@ -52,7 +52,7 @@ namespace ProftaakEyectEvents
 
         public override string ToString()
         {
-            return base.ToString();
+            return imageLink + "-" + imageName;
         }
 
     }

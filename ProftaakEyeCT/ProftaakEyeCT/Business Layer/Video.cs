@@ -11,6 +11,31 @@ namespace ProftaakEyectEvents
         private string videoName;
         private string videoLink;
 
+        public string VideoName
+        {
+            get
+            {
+                return videoName;
+            }
+
+            set
+            {
+                videoName = value;
+            }
+        }
+
+        public string VideoLink
+        {
+            get
+            {
+                return videoLink;
+            }
+
+            set
+            {
+                videoLink = value;
+            }
+        }
 
         public Video(int Id, string videoName, string videoLink) : base(Id)
         {
@@ -18,12 +43,11 @@ namespace ProftaakEyectEvents
             VideoLink = videoLink;
         }
 
-        public string VideoName { get { return VideoName; } set { VideoName = value; } }
-        public string VideoLink { get { return VideoLink; } set { VideoLink = value; } }
+      
 
         public override string ToString()
         {
-            return base.ToString();
+            return videoName + "-" +videoLink; 
         }
 
     }

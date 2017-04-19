@@ -23,7 +23,7 @@ namespace ProftaakEyectEvents
 
         public override string ToString()
         {
-            return "Media";
+            return Id.ToString();
         }
     }
 }

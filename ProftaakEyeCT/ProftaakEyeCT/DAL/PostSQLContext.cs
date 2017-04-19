@@ -18,8 +18,9 @@ namespace ProftaakEyeCT.DAL
 
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT P.*, M.VideoLink, M.ImageLink" +
-                " FROM post p INNER JOIN Media M ON P.MediaID = M.ID";
+                string query = "SELECT P.*, M.*, A.*" +
+                " FROM post p INNER JOIN Media M ON P.MediaID = M.ID" +
+                " INNER JOIN Account A on P.AccountID = A.ID";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -32,11 +33,14 @@ namespace ProftaakEyeCT.DAL
                             {
                                 Image image = null;
                                 Video video = null;
+                                Student student = null;
+                                Admin admin = null;
                                 if (reader["MediaiD"] != DBNull.Value)
                                 {
+                                    //Kijken of er een image of een video bij de post hoort
                                     switch (Convert.ToInt32(reader["MediaType"]))
                                     {
-                                        case 1:
+                                        case 2:
                                             image = new Image(
                                                 Convert.ToInt32(reader["Id"]),
                                                 Convert.ToString(reader["ImageName"]),
@@ -45,7 +49,7 @@ namespace ProftaakEyeCT.DAL
                                             break;
 
 
-                                        case 2:
+                                        case 1:
                                             video = new Video(
                                                 Convert.ToInt32(reader["Id"]),
                                                 Convert.ToString(reader["VideoName"]),
@@ -54,9 +58,27 @@ namespace ProftaakEyeCT.DAL
                                             break;
 
                                     }
+                                }
+                                if (reader["AccountID"] != DBNull.Value)
+                                {
+                                    
+                                    switch (Convert.ToString(reader["Kind"]))
+                                    {
+                                        case "Student":
+                                            student = new Student(
+                                            Convert.ToString(reader["Username"]));
+                                            post.AddStudent(student);
+                                            break;
+
+                                        case "Admin":
+                                            admin = new Admin(
+                                            Convert.ToString(reader["Username"]));
+                                            post.AddAdmin(admin);
+                                            break;
+                                    }
+                                        
 
                                 }
-
 
                                 posts.Add(post);
                             }
@@ -94,6 +116,7 @@ namespace ProftaakEyeCT.DAL
         {
             return new Post(
                 Convert.ToInt32(reader["Id"]),
+                Convert.ToInt32(reader["MediaId"]),
                 Convert.ToString(reader["Text"]),
                 Convert.ToDateTime(reader["PostDateTime"]));
 

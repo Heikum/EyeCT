@@ -8,10 +8,35 @@ namespace ProftaakEyectEvents
 {
     public class Student : Account
     {
-        public Student(int Id, string kind,int personid,string Username, string Emailadress, string Password, bool Rights) : base(Id,kind, personid, Username, Emailadress, Password, Rights)
+        private string username;
+
+        public string Username1
+        {
+            get
+            {
+                return username;
+            }
+
+            set
+            {
+                username = value;
+            }
+        }
+
+        public Student(int Id, string kind, int personid, string Username, string Emailadress, string Password, bool Rights) : base(Id, kind, personid, Username, Emailadress, Password, Rights)
         {
 
         }
+
+
+        public Student(string username) : base(username)
+        {
+            this.Username1 = username;
+        }
+                
+   
+
+        
 
         public void makeReservation()
         {
@@ -23,6 +48,11 @@ namespace ProftaakEyectEvents
         public void hireMaterial()
         {
 
+        }
+
+        public override string ToString()
+        {
+            return username;
         }
     }
 
