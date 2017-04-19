@@ -228,5 +228,13 @@ namespace ProftaakEyeCT
             UpdateControls();
 
         }
+
+        private void btnMedia_Click(object sender, EventArgs e)
+        {
+            
+            MediaPlatform mediaPlatform = new MediaPlatform();
+
+            mediaPlatform.Show();
+        }
     }
 }

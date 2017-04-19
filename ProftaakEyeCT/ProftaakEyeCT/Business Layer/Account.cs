@@ -43,6 +43,11 @@ namespace ProftaakEyectEvents
 
         }
 
+        public Account(string username)
+        {
+            this.username = username;
+        }
+
 
         //Post post
         public void placePost()

@@ -66,7 +66,33 @@ namespace ProftaakEyeCT.DAL
 
         public bool UpdateMaterial(Material material)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE Material" +
+                    " SET Name=@name, Price=@price, Stock=@stock" +
+                    " WHERE ID=@id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", material.Id);
+                    command.Parameters.AddWithValue("name", material.Name);
+                    command.Parameters.AddWithValue("price", material.Price);
+                    command.Parameters.AddWithValue("stock", material.Stock);
+                    try
+                    {
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                }
+            }
+
+            return false;
         }
 
         private Material CreateMaterialFromReader(SqlDataReader reader)

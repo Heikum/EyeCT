@@ -10,17 +10,20 @@ namespace ProftaakEyectEvents
     {
         private string text;
         private int postID;
+        private int mediaID;
         private DateTime postdatetime;
         private Video videolink;
         private Image imagelink;
-        private Account postedby;
-        //hoi
+        private Student postedByStudent;
+        private Admin postedByAdmin;
+        
 
-        public Post(int postID, string text, DateTime postdatetime)
+        public Post(int postID, int mediaID, string text, DateTime postdatetime)
         {
             this.text = text;
             this.postID = postID;
             this.Postdatetime = postdatetime;
+            this.MediaID = mediaID;
 
         }
 
@@ -43,6 +46,28 @@ namespace ProftaakEyectEvents
             }
             return false;
         }
+
+        public bool AddStudent(Student student)
+        {
+            if (this.PostedByStudent == null)
+            {
+                this.PostedByStudent = student;
+                return true;
+            }
+            return false;
+        }
+
+        public bool AddAdmin(Admin admin)
+        {
+            if (this.PostedByAdmin == null)
+            {
+                this.PostedByAdmin = admin;
+                return true;
+            }
+            return false;
+        }
+
+
 
         public string Text
         {
@@ -84,18 +109,6 @@ namespace ProftaakEyectEvents
             }
         }
 
-        public Account Postedby
-        {
-            get
-            {
-                return postedby;
-            }
-
-            set
-            {
-                postedby = value;
-            }
-        }
 
         public Video Videolink
         {
@@ -121,6 +134,50 @@ namespace ProftaakEyectEvents
             {
                 imagelink = value;
             }
+        }
+
+        public int MediaID
+        {
+            get
+            {
+                return mediaID;
+            }
+
+            set
+            {
+                mediaID = value;
+            }
+        }
+
+        public Student PostedByStudent
+        {
+            get
+            {
+                return postedByStudent;
+            }
+
+            set
+            {
+                postedByStudent = value;
+            }
+        }
+
+        public Admin PostedByAdmin
+        {
+            get
+            {
+                return postedByAdmin;
+            }
+
+            set
+            {
+                postedByAdmin = value;
+            }
+        }
+
+        public override string ToString()
+        {
+            return "username: " + postedByAdmin + "" + postedByStudent + "-" + text + "-" + postdatetime + "-" + imagelink + videolink; 
         }
     }
 }

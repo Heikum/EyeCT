@@ -75,18 +75,20 @@
             // lbMediaReactions
             // 
             this.lbMediaReactions.FormattingEnabled = true;
-            this.lbMediaReactions.Location = new System.Drawing.Point(12, 64);
+            this.lbMediaReactions.Location = new System.Drawing.Point(414, 64);
             this.lbMediaReactions.Name = "lbMediaReactions";
-            this.lbMediaReactions.Size = new System.Drawing.Size(289, 368);
+            this.lbMediaReactions.Size = new System.Drawing.Size(378, 368);
             this.lbMediaReactions.TabIndex = 6;
             // 
             // lbMediaPosts
             // 
             this.lbMediaPosts.FormattingEnabled = true;
-            this.lbMediaPosts.Location = new System.Drawing.Point(328, 64);
+            this.lbMediaPosts.HorizontalScrollbar = true;
+            this.lbMediaPosts.Location = new System.Drawing.Point(12, 64);
             this.lbMediaPosts.Name = "lbMediaPosts";
-            this.lbMediaPosts.Size = new System.Drawing.Size(289, 368);
+            this.lbMediaPosts.Size = new System.Drawing.Size(380, 368);
             this.lbMediaPosts.TabIndex = 5;
+            this.lbMediaPosts.SelectedIndexChanged += new System.EventHandler(this.lbMediaPosts_SelectedIndexChanged);
             // 
             // btnMediaRapporteren
             // 
@@ -119,7 +121,7 @@
             // 
             this.lblMediaReacties.AutoSize = true;
             this.lblMediaReacties.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMediaReacties.Location = new System.Drawing.Point(417, 22);
+            this.lblMediaReacties.Location = new System.Drawing.Point(483, 19);
             this.lblMediaReacties.Name = "lblMediaReacties";
             this.lblMediaReacties.Size = new System.Drawing.Size(87, 25);
             this.lblMediaReacties.TabIndex = 9;
@@ -129,7 +131,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(629, 490);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(804, 490);
             this.Controls.Add(this.lblMediaReacties);
             this.Controls.Add(this.btnMediaVerwijderen);
             this.Controls.Add(this.btnMediaRapporteren);
@@ -141,6 +144,7 @@
             this.Controls.Add(this.lblMediaPosts);
             this.Name = "MediaPlatform";
             this.Text = "MediaPlatform";
+            this.Load += new System.EventHandler(this.MediaPlatform_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

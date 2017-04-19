@@ -209,6 +209,7 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnMedia = new System.Windows.Forms.Button();
             this.tcCamping.SuspendLayout();
             this.tpLogin.SuspendLayout();
             this.tpRegistreren.SuspendLayout();
@@ -250,6 +251,7 @@
             // tpLogin
             // 
             this.tpLogin.BackColor = System.Drawing.Color.Purple;
+            this.tpLogin.Controls.Add(this.btnMedia);
             this.tpLogin.Controls.Add(this.btnRegistreren);
             this.tpLogin.Controls.Add(this.lblPassword);
             this.tpLogin.Controls.Add(this.lblUsername);
@@ -1970,6 +1972,16 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // btnMedia
+            // 
+            this.btnMedia.Location = new System.Drawing.Point(604, 25);
+            this.btnMedia.Name = "btnMedia";
+            this.btnMedia.Size = new System.Drawing.Size(152, 57);
+            this.btnMedia.TabIndex = 2;
+            this.btnMedia.Text = "Media";
+            this.btnMedia.UseVisualStyleBackColor = true;
+            this.btnMedia.Click += new System.EventHandler(this.btnMedia_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2193,6 +2205,7 @@
         private System.Windows.Forms.TextBox txtMaterialPrice;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.TextBox txtNewPersonPhonenumber;
+        private System.Windows.Forms.Button btnMedia;
     }
 }
 

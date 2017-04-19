@@ -25,6 +25,7 @@ namespace ProftaakEyeCT.DAL
                         while (reader.Read())
                         {
                             media.Add(CreateMediaFromReader(reader));
+
                         }
                     }
                 }
