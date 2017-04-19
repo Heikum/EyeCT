@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registerform));
             this.txtNewPersonPhonenumber = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
@@ -208,6 +209,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(353, 324);
             this.Controls.Add(this.txtNewPersonPhonenumber);
             this.Controls.Add(this.label20);
@@ -228,7 +230,9 @@
             this.Controls.Add(this.txtNewAccountPassword);
             this.Controls.Add(this.txtNewAccountEmail);
             this.Controls.Add(this.txtNewAccountUsername);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registerform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Register";
             ((System.ComponentModel.ISupportInitialize)(this.nudNewPersonHousenumber)).EndInit();
             this.ResumeLayout(false);

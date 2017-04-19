@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MediaPlatform));
             this.lblMediaPosts = new System.Windows.Forms.Label();
             this.btnMediaVerwijderen = new System.Windows.Forms.Button();
             this.btnMediaRefresh = new System.Windows.Forms.Button();
@@ -142,7 +143,9 @@
             this.Controls.Add(this.btnMediaReageren);
             this.Controls.Add(this.lbMediaPosts);
             this.Controls.Add(this.lblMediaPosts);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "MediaPlatform";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MediaPlatform";
             this.Load += new System.EventHandler(this.MediaPlatform_Load);
             this.ResumeLayout(false);
