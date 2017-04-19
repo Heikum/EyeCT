@@ -32,6 +32,11 @@ namespace ProftaakEyeCT.Presentation_Layer
             return context.UpdateAccount(account);
         }
 
+        public bool Login(string gebruikersnaam, string wachtwoord)
+        {
+            return context.Login(gebruikersnaam, wachtwoord);
+        }
+
         public bool DeleteAccount(int id)
         {
             return context.DeleteAccount(id);

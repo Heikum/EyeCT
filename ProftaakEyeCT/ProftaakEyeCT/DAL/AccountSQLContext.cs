@@ -157,6 +157,29 @@ namespace ProftaakEyectEvents.DAL
 
             return false;
         }
+
+        public bool Login(string gebruikersnaam, string wachtwoord)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                SqlCommand cmd = new SqlCommand(@"SELECT Count(*) FROM [Account] 
+                                        WHERE Username=@uname and 
+                                        Password=@pass", connection);
+                cmd.Parameters.AddWithValue("@uname", gebruikersnaam);
+                cmd.Parameters.AddWithValue("@pass", wachtwoord);
+                var result = (int)cmd.ExecuteScalar();
+                if (result > 0)
+                {
+                    return true;
+                }
+                else
+                {
+                    connection.Close();
+                    return false;
+                    ;
+                }
+            }
+        }
           
 
         public List<Account> GetAllAccountInformation()
