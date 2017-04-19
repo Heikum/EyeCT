@@ -21,7 +21,7 @@ namespace ProftaakEyectEvents
             this.text = text;
             this.postID = postID;
             this.Postdatetime = postdatetime;
-         
+
         }
 
         public bool AddImage(Image image)

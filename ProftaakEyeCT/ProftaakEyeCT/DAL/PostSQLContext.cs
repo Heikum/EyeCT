@@ -41,17 +41,17 @@ namespace ProftaakEyeCT.DAL
                                                 Convert.ToInt32(reader["Id"]),
                                                 Convert.ToString(reader["ImageName"]),
                                                 Convert.ToString(reader["ImageLink"]));
-                                                post.AddImage(image);
-                                                break;
-                                                
+                                            post.AddImage(image);
+                                            break;
+
 
                                         case 2:
                                             video = new Video(
                                                 Convert.ToInt32(reader["Id"]),
                                                 Convert.ToString(reader["VideoName"]),
                                                 Convert.ToString(reader["VideoLink"]));
-                                                post.AddVideo(video);
-                                                break;
+                                            post.AddVideo(video);
+                                            break;
 
                                     }
 
@@ -60,11 +60,11 @@ namespace ProftaakEyeCT.DAL
 
                                 posts.Add(post);
                             }
-                            
+
                         }
                     }
 
-                    
+
                 }
             }
             return posts;

@@ -10,7 +10,7 @@ namespace ProftaakEyectEvents
     {
         private string videoName;
         private string videoLink;
-       
+
 
         public Video(int Id, string videoName, string videoLink) : base(Id)
         {
@@ -27,4 +27,4 @@ namespace ProftaakEyectEvents
         }
 
     }
-    }
+}

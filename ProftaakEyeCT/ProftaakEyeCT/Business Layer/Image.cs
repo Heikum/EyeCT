@@ -11,7 +11,7 @@ namespace ProftaakEyectEvents
         private string imageLink;
         private string imageName;
 
-        public Image(int Id, string imageLink, string imageName): base (Id)
+        public Image(int Id, string imageLink, string imageName) : base(Id)
         {
             this.imageLink = imageLink;
             this.imageName = imageName;
