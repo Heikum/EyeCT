@@ -14,6 +14,7 @@ namespace ProftaakEyectEvents
         private Video videolink;
         private Image imagelink;
         private Account postedby;
+        //hoi
 
         public Post(int postID, string text, DateTime postdatetime)
         {
