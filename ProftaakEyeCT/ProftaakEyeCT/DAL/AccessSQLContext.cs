@@ -16,11 +16,12 @@ namespace ProftaakEyeCT.DAL
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO Access (AccessStatus, AccountID, ReservationID)" +
-                    "VALUES (@accesstat, @accID, @ResID)";
+                string query = "INSERT INTO Access (AccessStatus, InsideStatus, AccountID, ReservationID)" +
+                    "VALUES (@accesstat, @insidestat @accID, @ResID)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@accesstat", false);
+                    command.Parameters.AddWithValue("@insidestat", false);
                     command.Parameters.AddWithValue("@accID", acc.Id);
                     command.Parameters.AddWithValue("@ResID", null);
                     try
@@ -94,7 +95,7 @@ namespace ProftaakEyeCT.DAL
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("username", acc);
-                    if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                    if (Convert.ToInt32(command.ExecuteScalar()) == 1)
                     {
                         return true;
                     }
