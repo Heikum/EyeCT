@@ -24,6 +24,8 @@ namespace ProftaakEyeCT
         private MediaRepository mediarepo;
         private Media updateMedia;
         private MaterialRepository materialrepo;
+        private CampingspotRepository campingspotrepo;
+        private CampingSpot updateCampingspot;
         public Menuform()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace ProftaakEyeCT
             //mediarepo = new MediaRepository(new MediaSQLContext());
             accountrepo = new AccountRepository(new AccountSQLContext());
             materialrepo = new MaterialRepository(new MaterialSQLContext());
+            campingspotrepo = new CampingspotRepository(new CampingspotSQLContext());
             UpdateControls();
 
 
@@ -52,6 +55,8 @@ namespace ProftaakEyeCT
             {
                 lbAllMaterials.Items.Add(material);
             }
+            lbAvailable.Items.Clear();
+            foreach (CampingSpot campingspot in campingspotrepo.GetAllAvailable()) ;
 
 
         }
