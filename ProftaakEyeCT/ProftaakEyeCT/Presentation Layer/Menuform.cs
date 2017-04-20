@@ -29,6 +29,8 @@ namespace ProftaakEyeCT
         private CampingspotRepository campingspotrepo;
         private EventRepository eventrepo;
         private Event updateEvent;
+        private AccessRepository accessrepo;
+        private Access updateAccess;
         
         public Menuform()
         {
@@ -38,9 +40,10 @@ namespace ProftaakEyeCT
             //mediarepo = new MediaRepository(new MediaSQLContext());
             accountrepo = new AccountRepository(new AccountSQLContext());
             materialrepo = new MaterialRepository(new MaterialSQLContext());
-            UpdateControls();
-           
-
+            campingspotrepo = new CampingspotRepository(new CampingspotSQLContext());
+            eventrepo = new EventRepository(new EventSQLContext());
+            accessrepo = new AccessRepository(new AccessSQLContext());
+            UpdateControls(); 
         }
 
         //code voor person
@@ -61,8 +64,21 @@ namespace ProftaakEyeCT
             {
                 lbAllMaterials.Items.Add(material);
             }
-
-
+            lbReservationCampingspot.Items.Clear();
+            foreach (CampingSpot campingspot in campingspotrepo.GetAllAvailable())
+            {
+                lbReservationCampingspot.Items.Add(campingspot);
+            }
+            lbReservationEvents.Items.Clear();
+            foreach (Event events in eventrepo.GetAllEvents())
+            {
+                lbReservationEvents.Items.Add(events);
+            }
+            lbOnSite.Items.Clear();
+            foreach (Account account in accessrepo.GetAllInside())
+            {
+                lbOnSite.Items.Add(account);
+            }
         }
 
 
@@ -215,6 +231,24 @@ namespace ProftaakEyeCT
             updateEvent = (Event)lbReservationEvents.SelectedItem;
             txtReservationEvent.Text = updateEvent.name;
 
+        }
+
+        private void btnCheckStat_Click(object sender, EventArgs e)
+        {
+            if (accessrepo.GetStatus(tbAccUsername.Text))
+            {
+                btnCheck.BackColor = Color.Green;
+            }
+            else
+            {
+                btnCheck.BackColor = Color.Red;
+
+            }
+        }
+
+        private void btnOnSiteReload_Click(object sender, EventArgs e)
+        {
+            UpdateControls();
         }
     }
 }

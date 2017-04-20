@@ -65,14 +65,35 @@ namespace ProftaakEyeCT.DAL
             return false;
         }
 
-        public bool GetStatus(/*Access access,*/ Account acc)
+        public List<Account> GetAllInside()
+        {
+            List<Account> accounts = new List<Account>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Account WHERE ID IN (SELECT AccountId FROM Access WHERE InsideStatus = 1)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            accounts.Add(CreateAccountFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return accounts;
+        }
+
+        public bool GetStatus(/*Access access, Account acc*/ string acc)
         {
             using (SqlConnection connection = Database.Connection)
             {
                 string query = "SELECT AccessStatus FROM Access WHERE ID IN (SELECT AccountID FROM Account WHERE Username=@username)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("username", acc.Username);
+                    command.Parameters.AddWithValue("username", acc);
                     if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
                     {
                         return true;
@@ -106,6 +127,20 @@ namespace ProftaakEyeCT.DAL
             return new Access(
                  Convert.ToInt32(reader["RFID"]),
                  Convert.ToBoolean(reader["AccessStatus"]));
+        }
+
+        private Account CreateAccountFromReader(SqlDataReader reader)
+        {
+            return new Account(
+                 Convert.ToInt32(reader["ID"]),
+                 Convert.ToString(reader["Kind"]),
+                 Convert.ToInt32(reader["PersonID"]),
+                 Convert.ToString(reader["Username"]),
+                 Convert.ToString(reader["Emailadress"]),
+                 Convert.ToString(reader["Password"]),
+                 Convert.ToBoolean(reader["Rights"]));
+
+
         }
     }
 }
