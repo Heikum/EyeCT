@@ -36,11 +36,11 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         private void btnAddPost_Click(object sender, EventArgs e)
         {
-            if(DummyImageLink !=  )
+            if(DummyImageLink !=  null)
             {
 
             }
-            else if (txtPostPlatformText.Text = YoutubeLink)
+            else if (txtPostPlatformText.Text == YoutubeLink)
             {
 
             }

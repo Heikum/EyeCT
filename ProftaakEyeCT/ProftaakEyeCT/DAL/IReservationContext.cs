@@ -12,7 +12,7 @@ namespace ProftaakEyectEvents.DAL
 
         Reservation GetByID(int Id);
 
-        void InsertReservation(Reservation reservation);
+        Reservation InsertReservation(Reservation reservation, Event events, CampingSpot campingspot);
 
         void UpdateReservation(Reservation reservation);
 
