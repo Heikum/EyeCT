@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DAL\AccessSQLContext.cs" />
+    <Compile Include="DAL\AccountReservationSQLContext.cs" />
     <Compile Include="DAL\AccountSQLContext.cs" />
     <Compile Include="Business Layer\Access.cs" />
     <Compile Include="Business Layer\Account.cs" />
@@ -129,6 +130,12 @@
     <Compile Include="Presentation Layer\Registerform.Designer.cs">
       <DependentUpon>Registerform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\Reservation group.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Reservation group.Designer.cs">
+      <DependentUpon>Reservation group.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\ReservationRepository.cs" />
     <Compile Include="Startup Layer\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -153,6 +160,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ReactionPlatform.resx">
       <DependentUpon>ReactionPlatform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Reservation group.resx">
+      <DependentUpon>Reservation group.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

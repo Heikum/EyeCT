@@ -10,11 +10,7 @@ namespace ProftaakEyectEvents.DAL
 {
     class ReservationSQLContext:IReservationContext
     {
-        public ReservationSQLContext()
-        {
-            Database.Initialize();
-        }
-
+        
         public List<Reservation> GetAll()
         {
             List<Reservation> reservations = new List<Reservation>();
@@ -58,51 +54,86 @@ namespace ProftaakEyectEvents.DAL
             return null;
         }
 
-        public Reservation InsertReservation(Reservation reservation,Event events,CampingSpot campingspot)
+        public Reservation InsertReservation(Reservation reservation)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO Reservation (ID, ReservationDate, PaymentStatus, EventID, CampingSpotsID)" +
-                    " VALUES (@id, @reservationdate, @paymentstatus, @eventid, @campingspotsid)";
+                string query = "INSERT INTO Reservation (ReservationDate, PaymentStatus, EventID, CampingSpotsID)" +
+                    " VALUES (@reservationdate, @paymentstatus, @eventid, @campingspotsid)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     
                     command.Parameters.AddWithValue("@reservationdate", DateTime.Now);
                     command.Parameters.AddWithValue("@paymentstatus", reservation.Paymentstatus);
-                    command.Parameters.AddWithValue("@eventid", events.id);
-                    command.Parameters.AddWithValue("@campingspotsid", campingspot.Id);
-                 
+                    command.Parameters.AddWithValue("@eventid", reservation.Eventid);
+                    command.Parameters.AddWithValue("@campingspotsid", reservation.Campingspotid);
+                    
+
 
                     try
                     {
                         command.ExecuteNonQuery();
+                      
+                    }
+                    catch (SqlException e)
+                    {
+                        // Unexpected error: rethrow to let the caller handle it
+                        MessageBox.Show("Dit is al reeds ingevoerd" + e);
+                        
+                    }
+                
+                }
+
+                return reservation;
+                   
+
+
+            }
+        }
+        public void InsertAccountReservation(Account account, int resid)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO AccountReservation VALUES (@reservationid, @accountid)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@reservationid", resid);
+                    command.Parameters.AddWithValue("@accountid", account.Id);
+                    
+
+
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                        
                     }
                     catch (SqlException e)
                     {
                         // Unexpected error: rethrow to let the caller handle it
                         MessageBox.Show("Dit is al reeds ingevoerd" + e);
                     }
-                
+
                 }
-                return reservation;
+               
             }
         }
 
+        
         public void UpdateReservation(Reservation reservation)
         {
-            string query = "UPDATE Reservation SET Price = @price, Personamount = @personamount, Date = @date, Location = @location, Paymentstatus = @paymentstatus, Mainreservator = @mainreservator, Otherreservator = @otherreservator WHERE Id = @id";
+            string query = "UPDATE Reservation SET ReservationDate = @reservationdate, PaymentStatus = @paymentstatus, EventID = @eventid, CampingsSpotsID = @campingspotsid WHERE Id = @id";
             using (SqlConnection connection = Database.Connection)
             {
                 SqlCommand command = new SqlCommand(query, connection);
                 command.Parameters.AddWithValue("id", reservation.Id);
-                command.Parameters.AddWithValue("price", reservation.Price);
-                command.Parameters.AddWithValue("personamount", reservation.PersonAmount);
-                command.Parameters.AddWithValue("date", reservation.Date);
-                command.Parameters.AddWithValue("location", reservation.Location);
+                command.Parameters.AddWithValue("reservationdate", reservation.Reservationdate);
                 command.Parameters.AddWithValue("paymentstatus", reservation.Paymentstatus);
-                command.Parameters.AddWithValue("mainreservator", reservation.Mainreservator);
-                command.Parameters.AddWithValue("otherreservator", reservation.Otherreservator);
+                command.Parameters.AddWithValue("eventid", reservation.Eventid);
+                command.Parameters.AddWithValue("campingspotsid", reservation.Campingspotid);
                 command.ExecuteNonQuery();
             }
         }
@@ -121,12 +152,11 @@ namespace ProftaakEyectEvents.DAL
         private Reservation CreateReservationFromReader(SqlDataReader reader)
         {
             return new Reservation(
-                Convert.ToInt32(reader["Id"]),
-                Convert.ToInt32(reader["Price"]),
-                Convert.ToInt32(reader["Personamount"]),
-                Convert.ToDateTime(reader["Date"]),
-                Convert.ToString(reader["Location"]),
-                Convert.ToBoolean(reader["Paymentstatus"]));
+                Convert.ToInt32(reader["ID"]),
+                Convert.ToDateTime(reader["ReservationDate"]),
+                Convert.ToBoolean(reader["PaymentStatus"]),
+                Convert.ToInt32(reader["EventID"]),
+                Convert.ToInt32(reader["CampingsSpotsID"]));
 
         }
     }
