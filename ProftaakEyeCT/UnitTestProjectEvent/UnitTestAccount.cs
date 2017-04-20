@@ -10,21 +10,21 @@ namespace UnitTestProjectEvent
     public class UnitTestAccount
     {
         private Account account;
+        [TestInitialize]
         public void TestInitialize()
         {
-            account = new Account(2, "Student", 24, "richard", "testmail@gmail.com", "1243", false);
+            this.account = new Account(2, "Student", 24, "richard", "testmail@gmail.com", "1243", false);
         }
         [TestMethod]
         public void TestConstructorAccount()
         {
-            account = new Account(2, "Student", 24, "richard", "testmail@gmail.com", "1243", false);
-            Assert.AreEqual("richard", account.Username);
-            Assert.AreEqual(2, account.Id);
-            Assert.AreEqual(24, account.Personid);
-            Assert.AreEqual("Student", account.Kind);
-            Assert.AreEqual("testmail@gmail.com", account.Emailadress);
-            Assert.AreEqual(false, account.Rights);
-            Assert.AreEqual("1243", account.Password);
+            Assert.AreEqual("richard", this.account.Username);
+            Assert.AreEqual(2, this.account.Id);
+            Assert.AreEqual(24, this.account.Personid);
+            Assert.AreEqual("Student", this.account.Kind);
+            Assert.AreEqual("testmail@gmail.com", this.account.Emailadress);
+            Assert.AreEqual(false, this.account.Rights);
+            Assert.AreEqual("1243", this.account.Password);
         }
     }
 }

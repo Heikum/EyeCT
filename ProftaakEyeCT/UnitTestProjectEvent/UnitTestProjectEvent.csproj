@@ -52,6 +52,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestEvent.cs" />
+    <Compile Include="UnitTestPost.cs" />
+    <Compile Include="UnitTestImage.cs" />
     <Compile Include="UnitTestPerson.cs" />
     <Compile Include="UnitTestAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
