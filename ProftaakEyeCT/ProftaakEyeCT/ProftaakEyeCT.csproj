@@ -46,6 +46,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAL\AccessSQLContext.cs" />
     <Compile Include="DAL\AccountSQLContext.cs" />
     <Compile Include="Business Layer\Access.cs" />
     <Compile Include="Business Layer\Account.cs" />
@@ -56,6 +57,7 @@
     <Compile Include="DAL\CampingspotSQLContext.cs" />
     <Compile Include="DAL\Database.cs" />
     <Compile Include="DAL\EventSQLContext.cs" />
+    <Compile Include="DAL\IAccessContext.cs" />
     <Compile Include="DAL\IAccountContext.cs" />
     <Compile Include="DAL\ICampingspotContext.cs" />
     <Compile Include="DAL\IEventContext.cs" />
@@ -70,7 +72,7 @@
     <Compile Include="DAL\IReservationContext.cs" />
     <Compile Include="DAL\PostSQLContext.cs" />
     <Compile Include="DAL\ReactionSQLContext.cs" />
-    <Compile Include="Presentation Layer\CampingspotRepository.cs" />
+    <Compile Include="Presentation Layer\AccessRepository.cs" />
     <Compile Include="Presentation Layer\Menuform.cs">
       <SubType>Form</SubType>
     </Compile>

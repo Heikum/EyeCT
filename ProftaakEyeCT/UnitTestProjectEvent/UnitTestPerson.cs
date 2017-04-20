@@ -8,21 +8,21 @@ namespace UnitTestProjectEvent
     public class UnitTestPerson
     {
         private Person person;
+        [TestInitialize]
         public void TestInitialize()
         {
-            person = new Person(2, "hicham", "5701ND", "Helmond", "Blinkertsestraat", 5, "0636513443");
+            this.person = new Person(2, "hicham", "5701ND", "Helmond", "Blinkertsestraat", 5, "0636513443");
         }
         [TestMethod]
         public void TestConstructorPerson()
         {
-            person = new Person(2, "hicham", "5701ND", "Helmond", "Blinkertsestraat", 5, "0636513443");
-            Assert.AreEqual("hicham", person.Name);
-            Assert.AreEqual(2, person.Id);
-            Assert.AreEqual("5701ND", person.Zipcode);
-            Assert.AreEqual("Helmond", person.City);
-            Assert.AreEqual("Blinkertsestraat", person.Street);
-            Assert.AreEqual(5, person.Number);
-            Assert.AreEqual("0636513443", person.Phonenumber);
+            Assert.AreEqual("hicham", this.person.Name);
+            Assert.AreEqual(2, this.person.Id);
+            Assert.AreEqual("5701ND", this.person.Zipcode);
+            Assert.AreEqual("Helmond", this.person.City);
+            Assert.AreEqual("Blinkertsestraat", this.person.Street);
+            Assert.AreEqual(5, this.person.Number);
+            Assert.AreEqual("0636513443", this.person.Phonenumber);
         }
     }
 }
