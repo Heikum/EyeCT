@@ -24,7 +24,7 @@ namespace ProftaakEyectEvents
         public void removeRFID(Account account)
         {
             //remove uit de accesstabel de rij met het rfid dat het zelfde is als het account ID
-        }*/
+        }
         public bool gainAccess(Account account) //naar binnen
         {
             //haal uit de database voor dat account het RFID ID
@@ -63,6 +63,6 @@ namespace ProftaakEyectEvents
             //haal uit de database de AccessStatus
             //set de accessstatus
             return accessstatus;
-        }
+        }*/
     }
 }
