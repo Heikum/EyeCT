@@ -24,5 +24,13 @@ namespace UnitTestProjectEvent
             Assert.AreEqual(5, this.person.Number);
             Assert.AreEqual("0636513443", this.person.Phonenumber);
         }
+        [TestMethod]
+        public void TestTostringPerson()
+        {
+            string result = this.person.ToString();
+            string expected = this.person.Name + " " + this.person.Zipcode + " " + this.person.City + " " + this.person.Street + " " + this.person.Number + " " + this.person.Phonenumber;
+            Assert.AreEqual(expected, result);
+        }
+
     }
 }

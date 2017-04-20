@@ -21,5 +21,12 @@ namespace UnitTestProjectEvent
             Assert.AreEqual("eventnaam", this.gebeurtenis.name);
             Assert.AreEqual("helmond", this.gebeurtenis.location);
         }
+        [TestMethod]
+        public void TestTostringEvent()
+        {
+            string result = this.gebeurtenis.ToString();
+            string expected = this.gebeurtenis.name + " | " + "Location: " + this.gebeurtenis.location + " | " + "Start Date: " + this.gebeurtenis.eventstartdate.ToString("dd/MM/yyyy") + " | " + "End Date: " + this.gebeurtenis.eventenddate.ToString("dd/MM/yyyy");
+            Assert.AreEqual(expected, result);
+        }
     }
 }
