@@ -15,8 +15,9 @@ using ProftaakEyeCT.DAL;
 
 namespace ProftaakEyeCT
 {
-    public partial class Form1 : Form
+    public partial class Loginform : Form
     {
+        public string LoggedInUser;
         private PersonRepository personrepo;
         private Person updatePerson;
         private AccountRepository accountrepo;
@@ -24,7 +25,7 @@ namespace ProftaakEyeCT
         private MediaRepository mediarepo;
         private Media updateMedia;
         private MaterialRepository materialrepo;
-        public Form1()
+        public Loginform()
         {
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
@@ -38,6 +39,7 @@ namespace ProftaakEyeCT
             bool message = accountrepo.Login(tbUsername.Text, tbPassword.Text);
             if (message == true)
             {
+                LoggedInUser = tbUsername.Text;
                 MessageBox.Show("You are now logged in!");
                 Menuform menu = new Menuform();
                 menu.Show();
