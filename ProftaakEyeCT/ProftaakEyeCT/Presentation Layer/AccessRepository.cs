@@ -20,7 +20,7 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         public bool GetStatus(Access access)
         {
-
+            return false;
         }
     }
 }
