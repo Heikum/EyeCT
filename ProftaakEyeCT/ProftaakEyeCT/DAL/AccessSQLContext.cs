@@ -37,19 +37,20 @@ namespace ProftaakEyeCT.DAL
 
             }
         }
-
+        // goeike
         public bool AddRFIDstatusnewaccount(int id)
         {
             using (SqlConnection connection = Database.Connection)
             {
                 string query = "INSERT INTO Access (AccessStatus, InsideStatus, AccountID, ReservationID)" +
-                    "VALUES (@accesstat, @insidestat @accID, @ResID)";
+                    "VALUES (@accesstat, @insidestat, @accID, @ResID)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@accesstat", false);
                     command.Parameters.AddWithValue("@insidestat", false);
                     command.Parameters.AddWithValue("@accID", id);
-                    command.Parameters.AddWithValue("@ResID", null);
+                    Console.WriteLine(id);
+                    command.Parameters.AddWithValue("@ResID", DBNull.Value);
                     command.ExecuteNonQuery();
                     }
                     return true;
