@@ -9,7 +9,8 @@ namespace ProftaakEyeCT.DAL
 {
     public interface IAccessContext
     {
-        bool GetStatus(Account acc);
+        List<Account> GetAllInside();
+        bool GetStatus(string name);
 
         Access AddRFID(Access access, Account acc);
 

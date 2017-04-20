@@ -29,6 +29,8 @@ namespace ProftaakEyeCT
         private CampingspotRepository campingspotrepo;
         private EventRepository eventrepo;
         private Event updateEvent;
+        private AccessRepository accessrepo;
+        private Access updateAccess;
         
         public Menuform()
         {
@@ -40,10 +42,8 @@ namespace ProftaakEyeCT
             materialrepo = new MaterialRepository(new MaterialSQLContext());
             campingspotrepo = new CampingspotRepository(new CampingspotSQLContext());
             eventrepo = new EventRepository(new EventSQLContext());
-            
-            UpdateControls();
-           
-
+            accessrepo = new AccessRepository(new AccessSQLContext());
+            UpdateControls(); 
         }
 
         //code voor person
@@ -74,8 +74,11 @@ namespace ProftaakEyeCT
             {
                 lbReservationEvents.Items.Add(events);
             }
-
-
+            lbOnSite.Items.Clear();
+            foreach (Account account in accessrepo.GetAllInside())
+            {
+                lbOnSite.Items.Add(account);
+            }
         }
 
 
@@ -228,6 +231,24 @@ namespace ProftaakEyeCT
             updateEvent = (Event)lbReservationEvents.SelectedItem;
             txtReservationEvent.Text = updateEvent.name;
 
+        }
+
+        private void btnCheckStat_Click(object sender, EventArgs e)
+        {
+            if (accessrepo.GetStatus(tbAccUsername.Text))
+            {
+                btnCheck.BackColor = Color.Green;
+            }
+            else
+            {
+                btnCheck.BackColor = Color.Red;
+
+            }
+        }
+
+        private void btnOnSiteReload_Click(object sender, EventArgs e)
+        {
+            UpdateControls();
         }
     }
 }
