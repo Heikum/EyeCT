@@ -11,19 +11,18 @@ namespace ProftaakEyeCT.DAL
 {
     public class AccessSQLContext : IAccessContext
     {
-        //Add RFID
-        public Access AddRFID(Access access)
+        
+        public Access AddRFID(Access access, Account acc)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO Access (RFID, AccessStatus, AccountID, ReservationID)" +
-                    "VALUES (@rfid, @accesstat, @accID, @ResID)";
+                string query = "INSERT INTO Access (AccessStatus, AccountID, ReservationID)" +
+                    "VALUES (@accesstat, @accID, @ResID)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@kind", access.rfid);
-                    command.Parameters.AddWithValue("@personid", access.accessstatus);
-                    command.Parameters.AddWithValue("@accID", 0);
-                    command.Parameters.AddWithValue("@ResID", 0);
+                    command.Parameters.AddWithValue("@accesstat", false);
+                    command.Parameters.AddWithValue("@accID", acc.Id);
+                    command.Parameters.AddWithValue("@ResID", null);
                     try
                     {
                         command.ExecuteNonQuery();
@@ -38,14 +37,14 @@ namespace ProftaakEyeCT.DAL
             }
         }
 
-        public bool GainAccess(bool accessBool, Access access)
+        public bool GainAccess(bool accessBool,/* Access access,*/ Account acc)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "UPDATE Access SET AccessStatus=@accesstatus WHERE Id = @id";
+                string query = "UPDATE Access SET AccessStatus=@accesstatus WHERE AccountID IN (SELECT ID FROM Account WHERE Username=@username)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("id", access.rfid);
+                    command.Parameters.AddWithValue("username", acc.Username);
                     command.Parameters.AddWithValue("accesstatus", accessBool);
                     command.ExecuteNonQuery();
                     try
@@ -66,14 +65,14 @@ namespace ProftaakEyeCT.DAL
             return false;
         }
 
-        public bool GetStatus(Access access)
+        public bool GetStatus(/*Access access,*/ Account acc)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT AccessStatus FROM Access WHERE RFID=@rfid";
+                string query = "SELECT AccessStatus FROM Access WHERE ID IN (SELECT AccountID FROM Account WHERE Username=@username)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("rfid", access.rfid);
+                    command.Parameters.AddWithValue("username", acc.Username);
                     if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
                     {
                         return true;
