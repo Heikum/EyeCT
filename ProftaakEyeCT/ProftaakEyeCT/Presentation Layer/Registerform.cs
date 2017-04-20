@@ -20,11 +20,13 @@ namespace ProftaakEyeCT
         private PersonRepository personrepo;
         private Person updatePerson;
         private AccountRepository accountrepo;
+        private AccessRepository accessrepo; 
         public Registerform()
         {
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
             accountrepo = new AccountRepository(new AccountSQLContext());
+            accessrepo = new AccessRepository(new AccessSQLContext()); 
         }
 
         private void InsertPerson()
@@ -54,7 +56,8 @@ namespace ProftaakEyeCT
             else
             {
                 MessageBox.Show("Adding person failed. Check if the number is unique.");
-            }
+            } 
+
         }
         private void InsertAccount()
         {
@@ -85,6 +88,11 @@ namespace ProftaakEyeCT
             {
                 MessageBox.Show("Adding account failed. Check if the number is unique.");
             }
+
+        }
+        public void insertaccess()
+        {
+            accessrepo.AddRFIDstatusnewaccount(accountrepo.GetID());
         }
 
         private void btnAccountConfirm_Click(object sender, EventArgs e)
@@ -98,13 +106,13 @@ namespace ProftaakEyeCT
                 try
                 {
                     InsertPerson();
-                    InsertAccount();
-                    MessageBox.Show("Succes!");
+                    InsertAccount();                 
+                    insertaccess();
+                    MessageBox.Show("Your account has been created succesfully!");
                 }
                 catch (Exception exception)
                 {
-                    Console.WriteLine(exception);
-                    throw;
+                    MessageBox.Show("An error has occured: " + exception); 
                 }
             }
         }

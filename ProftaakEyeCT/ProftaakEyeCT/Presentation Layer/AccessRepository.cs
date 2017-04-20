@@ -18,6 +18,10 @@ namespace ProftaakEyeCT.Presentation_Layer
             this.context = context;
         }
 
+        public bool AddRFIDstatusnewaccount(int id)
+        {
+            return context.AddRFIDstatusnewaccount(id);
+        }
         public bool GetStatus(string acc)
         {
             return context.GetStatus(acc);

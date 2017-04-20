@@ -26,6 +26,10 @@ namespace ProftaakEyeCT.Presentation_Layer
             return context.InsertAccount(account, person);
 
         }
+        public int GetID()
+        {
+            return context.GetID(); 
+        }
         
         public bool UpdateAccount(Account account)
         {

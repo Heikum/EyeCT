@@ -87,8 +87,8 @@ namespace ProftaakEyectEvents.DAL
                     command.Parameters.AddWithValue("@kind", account.Kind);
                     command.Parameters.AddWithValue("@personid", person.Id);
                     command.Parameters.AddWithValue("@username", account.Username);
-                    command.Parameters.AddWithValue("@emailadress", account.Password);
-                    command.Parameters.AddWithValue("@password", account.Emailadress);
+                    command.Parameters.AddWithValue("@emailadress", account.Emailadress);
+                    command.Parameters.AddWithValue("@password", account.Password);
                     command.Parameters.AddWithValue("@rights", account.Rights);
 
 
@@ -181,15 +181,14 @@ namespace ProftaakEyectEvents.DAL
                 }
             }
         }
-        public int GetID(string username)
+        public int GetID()
         {
             int userid; 
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT ID FROM Account WHERE Username =@username;";
+                string query = "SELECT TOP 1 ID FROM Account ORDER BY ID DESC";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@username", username);
                     userid = Convert.ToInt32(command.ExecuteScalar());
                     return userid; 
                 }
