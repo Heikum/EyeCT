@@ -8,34 +8,35 @@ namespace ProftaakEyectEvents
 {
     public class CampingSpot
     {
-        private int room { get; set; }
-        private string location { get; set; }
-        private bool avalibillity { get; set; }
-        private int price { get; set; }
+        private readonly int id;
+        private bool availability;
+        private int room;
+        private string category;
+        private int price;
 
-        public CampingSpot(int room, string location, bool avalibillity)
+        public int Id => id;
+
+        public bool Availability { get { return availability; } set { availability = value; } }
+        public int Room { get { return room; } set { room = value; } }
+        public string Category { get { return category; } set { category = value; } }
+        public int Price { get { return price; } set { price = value; } }
+
+        public CampingSpot(int id, bool availability, int room, string category, int price)
         {
+            this.id = id;
+            this.availability = availability;
             this.room = room;
-            this.location = location;
-            this.avalibillity = avalibillity;
+            this.category = category;
+            this.price = price;
         }
-        public bool Avalibillity(int ID)
+        public CampingSpot(bool availability, int room, string category, int price)
+            :this(0,availability,room,category,price)
         {
-            //get avalibillity from database for the given ID
-            //set avalibillity
-            return avalibillity;
+
         }
-        public int getRoom(int ID)
+        public override string ToString()
         {
-            //get room from database for the given ID
-            //set room
-            return room;
-        }
-        public int getPrice(int ID)
-        {
-            //get price from database for the given ID
-            //set price
-            return room;
+            return id + " || " + room + " || " + category + " || " + price;
         }
     }
 }
