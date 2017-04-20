@@ -73,6 +73,7 @@
     <Compile Include="DAL\PostSQLContext.cs" />
     <Compile Include="DAL\ReactionSQLContext.cs" />
     <Compile Include="Presentation Layer\AccessRepository.cs" />
+    <Compile Include="Presentation Layer\CampingspotRepository.cs" />
     <Compile Include="Presentation Layer\Menuform.cs">
       <SubType>Form</SubType>
     </Compile>

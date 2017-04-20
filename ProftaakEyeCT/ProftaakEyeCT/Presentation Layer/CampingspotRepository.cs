@@ -17,9 +17,10 @@ namespace ProftaakEyeCT.Presentation_Layer
             this.context = context;
         }
       
-        public List<CampingSpot> GetAllAvailable()
+        public List<CampingSpot> GetAll()
         {
             return context.GetAllAvailable();
         }
+
     }
 }
