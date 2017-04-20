@@ -108,11 +108,11 @@ namespace ProftaakEyeCT
                     InsertPerson();
                     InsertAccount();                 
                     insertaccess();
-                    MessageBox.Show("Succes!");
+                    MessageBox.Show("Your account has been created succesfully!");
                 }
                 catch (Exception exception)
                 {
-                    MessageBox.Show("Er is een fout opgetreden: " + exception); 
+                    MessageBox.Show("An error has occured: " + exception); 
                 }
             }
         }
