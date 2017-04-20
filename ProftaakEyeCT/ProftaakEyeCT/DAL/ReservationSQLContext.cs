@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProftaakEyectEvents.DAL
 {
-    class ReservationSQLContext
+    class ReservationSQLContext:IReservationContext
     {
         public ReservationSQLContext()
         {
@@ -58,23 +58,21 @@ namespace ProftaakEyectEvents.DAL
             return null;
         }
 
-        public void InsertReservation(Reservation reservation)
+        public Reservation InsertReservation(Reservation reservation,Event events,CampingSpot campingspot)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO Reservation (Id, Price, Personamount, Date, Location, Paymentstatus, Mainreservator, Otherreservator)" +
-                    " VALUES (@id, @price, @personamount, @date, @location, @paymentstatus, @mainreservator, @otherreservator)";
+                string query = "INSERT INTO Reservation (ID, ReservationDate, PaymentStatus, EventID, CampingSpotsID)" +
+                    " VALUES (@id, @reservationdate, @paymentstatus, @eventid, @campingspotsid)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@id", reservation.Id);
-                    command.Parameters.AddWithValue("@price", reservation.Price);
-                    command.Parameters.AddWithValue("@personamount", reservation.PersonAmount);
-                    command.Parameters.AddWithValue("@date", reservation.Date);
-                    command.Parameters.AddWithValue("@location", reservation.Location);
+                    
+                    command.Parameters.AddWithValue("@reservationdate", DateTime.Now);
                     command.Parameters.AddWithValue("@paymentstatus", reservation.Paymentstatus);
-                    command.Parameters.AddWithValue("@mainreservator", reservation.Mainreservator);
-                    command.Parameters.AddWithValue("@otherreservator", reservation.Otherreservator);
+                    command.Parameters.AddWithValue("@eventid", events.id);
+                    command.Parameters.AddWithValue("@campingspotsid", campingspot.Id);
+                 
 
                     try
                     {
@@ -85,7 +83,9 @@ namespace ProftaakEyectEvents.DAL
                         // Unexpected error: rethrow to let the caller handle it
                         MessageBox.Show("Dit is al reeds ingevoerd" + e);
                     }
+                
                 }
+                return reservation;
             }
         }
 
