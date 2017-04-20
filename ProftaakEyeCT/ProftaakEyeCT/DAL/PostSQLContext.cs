@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using ProftaakEyectEvents;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace ProftaakEyeCT.DAL
 {
@@ -104,7 +105,32 @@ namespace ProftaakEyeCT.DAL
 
         public Post Insert(Post post)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO Post (Text, PostDateTime, AccountID)" +
+                    "SELECT Text, PostDateTime, A.ID" +
+                    "FROM Post P  INNER JOIN Media M ON P.MediaID = M.ID" +
+                    "INNER JOIN Account A ON P.AccountID = A.ID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@text", post.Text);
+                    command.Parameters.AddWithValue("@postdatetime", post.Postdatetime);
+
+                
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(Convert.ToString(e));
+                    }
+                }
+                return post;
+            }
         }
 
         public bool Update(Post post)

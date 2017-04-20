@@ -103,6 +103,12 @@
     <Compile Include="Business Layer\Person.cs" />
     <Compile Include="Business Layer\Post.cs" />
     <Compile Include="DAL\ReservationSQLContext.cs" />
+    <Compile Include="Presentation Layer\PostPlatform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\PostPlatform.Designer.cs">
+      <DependentUpon>PostPlatform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\PostRepository.cs" />
     <Compile Include="Presentation Layer\ReactionPlatform.cs">
       <SubType>Form</SubType>
@@ -134,6 +140,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\MediaPlatform.resx">
       <DependentUpon>MediaPlatform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\PostPlatform.resx">
+      <DependentUpon>PostPlatform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ReactionPlatform.resx">
       <DependentUpon>ReactionPlatform.cs</DependentUpon>
