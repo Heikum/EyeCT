@@ -33,8 +33,7 @@ namespace ProftaakEyectEvents
             this.date = date;
             this.location = location;
             this.paymentstatus = paymentstatus;
-            this.mainreservator = mainreservator;
-            this.otherreservator = otherreservator;
+            
         }
         public Reservation(int price, int personAmount, DateTime date, string location, bool paymentstatus)
             : this(-1, price, personAmount, date, location, paymentstatus)

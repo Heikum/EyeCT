@@ -54,10 +54,12 @@
     <Compile Include="Business Layer\Adminstration.cs" />
     <Compile Include="Business Layer\CampingSpots.cs" />
     <Compile Include="Business Layer\Event.cs" />
+    <Compile Include="DAL\CampingspotSQLContext.cs" />
     <Compile Include="DAL\Database.cs" />
     <Compile Include="DAL\EventSQLContext.cs" />
     <Compile Include="DAL\IAccessContext.cs" />
     <Compile Include="DAL\IAccountContext.cs" />
+    <Compile Include="DAL\ICampingspotContext.cs" />
     <Compile Include="DAL\IEventContext.cs" />
     <Compile Include="DAL\IMaterialContext.cs" />
     <Compile Include="DAL\IMediaContext.cs" />
