@@ -17,6 +17,7 @@ namespace ProftaakEyeCT
 {
     public partial class Menuform : Form
     {
+        Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
         private PersonRepository personrepo;
         private Person updatePerson;
         private AccountRepository accountrepo;
@@ -24,23 +25,28 @@ namespace ProftaakEyeCT
         private MediaRepository mediarepo;
         private Media updateMedia;
         private MaterialRepository materialrepo;
-        private CampingspotRepository campingspotrepo;
         private CampingSpot updateCampingspot;
+        private CampingspotRepository campingspotrepo;
+        private EventRepository eventrepo;
+        private Event updateEvent;
+        
         public Menuform()
         {
+            
             InitializeComponent();
             personrepo = new PersonRepository(new PersonSQLContext());
             //mediarepo = new MediaRepository(new MediaSQLContext());
             accountrepo = new AccountRepository(new AccountSQLContext());
             materialrepo = new MaterialRepository(new MaterialSQLContext());
-            campingspotrepo = new CampingspotRepository(new CampingspotSQLContext());
             UpdateControls();
-
+           
 
         }
+
         //code voor person
         private void UpdateControls()
         {
+            
             lbAllAccounts.Items.Clear();
             foreach (Account account in accountrepo.GetAllAccounts())
             {
@@ -55,8 +61,6 @@ namespace ProftaakEyeCT
             {
                 lbAllMaterials.Items.Add(material);
             }
-            lbAvailable.Items.Clear();
-            foreach (CampingSpot campingspot in campingspotrepo.GetAllAvailable()) ;
 
 
         }
@@ -107,6 +111,11 @@ namespace ProftaakEyeCT
             {
                 MessageBox.Show("Updating account failed. Check if the email address is valid.");
             }
+        }
+        private void Menuform_Load(object sender, EventArgs e)
+        {
+            string LoggedInUser = mainloginform.LoggedInUser;
+            txtReservationAccountName.Text = LoggedInUser; 
         }
 
 
@@ -188,6 +197,24 @@ namespace ProftaakEyeCT
             MediaPlatform mediaPlatform = new MediaPlatform();
 
             mediaPlatform.Show();
+        }
+
+        private void tpReserve_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbReservationCampingspot_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateCampingspot = (CampingSpot)lbReservationCampingspot.SelectedItem;
+            nudReservationCampingspot.Value = updateCampingspot.Id;
+        }
+
+        private void lbReservationEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateEvent = (Event)lbReservationEvents.SelectedItem;
+            txtReservationEvent.Text = updateEvent.name;
+
         }
     }
 }
