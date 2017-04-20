@@ -20,11 +20,15 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetAll();
         }
-        public Reservation InsertReservation(Reservation reservation, Event events, CampingSpot campingspot)
+        public Reservation InsertReservation(Reservation reservation)
         {
 
-            return context.InsertReservation(reservation, events, campingspot);
+            return context.InsertReservation(reservation);
 
+        }
+        public void InsertAccountReservation(Account account, int resid)
+        {
+            context.InsertAccountReservation(account, resid);
         }
 
     }

@@ -8,35 +8,30 @@ namespace ProftaakEyectEvents
 {
     public class Reservation
     {
-        private readonly int id = -1;
-        private int price;
-        private int personAmount;
-        private DateTime date;
-        private string location;
+        private readonly int id;
+        private DateTime reservationdate;
         private bool paymentstatus;
-        private Account mainreservator;
-        private Account otherreservator;
+        private int eventid;
+        private int campingspotid;
 
-        public int Id { get; set; }
-        public int Price { get; set; }
-        public int PersonAmount { get; set; }
-        public DateTime Date { get; set; }
-        public string Location { get; set; }
-        public bool Paymentstatus { get; set; }
-        public Account Mainreservator { get; set; }
-        public Account Otherreservator { get; set; }
+        public int Id => id;
 
-        public Reservation(int id, int price, int personAmount, DateTime date, string location, bool paymentstatus)
+        public DateTime Reservationdate { get { return reservationdate; } set { reservationdate = value; } }
+        public bool Paymentstatus { get { return paymentstatus; } set { paymentstatus = value; } }
+        public int Eventid { get { return eventid; } set  { eventid = value; } }
+        public int Campingspotid { get { return campingspotid; } set { campingspotid = value; } }
+
+        public Reservation(int id, DateTime reservationdate, bool paymentstatus, int eventid, int campingspotid)
         {
-            this.price = price;
-            this.personAmount = personAmount;
-            this.date = date;
-            this.location = location;
+            this.id = id;
+            this.reservationdate = reservationdate;
             this.paymentstatus = paymentstatus;
+            this.eventid = eventid;
+            this.campingspotid = campingspotid;
             
         }
-        public Reservation(int price, int personAmount, DateTime date, string location, bool paymentstatus)
-            : this(-1, price, personAmount, date, location, paymentstatus)
+        public Reservation(DateTime reservationdate, bool paymentstatus, int eventid, int campingspotid)
+            : this(0, reservationdate, paymentstatus, eventid, campingspotid)
         {
 
         }

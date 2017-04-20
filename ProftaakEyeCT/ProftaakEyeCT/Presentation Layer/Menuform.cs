@@ -18,6 +18,7 @@ namespace ProftaakEyeCT
     public partial class Menuform : Form
     {
         Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
+        public int ReservationID;
         private PersonRepository personrepo;
         private Person updatePerson;
         private AccountRepository accountrepo;
@@ -31,6 +32,8 @@ namespace ProftaakEyeCT
         private Event updateEvent;
         private AccessRepository accessrepo;
         private Access updateAccess;
+        private ReservationRepository reservationrepo;
+        private Reservation updateReservation;
         
         public Menuform()
         {
@@ -43,6 +46,7 @@ namespace ProftaakEyeCT
             campingspotrepo = new CampingspotRepository(new CampingspotSQLContext());
             eventrepo = new EventRepository(new EventSQLContext());
             accessrepo = new AccessRepository(new AccessSQLContext());
+            reservationrepo = new ReservationRepository(new ReservationSQLContext());
             UpdateControls(); 
         }
 
@@ -249,6 +253,21 @@ namespace ProftaakEyeCT
         private void btnOnSiteReload_Click(object sender, EventArgs e)
         {
             UpdateControls();
+        }
+
+        private void btnAddReservation_Click(object sender, EventArgs e)
+        {
+            updateEvent = (Event)lbReservationEvents.SelectedItem;
+            
+            updateCampingspot = (CampingSpot)lbReservationCampingspot.SelectedItem;
+            if (updateEvent != null && updateCampingspot != null)
+            {
+                updateReservation = reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, updateCampingspot.Id));
+                
+                ReservationID = updateReservation.Id;
+                Reservation_group rg = new Reservation_group();
+                rg.Show();
+            }
         }
     }
 }
