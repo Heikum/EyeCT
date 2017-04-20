@@ -89,16 +89,23 @@ namespace ProftaakEyeCT
 
         private void btnAccountConfirm_Click(object sender, EventArgs e)
         {
-            try
+            if (txtNewAccountUsername.Text == "" || txtNewAccountPassword.Text == "" || txtNewAccountEmail.Text == "" || txtNewPersonName.Text == "" || txtNewPersonZipcode.Text == "" || txtNewPersonCity.Text == "" || txtNewPersonStreet.Text == "" || txtNewPersonPhonenumber.Text == "")
             {
-                InsertPerson();
-                InsertAccount();
-                MessageBox.Show("Succes!");
+                MessageBox.Show("Not all information has been entered, please check again.");
             }
-            catch (Exception exception)
+            else
             {
-                Console.WriteLine(exception);
-                throw;
+                try
+                {
+                    InsertPerson();
+                    InsertAccount();
+                    MessageBox.Show("Succes!");
+                }
+                catch (Exception exception)
+                {
+                    Console.WriteLine(exception);
+                    throw;
+                }
             }
         }
     }
