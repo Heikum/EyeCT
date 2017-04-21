@@ -30,6 +30,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             context.InsertAccountReservation(account, resid);
         }
+        public Reservation GetById(int eventid, int campingspotsid)
+        {
+            return context.GetByID(eventid, campingspotsid);
+        }
 
     }
 }
