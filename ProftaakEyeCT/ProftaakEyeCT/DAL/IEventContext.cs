@@ -16,6 +16,7 @@ namespace ProftaakEyeCT.DAL
         bool UpdateEvents(Event events);
 
         bool DeleteEvent(int id);
+        void InsertCampingspot(Event events, int campingspot, bool status);
 
     }
 }

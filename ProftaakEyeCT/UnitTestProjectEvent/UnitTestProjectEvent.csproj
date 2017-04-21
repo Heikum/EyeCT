@@ -52,11 +52,11 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="UnitTestReservation.cs" />
     <Compile Include="UnitTestVideo.cs" />
     <Compile Include="UnitTestMaterial.cs" />
     <Compile Include="UnitTestEvent.cs" />
     <Compile Include="UnitTestPost.cs" />
-    <Compile Include="UnitTestImage.cs" />
     <Compile Include="UnitTestPerson.cs" />
     <Compile Include="UnitTestAccount.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

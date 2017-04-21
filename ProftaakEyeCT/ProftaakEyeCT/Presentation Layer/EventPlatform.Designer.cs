@@ -45,6 +45,7 @@
             this.dtpEventEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblEventEndDate = new System.Windows.Forms.Label();
             this.btnTest = new System.Windows.Forms.Button();
+            this.btnEventAdd = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -165,7 +166,7 @@
             // 
             this.dtpEventStartDate.Checked = false;
             this.dtpEventStartDate.Location = new System.Drawing.Point(21, 195);
-            this.dtpEventStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEventStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEventStartDate.Name = "dtpEventStartDate";
             this.dtpEventStartDate.Size = new System.Drawing.Size(169, 20);
             this.dtpEventStartDate.TabIndex = 17;
@@ -174,7 +175,7 @@
             // 
             this.dtpEventEndDate.Checked = false;
             this.dtpEventEndDate.Location = new System.Drawing.Point(21, 240);
-            this.dtpEventEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEventEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEventEndDate.Name = "dtpEventEndDate";
             this.dtpEventEndDate.Size = new System.Drawing.Size(169, 20);
             this.dtpEventEndDate.TabIndex = 36;
@@ -191,7 +192,7 @@
             // btnTest
             // 
             this.btnTest.Location = new System.Drawing.Point(39, 327);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnTest.Margin = new System.Windows.Forms.Padding(2);
             this.btnTest.Name = "btnTest";
             this.btnTest.Size = new System.Drawing.Size(56, 19);
             this.btnTest.TabIndex = 38;
@@ -199,11 +200,22 @@
             this.btnTest.UseVisualStyleBackColor = true;
             this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
+            // btnEventAdd
+            // 
+            this.btnEventAdd.Location = new System.Drawing.Point(21, 278);
+            this.btnEventAdd.Name = "btnEventAdd";
+            this.btnEventAdd.Size = new System.Drawing.Size(169, 23);
+            this.btnEventAdd.TabIndex = 39;
+            this.btnEventAdd.Text = "Add event";
+            this.btnEventAdd.UseVisualStyleBackColor = true;
+            this.btnEventAdd.Click += new System.EventHandler(this.btnEventAdd_Click);
+            // 
             // EventPlatform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(701, 399);
+            this.Controls.Add(this.btnEventAdd);
             this.Controls.Add(this.btnTest);
             this.Controls.Add(this.dtpEventEndDate);
             this.Controls.Add(this.lblEventEndDate);
@@ -217,7 +229,7 @@
             this.Controls.Add(this.txtEventName);
             this.Controls.Add(this.txtEventDescription);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EventPlatform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EventPlatform";
@@ -244,5 +256,6 @@
         private System.Windows.Forms.DateTimePicker dtpEventEndDate;
         private System.Windows.Forms.Label lblEventEndDate;
         private System.Windows.Forms.Button btnTest;
+        private System.Windows.Forms.Button btnEventAdd;
     }
 }

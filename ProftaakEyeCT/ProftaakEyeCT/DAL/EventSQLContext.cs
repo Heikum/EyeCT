@@ -31,6 +31,10 @@ namespace ProftaakEyectEvents.DAL
                 }
                 return events;
             }
+        public Event GetByName(Event events)
+        {
+
+        }
 
             public Event InsertEvent(Event events)
             {
@@ -57,6 +61,31 @@ namespace ProftaakEyectEvents.DAL
                     return events;
                 }
             }
+        public void InsertCampingspot(Event events, int campingspot, bool status)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO EventCampingspot (EventID, CampingSpotsID, Status)" +
+                    "VALUES (@eventid, @campingspotid, @status)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@description", events.id);
+                    command.Parameters.AddWithValue("@name", campingspot);
+                    command.Parameters.AddWithValue("@location", status);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(Convert.ToString(e));
+                    }
+                }
+                
+            }
+
+        }
 
             public bool UpdateEvents(Event events)
             {
