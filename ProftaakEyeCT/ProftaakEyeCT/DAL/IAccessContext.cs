@@ -19,5 +19,7 @@ namespace ProftaakEyeCT.DAL
         bool AddRFIDstatusnewaccount(int id); 
 
         bool GainAccess(bool accessBool, Account acc);
+
+        bool UpdateInside(Account acc, bool accessbool);
     }
 }

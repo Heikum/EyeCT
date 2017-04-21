@@ -143,6 +143,34 @@ namespace ProftaakEyeCT.DAL
             return false;
         }
 
+        public bool UpdateInside(Account acc, bool access)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE Access SET InsideStatus=@accesstatus WHERE AccountID IN (SELECT ID FROM Account WHERE Username=@username)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("username", acc.Username);
+                    command.Parameters.AddWithValue("accesstatus", access);
+                    command.ExecuteNonQuery();
+                    try
+                    {
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                }
+            }
+
+            return false;
+        }
+
         private Access CreateAccessFromReader(SqlDataReader reader)
         {
             return new Access(
