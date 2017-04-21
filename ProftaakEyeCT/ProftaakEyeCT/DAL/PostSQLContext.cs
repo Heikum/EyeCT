@@ -185,7 +185,7 @@ namespace ProftaakEyeCT.DAL
             throw new NotImplementedException();
         }
 
-        public Post Insert(Post post)
+        public Post InsertPost(Post post, Account account, Media media)
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -194,10 +194,11 @@ namespace ProftaakEyeCT.DAL
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
 
-                    command.Parameters.AddWithValue("@mediaid", post.MediaID);
+                    command.Parameters.AddWithValue("@mediaid", media.MediaID);
                     command.Parameters.AddWithValue("@text", post.Text);
                     command.Parameters.AddWithValue("@postdatetime", post.Postdatetime);
-                    command.Parameters.AddWithValue("@accountid", post.AccountID);
+                    command.Parameters.AddWithValue("@accountid", account.Id);
+
 
 
                     try
@@ -209,14 +210,40 @@ namespace ProftaakEyeCT.DAL
                         MessageBox.Show(Convert.ToString(e));
                     }
                     return post;
+
                 }
 
             }
         }
 
-        public bool Update(Post post)
+        public bool UpdatePost(Post post)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE Post SET Text = @text, PostDateTime = @postdatetime WHERE Id = @id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@id", post.PostID);
+                    command.Parameters.AddWithValue("@text", post.Text);
+                    command.Parameters.AddWithValue("@postdatetime", post.Postdatetime);
+                    command.ExecuteNonQuery();
+                    try
+                    {
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(e.Message);
+                    }
+
+                }
+            }
+
+            return false;
         }
 
         private Post CreatePostFromReader(SqlDataReader reader)

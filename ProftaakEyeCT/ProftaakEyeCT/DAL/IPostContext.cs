@@ -11,10 +11,10 @@ namespace ProftaakEyeCT.DAL
     {
         List<Post> GetAll();
         Post GetById(int id);
-        Post Insert(Post post);
+        Post InsertPost(Post post, Account account, Media media);
         bool Delete(int id);
         List<Post> GetByUsername(string username);
-        bool Update(Post post);
+        bool UpdatePost(Post post);
 
     }
 }

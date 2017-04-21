@@ -16,18 +16,17 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             this.context = context;
         }
-        public Post Insert(Post post)
+        public Post InsertPost(Post post, Account account, Media media)
         {
-
-            return context.Insert(post);
+            return context.InsertPost(post, account, media);
         }
         public List<Post> GetAll()
         {
             return context.GetAll();
         }
-        public bool Update(Post post)
+        public bool UpdatePost(Post post)
         {
-            return context.Update(post);
+            return context.UpdatePost(post);
         }
 
         public List<Post> GetByUsername(string username)

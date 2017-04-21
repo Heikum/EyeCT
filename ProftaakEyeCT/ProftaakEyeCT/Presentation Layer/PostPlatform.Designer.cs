@@ -31,7 +31,7 @@
             this.lbPostPlatformPosts = new System.Windows.Forms.ListBox();
             this.txtPostPlatformText = new System.Windows.Forms.TextBox();
             this.lblPostPlatformText = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpPostDate = new System.Windows.Forms.DateTimePicker();
             this.txtImageLink = new System.Windows.Forms.TextBox();
             this.lblImageLink = new System.Windows.Forms.Label();
             this.btnAddPost = new System.Windows.Forms.Button();
@@ -76,14 +76,14 @@
             this.lblPostPlatformText.TabIndex = 2;
             this.lblPostPlatformText.Text = "Post Text:";
             // 
-            // dateTimePicker1
+            // dtpPostDate
             // 
-            this.dateTimePicker1.Enabled = false;
-            this.dateTimePicker1.Location = new System.Drawing.Point(12, 366);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(249, 22);
-            this.dateTimePicker1.TabIndex = 3;
-            this.dateTimePicker1.Value = new System.DateTime(2017, 4, 20, 11, 46, 15, 0);
+            this.dtpPostDate.Enabled = false;
+            this.dtpPostDate.Location = new System.Drawing.Point(12, 366);
+            this.dtpPostDate.Name = "dtpPostDate";
+            this.dtpPostDate.Size = new System.Drawing.Size(249, 22);
+            this.dtpPostDate.TabIndex = 3;
+            this.dtpPostDate.Value = new System.DateTime(2017, 4, 20, 11, 46, 15, 0);
             // 
             // txtImageLink
             // 
@@ -241,7 +241,7 @@
             this.Controls.Add(this.btnAddPost);
             this.Controls.Add(this.lblImageLink);
             this.Controls.Add(this.txtImageLink);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.dtpPostDate);
             this.Controls.Add(this.lblPostPlatformText);
             this.Controls.Add(this.txtPostPlatformText);
             this.Controls.Add(this.lbPostPlatformPosts);
@@ -260,7 +260,7 @@
         private System.Windows.Forms.ListBox lbPostPlatformPosts;
         private System.Windows.Forms.TextBox txtPostPlatformText;
         private System.Windows.Forms.Label lblPostPlatformText;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpPostDate;
         private System.Windows.Forms.TextBox txtImageLink;
         private System.Windows.Forms.Label lblImageLink;
         private System.Windows.Forms.Button btnAddPost;
