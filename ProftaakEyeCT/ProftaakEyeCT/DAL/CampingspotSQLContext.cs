@@ -54,6 +54,28 @@ namespace ProftaakEyeCT.DAL
             }
             return campingspot;
         }
+        public int GetCampingspotById(int campingspotid)
+        {
+            
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT CampingSpotsID FROM EventCampingspots INNER JOIN CampingSpots ON EventCampingspots.CampingSpotsID = CampingSpots.ID WHERE EventCampingspots.ID = @id";
+
+                //commit
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", campingspotid);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return (int)reader.GetValue(0);
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
         private CampingSpot CreateCampingspotFromReader(SqlDataReader reader)
         {
             return new CampingSpot(

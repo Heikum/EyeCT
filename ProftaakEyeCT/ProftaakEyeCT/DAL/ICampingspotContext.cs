@@ -11,6 +11,7 @@ namespace ProftaakEyeCT.DAL
     {
         List<CampingSpot> GetAllAvailable(Event events);
         List<CampingSpot> GetByEvent(Event events);
+        int GetCampingspotById(int campingspotid);
 
     }
 }
