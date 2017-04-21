@@ -16,7 +16,9 @@ namespace ProftaakEyeCT.Presentation_Layer
     public partial class PostPlatform : Form
     {
         private PostRepository postrepo;
+        private Post updatePost;
         private ReactionRepository reactionrepo;
+        private Reaction updateReaction;
         Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
         private string DummyImageLink = "http://dummyimage.com/";
         private string YoutubeLink = "https://www.youtube.com/";
@@ -25,10 +27,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             InitializeComponent();
             postrepo = new PostRepository(new PostSQLContext());
-            UpdatePosts();
+            UpdatePostControls();
         }
 
-        private void UpdatePosts()
+        private void UpdatePostControls()
         {
             string LoggedInUser = mainloginform.LoggedInUser;
             txtLoggedInUser.Text = LoggedInUser;
@@ -39,6 +41,29 @@ namespace ProftaakEyeCT.Presentation_Layer
                 lbPostPlatformPosts.Items.Add(post);
             }
 
+        }
+
+        private void UpdatePost()
+        {
+
+            updatePost.Text = txtPostPlatformText.Text;
+            updatePost.Postdatetime = dtpPostDate.Value;
+
+
+            if (postrepo.UpdatePost(updatePost))
+            {
+                UpdatePostControls();
+                txtPostPlatformText.Text = "";
+                txtImageLink.Text = "";
+                txtImageName.Text = "";
+                txtVideoLink.Text = "";
+                txtVideoName.Text = "";
+                updatePost = null;
+            }
+            else
+            {
+                MessageBox.Show("Updating person failed. Check if the email address is valid.");
+            }
         }
 
         private void btnAddPost_Click(object sender, EventArgs e)
@@ -109,6 +134,16 @@ namespace ProftaakEyeCT.Presentation_Layer
                 txtVideoName.Enabled = true;
                 txtVideoLink.Enabled = true;
             }
+        }
+
+        private void InsertPost()
+        {
+
+        }
+
+        private void InsertMedia()
+        {
+
         }
     }
 }
