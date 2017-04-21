@@ -269,5 +269,11 @@ namespace ProftaakEyeCT
             EventPlatform eventplatform = new EventPlatform();
             eventplatform.Show();
         }
+
+        private void pbCampingFoto_MouseClick(object sender, MouseEventArgs e)
+        {
+            CampingMapForm formie = new CampingMapForm();
+            formie.Show(); 
+        }
     }
 }

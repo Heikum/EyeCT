@@ -48,19 +48,19 @@
             this.txtNewAccountPassword = new System.Windows.Forms.TextBox();
             this.txtNewAccountEmail = new System.Windows.Forms.TextBox();
             this.txtNewAccountUsername = new System.Windows.Forms.TextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.nudNewPersonHousenumber)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtNewPersonPhonenumber
             // 
             this.txtNewPersonPhonenumber.Location = new System.Drawing.Point(15, 504);
-            this.txtNewPersonPhonenumber.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewPersonPhonenumber.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewPersonPhonenumber.Name = "txtNewPersonPhonenumber";
             this.txtNewPersonPhonenumber.Size = new System.Drawing.Size(236, 31);
             this.txtNewPersonPhonenumber.TabIndex = 45;
@@ -128,7 +128,7 @@
             // nudNewPersonHousenumber
             // 
             this.nudNewPersonHousenumber.Location = new System.Drawing.Point(15, 421);
-            this.nudNewPersonHousenumber.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.nudNewPersonHousenumber.Margin = new System.Windows.Forms.Padding(6);
             this.nudNewPersonHousenumber.Name = "nudNewPersonHousenumber";
             this.nudNewPersonHousenumber.Size = new System.Drawing.Size(240, 31);
             this.nudNewPersonHousenumber.TabIndex = 38;
@@ -136,7 +136,7 @@
             // txtNewPersonStreet
             // 
             this.txtNewPersonStreet.Location = new System.Drawing.Point(15, 331);
-            this.txtNewPersonStreet.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewPersonStreet.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewPersonStreet.Name = "txtNewPersonStreet";
             this.txtNewPersonStreet.Size = new System.Drawing.Size(236, 31);
             this.txtNewPersonStreet.TabIndex = 37;
@@ -144,7 +144,7 @@
             // txtNewPersonCity
             // 
             this.txtNewPersonCity.Location = new System.Drawing.Point(15, 240);
-            this.txtNewPersonCity.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewPersonCity.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewPersonCity.Name = "txtNewPersonCity";
             this.txtNewPersonCity.Size = new System.Drawing.Size(236, 31);
             this.txtNewPersonCity.TabIndex = 36;
@@ -152,7 +152,7 @@
             // txtNewPersonZipcode
             // 
             this.txtNewPersonZipcode.Location = new System.Drawing.Point(15, 156);
-            this.txtNewPersonZipcode.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewPersonZipcode.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewPersonZipcode.Name = "txtNewPersonZipcode";
             this.txtNewPersonZipcode.Size = new System.Drawing.Size(236, 31);
             this.txtNewPersonZipcode.TabIndex = 35;
@@ -160,7 +160,7 @@
             // txtNewPersonName
             // 
             this.txtNewPersonName.Location = new System.Drawing.Point(15, 75);
-            this.txtNewPersonName.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewPersonName.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewPersonName.Name = "txtNewPersonName";
             this.txtNewPersonName.Size = new System.Drawing.Size(236, 31);
             this.txtNewPersonName.TabIndex = 34;
@@ -168,7 +168,7 @@
             // btnAccountConfirm
             // 
             this.btnAccountConfirm.Location = new System.Drawing.Point(15, 589);
-            this.btnAccountConfirm.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnAccountConfirm.Margin = new System.Windows.Forms.Padding(6);
             this.btnAccountConfirm.Name = "btnAccountConfirm";
             this.btnAccountConfirm.Size = new System.Drawing.Size(693, 67);
             this.btnAccountConfirm.TabIndex = 32;
@@ -209,7 +209,7 @@
             // txtNewAccountPassword
             // 
             this.txtNewAccountPassword.Location = new System.Drawing.Point(15, 159);
-            this.txtNewAccountPassword.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewAccountPassword.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewAccountPassword.Name = "txtNewAccountPassword";
             this.txtNewAccountPassword.Size = new System.Drawing.Size(346, 31);
             this.txtNewAccountPassword.TabIndex = 28;
@@ -217,7 +217,7 @@
             // txtNewAccountEmail
             // 
             this.txtNewAccountEmail.Location = new System.Drawing.Point(15, 239);
-            this.txtNewAccountEmail.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewAccountEmail.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewAccountEmail.Name = "txtNewAccountEmail";
             this.txtNewAccountEmail.Size = new System.Drawing.Size(346, 31);
             this.txtNewAccountEmail.TabIndex = 27;
@@ -225,20 +225,10 @@
             // txtNewAccountUsername
             // 
             this.txtNewAccountUsername.Location = new System.Drawing.Point(15, 70);
-            this.txtNewAccountUsername.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.txtNewAccountUsername.Margin = new System.Windows.Forms.Padding(6);
             this.txtNewAccountUsername.Name = "txtNewAccountUsername";
             this.txtNewAccountUsername.Size = new System.Drawing.Size(346, 31);
             this.txtNewAccountUsername.TabIndex = 26;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
-            this.pictureBox1.Location = new System.Drawing.Point(100, 338);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(223, 223);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 46;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -276,6 +266,16 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Account Details";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
+            this.pictureBox1.Location = new System.Drawing.Point(100, 338);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(223, 223);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 46;
+            this.pictureBox1.TabStop = false;
+            // 
             // Registerform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
@@ -288,17 +288,17 @@
             this.Controls.Add(this.btnAccountConfirm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.MaximizeBox = false;
             this.Name = "Registerform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Camping Event system - Register";
             ((System.ComponentModel.ISupportInitialize)(this.nudNewPersonHousenumber)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
