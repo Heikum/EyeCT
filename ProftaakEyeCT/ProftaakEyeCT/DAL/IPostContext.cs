@@ -13,6 +13,7 @@ namespace ProftaakEyeCT.DAL
         Post GetById(int id);
         Post Insert(Post post);
         bool Delete(int id);
+        List<Post> GetByUsername(string username);
         bool Update(Post post);
 
     }

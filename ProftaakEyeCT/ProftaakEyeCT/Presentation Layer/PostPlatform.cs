@@ -17,6 +17,7 @@ namespace ProftaakEyeCT.Presentation_Layer
     {
         private PostRepository postrepo;
         private ReactionRepository reactionrepo;
+        Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
         private string DummyImageLink = "http://dummyimage.com/";
         private string YoutubeLink = "https://www.youtube.com/";
 
@@ -24,25 +25,89 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             InitializeComponent();
             postrepo = new PostRepository(new PostSQLContext());
-            reactionrepo = new ReactionRepository(new ReactionSQLContext());
             UpdatePosts();
         }
 
         private void UpdatePosts()
         {
-            //posts inladen
-            lbPostPlatformPosts.DataSource = postrepo.GetAll();
+            string LoggedInUser = mainloginform.LoggedInUser;
+            txtLoggedInUser.Text = LoggedInUser;
+
+            lbPostPlatformPosts.Items.Clear();
+            foreach (Post post in postrepo.GetByUsername(LoggedInUser))
+            {
+                lbPostPlatformPosts.Items.Add(post);
+            }
+
         }
 
         private void btnAddPost_Click(object sender, EventArgs e)
         {
-            if(DummyImageLink !=  null)
-            {
 
+          
+        }
+
+        private void PostPlatform_Load(object sender, EventArgs e)
+        {
+            string LoggedInUser = mainloginform.LoggedInUser;
+            txtLoggedInUser.Text = LoggedInUser;
+        }
+
+        private void rbVideoMedia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbVideoMedia.Checked)
+            {
+                txtImageName.Enabled = false;
+                txtImageLink.Enabled = false;
             }
-            else if (txtPostPlatformText.Text == YoutubeLink)
-            {
+            else if (rbVideoMedia.Checked == false)
 
+            {
+                if(rbGeenMedia.Checked == false)
+                {
+                    txtImageName.Enabled = true;
+                    txtImageLink.Enabled = true;
+                }
+            }
+        }
+
+        private void rbImageMedia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbImageMedia.Checked)
+            {
+                txtVideoName.Enabled = false;
+                txtVideoLink.Enabled = false;
+            }
+
+            else if (rbImageMedia.Checked == false)
+
+            {
+                if (rbGeenMedia.Checked == false)
+                {
+                    txtVideoName.Enabled = true;
+                    txtVideoLink.Enabled = true;
+                }
+            }
+        }
+
+        private void rbGeenMedia_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbGeenMedia.Checked)
+            {
+                txtVideoName.Enabled = false;
+                txtVideoLink.Enabled = false;
+                txtImageName.Enabled = false;
+                txtImageLink.Enabled = false;
+            }
+            else if (rbImageMedia.Checked)
+            {
+                txtImageName.Enabled = true;
+                txtImageLink.Enabled = true;
+            }
+            else if (rbVideoMedia.Checked)
+            {
+                txtVideoName.Enabled = true;
+                txtVideoLink.Enabled = true;
             }
         }
     }

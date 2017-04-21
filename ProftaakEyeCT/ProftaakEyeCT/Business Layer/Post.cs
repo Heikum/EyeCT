@@ -16,9 +16,9 @@ namespace ProftaakEyectEvents
         private Image imagelink;
         private Student postedByStudent;
         private Admin postedByAdmin;
-        
+        private int accountid;
 
-        public Post(int postID, int mediaID, string text, DateTime postdatetime)
+        public Post(int postID, int mediaID, string text, DateTime postdatetime, int accountid)
         {
             this.text = text;
             this.postID = postID;
@@ -172,6 +172,18 @@ namespace ProftaakEyectEvents
             set
             {
                 postedByAdmin = value;
+            }
+        }
+
+        public int AccountID
+        {
+            get
+            {
+                return accountid;
+            }
+            set
+            {
+                accountid = value;
             }
         }
 

@@ -49,5 +49,11 @@ namespace ProftaakEyeCT
         {
             UpdateReactions();
         }
+
+        private void btnOpenPostPlatform_Click(object sender, EventArgs e)
+        {
+            PostPlatform postplatform = new PostPlatform();
+            postplatform.Show();
+        }
     }
 }

@@ -30,6 +30,11 @@ namespace ProftaakEyeCT.Presentation_Layer
             return context.Update(post);
         }
 
+        public List<Post> GetByUsername(string username)
+        {
+            return context.GetByUsername(username);
+        }
+
         public bool Delete(int id)
         {
             return context.Delete(id);
