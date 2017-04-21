@@ -63,6 +63,16 @@ namespace ProftaakEyeCT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap access {
+            get {
+                object obj = ResourceManager.GetObject("access", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap accountdetails {
             get {
                 object obj = ResourceManager.GetObject("accountdetails", resourceCulture);
@@ -86,6 +96,16 @@ namespace ProftaakEyeCT.Properties {
         internal static System.Drawing.Bitmap Camping_ReeënDal {
             get {
                 object obj = ResourceManager.GetObject("Camping_ReeënDal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap events {
+            get {
+                object obj = ResourceManager.GetObject("events", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -136,6 +156,46 @@ namespace ProftaakEyeCT.Properties {
         internal static System.Drawing.Bitmap lol1 {
             get {
                 object obj = ResourceManager.GetObject("lol1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap mediaplatform {
+            get {
+                object obj = ResourceManager.GetObject("mediaplatform", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Posts {
+            get {
+                object obj = ResourceManager.GetObject("Posts", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reactions {
+            get {
+                object obj = ResourceManager.GetObject("reactions", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap reservations {
+            get {
+                object obj = ResourceManager.GetObject("reservations", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
