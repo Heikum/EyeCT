@@ -31,9 +31,25 @@ namespace ProftaakEyectEvents.DAL
                 }
                 return events;
             }
-        public Event GetByName(Event events)
+        public Event GetByName(string eventname)
         {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Event Where Name=@eventname";
 
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@eventname", eventname);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return CreateEventFromReader(reader);
+                        }
+                    }
+                }
+            }
+            return null;
         }
 
             public Event InsertEvent(Event events)
@@ -65,13 +81,13 @@ namespace ProftaakEyectEvents.DAL
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO EventCampingspot (EventID, CampingSpotsID, Status)" +
+                string query = "INSERT INTO EventCampingspots (EventID, CampingSpotsID, Status)" +
                     "VALUES (@eventid, @campingspotid, @status)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@description", events.id);
-                    command.Parameters.AddWithValue("@name", campingspot);
-                    command.Parameters.AddWithValue("@location", status);
+                    command.Parameters.AddWithValue("@eventid", events.id);
+                    command.Parameters.AddWithValue("@campingspotid", campingspot);
+                    command.Parameters.AddWithValue("@status", status);
 
                     try
                     {

@@ -44,11 +44,7 @@ namespace ProftaakEyeCT.Presentation_Layer
             try
             {
                 events = new Event(txtEventDescription.Text, txtEventName.Text, txtEventLocation.Text, Convert.ToDateTime(dtpEventStartDate.Value.ToString("dd/MM/yyyy")), Convert.ToDateTime(dtpEventEndDate.Value.ToString("dd/MM/yyyy")));
-                for (int i = 1; i<11; i++)
-                {
-                    updateEvent = 
-                    eventrepo.InsertCampingspot()
-                }
+                
             }
             catch (FormatException)
             {
@@ -58,6 +54,12 @@ namespace ProftaakEyeCT.Presentation_Layer
 
             if (eventrepo.InsertEvent(events) != null)
             {
+                updateEvent = eventrepo.GetByName(txtEventName.Text);
+                for (int i = 1; i < 11; i++)
+                {
+
+                    eventrepo.InsertCampingspot(updateEvent, i, false);
+                }
                 UpdateControls();
                 txtEventDescription.Text = "";
                 txtEventName.Text = "";
@@ -139,7 +141,7 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         private void btnEventAdd_Click(object sender, EventArgs e)
         {
-
+            InsertEvent();
         }
     }
 }

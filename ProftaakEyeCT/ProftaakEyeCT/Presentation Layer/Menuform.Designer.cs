@@ -179,6 +179,7 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
+            this.btnEventPlatform = new System.Windows.Forms.Button();
             this.tcCamping.SuspendLayout();
             this.tpMedia.SuspendLayout();
             this.tpAccountDetails.SuspendLayout();
@@ -217,6 +218,7 @@
             // tpMedia
             // 
             this.tpMedia.BackColor = System.Drawing.Color.Purple;
+            this.tpMedia.Controls.Add(this.btnEventPlatform);
             this.tpMedia.Controls.Add(this.btnMedia);
             this.tpMedia.Location = new System.Drawing.Point(4, 22);
             this.tpMedia.Name = "tpMedia";
@@ -227,7 +229,7 @@
             // 
             // btnMedia
             // 
-            this.btnMedia.Location = new System.Drawing.Point(326, 160);
+            this.btnMedia.Location = new System.Drawing.Point(235, 160);
             this.btnMedia.Name = "btnMedia";
             this.btnMedia.Size = new System.Drawing.Size(152, 57);
             this.btnMedia.TabIndex = 2;
@@ -1671,6 +1673,16 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // btnEventPlatform
+            // 
+            this.btnEventPlatform.Location = new System.Drawing.Point(451, 160);
+            this.btnEventPlatform.Name = "btnEventPlatform";
+            this.btnEventPlatform.Size = new System.Drawing.Size(152, 57);
+            this.btnEventPlatform.TabIndex = 3;
+            this.btnEventPlatform.Text = "Event";
+            this.btnEventPlatform.UseVisualStyleBackColor = true;
+            this.btnEventPlatform.Click += new System.EventHandler(this.btnEventPlatform_Click);
+            // 
             // Menuform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1861,5 +1873,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ListBox lbOnSite;
         private System.Windows.Forms.Button btnAddReservation;
+        private System.Windows.Forms.Button btnEventPlatform;
     }
 }

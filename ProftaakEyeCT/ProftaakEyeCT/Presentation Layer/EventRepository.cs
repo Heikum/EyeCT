@@ -40,6 +40,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             context.InsertCampingspot(events, campingspot, status);
         }
+        public Event GetByName(string eventname)
+        {
+            return context.GetByName(eventname);
+        }
 
     }
 }

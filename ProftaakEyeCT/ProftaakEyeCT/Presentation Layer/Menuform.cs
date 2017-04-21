@@ -264,7 +264,10 @@ namespace ProftaakEyeCT
             UpdateControls();
         }
 
-        
-
+        private void btnEventPlatform_Click(object sender, EventArgs e)
+        {
+            EventPlatform eventplatform = new EventPlatform();
+            eventplatform.Show();
+        }
     }
 }
