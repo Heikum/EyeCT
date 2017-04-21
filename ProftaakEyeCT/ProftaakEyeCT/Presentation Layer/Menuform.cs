@@ -188,7 +188,8 @@ namespace ProftaakEyeCT
         private void lbReservationCampingspot_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateCampingspot = (CampingSpot)lbReservationCampingspot.SelectedItem;
-            nudReservationCampingspot.Value = updateCampingspot.Id;
+            
+            nudReservationCampingspot.Value = campingspotrepo.GetCampingspotById(updateCampingspot.Id);
         }
 
         private void lbReservationEvents_SelectedIndexChanged(object sender, EventArgs e)
@@ -228,8 +229,9 @@ namespace ProftaakEyeCT
             if (updateEvent != null && updateCampingspot != null)
             {
                 reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, updateCampingspot.Id));
+                //updateReservation = 
                 
-                ReservationID = updateReservation.Id;
+                //ReservationID = updateReservation.Id
                 Reservation_group rg = new Reservation_group();
                 rg.Show();
             }

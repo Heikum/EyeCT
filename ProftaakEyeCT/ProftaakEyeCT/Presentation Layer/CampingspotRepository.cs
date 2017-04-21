@@ -25,6 +25,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetByEvent(events);
         }
+        public int GetCampingspotById(int campingspotid)
+        {
+            return context.GetCampingspotById(campingspotid);
+        }
 
     }
 }
