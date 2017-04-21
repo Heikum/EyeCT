@@ -46,5 +46,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetAllInside();
         }
+
+        bool UpdateInside(Account acc, bool accessbool)
+        {
+            return context.UpdateInside(acc, accessbool);
+        }
     }
 }
