@@ -33,15 +33,16 @@ namespace ProftaakEyectEvents.DAL
         }
 
 
-        public Reservation GetByID(int Id)
+        public Reservation GetByID(int eventid, int campingspotid)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Reservation Where Id = id LIMIT 1";
+                string query = "SELECT * FROM Reservation Where EventID = @eventid AND CampingSpotsID = @campingspotsid";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("Id", Id);
+                    command.Parameters.AddWithValue("eventid", eventid);
+                    command.Parameters.AddWithValue("campingspotsid", campingspotid);
                     using (SqlDataReader reader = command.ExecuteReader())
                     {
                         if (reader.Read())
@@ -156,7 +157,7 @@ namespace ProftaakEyectEvents.DAL
                 Convert.ToDateTime(reader["ReservationDate"]),
                 Convert.ToBoolean(reader["PaymentStatus"]),
                 Convert.ToInt32(reader["EventID"]),
-                Convert.ToInt32(reader["CampingsSpotsID"]));
+                Convert.ToInt32(reader["CampingSpotsID"]));
 
         }
     }

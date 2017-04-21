@@ -50,5 +50,13 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         
         }
+
+        private void btnConfirm_Click(object sender, EventArgs e)
+        {
+            Menuform menuform = new Menuform();
+            menuform.Show();
+            this.Hide();
+
+        }
     }
 }

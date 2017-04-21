@@ -76,6 +76,36 @@ namespace ProftaakEyeCT.DAL
             }
             return 0;
         }
+        public bool UpdateCampingspot(int eventid, int campingspotid)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE EventCampingspots" +
+                    " SET Status=@status" +
+                    " WHERE CampingSpotsID=@campingspotsid AND EventID =@eventid";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("status", false);
+                    command.Parameters.AddWithValue("campingspotsid", campingspotid);
+                    command.Parameters.AddWithValue("eventid", eventid);
+
+                    try
+                    {
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (SqlException e)
+                    {
+                        
+                    }
+
+                }
+            }
+
+            return false;
+        }
         private CampingSpot CreateCampingspotFromReader(SqlDataReader reader)
         {
             return new CampingSpot(

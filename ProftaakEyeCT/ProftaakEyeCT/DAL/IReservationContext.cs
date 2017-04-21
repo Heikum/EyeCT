@@ -10,7 +10,7 @@ namespace ProftaakEyectEvents.DAL
     {
         List<Reservation> GetAll();
 
-        Reservation GetByID(int Id);
+        Reservation GetByID(int eventid, int campingspotid);
 
         Reservation InsertReservation(Reservation reservation);
 

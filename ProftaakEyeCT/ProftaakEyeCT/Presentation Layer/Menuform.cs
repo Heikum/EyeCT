@@ -225,13 +225,14 @@ namespace ProftaakEyeCT
         private void btnAddReservation_Click(object sender, EventArgs e)
         {
             updateEvent = (Event)lbReservationEvents.SelectedItem;
-            updateCampingspot = (CampingSpot)lbReservationCampingspot.SelectedItem;
-            if (updateEvent != null && updateCampingspot != null)
+            
+            if (updateEvent != null && nudReservationCampingspot.Value != 0)
             {
-                reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, updateCampingspot.Id));
-                //updateReservation = 
-                
-                //ReservationID = updateReservation.Id
+                reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, (int)nudReservationCampingspot.Value));
+                campingspotrepo.UpdateCampingspot(updateEvent.id, (int)nudReservationCampingspot.Value);
+                updateReservation = reservationrepo.GetById(updateEvent.id, (int)nudReservationCampingspot.Value);
+
+                ReservationID = updateReservation.Id;
                 Reservation_group rg = new Reservation_group();
                 rg.Show();
             }
@@ -267,16 +268,23 @@ namespace ProftaakEyeCT
             UpdateControls();
         }
 
-        private void btnEventPlatform_Click(object sender, EventArgs e)
-        {
-            EventPlatform eventplatform = new EventPlatform();
-            eventplatform.Show();
-        }
+
 
         private void pbCampingFoto_MouseClick(object sender, MouseEventArgs e)
         {
             CampingMapForm formie = new CampingMapForm();
             formie.Show(); 
+        }
+
+        private void EventPlatormShow_Click(object sender, EventArgs e)
+        {
+            EventPlatform eventplatform = new EventPlatform();
+            eventplatform.Show();
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            UpdateControls();
         }
     }
 }

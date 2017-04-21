@@ -33,6 +33,7 @@
             this.txtReservationName = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnConfirm = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbReservationPerson
@@ -59,14 +60,14 @@
             this.txtReservationName.Enabled = false;
             this.txtReservationName.Location = new System.Drawing.Point(153, 70);
             this.txtReservationName.Name = "txtReservationName";
-            this.txtReservationName.Size = new System.Drawing.Size(100, 20);
+            this.txtReservationName.Size = new System.Drawing.Size(121, 20);
             this.txtReservationName.TabIndex = 2;
             // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(153, 112);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 23);
+            this.button1.Size = new System.Drawing.Size(121, 23);
             this.button1.TabIndex = 3;
             this.button1.Text = "Add person";
             this.button1.UseVisualStyleBackColor = true;
@@ -81,11 +82,22 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Name:";
             // 
+            // btnConfirm
+            // 
+            this.btnConfirm.Location = new System.Drawing.Point(153, 169);
+            this.btnConfirm.Name = "btnConfirm";
+            this.btnConfirm.Size = new System.Drawing.Size(121, 23);
+            this.btnConfirm.TabIndex = 5;
+            this.btnConfirm.Text = "Confirm";
+            this.btnConfirm.UseVisualStyleBackColor = true;
+            this.btnConfirm.Click += new System.EventHandler(this.btnConfirm_Click);
+            // 
             // Reservation_group
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(381, 318);
+            this.Controls.Add(this.btnConfirm);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.txtReservationName);
@@ -105,5 +117,6 @@
         private System.Windows.Forms.TextBox txtReservationName;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnConfirm;
     }
 }
