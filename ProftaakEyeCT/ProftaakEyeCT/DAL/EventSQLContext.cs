@@ -157,7 +157,7 @@ namespace ProftaakEyectEvents.DAL
             private Event CreateEventFromReader(SqlDataReader reader)
             {
                 return new Event(
-                    Convert.ToInt32(reader["Id"]),
+                    Convert.ToInt32(reader["ID"]),
                     Convert.ToString(reader["Description"]),
                     Convert.ToString(reader["Name"]),
                     Convert.ToString(reader["Location"]),

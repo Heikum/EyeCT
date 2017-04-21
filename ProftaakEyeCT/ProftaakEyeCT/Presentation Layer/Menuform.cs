@@ -69,10 +69,7 @@ namespace ProftaakEyeCT
                 lbAllMaterials.Items.Add(material);
             }
             lbReservationCampingspot.Items.Clear();
-            foreach (CampingSpot campingspot in campingspotrepo.GetAllAvailable())
-            {
-                lbReservationCampingspot.Items.Add(campingspot);
-            }
+            
             lbReservationEvents.Items.Clear();
             foreach (Event events in eventrepo.GetAllEvents())
             {
@@ -198,6 +195,11 @@ namespace ProftaakEyeCT
         {
             updateEvent = (Event)lbReservationEvents.SelectedItem;
             txtReservationEvent.Text = updateEvent.name;
+            lbReservationCampingspot.Items.Clear();
+            foreach (CampingSpot campingspot in campingspotrepo.GetAllAvailable(updateEvent))
+            {
+                lbReservationCampingspot.Items.Add(campingspot);
+            }
 
         }
 
@@ -222,11 +224,10 @@ namespace ProftaakEyeCT
         private void btnAddReservation_Click(object sender, EventArgs e)
         {
             updateEvent = (Event)lbReservationEvents.SelectedItem;
-            
             updateCampingspot = (CampingSpot)lbReservationCampingspot.SelectedItem;
             if (updateEvent != null && updateCampingspot != null)
             {
-                updateReservation = reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, updateCampingspot.Id));
+                reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, updateCampingspot.Id));
                 
                 ReservationID = updateReservation.Id;
                 Reservation_group rg = new Reservation_group();

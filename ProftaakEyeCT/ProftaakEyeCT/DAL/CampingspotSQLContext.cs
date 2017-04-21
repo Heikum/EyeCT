@@ -15,7 +15,7 @@ namespace ProftaakEyeCT.DAL
             List<CampingSpot> campingspot = new List<CampingSpot>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM EventCampingspots WHERE Status = 1 AND EventID = @eventid ";
+                string query = "SELECT * FROM EventCampingspots INNER JOIN CampingSpots ON EventCampingspots.CampingSpotsID = CampingSpots.ID WHERE Status = 1 AND EventID = @eventid ";
 
                 //commit
                 using (SqlCommand command = new SqlCommand(query, connection))
