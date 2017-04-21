@@ -63,6 +63,16 @@ namespace ProftaakEyeCT.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap accountdetails {
+            get {
+                object obj = ResourceManager.GetObject("accountdetails", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap bar {
             get {
                 object obj = ResourceManager.GetObject("bar", resourceCulture);
@@ -126,6 +136,16 @@ namespace ProftaakEyeCT.Properties {
         internal static System.Drawing.Bitmap lol1 {
             get {
                 object obj = ResourceManager.GetObject("lol1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap welcome {
+            get {
+                object obj = ResourceManager.GetObject("welcome", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

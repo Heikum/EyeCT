@@ -109,6 +109,7 @@ namespace ProftaakEyeCT
                     InsertAccount();                 
                     insertaccess();
                     MessageBox.Show("Your account has been created succesfully!");
+                    this.Close(); 
                 }
                 catch (Exception exception)
                 {
