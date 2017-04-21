@@ -118,6 +118,7 @@
             this.lblSearchEvents = new System.Windows.Forms.Label();
             this.lbEvents = new System.Windows.Forms.ListBox();
             this.tpReserve = new System.Windows.Forms.TabPage();
+            this.btnAddReservation = new System.Windows.Forms.Button();
             this.lblReservationEvent = new System.Windows.Forms.Label();
             this.nudReservationCampingspot = new System.Windows.Forms.NumericUpDown();
             this.lblReservationCampingspot = new System.Windows.Forms.Label();
@@ -178,7 +179,7 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.btnAddReservation = new System.Windows.Forms.Button();
+            this.btnEventPlatform = new System.Windows.Forms.Button();
             this.tcCamping.SuspendLayout();
             this.tpMedia.SuspendLayout();
             this.tpAccountDetails.SuspendLayout();
@@ -217,17 +218,18 @@
             // tpMedia
             // 
             this.tpMedia.BackColor = System.Drawing.Color.Purple;
+            this.tpMedia.Controls.Add(this.btnEventPlatform);
             this.tpMedia.Controls.Add(this.btnMedia);
             this.tpMedia.Location = new System.Drawing.Point(4, 22);
             this.tpMedia.Name = "tpMedia";
-            this.tpMedia.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpMedia.Padding = new System.Windows.Forms.Padding(3);
             this.tpMedia.Size = new System.Drawing.Size(809, 416);
             this.tpMedia.TabIndex = 0;
             this.tpMedia.Text = "Media";
             // 
             // btnMedia
             // 
-            this.btnMedia.Location = new System.Drawing.Point(326, 160);
+            this.btnMedia.Location = new System.Drawing.Point(235, 160);
             this.btnMedia.Name = "btnMedia";
             this.btnMedia.Size = new System.Drawing.Size(152, 57);
             this.btnMedia.TabIndex = 2;
@@ -367,6 +369,7 @@
             this.btnPersonRemove.TabIndex = 16;
             this.btnPersonRemove.Text = "Remove";
             this.btnPersonRemove.UseVisualStyleBackColor = true;
+            this.btnPersonRemove.Click += new System.EventHandler(this.btnPersonRemove_Click_1);
             // 
             // lbAllAccounts
             // 
@@ -384,6 +387,7 @@
             this.btnPersonUpdate.TabIndex = 15;
             this.btnPersonUpdate.Text = "Update";
             this.btnPersonUpdate.UseVisualStyleBackColor = true;
+            this.btnPersonUpdate.Click += new System.EventHandler(this.btnPersonUpdate_Click_1);
             // 
             // btnPersonEdit
             // 
@@ -393,6 +397,7 @@
             this.btnPersonEdit.TabIndex = 14;
             this.btnPersonEdit.Text = "Edit";
             this.btnPersonEdit.UseVisualStyleBackColor = true;
+            this.btnPersonEdit.Click += new System.EventHandler(this.btnPersonEdit_Click_1);
             // 
             // lblPersonPhonenumber
             // 
@@ -490,7 +495,7 @@
             this.tpManage.Controls.Add(this.lblSearch);
             this.tpManage.Location = new System.Drawing.Point(4, 22);
             this.tpManage.Name = "tpManage";
-            this.tpManage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpManage.Padding = new System.Windows.Forms.Padding(3);
             this.tpManage.Size = new System.Drawing.Size(809, 416);
             this.tpManage.TabIndex = 1;
             this.tpManage.Text = "Manage";
@@ -1070,6 +1075,16 @@
             this.tpReserve.Text = "Reserve";
             this.tpReserve.Click += new System.EventHandler(this.tpReserve_Click);
             // 
+            // btnAddReservation
+            // 
+            this.btnAddReservation.Location = new System.Drawing.Point(164, 227);
+            this.btnAddReservation.Name = "btnAddReservation";
+            this.btnAddReservation.Size = new System.Drawing.Size(166, 23);
+            this.btnAddReservation.TabIndex = 17;
+            this.btnAddReservation.Text = "Make reservation";
+            this.btnAddReservation.UseVisualStyleBackColor = true;
+            this.btnAddReservation.Click += new System.EventHandler(this.btnAddReservation_Click);
+            // 
             // lblReservationEvent
             // 
             this.lblReservationEvent.AutoSize = true;
@@ -1442,7 +1457,7 @@
             // btnOnSiteReload
             // 
             this.btnOnSiteReload.Location = new System.Drawing.Point(416, 358);
-            this.btnOnSiteReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOnSiteReload.Margin = new System.Windows.Forms.Padding(2);
             this.btnOnSiteReload.Name = "btnOnSiteReload";
             this.btnOnSiteReload.Size = new System.Drawing.Size(65, 30);
             this.btnOnSiteReload.TabIndex = 42;
@@ -1464,7 +1479,7 @@
             // 
             this.lbOnSite.FormattingEnabled = true;
             this.lbOnSite.Location = new System.Drawing.Point(307, 51);
-            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2);
             this.lbOnSite.Name = "lbOnSite";
             this.lbOnSite.Size = new System.Drawing.Size(285, 303);
             this.lbOnSite.TabIndex = 40;
@@ -1472,7 +1487,7 @@
             // btnCheckStat
             // 
             this.btnCheckStat.Location = new System.Drawing.Point(90, 150);
-            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckStat.Name = "btnCheckStat";
             this.btnCheckStat.Size = new System.Drawing.Size(80, 30);
             this.btnCheckStat.TabIndex = 39;
@@ -1658,15 +1673,15 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // btnAddReservation
+            // btnEventPlatform
             // 
-            this.btnAddReservation.Location = new System.Drawing.Point(164, 227);
-            this.btnAddReservation.Name = "btnAddReservation";
-            this.btnAddReservation.Size = new System.Drawing.Size(166, 23);
-            this.btnAddReservation.TabIndex = 17;
-            this.btnAddReservation.Text = "Make reservation";
-            this.btnAddReservation.UseVisualStyleBackColor = true;
-            this.btnAddReservation.Click += new System.EventHandler(this.btnAddReservation_Click);
+            this.btnEventPlatform.Location = new System.Drawing.Point(451, 160);
+            this.btnEventPlatform.Name = "btnEventPlatform";
+            this.btnEventPlatform.Size = new System.Drawing.Size(152, 57);
+            this.btnEventPlatform.TabIndex = 3;
+            this.btnEventPlatform.Text = "Event";
+            this.btnEventPlatform.UseVisualStyleBackColor = true;
+            this.btnEventPlatform.Click += new System.EventHandler(this.btnEventPlatform_Click);
             // 
             // Menuform
             // 
@@ -1858,5 +1873,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.ListBox lbOnSite;
         private System.Windows.Forms.Button btnAddReservation;
+        private System.Windows.Forms.Button btnEventPlatform;
     }
 }

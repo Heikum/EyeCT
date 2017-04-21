@@ -31,6 +31,26 @@ namespace ProftaakEyectEvents.DAL
                 }
                 return events;
             }
+        public Event GetByName(string eventname)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Event Where Name=@eventname";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@eventname", eventname);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return CreateEventFromReader(reader);
+                        }
+                    }
+                }
+            }
+            return null;
+        }
 
             public Event InsertEvent(Event events)
             {
@@ -57,6 +77,31 @@ namespace ProftaakEyectEvents.DAL
                     return events;
                 }
             }
+        public void InsertCampingspot(Event events, int campingspot, bool status)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO EventCampingspots (EventID, CampingSpotsID, Status)" +
+                    "VALUES (@eventid, @campingspotid, @status)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@eventid", events.id);
+                    command.Parameters.AddWithValue("@campingspotid", campingspot);
+                    command.Parameters.AddWithValue("@status", status);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(Convert.ToString(e));
+                    }
+                }
+                
+            }
+
+        }
 
             public bool UpdateEvents(Event events)
             {

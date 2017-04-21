@@ -36,6 +36,14 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.DeleteEvent(id);
         }
+        public void InsertCampingspot(Event events, int campingspot, bool status)
+        {
+            context.InsertCampingspot(events, campingspot, status);
+        }
+        public Event GetByName(string eventname)
+        {
+            return context.GetByName(eventname);
+        }
 
     }
 }

@@ -147,44 +147,8 @@ namespace ProftaakEyeCT
 
         }
 
-        private void btnPersonUpdate_Click(object sender, EventArgs e)
-        {
-            updatePerson = personrepo.GetById(updateAccount.Personid);
-            updateAccount = (Account)lbAllAccounts.SelectedItem;
-            UpdatePerson();
-            UpdateAccount();
-            UpdateControls();
-        }
-
-        private void btnPersonRemove_Click(object sender, EventArgs e)
-        {
-            personrepo.Delete(((Person)lbAllAccounts.SelectedItem).Id);
-            UpdateControls();
-        }
-
-        private void btnPersonEdit_Click(object sender, EventArgs e)
-        {
-            updateAccount = (Account)lbAllAccounts.SelectedItem;
-            updatePerson = personrepo.GetById(updateAccount.Personid);
-            txtAccountUsername.Text = updateAccount.Username;
-            txtAccountPassword.Text = updateAccount.Password;
-            txtAccountEmail.Text = updateAccount.Emailadress;
-            txtPersonName.Text = updatePerson.Name;
-            txtPersonZipcode.Text = updatePerson.Zipcode;
-            txtPersonCity.Text = updatePerson.City;
-            txtPersonStreet.Text = updatePerson.Street;
-            nudPersonHousenumber.Value = updatePerson.Number;
-            txtPersonPhonenumber.Text = updatePerson.Phonenumber;
 
 
-            //updatePerson = (Person)lbAllPersons.SelectedItem;
-            //txtPersonName.Text = updatePerson.Name;
-            //txtPersonZipcode.Text = updatePerson.Zipcode;
-            //txtPersonCity.Text = updatePerson.City;
-            //txtPersonStreet.Text = updatePerson.Street;
-            //nudPersonHousenumber.Value = updatePerson.Number;
-            //txtPersonPhonenumber.Text = updatePerson.Phonenumber;
-        }
 
         private void btnAccountConfirm_Click(object sender, EventArgs e)
         {
@@ -268,6 +232,42 @@ namespace ProftaakEyeCT
                 Reservation_group rg = new Reservation_group();
                 rg.Show();
             }
+        }
+
+        private void btnPersonEdit_Click_1(object sender, EventArgs e)
+        {
+            updateAccount = (Account)lbAllAccounts.SelectedItem;
+            updatePerson = personrepo.GetById(updateAccount.Personid);
+            txtAccountUsername.Text = updateAccount.Username;
+            txtAccountPassword.Text = updateAccount.Password;
+            txtAccountEmail.Text = updateAccount.Emailadress;
+            txtPersonName.Text = updatePerson.Name;
+            txtPersonZipcode.Text = updatePerson.Zipcode;
+            txtPersonCity.Text = updatePerson.City;
+            txtPersonStreet.Text = updatePerson.Street;
+            nudPersonHousenumber.Value = updatePerson.Number;
+            txtPersonPhonenumber.Text = updatePerson.Phonenumber;
+        }
+
+        private void btnPersonUpdate_Click_1(object sender, EventArgs e)
+        {
+            updatePerson = personrepo.GetById(updateAccount.Personid);
+            updateAccount = (Account)lbAllAccounts.SelectedItem;
+            UpdatePerson();
+            UpdateAccount();
+            UpdateControls();
+        }
+
+        private void btnPersonRemove_Click_1(object sender, EventArgs e)
+        {
+            personrepo.Delete(((Person)lbAllAccounts.SelectedItem).Id);
+            UpdateControls();
+        }
+
+        private void btnEventPlatform_Click(object sender, EventArgs e)
+        {
+            EventPlatform eventplatform = new EventPlatform();
+            eventplatform.Show();
         }
     }
 }
