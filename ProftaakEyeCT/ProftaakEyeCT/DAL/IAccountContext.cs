@@ -20,6 +20,8 @@ namespace ProftaakEyectEvents.DAL
 
         bool DeleteAccount(int id);
 
+        int GetID(); 
+
         bool UpdateAccount(Account account);
 
         List<Account> GetAllAccountInformation();

@@ -37,51 +37,7 @@ namespace ProftaakEyectEvents
         /// Create a new database if it doesn't exist, and fill it with some
         /// dummy data.
         /// </summary>
-        public static void Initialize()
-        {
-            bool recreateDatabase = false;
-
-            // Check if the database already exists
-            if (File.Exists("Hier komt de file naam van de database"))
-            {
-                // If this source file is also found when running the program,
-                // see if it was modified after the database was last written to
-                if (File.Exists(@"..\..\Data\Database.cs") &&
-                        (new FileInfo(@".\Hier komt de file naam van de database").LastWriteTime <
-                         new FileInfo(@"..\..\Data\Database.cs").LastWriteTime))
-                {
-                    recreateDatabase = true;
-                }
-            }
-            else
-            {
-                recreateDatabase = true;
-            }
-
-            // File doesn't exist, or this file was modified after the database
-            // was created: recreate the database
-            if (recreateDatabase)
-            {
-                Console.WriteLine("Database (re)created.");
-                SqlCommand recreateDb = new SqlCommand(str, Connection);
-
-                // Create some dummy data to work with
-                using (SqlConnection connection = Database.Connection)
-                {
-                    string[] queries = new string[] {
-                        "Create queries here"
-                    };
-
-                    foreach (string query in queries)
-                    {
-                        using (SqlCommand command = new SqlCommand(query, connection))
-                        {
-                            command.ExecuteNonQuery();
-                        }
-
-                    }
-                }
-            }
-        }
+        
+        
     }
 }

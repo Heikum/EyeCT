@@ -18,6 +18,7 @@ namespace ProftaakEyeCT
     public partial class Menuform : Form
     {
         Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
+        public int ReservationID;
         private PersonRepository personrepo;
         private Person updatePerson;
         private AccountRepository accountrepo;
@@ -29,6 +30,10 @@ namespace ProftaakEyeCT
         private CampingspotRepository campingspotrepo;
         private EventRepository eventrepo;
         private Event updateEvent;
+        private AccessRepository accessrepo;
+        private Access updateAccess;
+        private ReservationRepository reservationrepo;
+        private Reservation updateReservation;
         
         public Menuform()
         {
@@ -40,10 +45,9 @@ namespace ProftaakEyeCT
             materialrepo = new MaterialRepository(new MaterialSQLContext());
             campingspotrepo = new CampingspotRepository(new CampingspotSQLContext());
             eventrepo = new EventRepository(new EventSQLContext());
-            
-            UpdateControls();
-           
-
+            accessrepo = new AccessRepository(new AccessSQLContext());
+            reservationrepo = new ReservationRepository(new ReservationSQLContext());
+            UpdateControls(); 
         }
 
         //code voor person
@@ -74,8 +78,11 @@ namespace ProftaakEyeCT
             {
                 lbReservationEvents.Items.Add(events);
             }
-
-
+            lbOnSite.Items.Clear();
+            foreach (Account account in accessrepo.GetAllInside())
+            {
+                lbOnSite.Items.Add(account);
+            }
         }
 
 
@@ -228,6 +235,39 @@ namespace ProftaakEyeCT
             updateEvent = (Event)lbReservationEvents.SelectedItem;
             txtReservationEvent.Text = updateEvent.name;
 
+        }
+
+        private void btnCheckStat_Click(object sender, EventArgs e)
+        {
+            if (accessrepo.GetStatus(tbAccUsername.Text))
+            {
+                btnCheck.BackColor = Color.Green;
+            }
+            else
+            {
+                btnCheck.BackColor = Color.Red;
+
+            }
+        }
+
+        private void btnOnSiteReload_Click(object sender, EventArgs e)
+        {
+            UpdateControls();
+        }
+
+        private void btnAddReservation_Click(object sender, EventArgs e)
+        {
+            updateEvent = (Event)lbReservationEvents.SelectedItem;
+            
+            updateCampingspot = (CampingSpot)lbReservationCampingspot.SelectedItem;
+            if (updateEvent != null && updateCampingspot != null)
+            {
+                updateReservation = reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, updateCampingspot.Id));
+                
+                ReservationID = updateReservation.Id;
+                Reservation_group rg = new Reservation_group();
+                rg.Show();
+            }
         }
     }
 }

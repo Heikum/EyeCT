@@ -12,7 +12,9 @@ namespace ProftaakEyectEvents.DAL
 
         Reservation GetByID(int Id);
 
-        void InsertReservation(Reservation reservation);
+        Reservation InsertReservation(Reservation reservation);
+
+        void InsertAccountReservation(Account account, int resid);
 
         void UpdateReservation(Reservation reservation);
 

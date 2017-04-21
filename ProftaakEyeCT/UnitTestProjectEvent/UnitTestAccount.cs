@@ -26,5 +26,12 @@ namespace UnitTestProjectEvent
             Assert.AreEqual(false, this.account.Rights);
             Assert.AreEqual("1243", this.account.Password);
         }
+        [TestMethod]
+        public void TestTostringAccount()
+        {
+            string result = this.account.ToString(); 
+            string expected = this.account.Username + " " + this.account.Password + " " + this.account.Emailadress;
+            Assert.AreEqual(expected, result);
+        }
     }
 }

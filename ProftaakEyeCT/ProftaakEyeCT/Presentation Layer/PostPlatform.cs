@@ -43,6 +43,7 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         private void btnAddPost_Click(object sender, EventArgs e)
         {
+
           
         }
 
@@ -60,6 +61,7 @@ namespace ProftaakEyeCT.Presentation_Layer
                 txtImageLink.Enabled = false;
             }
             else if (rbVideoMedia.Checked == false)
+
             {
                 if(rbGeenMedia.Checked == false)
                 {
@@ -76,7 +78,9 @@ namespace ProftaakEyeCT.Presentation_Layer
                 txtVideoName.Enabled = false;
                 txtVideoLink.Enabled = false;
             }
+
             else if (rbImageMedia.Checked == false)
+
             {
                 if (rbGeenMedia.Checked == false)
                 {

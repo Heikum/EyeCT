@@ -118,6 +118,15 @@
             this.lblSearchEvents = new System.Windows.Forms.Label();
             this.lbEvents = new System.Windows.Forms.ListBox();
             this.tpReserve = new System.Windows.Forms.TabPage();
+            this.lblReservationEvent = new System.Windows.Forms.Label();
+            this.nudReservationCampingspot = new System.Windows.Forms.NumericUpDown();
+            this.lblReservationCampingspot = new System.Windows.Forms.Label();
+            this.lblReservationAccountName = new System.Windows.Forms.Label();
+            this.txtReservationEvent = new System.Windows.Forms.TextBox();
+            this.txtReservationAccountName = new System.Windows.Forms.TextBox();
+            this.pbCampingFoto = new System.Windows.Forms.PictureBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.lbReservationEvents = new System.Windows.Forms.ListBox();
             this.btnReserve = new System.Windows.Forms.Button();
             this.lblAvailable = new System.Windows.Forms.Label();
             this.lbReservationCampingspot = new System.Windows.Forms.ListBox();
@@ -145,13 +154,17 @@
             this.lblSearchInEvents = new System.Windows.Forms.Label();
             this.lbAllEvents = new System.Windows.Forms.ListBox();
             this.tpAccess = new System.Windows.Forms.TabPage();
+            this.btnOnSiteReload = new System.Windows.Forms.Button();
+            this.label18 = new System.Windows.Forms.Label();
+            this.lbOnSite = new System.Windows.Forms.ListBox();
+            this.btnCheckStat = new System.Windows.Forms.Button();
             this.label17 = new System.Windows.Forms.Label();
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.textBox11 = new System.Windows.Forms.TextBox();
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.textBox13 = new System.Windows.Forms.TextBox();
             this.textBox14 = new System.Windows.Forms.TextBox();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.tbAccUsername = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
@@ -165,16 +178,7 @@
             this.dtpDateNow = new System.Windows.Forms.DateTimePicker();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.button2 = new System.Windows.Forms.Button();
-            this.lbReservationEvents = new System.Windows.Forms.ListBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.pbCampingFoto = new System.Windows.Forms.PictureBox();
-            this.txtReservationAccountName = new System.Windows.Forms.TextBox();
-            this.txtReservationEvent = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.lblReservationAccountName = new System.Windows.Forms.Label();
-            this.lblReservationCampingspot = new System.Windows.Forms.Label();
-            this.nudReservationCampingspot = new System.Windows.Forms.NumericUpDown();
-            this.lblReservationEvent = new System.Windows.Forms.Label();
+            this.btnAddReservation = new System.Windows.Forms.Button();
             this.tcCamping.SuspendLayout();
             this.tpMedia.SuspendLayout();
             this.tpAccountDetails.SuspendLayout();
@@ -185,12 +189,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
             this.tbEvents.SuspendLayout();
             this.tpReserve.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudReservationCampingspot)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCampingFoto)).BeginInit();
             this.tpMaterials.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaterialStock)).BeginInit();
             this.tpAccess.SuspendLayout();
             this.tpLogout.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pbCampingFoto)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudReservationCampingspot)).BeginInit();
             this.SuspendLayout();
             // 
             // tcCamping
@@ -1046,11 +1050,11 @@
             // tpReserve
             // 
             this.tpReserve.BackColor = System.Drawing.Color.Purple;
+            this.tpReserve.Controls.Add(this.btnAddReservation);
             this.tpReserve.Controls.Add(this.lblReservationEvent);
             this.tpReserve.Controls.Add(this.nudReservationCampingspot);
             this.tpReserve.Controls.Add(this.lblReservationCampingspot);
             this.tpReserve.Controls.Add(this.lblReservationAccountName);
-            this.tpReserve.Controls.Add(this.textBox8);
             this.tpReserve.Controls.Add(this.txtReservationEvent);
             this.tpReserve.Controls.Add(this.txtReservationAccountName);
             this.tpReserve.Controls.Add(this.pbCampingFoto);
@@ -1065,6 +1069,96 @@
             this.tpReserve.TabIndex = 4;
             this.tpReserve.Text = "Reserve";
             this.tpReserve.Click += new System.EventHandler(this.tpReserve_Click);
+            // 
+            // lblReservationEvent
+            // 
+            this.lblReservationEvent.AutoSize = true;
+            this.lblReservationEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservationEvent.ForeColor = System.Drawing.Color.Yellow;
+            this.lblReservationEvent.Location = new System.Drawing.Point(161, 157);
+            this.lblReservationEvent.Name = "lblReservationEvent";
+            this.lblReservationEvent.Size = new System.Drawing.Size(54, 20);
+            this.lblReservationEvent.TabIndex = 16;
+            this.lblReservationEvent.Text = "Event:";
+            // 
+            // nudReservationCampingspot
+            // 
+            this.nudReservationCampingspot.Enabled = false;
+            this.nudReservationCampingspot.Location = new System.Drawing.Point(164, 112);
+            this.nudReservationCampingspot.Name = "nudReservationCampingspot";
+            this.nudReservationCampingspot.Size = new System.Drawing.Size(166, 20);
+            this.nudReservationCampingspot.TabIndex = 15;
+            // 
+            // lblReservationCampingspot
+            // 
+            this.lblReservationCampingspot.AutoSize = true;
+            this.lblReservationCampingspot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservationCampingspot.ForeColor = System.Drawing.Color.Yellow;
+            this.lblReservationCampingspot.Location = new System.Drawing.Point(160, 89);
+            this.lblReservationCampingspot.Name = "lblReservationCampingspot";
+            this.lblReservationCampingspot.Size = new System.Drawing.Size(52, 20);
+            this.lblReservationCampingspot.TabIndex = 14;
+            this.lblReservationCampingspot.Text = "Place:";
+            // 
+            // lblReservationAccountName
+            // 
+            this.lblReservationAccountName.AutoSize = true;
+            this.lblReservationAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblReservationAccountName.ForeColor = System.Drawing.Color.Yellow;
+            this.lblReservationAccountName.Location = new System.Drawing.Point(160, 33);
+            this.lblReservationAccountName.Name = "lblReservationAccountName";
+            this.lblReservationAccountName.Size = new System.Drawing.Size(55, 20);
+            this.lblReservationAccountName.TabIndex = 13;
+            this.lblReservationAccountName.Text = "Name:";
+            // 
+            // txtReservationEvent
+            // 
+            this.txtReservationEvent.Enabled = false;
+            this.txtReservationEvent.Location = new System.Drawing.Point(164, 180);
+            this.txtReservationEvent.Name = "txtReservationEvent";
+            this.txtReservationEvent.Size = new System.Drawing.Size(166, 20);
+            this.txtReservationEvent.TabIndex = 11;
+            // 
+            // txtReservationAccountName
+            // 
+            this.txtReservationAccountName.Enabled = false;
+            this.txtReservationAccountName.Location = new System.Drawing.Point(164, 56);
+            this.txtReservationAccountName.Name = "txtReservationAccountName";
+            this.txtReservationAccountName.Size = new System.Drawing.Size(166, 20);
+            this.txtReservationAccountName.TabIndex = 9;
+            // 
+            // pbCampingFoto
+            // 
+            this.pbCampingFoto.BackColor = System.Drawing.SystemColors.Info;
+            this.pbCampingFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pbCampingFoto.Image = global::ProftaakEyeCT.Properties.Resources.Camping_ReeënDal;
+            this.pbCampingFoto.InitialImage = null;
+            this.pbCampingFoto.Location = new System.Drawing.Point(442, 13);
+            this.pbCampingFoto.Name = "pbCampingFoto";
+            this.pbCampingFoto.Size = new System.Drawing.Size(360, 398);
+            this.pbCampingFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbCampingFoto.TabIndex = 8;
+            this.pbCampingFoto.TabStop = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Yellow;
+            this.label10.Location = new System.Drawing.Point(6, 214);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(62, 20);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Events:";
+            // 
+            // lbReservationEvents
+            // 
+            this.lbReservationEvents.FormattingEnabled = true;
+            this.lbReservationEvents.Location = new System.Drawing.Point(6, 237);
+            this.lbReservationEvents.Name = "lbReservationEvents";
+            this.lbReservationEvents.Size = new System.Drawing.Size(139, 173);
+            this.lbReservationEvents.TabIndex = 6;
+            this.lbReservationEvents.SelectedIndexChanged += new System.EventHandler(this.lbReservationEvents_SelectedIndexChanged);
             // 
             // btnReserve
             // 
@@ -1317,13 +1411,17 @@
             // tpAccess
             // 
             this.tpAccess.BackColor = System.Drawing.Color.Purple;
+            this.tpAccess.Controls.Add(this.btnOnSiteReload);
+            this.tpAccess.Controls.Add(this.label18);
+            this.tpAccess.Controls.Add(this.lbOnSite);
+            this.tpAccess.Controls.Add(this.btnCheckStat);
             this.tpAccess.Controls.Add(this.label17);
             this.tpAccess.Controls.Add(this.textBox6);
             this.tpAccess.Controls.Add(this.textBox11);
             this.tpAccess.Controls.Add(this.textBox12);
             this.tpAccess.Controls.Add(this.textBox13);
             this.tpAccess.Controls.Add(this.textBox14);
-            this.tpAccess.Controls.Add(this.textBox15);
+            this.tpAccess.Controls.Add(this.tbAccUsername);
             this.tpAccess.Controls.Add(this.label9);
             this.tpAccess.Controls.Add(this.comboBox2);
             this.tpAccess.Controls.Add(this.label11);
@@ -1341,11 +1439,52 @@
             this.tpAccess.TabIndex = 6;
             this.tpAccess.Text = "Access";
             // 
+            // btnOnSiteReload
+            // 
+            this.btnOnSiteReload.Location = new System.Drawing.Point(416, 358);
+            this.btnOnSiteReload.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOnSiteReload.Name = "btnOnSiteReload";
+            this.btnOnSiteReload.Size = new System.Drawing.Size(65, 30);
+            this.btnOnSiteReload.TabIndex = 42;
+            this.btnOnSiteReload.Text = "Reload";
+            this.btnOnSiteReload.UseVisualStyleBackColor = true;
+            this.btnOnSiteReload.Click += new System.EventHandler(this.btnOnSiteReload_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(413, 32);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(59, 17);
+            this.label18.TabIndex = 41;
+            this.label18.Text = "On Site:";
+            // 
+            // lbOnSite
+            // 
+            this.lbOnSite.FormattingEnabled = true;
+            this.lbOnSite.Location = new System.Drawing.Point(307, 51);
+            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOnSite.Name = "lbOnSite";
+            this.lbOnSite.Size = new System.Drawing.Size(285, 303);
+            this.lbOnSite.TabIndex = 40;
+            // 
+            // btnCheckStat
+            // 
+            this.btnCheckStat.Location = new System.Drawing.Point(90, 150);
+            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckStat.Name = "btnCheckStat";
+            this.btnCheckStat.Size = new System.Drawing.Size(80, 30);
+            this.btnCheckStat.TabIndex = 39;
+            this.btnCheckStat.Text = "Check Access";
+            this.btnCheckStat.UseVisualStyleBackColor = true;
+            this.btnCheckStat.Click += new System.EventHandler(this.btnCheckStat_Click);
+            // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(431, 65);
+            this.label17.Location = new System.Drawing.Point(635, 24);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(114, 25);
             this.label17.TabIndex = 38;
@@ -1353,51 +1492,51 @@
             // 
             // textBox6
             // 
-            this.textBox6.Location = new System.Drawing.Point(579, 336);
+            this.textBox6.Location = new System.Drawing.Point(783, 296);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(205, 20);
             this.textBox6.TabIndex = 37;
             // 
             // textBox11
             // 
-            this.textBox11.Location = new System.Drawing.Point(577, 377);
+            this.textBox11.Location = new System.Drawing.Point(781, 336);
             this.textBox11.Name = "textBox11";
             this.textBox11.Size = new System.Drawing.Size(205, 20);
             this.textBox11.TabIndex = 28;
             // 
             // textBox12
             // 
-            this.textBox12.Location = new System.Drawing.Point(579, 293);
+            this.textBox12.Location = new System.Drawing.Point(783, 253);
             this.textBox12.Name = "textBox12";
             this.textBox12.Size = new System.Drawing.Size(205, 20);
             this.textBox12.TabIndex = 27;
             // 
             // textBox13
             // 
-            this.textBox13.Location = new System.Drawing.Point(579, 204);
+            this.textBox13.Location = new System.Drawing.Point(783, 163);
             this.textBox13.Name = "textBox13";
             this.textBox13.Size = new System.Drawing.Size(205, 20);
             this.textBox13.TabIndex = 26;
             // 
             // textBox14
             // 
-            this.textBox14.Location = new System.Drawing.Point(579, 159);
+            this.textBox14.Location = new System.Drawing.Point(783, 119);
             this.textBox14.Name = "textBox14";
             this.textBox14.Size = new System.Drawing.Size(205, 20);
             this.textBox14.TabIndex = 25;
             // 
-            // textBox15
+            // tbAccUsername
             // 
-            this.textBox15.Location = new System.Drawing.Point(579, 120);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(205, 20);
-            this.textBox15.TabIndex = 24;
+            this.tbAccUsername.Location = new System.Drawing.Point(156, 112);
+            this.tbAccUsername.Name = "tbAccUsername";
+            this.tbAccUsername.Size = new System.Drawing.Size(135, 20);
+            this.tbAccUsername.TabIndex = 24;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(433, 336);
+            this.label9.Location = new System.Drawing.Point(637, 296);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(87, 17);
             this.label9.TabIndex = 36;
@@ -1406,7 +1545,7 @@
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(579, 250);
+            this.comboBox2.Location = new System.Drawing.Point(783, 210);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(205, 21);
             this.comboBox2.TabIndex = 35;
@@ -1415,7 +1554,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(433, 378);
+            this.label11.Location = new System.Drawing.Point(637, 337);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(138, 17);
             this.label11.TabIndex = 34;
@@ -1425,7 +1564,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(433, 294);
+            this.label12.Location = new System.Drawing.Point(637, 254);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(94, 17);
             this.label12.TabIndex = 33;
@@ -1435,7 +1574,7 @@
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(433, 250);
+            this.label13.Location = new System.Drawing.Point(637, 210);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(108, 17);
             this.label13.TabIndex = 32;
@@ -1445,7 +1584,7 @@
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(433, 205);
+            this.label14.Location = new System.Drawing.Point(637, 164);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(129, 17);
             this.label14.TabIndex = 31;
@@ -1455,7 +1594,7 @@
             // 
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(433, 162);
+            this.label15.Location = new System.Drawing.Point(637, 121);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(37, 17);
             this.label15.TabIndex = 30;
@@ -1465,17 +1604,17 @@
             // 
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(433, 121);
+            this.label16.Location = new System.Drawing.Point(29, 114);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(49, 17);
+            this.label16.Size = new System.Drawing.Size(77, 17);
             this.label16.TabIndex = 29;
-            this.label16.Text = "Name:";
+            this.label16.Text = "Username:";
             // 
             // btnCheck
             // 
             this.btnCheck.BackColor = System.Drawing.Color.Red;
             this.btnCheck.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.btnCheck.Location = new System.Drawing.Point(140, 280);
+            this.btnCheck.Location = new System.Drawing.Point(32, 203);
             this.btnCheck.Name = "btnCheck";
             this.btnCheck.Size = new System.Drawing.Size(200, 76);
             this.btnCheck.TabIndex = 2;
@@ -1485,7 +1624,7 @@
             // 
             this.lblDateNow.AutoSize = true;
             this.lblDateNow.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDateNow.Location = new System.Drawing.Point(137, 124);
+            this.lblDateNow.Location = new System.Drawing.Point(780, 32);
             this.lblDateNow.Name = "lblDateNow";
             this.lblDateNow.Size = new System.Drawing.Size(71, 17);
             this.lblDateNow.TabIndex = 1;
@@ -1494,7 +1633,7 @@
             // dtpDateNow
             // 
             this.dtpDateNow.Enabled = false;
-            this.dtpDateNow.Location = new System.Drawing.Point(140, 156);
+            this.dtpDateNow.Location = new System.Drawing.Point(781, 59);
             this.dtpDateNow.Name = "dtpDateNow";
             this.dtpDateNow.Size = new System.Drawing.Size(200, 20);
             this.dtpDateNow.TabIndex = 0;
@@ -1519,102 +1658,15 @@
             this.button2.Text = "Logout";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // lbReservationEvents
+            // btnAddReservation
             // 
-            this.lbReservationEvents.FormattingEnabled = true;
-            this.lbReservationEvents.Location = new System.Drawing.Point(6, 237);
-            this.lbReservationEvents.Name = "lbReservationEvents";
-            this.lbReservationEvents.Size = new System.Drawing.Size(139, 173);
-            this.lbReservationEvents.TabIndex = 6;
-            this.lbReservationEvents.SelectedIndexChanged += new System.EventHandler(this.lbReservationEvents_SelectedIndexChanged);
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Yellow;
-            this.label10.Location = new System.Drawing.Point(6, 214);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(62, 20);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Events:";
-            // 
-            // pbCampingFoto
-            // 
-            this.pbCampingFoto.BackColor = System.Drawing.SystemColors.Info;
-            this.pbCampingFoto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pbCampingFoto.Image = global::ProftaakEyeCT.Properties.Resources.Camping_ReeënDal;
-            this.pbCampingFoto.InitialImage = null;
-            this.pbCampingFoto.Location = new System.Drawing.Point(442, 13);
-            this.pbCampingFoto.Name = "pbCampingFoto";
-            this.pbCampingFoto.Size = new System.Drawing.Size(360, 398);
-            this.pbCampingFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbCampingFoto.TabIndex = 8;
-            this.pbCampingFoto.TabStop = false;
-            // 
-            // txtReservationAccountName
-            // 
-            this.txtReservationAccountName.Enabled = false;
-            this.txtReservationAccountName.Location = new System.Drawing.Point(164, 56);
-            this.txtReservationAccountName.Name = "txtReservationAccountName";
-            this.txtReservationAccountName.Size = new System.Drawing.Size(166, 20);
-            this.txtReservationAccountName.TabIndex = 9;
-            // 
-            // txtReservationEvent
-            // 
-            this.txtReservationEvent.Enabled = false;
-            this.txtReservationEvent.Location = new System.Drawing.Point(164, 180);
-            this.txtReservationEvent.Name = "txtReservationEvent";
-            this.txtReservationEvent.Size = new System.Drawing.Size(166, 20);
-            this.txtReservationEvent.TabIndex = 11;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(164, 256);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(166, 20);
-            this.textBox8.TabIndex = 12;
-            // 
-            // lblReservationAccountName
-            // 
-            this.lblReservationAccountName.AutoSize = true;
-            this.lblReservationAccountName.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationAccountName.ForeColor = System.Drawing.Color.Yellow;
-            this.lblReservationAccountName.Location = new System.Drawing.Point(160, 33);
-            this.lblReservationAccountName.Name = "lblReservationAccountName";
-            this.lblReservationAccountName.Size = new System.Drawing.Size(55, 20);
-            this.lblReservationAccountName.TabIndex = 13;
-            this.lblReservationAccountName.Text = "Name:";
-            // 
-            // lblReservationCampingspot
-            // 
-            this.lblReservationCampingspot.AutoSize = true;
-            this.lblReservationCampingspot.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationCampingspot.ForeColor = System.Drawing.Color.Yellow;
-            this.lblReservationCampingspot.Location = new System.Drawing.Point(160, 89);
-            this.lblReservationCampingspot.Name = "lblReservationCampingspot";
-            this.lblReservationCampingspot.Size = new System.Drawing.Size(52, 20);
-            this.lblReservationCampingspot.TabIndex = 14;
-            this.lblReservationCampingspot.Text = "Place:";
-            // 
-            // nudReservationCampingspot
-            // 
-            this.nudReservationCampingspot.Enabled = false;
-            this.nudReservationCampingspot.Location = new System.Drawing.Point(164, 112);
-            this.nudReservationCampingspot.Name = "nudReservationCampingspot";
-            this.nudReservationCampingspot.Size = new System.Drawing.Size(166, 20);
-            this.nudReservationCampingspot.TabIndex = 15;
-            // 
-            // lblReservationEvent
-            // 
-            this.lblReservationEvent.AutoSize = true;
-            this.lblReservationEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblReservationEvent.ForeColor = System.Drawing.Color.Yellow;
-            this.lblReservationEvent.Location = new System.Drawing.Point(161, 157);
-            this.lblReservationEvent.Name = "lblReservationEvent";
-            this.lblReservationEvent.Size = new System.Drawing.Size(54, 20);
-            this.lblReservationEvent.TabIndex = 16;
-            this.lblReservationEvent.Text = "Event:";
+            this.btnAddReservation.Location = new System.Drawing.Point(164, 227);
+            this.btnAddReservation.Name = "btnAddReservation";
+            this.btnAddReservation.Size = new System.Drawing.Size(166, 23);
+            this.btnAddReservation.TabIndex = 17;
+            this.btnAddReservation.Text = "Make reservation";
+            this.btnAddReservation.UseVisualStyleBackColor = true;
+            this.btnAddReservation.Click += new System.EventHandler(this.btnAddReservation_Click);
             // 
             // Menuform
             // 
@@ -1642,14 +1694,14 @@
             this.tbEvents.PerformLayout();
             this.tpReserve.ResumeLayout(false);
             this.tpReserve.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudReservationCampingspot)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbCampingFoto)).EndInit();
             this.tpMaterials.ResumeLayout(false);
             this.tpMaterials.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaterialStock)).EndInit();
             this.tpAccess.ResumeLayout(false);
             this.tpAccess.PerformLayout();
             this.tpLogout.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pbCampingFoto)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nudReservationCampingspot)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1778,7 +1830,7 @@
         private System.Windows.Forms.TextBox textBox12;
         private System.Windows.Forms.TextBox textBox13;
         private System.Windows.Forms.TextBox textBox14;
-        private System.Windows.Forms.TextBox textBox15;
+        private System.Windows.Forms.TextBox tbAccUsername;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label11;
@@ -1795,12 +1847,16 @@
         private System.Windows.Forms.ListBox lbReservationEvents;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.PictureBox pbCampingFoto;
-        private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.TextBox txtReservationEvent;
         private System.Windows.Forms.TextBox txtReservationAccountName;
         private System.Windows.Forms.Label lblReservationAccountName;
         private System.Windows.Forms.Label lblReservationCampingspot;
         private System.Windows.Forms.NumericUpDown nudReservationCampingspot;
         private System.Windows.Forms.Label lblReservationEvent;
+        private System.Windows.Forms.Button btnCheckStat;
+        private System.Windows.Forms.Button btnOnSiteReload;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ListBox lbOnSite;
+        private System.Windows.Forms.Button btnAddReservation;
     }
 }
