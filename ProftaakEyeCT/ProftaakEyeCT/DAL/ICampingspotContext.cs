@@ -9,6 +9,8 @@ namespace ProftaakEyeCT.DAL
 {
     public interface ICampingspotContext
     {
-        List<CampingSpot> GetAllAvailable();
+        List<CampingSpot> GetAllAvailable(Event events);
+        List<CampingSpot> GetByEvent(Event events);
+
     }
 }
