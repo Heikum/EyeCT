@@ -19,6 +19,7 @@ namespace ProftaakEyeCT.Presentation_Layer
         private Post updatePost;
         private ReactionRepository reactionrepo;
         private Reaction updateReaction;
+        private MediaRepository mediarepo;
         Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
         private string DummyImageLink = "http://dummyimage.com/";
         private string YoutubeLink = "https://www.youtube.com/";
@@ -66,10 +67,22 @@ namespace ProftaakEyeCT.Presentation_Layer
             }
         }
 
+        //moet nog testen
         private void btnAddPost_Click(object sender, EventArgs e)
         {
+            int mediaId = mediarepo.GetId();
+            if (rbImageMedia.Checked)
+            {
+                
+                mediarepo.Insert(new ProftaakEyectEvents.Image(mediarepo.GetId(), txtImageLink.Text, txtImageLink.Text));
+                postrepo.InsertPost(new Post(mediaId - 1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
+            }
+            if (rbVideoMedia.Checked)
+            {
+                mediarepo.Insert(new Video(mediarepo.GetId(), txtVideoLink.Text, txtVideoName.Text));
+                postrepo.InsertPost(new Post(mediaId - 1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
 
-          
+            }
         }
 
         private void PostPlatform_Load(object sender, EventArgs e)

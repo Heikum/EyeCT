@@ -194,7 +194,23 @@ namespace ProftaakEyectEvents.DAL
                 }
             }
         }
-          
+
+        public int GetAccountIDByUsername(string gebruikersnaam)
+        {
+            int userid;
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT ID FROM Account where username = @username";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@username", gebruikersnaam);
+                    userid = Convert.ToInt32(command.ExecuteScalar());
+
+                }
+            }
+            return userid;
+        }
+
 
         public List<Account> GetAllAccountInformation()
         {

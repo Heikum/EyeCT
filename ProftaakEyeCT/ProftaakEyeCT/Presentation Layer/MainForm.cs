@@ -18,6 +18,7 @@ namespace ProftaakEyeCT
     public partial class Loginform : Form
     {
         public string LoggedInUser;
+        public int accountid;
         private PersonRepository personrepo;
         private Person updatePerson;
         private AccountRepository accountrepo;
@@ -40,6 +41,7 @@ namespace ProftaakEyeCT
             if (message == true)
             {
                 LoggedInUser = tbUsername.Text;
+                accountrepo.GetAccountIDByUsername(tbUsername.Text);
                 MessageBox.Show("You are now logged in!");
                 Menuform menu = new Menuform();
                 menu.Show();

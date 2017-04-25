@@ -13,8 +13,11 @@ namespace ProftaakEyeCT.DAL
         List<Media> GetAll();
         Media GetByName(string Name);
         Media Insert(Media media);
+        Video Insert(Video video);
+        Image Insert(Image image);
         bool Delete(int id);
         bool Update(Media media);
+        int GetId();
 
     }
 }

@@ -43,30 +43,31 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.pbMedia = new System.Windows.Forms.PictureBox();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMediaVerwijderen
             // 
-            this.btnMediaVerwijderen.Location = new System.Drawing.Point(1111, 989);
-            this.btnMediaVerwijderen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMediaVerwijderen.Location = new System.Drawing.Point(556, 514);
             this.btnMediaVerwijderen.Name = "btnMediaVerwijderen";
-            this.btnMediaVerwijderen.Size = new System.Drawing.Size(214, 77);
+            this.btnMediaVerwijderen.Size = new System.Drawing.Size(107, 40);
             this.btnMediaVerwijderen.TabIndex = 2;
             this.btnMediaVerwijderen.Text = "Verwijderen";
             this.btnMediaVerwijderen.UseVisualStyleBackColor = true;
             // 
             // btnMediaRefresh
             // 
-            this.btnMediaRefresh.Location = new System.Drawing.Point(831, 989);
-            this.btnMediaRefresh.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMediaRefresh.Location = new System.Drawing.Point(416, 514);
             this.btnMediaRefresh.Name = "btnMediaRefresh";
-            this.btnMediaRefresh.Size = new System.Drawing.Size(256, 77);
+            this.btnMediaRefresh.Size = new System.Drawing.Size(128, 40);
             this.btnMediaRefresh.TabIndex = 4;
             this.btnMediaRefresh.Text = "Refresh";
             this.btnMediaRefresh.UseVisualStyleBackColor = true;
@@ -74,61 +75,53 @@
             // lbMediaReactions
             // 
             this.lbMediaReactions.FormattingEnabled = true;
-            this.lbMediaReactions.ItemHeight = 25;
-            this.lbMediaReactions.Location = new System.Drawing.Point(831, 298);
-            this.lbMediaReactions.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lbMediaReactions.Location = new System.Drawing.Point(591, 155);
             this.lbMediaReactions.Name = "lbMediaReactions";
-            this.lbMediaReactions.Size = new System.Drawing.Size(752, 679);
+            this.lbMediaReactions.Size = new System.Drawing.Size(203, 355);
             this.lbMediaReactions.TabIndex = 6;
             // 
             // lbMediaPosts
             // 
             this.lbMediaPosts.FormattingEnabled = true;
             this.lbMediaPosts.HorizontalScrollbar = true;
-            this.lbMediaPosts.ItemHeight = 25;
-            this.lbMediaPosts.Location = new System.Drawing.Point(27, 298);
-            this.lbMediaPosts.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.lbMediaPosts.Location = new System.Drawing.Point(14, 155);
             this.lbMediaPosts.Name = "lbMediaPosts";
-            this.lbMediaPosts.Size = new System.Drawing.Size(759, 679);
+            this.lbMediaPosts.Size = new System.Drawing.Size(321, 355);
             this.lbMediaPosts.TabIndex = 5;
             this.lbMediaPosts.SelectedIndexChanged += new System.EventHandler(this.lbMediaPosts_SelectedIndexChanged);
             // 
             // btnMediaRapporteren
             // 
-            this.btnMediaRapporteren.Location = new System.Drawing.Point(1369, 989);
-            this.btnMediaRapporteren.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMediaRapporteren.Location = new System.Drawing.Point(684, 514);
             this.btnMediaRapporteren.Name = "btnMediaRapporteren";
-            this.btnMediaRapporteren.Size = new System.Drawing.Size(214, 77);
+            this.btnMediaRapporteren.Size = new System.Drawing.Size(107, 40);
             this.btnMediaRapporteren.TabIndex = 3;
             this.btnMediaRapporteren.Text = "Rapporteren";
             this.btnMediaRapporteren.UseVisualStyleBackColor = true;
             // 
             // btnMediaAanpassen
             // 
-            this.btnMediaAanpassen.Location = new System.Drawing.Point(27, 992);
-            this.btnMediaAanpassen.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMediaAanpassen.Location = new System.Drawing.Point(14, 516);
             this.btnMediaAanpassen.Name = "btnMediaAanpassen";
-            this.btnMediaAanpassen.Size = new System.Drawing.Size(214, 77);
+            this.btnMediaAanpassen.Size = new System.Drawing.Size(107, 40);
             this.btnMediaAanpassen.TabIndex = 1;
             this.btnMediaAanpassen.Text = "Aanpassen";
             this.btnMediaAanpassen.UseVisualStyleBackColor = true;
             // 
             // btnMediaReageren
             // 
-            this.btnMediaReageren.Location = new System.Drawing.Point(572, 989);
-            this.btnMediaReageren.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnMediaReageren.Location = new System.Drawing.Point(286, 514);
             this.btnMediaReageren.Name = "btnMediaReageren";
-            this.btnMediaReageren.Size = new System.Drawing.Size(214, 77);
+            this.btnMediaReageren.Size = new System.Drawing.Size(107, 40);
             this.btnMediaReageren.TabIndex = 0;
             this.btnMediaReageren.Text = "Reageren";
             this.btnMediaReageren.UseVisualStyleBackColor = true;
             // 
             // btnOpenPostPlatform
             // 
-            this.btnOpenPostPlatform.Location = new System.Drawing.Point(304, 992);
-            this.btnOpenPostPlatform.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.btnOpenPostPlatform.Location = new System.Drawing.Point(152, 516);
             this.btnOpenPostPlatform.Name = "btnOpenPostPlatform";
-            this.btnOpenPostPlatform.Size = new System.Drawing.Size(214, 77);
+            this.btnOpenPostPlatform.Size = new System.Drawing.Size(107, 40);
             this.btnOpenPostPlatform.TabIndex = 10;
             this.btnOpenPostPlatform.Text = "Nieuwe Post";
             this.btnOpenPostPlatform.UseVisualStyleBackColor = true;
@@ -137,9 +130,10 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProftaakEyeCT.Properties.Resources.reactions;
-            this.pictureBox4.Location = new System.Drawing.Point(1052, 179);
+            this.pictureBox4.Location = new System.Drawing.Point(604, 93);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(350, 110);
+            this.pictureBox4.Size = new System.Drawing.Size(175, 57);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox4.TabIndex = 24;
             this.pictureBox4.TabStop = false;
@@ -147,9 +141,10 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::ProftaakEyeCT.Properties.Resources.Posts;
-            this.pictureBox3.Location = new System.Drawing.Point(175, 179);
+            this.pictureBox3.Location = new System.Drawing.Point(88, 93);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(271, 110);
+            this.pictureBox3.Size = new System.Drawing.Size(136, 57);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 23;
             this.pictureBox3.TabStop = false;
@@ -157,9 +152,10 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProftaakEyeCT.Properties.Resources.mediaplatform;
-            this.pictureBox2.Location = new System.Drawing.Point(456, -22);
+            this.pictureBox2.Location = new System.Drawing.Point(228, -11);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(823, 161);
+            this.pictureBox2.Size = new System.Drawing.Size(412, 84);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 22;
             this.pictureBox2.TabStop = false;
@@ -167,10 +163,10 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.bar;
-            this.pictureBox1.Location = new System.Drawing.Point(13, 141);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox1.Location = new System.Drawing.Point(6, 73);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1592, 37);
+            this.pictureBox1.Size = new System.Drawing.Size(796, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -178,10 +174,10 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::ProftaakEyeCT.Properties.Resources.bar;
-            this.pictureBox7.Location = new System.Drawing.Point(13, 1077);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(4);
+            this.pictureBox7.Location = new System.Drawing.Point(6, 560);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox7.Name = "pictureBox7";
-            this.pictureBox7.Size = new System.Drawing.Size(1592, 37);
+            this.pictureBox7.Size = new System.Drawing.Size(796, 19);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
@@ -189,20 +185,40 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
-            this.pictureBox5.Location = new System.Drawing.Point(1319, 12);
+            this.pictureBox5.Location = new System.Drawing.Point(660, 6);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(124, 122);
+            this.pictureBox5.Size = new System.Drawing.Size(62, 63);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox5.TabIndex = 25;
             this.pictureBox5.TabStop = false;
             // 
+            // pbMedia
+            // 
+            this.pbMedia.Location = new System.Drawing.Point(341, 155);
+            this.pbMedia.Name = "pbMedia";
+            this.pbMedia.Size = new System.Drawing.Size(244, 178);
+            this.pbMedia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbMedia.TabIndex = 26;
+            this.pbMedia.TabStop = false;
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(341, 155);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(244, 178);
+            this.webBrowser1.TabIndex = 27;
+            // 
             // MediaPlatform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1608, 1127);
+            this.ClientSize = new System.Drawing.Size(831, 385);
+            this.Controls.Add(this.webBrowser1);
+            this.Controls.Add(this.pbMedia);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
             this.Controls.Add(this.pictureBox3);
@@ -218,7 +234,6 @@
             this.Controls.Add(this.btnMediaReageren);
             this.Controls.Add(this.lbMediaPosts);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.Name = "MediaPlatform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Media Platform";
@@ -229,6 +244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +264,7 @@
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pbMedia;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }

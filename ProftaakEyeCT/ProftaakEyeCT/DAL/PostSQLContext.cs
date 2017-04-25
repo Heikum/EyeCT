@@ -185,7 +185,8 @@ namespace ProftaakEyeCT.DAL
             throw new NotImplementedException();
         }
 
-        public Post InsertPost(Post post, Account account, Media media)
+        //deze klopt nog niet
+        public void InsertPost(Post post)
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -194,12 +195,10 @@ namespace ProftaakEyeCT.DAL
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
 
-                    command.Parameters.AddWithValue("@mediaid", media.MediaID);
+                    command.Parameters.AddWithValue("@mediaid", post.MediaID);
                     command.Parameters.AddWithValue("@text", post.Text);
                     command.Parameters.AddWithValue("@postdatetime", post.Postdatetime);
-                    command.Parameters.AddWithValue("@accountid", account.Id);
-
-
+                    command.Parameters.AddWithValue("@accountid", post.AccountID);
 
                     try
                     {
@@ -209,7 +208,7 @@ namespace ProftaakEyeCT.DAL
                     {
                         MessageBox.Show(Convert.ToString(e));
                     }
-                    return post;
+                    
 
                 }
 

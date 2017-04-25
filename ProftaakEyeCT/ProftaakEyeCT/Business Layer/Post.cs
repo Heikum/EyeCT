@@ -27,6 +27,15 @@ namespace ProftaakEyectEvents
 
         }
 
+        public Post(int mediaID, string text, DateTime postdatetime, int accountid)
+        {
+            this.text = text;
+            this.Postdatetime = postdatetime;
+            this.MediaID = mediaID;
+            this.AccountID = accountid;
+
+        }
+
         public bool AddImage(Image image)
         {
             if (this.Imagelink == null)
@@ -66,8 +75,6 @@ namespace ProftaakEyectEvents
             }
             return false;
         }
-
-
 
         public string Text
         {
