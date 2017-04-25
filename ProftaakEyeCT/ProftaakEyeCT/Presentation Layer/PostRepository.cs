@@ -16,9 +16,9 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             this.context = context;
         }
-        public Post InsertPost(Post post, Account account, Media media)
+        public void InsertPost(Post post)
         {
-            return context.InsertPost(post, account, media);
+            context.InsertPost(post);
         }
         public List<Post> GetAll()
         {

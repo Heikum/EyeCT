@@ -11,7 +11,7 @@ namespace ProftaakEyeCT.DAL
     {
         List<Post> GetAll();
         Post GetById(int id);
-        Post InsertPost(Post post, Account account, Media media);
+        void InsertPost(Post post);
         bool Delete(int id);
         List<Post> GetByUsername(string username);
         bool UpdatePost(Post post);

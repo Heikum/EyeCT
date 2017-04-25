@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace ProftaakEyeCT.DAL
 {
-    public class MediaSQLContext
+    public class MediaSQLContext: IMediaContext
     {
         public List<Media> GetAll()
         {
@@ -96,5 +96,113 @@ namespace ProftaakEyeCT.DAL
 
 
         }
+
+        //deze werkt niet
+        public Media Insert(Media media)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO Media (VideoName,VideoLink,ImageName,ImageLink,MediaType)" +
+                    "VALUES (@VideoName, @VideoLink, @ImageName, @ImageLink, @MediaType)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@VideoName", (media as Video).VideoName);
+                    command.Parameters.AddWithValue("@VideoLink", (media as Video).VideoLink);
+                    command.Parameters.AddWithValue("@ImageName", (media as Image).ImageName);
+                    command.Parameters.AddWithValue("@ImageLink", (media as Image).ImageLink);
+
+                    if((media as Video).VideoName == null)
+                    {
+                        command.Parameters.AddWithValue("@MediaType", 2);
+                    }
+
+                    if ((media as Image).ImageName == null)
+                    {
+                        command.Parameters.AddWithValue("@MediaType", 1);
+                    }
+                    else
+                    {
+                        command.Parameters.AddWithValue("@MediaType", 0);
+                    }
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show("Error:" + e.Message);
+                        
+                    }
+                }
+                
+            }
+            return media;
+        }
+
+        public bool Update(Media media)
+        {
+            throw new NotImplementedException();
+        }
+
+        public Video Insert(Video video)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO Media (VideoName,VideoLink,ImageName,ImageLink,MediaType)" +
+                    "VALUES (@VideoName, @VideoLink, @ImageName, @ImageLink, @MediaType)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@VideoName", video.VideoName);
+                    command.Parameters.AddWithValue("@VideoLink", video.VideoLink);
+                    command.Parameters.AddWithValue("@ImageName", DBNull.Value);
+                    command.Parameters.AddWithValue("@ImageLink", DBNull.Value);
+                    command.Parameters.AddWithValue("@MediaType", 1);
+
+
+                }
+            }
+            return video;
+
+        }
+
+        public Image Insert(Image image)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO Media (VideoName,VideoLink,ImageName,ImageLink,MediaType)" +
+                    "VALUES (@VideoName, @VideoLink, @ImageName, @ImageLink, @MediaType)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@VideoName", DBNull.Value);
+                    command.Parameters.AddWithValue("@VideoLink", DBNull.Value);
+                    command.Parameters.AddWithValue("@ImageName", image.ImageName);
+                    command.Parameters.AddWithValue("@ImageLink", image.ImageLink);
+                    command.Parameters.AddWithValue("@MediaType", 2);
+
+
+                }
+            }
+            return image;
+        }
+
+        public int GetId()
+        {
+            int userid;
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT TOP 1 ID FROM Media ORDER BY ID DESC";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    userid = Convert.ToInt32(command.ExecuteScalar());
+                    // het laatste id kiezen + 1 zodat het nieuwe id wordt verkregen en gebruikt kan worden
+                    userid++;
+                }
+            }
+
+            return userid;
+
+        }
+
+        // er moet nog een lege insert bij om de autoincrement gelijk te laten lopen
     }
 }

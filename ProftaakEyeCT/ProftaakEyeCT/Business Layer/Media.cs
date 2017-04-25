@@ -9,6 +9,9 @@ namespace ProftaakEyectEvents
     public abstract class Media
     {
         private int Id;
+     
+
+
 
 
         public Media(int ID)
@@ -17,9 +20,10 @@ namespace ProftaakEyectEvents
 
         }
 
+
         public int MediaID { get { return Id; } set { Id = value; } }
 
-
+        
 
         public override string ToString()
         {

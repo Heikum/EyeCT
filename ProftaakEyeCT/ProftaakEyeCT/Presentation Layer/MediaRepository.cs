@@ -22,6 +22,22 @@ namespace ProftaakEyeCT.Presentation_Layer
             return context.Insert(media);
 
         }
+
+        public Video Insert(Video video)
+        {
+            return context.Insert(video);
+        }
+
+        public Image Insert(Image image)
+        {
+            return context.Insert(image);
+        }
+
+        public int GetId()
+        {
+            return context.GetId();
+        }
+
         public List<Media> GetAll()
         {
             return context.GetAll();
