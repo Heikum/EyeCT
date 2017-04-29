@@ -177,7 +177,20 @@ namespace ProftaakEyeCT.DAL
 
         public bool Delete(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "DELETE FROM Post WHERE ID=@id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", id);
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public Post GetById(int id)

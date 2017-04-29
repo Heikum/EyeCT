@@ -16,10 +16,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             this.context = context;
         }
-        public Media Insert(Media media)
+        public Media InsertNull()
         {
 
-            return context.Insert(media);
+            return context.InsertNull();
 
         }
 

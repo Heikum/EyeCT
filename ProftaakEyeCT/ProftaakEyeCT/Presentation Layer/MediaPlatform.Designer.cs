@@ -44,7 +44,8 @@
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pbMedia = new System.Windows.Forms.PictureBox();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.btnLoadMedia = new System.Windows.Forms.Button();
+            this.axShockwaveFlash1 = new AxShockwaveFlashObjects.AxShockwaveFlash();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -52,6 +53,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMediaVerwijderen
@@ -62,6 +64,7 @@
             this.btnMediaVerwijderen.TabIndex = 2;
             this.btnMediaVerwijderen.Text = "Verwijderen";
             this.btnMediaVerwijderen.UseVisualStyleBackColor = true;
+            this.btnMediaVerwijderen.Click += new System.EventHandler(this.btnMediaVerwijderen_Click);
             // 
             // btnMediaRefresh
             // 
@@ -71,6 +74,7 @@
             this.btnMediaRefresh.TabIndex = 4;
             this.btnMediaRefresh.Text = "Refresh";
             this.btnMediaRefresh.UseVisualStyleBackColor = true;
+            this.btnMediaRefresh.Click += new System.EventHandler(this.btnMediaRefresh_Click);
             // 
             // lbMediaReactions
             // 
@@ -116,6 +120,7 @@
             this.btnMediaReageren.TabIndex = 0;
             this.btnMediaReageren.Text = "Reageren";
             this.btnMediaReageren.UseVisualStyleBackColor = true;
+            this.btnMediaReageren.Click += new System.EventHandler(this.btnMediaReageren_Click);
             // 
             // btnOpenPostPlatform
             // 
@@ -131,7 +136,7 @@
             // 
             this.pictureBox4.Image = global::ProftaakEyeCT.Properties.Resources.reactions;
             this.pictureBox4.Location = new System.Drawing.Point(604, 93);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(175, 57);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -142,7 +147,7 @@
             // 
             this.pictureBox3.Image = global::ProftaakEyeCT.Properties.Resources.Posts;
             this.pictureBox3.Location = new System.Drawing.Point(88, 93);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(136, 57);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -153,7 +158,7 @@
             // 
             this.pictureBox2.Image = global::ProftaakEyeCT.Properties.Resources.mediaplatform;
             this.pictureBox2.Location = new System.Drawing.Point(228, -11);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(412, 84);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -164,7 +169,7 @@
             // 
             this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox1.Location = new System.Drawing.Point(6, 73);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(796, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -175,7 +180,7 @@
             // 
             this.pictureBox7.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox7.Location = new System.Drawing.Point(6, 560);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(796, 19);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -186,7 +191,7 @@
             // 
             this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
             this.pictureBox5.Location = new System.Drawing.Point(660, 6);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(62, 63);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -202,13 +207,24 @@
             this.pbMedia.TabIndex = 26;
             this.pbMedia.TabStop = false;
             // 
-            // webBrowser1
+            // btnLoadMedia
             // 
-            this.webBrowser1.Location = new System.Drawing.Point(341, 155);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(244, 178);
-            this.webBrowser1.TabIndex = 27;
+            this.btnLoadMedia.Location = new System.Drawing.Point(341, 126);
+            this.btnLoadMedia.Name = "btnLoadMedia";
+            this.btnLoadMedia.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadMedia.TabIndex = 28;
+            this.btnLoadMedia.Text = "Load Media";
+            this.btnLoadMedia.UseVisualStyleBackColor = true;
+            this.btnLoadMedia.Click += new System.EventHandler(this.btnLoadMedia_Click);
+            // 
+            // axShockwaveFlash1
+            // 
+            this.axShockwaveFlash1.Enabled = true;
+            this.axShockwaveFlash1.Location = new System.Drawing.Point(341, 335);
+            this.axShockwaveFlash1.Name = "axShockwaveFlash1";
+            this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
+            this.axShockwaveFlash1.Size = new System.Drawing.Size(244, 173);
+            this.axShockwaveFlash1.TabIndex = 29;
             // 
             // MediaPlatform
             // 
@@ -216,8 +232,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(831, 385);
-            this.Controls.Add(this.webBrowser1);
+            this.ClientSize = new System.Drawing.Size(805, 446);
+            this.Controls.Add(this.axShockwaveFlash1);
+            this.Controls.Add(this.btnLoadMedia);
             this.Controls.Add(this.pbMedia);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -245,6 +262,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -265,6 +283,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pbMedia;
-        private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.Button btnLoadMedia;
+        private AxShockwaveFlashObjects.AxShockwaveFlash axShockwaveFlash1;
     }
 }
