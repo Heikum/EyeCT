@@ -49,34 +49,81 @@ namespace ProftaakEyeCT
         private void lbMediaPosts_SelectedIndexChanged(object sender, EventArgs e)
         {
             UpdateReactions();
+            
 
             if (lbMediaPosts.SelectedIndex != -1)
             {
                 string text = lbMediaPosts.GetItemText(lbMediaPosts.SelectedItem);
                 string[] result = text.Split('-');
 
+
                 if (result[6].StartsWith("https://www.youtube.com/"))
                 {
-                    webBrowser1.Show();
-                    string[] id = result[6].Split('=');
-                    string urlBase = "http://www.youtube.com/v/";
-                    webBrowser1.Navigate(urlBase + id[1]);
-                    pbMedia.Hide();
+                //    axShockwaveFlash1.Show();
+                //    string[] id = result[6].Split('=');
+                //    string urlBase = "http://www.youtube.com/v/";
+                //    axShockwaveFlash1.Movie = urlBase + id[1];
+                //    pbMedia.Hide();
                 }
                 else
                 {
                     pbMedia.Show();
                     pbMedia.ImageLocation = result[6];
-                    webBrowser1.Hide();
+                    axShockwaveFlash1.Hide();
                 }
+              
                 
             }
+            
         }
 
         private void btnOpenPostPlatform_Click(object sender, EventArgs e)
         {
             PostPlatform postplatform = new PostPlatform();
             postplatform.Show();
+            this.Close();
+        }
+
+        private void btnLoadMedia_Click(object sender, EventArgs e)
+        {
+            /*string text = lbMediaPosts.GetItemText(lbMediaPosts.SelectedItem);
+            string[] result = text.Split('-');
+
+            if (result[6].StartsWith("https://www.youtube.com/"))
+            {
+                webBrowser1.Show();
+                string[] id = result[6].Split('=');
+                string urlBase = "http://www.youtube.com/v/";
+                webBrowser1.Navigate(urlBase + id[1]);
+                pbMedia.Hide();
+            }
+            else
+            {
+                pbMedia.Show();
+                pbMedia.ImageLocation = result[6];
+                webBrowser1.Hide();
+            }*/
+        }
+
+        private void btnMediaVerwijderen_Click(object sender, EventArgs e)
+        {
+            var selectedpost = lbMediaPosts.SelectedItem as Post;
+            postrepo.Delete(selectedpost.PostID);
+            UpdatePosts();
+            UpdateReactions();
+        }
+
+        private void btnMediaRefresh_Click(object sender, EventArgs e)
+        {
+            UpdatePosts();
+            UpdateReactions();
+        }
+
+        private void btnMediaReageren_Click(object sender, EventArgs e)
+        {
+            ReactionPlatform reactionPlatForm = new ReactionPlatform();
+            reactionPlatForm.Show();
+            
         }
     }
 }

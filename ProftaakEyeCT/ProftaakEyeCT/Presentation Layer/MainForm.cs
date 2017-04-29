@@ -41,7 +41,7 @@ namespace ProftaakEyeCT
             if (message == true)
             {
                 LoggedInUser = tbUsername.Text;
-                accountrepo.GetAccountIDByUsername(tbUsername.Text);
+                accountid = accountrepo.GetAccountIDByUsername(tbUsername.Text);
                 MessageBox.Show("You are now logged in!");
                 Menuform menu = new Menuform();
                 menu.Show();

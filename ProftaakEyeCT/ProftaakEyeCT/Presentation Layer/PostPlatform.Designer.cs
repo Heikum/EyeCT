@@ -53,59 +53,65 @@
             // lbPostPlatformPosts
             // 
             this.lbPostPlatformPosts.FormattingEnabled = true;
-            this.lbPostPlatformPosts.ItemHeight = 16;
-            this.lbPostPlatformPosts.Location = new System.Drawing.Point(338, 21);
+            this.lbPostPlatformPosts.Location = new System.Drawing.Point(254, 17);
+            this.lbPostPlatformPosts.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.lbPostPlatformPosts.Name = "lbPostPlatformPosts";
-            this.lbPostPlatformPosts.Size = new System.Drawing.Size(338, 420);
+            this.lbPostPlatformPosts.Size = new System.Drawing.Size(254, 342);
             this.lbPostPlatformPosts.TabIndex = 0;
             // 
             // txtPostPlatformText
             // 
-            this.txtPostPlatformText.Location = new System.Drawing.Point(11, 190);
+            this.txtPostPlatformText.Location = new System.Drawing.Point(8, 154);
+            this.txtPostPlatformText.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtPostPlatformText.Multiline = true;
             this.txtPostPlatformText.Name = "txtPostPlatformText";
-            this.txtPostPlatformText.Size = new System.Drawing.Size(250, 121);
+            this.txtPostPlatformText.Size = new System.Drawing.Size(188, 99);
             this.txtPostPlatformText.TabIndex = 1;
             // 
             // lblPostPlatformText
             // 
             this.lblPostPlatformText.AutoSize = true;
-            this.lblPostPlatformText.Location = new System.Drawing.Point(9, 170);
+            this.lblPostPlatformText.Location = new System.Drawing.Point(7, 138);
+            this.lblPostPlatformText.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblPostPlatformText.Name = "lblPostPlatformText";
-            this.lblPostPlatformText.Size = new System.Drawing.Size(71, 17);
+            this.lblPostPlatformText.Size = new System.Drawing.Size(55, 13);
             this.lblPostPlatformText.TabIndex = 2;
             this.lblPostPlatformText.Text = "Post Text:";
             // 
             // dtpPostDate
             // 
             this.dtpPostDate.Enabled = false;
-            this.dtpPostDate.Location = new System.Drawing.Point(12, 366);
+            this.dtpPostDate.Location = new System.Drawing.Point(9, 297);
+            this.dtpPostDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dtpPostDate.Name = "dtpPostDate";
-            this.dtpPostDate.Size = new System.Drawing.Size(249, 22);
+            this.dtpPostDate.Size = new System.Drawing.Size(188, 20);
             this.dtpPostDate.TabIndex = 3;
             this.dtpPostDate.Value = new System.DateTime(2017, 4, 20, 11, 46, 15, 0);
             // 
             // txtImageLink
             // 
-            this.txtImageLink.Location = new System.Drawing.Point(714, 190);
+            this.txtImageLink.Location = new System.Drawing.Point(541, 73);
+            this.txtImageLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtImageLink.Name = "txtImageLink";
-            this.txtImageLink.Size = new System.Drawing.Size(250, 22);
+            this.txtImageLink.Size = new System.Drawing.Size(188, 20);
             this.txtImageLink.TabIndex = 4;
             // 
             // lblImageLink
             // 
             this.lblImageLink.AutoSize = true;
-            this.lblImageLink.Location = new System.Drawing.Point(711, 170);
+            this.lblImageLink.Location = new System.Drawing.Point(538, 57);
+            this.lblImageLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblImageLink.Name = "lblImageLink";
-            this.lblImageLink.Size = new System.Drawing.Size(80, 17);
+            this.lblImageLink.Size = new System.Drawing.Size(62, 13);
             this.lblImageLink.TabIndex = 5;
             this.lblImageLink.Text = "Image Link:";
             // 
             // btnAddPost
             // 
-            this.btnAddPost.Location = new System.Drawing.Point(12, 411);
+            this.btnAddPost.Location = new System.Drawing.Point(9, 334);
+            this.btnAddPost.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnAddPost.Name = "btnAddPost";
-            this.btnAddPost.Size = new System.Drawing.Size(259, 30);
+            this.btnAddPost.Size = new System.Drawing.Size(194, 24);
             this.btnAddPost.TabIndex = 6;
             this.btnAddPost.Text = "Place Post";
             this.btnAddPost.UseVisualStyleBackColor = true;
@@ -114,26 +120,30 @@
             // txtLoggedInUser
             // 
             this.txtLoggedInUser.Enabled = false;
-            this.txtLoggedInUser.Location = new System.Drawing.Point(12, 145);
+            this.txtLoggedInUser.Location = new System.Drawing.Point(9, 118);
+            this.txtLoggedInUser.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtLoggedInUser.Name = "txtLoggedInUser";
-            this.txtLoggedInUser.Size = new System.Drawing.Size(250, 22);
+            this.txtLoggedInUser.Size = new System.Drawing.Size(188, 20);
             this.txtLoggedInUser.TabIndex = 7;
             // 
             // lblLoggedInUser
             // 
             this.lblLoggedInUser.AutoSize = true;
-            this.lblLoggedInUser.Location = new System.Drawing.Point(12, 125);
+            this.lblLoggedInUser.Location = new System.Drawing.Point(9, 102);
+            this.lblLoggedInUser.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblLoggedInUser.Name = "lblLoggedInUser";
-            this.lblLoggedInUser.Size = new System.Drawing.Size(77, 17);
+            this.lblLoggedInUser.Size = new System.Drawing.Size(58, 13);
             this.lblLoggedInUser.TabIndex = 8;
             this.lblLoggedInUser.Text = "Username:";
             // 
             // rbImageMedia
             // 
             this.rbImageMedia.AutoSize = true;
-            this.rbImageMedia.Location = new System.Drawing.Point(12, 46);
+            this.rbImageMedia.Checked = true;
+            this.rbImageMedia.Location = new System.Drawing.Point(9, 17);
+            this.rbImageMedia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbImageMedia.Name = "rbImageMedia";
-            this.rbImageMedia.Size = new System.Drawing.Size(67, 21);
+            this.rbImageMedia.Size = new System.Drawing.Size(54, 17);
             this.rbImageMedia.TabIndex = 9;
             this.rbImageMedia.TabStop = true;
             this.rbImageMedia.Text = "Image";
@@ -143,11 +153,11 @@
             // rbVideoMedia
             // 
             this.rbVideoMedia.AutoSize = true;
-            this.rbVideoMedia.Location = new System.Drawing.Point(12, 19);
+            this.rbVideoMedia.Location = new System.Drawing.Point(9, 38);
+            this.rbVideoMedia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbVideoMedia.Name = "rbVideoMedia";
-            this.rbVideoMedia.Size = new System.Drawing.Size(65, 21);
+            this.rbVideoMedia.Size = new System.Drawing.Size(52, 17);
             this.rbVideoMedia.TabIndex = 10;
-            this.rbVideoMedia.TabStop = true;
             this.rbVideoMedia.Text = "Video";
             this.rbVideoMedia.UseVisualStyleBackColor = true;
             this.rbVideoMedia.CheckedChanged += new System.EventHandler(this.rbVideoMedia_CheckedChanged);
@@ -155,11 +165,11 @@
             // rbGeenMedia
             // 
             this.rbGeenMedia.AutoSize = true;
-            this.rbGeenMedia.Location = new System.Drawing.Point(12, 73);
+            this.rbGeenMedia.Location = new System.Drawing.Point(9, 59);
+            this.rbGeenMedia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.rbGeenMedia.Name = "rbGeenMedia";
-            this.rbGeenMedia.Size = new System.Drawing.Size(106, 21);
+            this.rbGeenMedia.Size = new System.Drawing.Size(83, 17);
             this.rbGeenMedia.TabIndex = 11;
-            this.rbGeenMedia.TabStop = true;
             this.rbGeenMedia.Text = "Geen Media";
             this.rbGeenMedia.UseVisualStyleBackColor = true;
             this.rbGeenMedia.CheckedChanged += new System.EventHandler(this.rbGeenMedia_CheckedChanged);
@@ -169,66 +179,76 @@
             this.groupBox1.Controls.Add(this.rbGeenMedia);
             this.groupBox1.Controls.Add(this.rbVideoMedia);
             this.groupBox1.Controls.Add(this.rbImageMedia);
-            this.groupBox1.Location = new System.Drawing.Point(16, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 10);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(200, 100);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox1.Size = new System.Drawing.Size(150, 81);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Media Opties:";
             // 
             // txtVideoName
             // 
-            this.txtVideoName.Location = new System.Drawing.Point(714, 41);
+            this.txtVideoName.Enabled = false;
+            this.txtVideoName.Location = new System.Drawing.Point(543, 118);
+            this.txtVideoName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtVideoName.Name = "txtVideoName";
-            this.txtVideoName.Size = new System.Drawing.Size(250, 22);
+            this.txtVideoName.Size = new System.Drawing.Size(188, 20);
             this.txtVideoName.TabIndex = 13;
             // 
             // lblVideoName
             // 
             this.lblVideoName.AutoSize = true;
-            this.lblVideoName.Location = new System.Drawing.Point(711, 21);
+            this.lblVideoName.Location = new System.Drawing.Point(540, 102);
+            this.lblVideoName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVideoName.Name = "lblVideoName";
-            this.lblVideoName.Size = new System.Drawing.Size(89, 17);
+            this.lblVideoName.Size = new System.Drawing.Size(68, 13);
             this.lblVideoName.TabIndex = 14;
             this.lblVideoName.Text = "Video Name:";
             // 
             // txtVideoLink
             // 
-            this.txtVideoLink.Location = new System.Drawing.Point(714, 90);
+            this.txtVideoLink.Enabled = false;
+            this.txtVideoLink.Location = new System.Drawing.Point(543, 158);
+            this.txtVideoLink.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtVideoLink.Name = "txtVideoLink";
-            this.txtVideoLink.Size = new System.Drawing.Size(250, 22);
+            this.txtVideoLink.Size = new System.Drawing.Size(188, 20);
             this.txtVideoLink.TabIndex = 15;
             // 
             // lblVideoLink
             // 
             this.lblVideoLink.AutoSize = true;
-            this.lblVideoLink.Location = new System.Drawing.Point(711, 70);
+            this.lblVideoLink.Location = new System.Drawing.Point(540, 142);
+            this.lblVideoLink.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblVideoLink.Name = "lblVideoLink";
-            this.lblVideoLink.Size = new System.Drawing.Size(74, 17);
+            this.lblVideoLink.Size = new System.Drawing.Size(57, 13);
             this.lblVideoLink.TabIndex = 16;
             this.lblVideoLink.Text = "Video Link";
             // 
             // txtImageName
             // 
-            this.txtImageName.Location = new System.Drawing.Point(714, 140);
+            this.txtImageName.Location = new System.Drawing.Point(541, 33);
+            this.txtImageName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtImageName.Name = "txtImageName";
-            this.txtImageName.Size = new System.Drawing.Size(250, 22);
+            this.txtImageName.Size = new System.Drawing.Size(188, 20);
             this.txtImageName.TabIndex = 17;
             // 
             // lblImageName
             // 
             this.lblImageName.AutoSize = true;
-            this.lblImageName.Location = new System.Drawing.Point(711, 120);
+            this.lblImageName.Location = new System.Drawing.Point(538, 17);
+            this.lblImageName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblImageName.Name = "lblImageName";
-            this.lblImageName.Size = new System.Drawing.Size(91, 17);
+            this.lblImageName.Size = new System.Drawing.Size(70, 13);
             this.lblImageName.TabIndex = 18;
             this.lblImageName.Text = "Image Name:";
             // 
             // PostPlatform
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1087, 593);
+            this.ClientSize = new System.Drawing.Size(815, 482);
             this.Controls.Add(this.lblImageName);
             this.Controls.Add(this.txtImageName);
             this.Controls.Add(this.lblVideoLink);
@@ -245,6 +265,7 @@
             this.Controls.Add(this.lblPostPlatformText);
             this.Controls.Add(this.txtPostPlatformText);
             this.Controls.Add(this.lbPostPlatformPosts);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PostPlatform";
             this.Text = "PostPlatform";
             this.Load += new System.EventHandler(this.PostPlatform_Load);

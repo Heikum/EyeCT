@@ -28,6 +28,7 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             InitializeComponent();
             postrepo = new PostRepository(new PostSQLContext());
+            mediarepo = new MediaRepository(new MediaSQLContext());
             UpdatePostControls();
         }
 
@@ -67,20 +68,34 @@ namespace ProftaakEyeCT.Presentation_Layer
             }
         }
 
-        //moet nog testen
+        
         private void btnAddPost_Click(object sender, EventArgs e)
         {
-            int mediaId = mediarepo.GetId();
+            MediaPlatform platform = new MediaPlatform();
+            int mediaId = mediarepo.GetId();//dit kan weg, was om te testen
             if (rbImageMedia.Checked)
-            {
-                
-                mediarepo.Insert(new ProftaakEyectEvents.Image(mediarepo.GetId(), txtImageLink.Text, txtImageLink.Text));
-                postrepo.InsertPost(new Post(mediaId - 1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
+            {              
+                mediarepo.Insert(new ProftaakEyectEvents.Image(mediaId, txtImageLink.Text, txtImageName.Text));
+                postrepo.InsertPost(new Post(mediarepo.GetId() - 1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
+                MessageBox.Show("Post added");
+                this.Close();
+                platform.Show();        
             }
             if (rbVideoMedia.Checked)
             {
-                mediarepo.Insert(new Video(mediarepo.GetId(), txtVideoLink.Text, txtVideoName.Text));
-                postrepo.InsertPost(new Post(mediaId - 1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
+                mediarepo.Insert(new Video(mediaId, txtVideoLink.Text, txtVideoName.Text));
+                postrepo.InsertPost(new Post(mediarepo.GetId() -1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
+                MessageBox.Show("Post added");
+                this.Close();
+                platform.Show();
+            }
+            if (rbGeenMedia.Checked)
+            {
+                mediarepo.InsertNull();//dbnull values worden toegevoegd om het id goed te laten verlopen i.v.m. FK's
+                postrepo.InsertPost(new Post(mediarepo.GetId() - 1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
+                MessageBox.Show("Post added");
+                this.Close();
+                platform.Show();
 
             }
         }

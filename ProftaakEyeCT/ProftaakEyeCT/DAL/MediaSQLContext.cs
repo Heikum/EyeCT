@@ -97,8 +97,8 @@ namespace ProftaakEyeCT.DAL
 
         }
 
-        //deze werkt niet
-        public Media Insert(Media media)
+        //Wordt gebruikt om de ID's van de media tabel gelijk te laten lopen met de posts
+        public Media InsertNull()
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -106,37 +106,26 @@ namespace ProftaakEyeCT.DAL
                     "VALUES (@VideoName, @VideoLink, @ImageName, @ImageLink, @MediaType)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("@VideoName", (media as Video).VideoName);
-                    command.Parameters.AddWithValue("@VideoLink", (media as Video).VideoLink);
-                    command.Parameters.AddWithValue("@ImageName", (media as Image).ImageName);
-                    command.Parameters.AddWithValue("@ImageLink", (media as Image).ImageLink);
+                    command.Parameters.AddWithValue("@VideoName", DBNull.Value);
+                    command.Parameters.AddWithValue("@VideoLink", DBNull.Value);
+                    command.Parameters.AddWithValue("@ImageName", DBNull.Value);
+                    command.Parameters.AddWithValue("@ImageLink", DBNull.Value);
+                    command.Parameters.AddWithValue("@MediaType", 0);
 
-                    if((media as Video).VideoName == null)
-                    {
-                        command.Parameters.AddWithValue("@MediaType", 2);
-                    }
-
-                    if ((media as Image).ImageName == null)
-                    {
-                        command.Parameters.AddWithValue("@MediaType", 1);
-                    }
-                    else
-                    {
-                        command.Parameters.AddWithValue("@MediaType", 0);
-                    }
+                    
                     try
                     {
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException e)
                     {
-                        MessageBox.Show("Error:" + e.Message);
+                        
                         
                     }
                 }
                 
             }
-            return media;
+            return null;
         }
 
         public bool Update(Media media)
@@ -157,12 +146,19 @@ namespace ProftaakEyeCT.DAL
                     command.Parameters.AddWithValue("@ImageName", DBNull.Value);
                     command.Parameters.AddWithValue("@ImageLink", DBNull.Value);
                     command.Parameters.AddWithValue("@MediaType", 1);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        
 
-
+                    }
                 }
-            }
-            return video;
+                return video;
 
+            }
         }
 
         public Image Insert(Image image)
@@ -178,11 +174,17 @@ namespace ProftaakEyeCT.DAL
                     command.Parameters.AddWithValue("@ImageName", image.ImageName);
                     command.Parameters.AddWithValue("@ImageLink", image.ImageLink);
                     command.Parameters.AddWithValue("@MediaType", 2);
-
-
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        return null;
+                    }
                 }
+                return image;
             }
-            return image;
         }
 
         public int GetId()
@@ -197,12 +199,13 @@ namespace ProftaakEyeCT.DAL
                     // het laatste id kiezen + 1 zodat het nieuwe id wordt verkregen en gebruikt kan worden
                     userid++;
                 }
+                return userid;
             }
 
-            return userid;
+           
 
         }
-
+        
         // er moet nog een lege insert bij om de autoincrement gelijk te laten lopen
     }
 }

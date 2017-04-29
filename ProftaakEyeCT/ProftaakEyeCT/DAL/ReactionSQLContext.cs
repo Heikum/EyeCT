@@ -46,12 +46,35 @@ namespace ProftaakEyeCT.DAL
             }
             return reactions;
         }
-    
-            
+
+
 
         public Reaction Insert(Reaction reaction)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO Reaction (Text,ReactionID,ReactionDateTime,AccountID,PostID)" +
+                    "VALUES (@Text, @ReactionID, @ReactionDateTime, @AccountID, @PostID)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@Text", reaction.Text);
+                    command.Parameters.AddWithValue("@ReactionID", reaction.ReactionId);
+                    command.Parameters.AddWithValue("@ReactionDateTime", reaction.ReactionDateTime);
+                    command.Parameters.AddWithValue("@AccountID", reaction.AccountId);
+                    command.Parameters.AddWithValue("@PostID", reaction.PostId);
+
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+
+                    }
+                }
+                return reaction;
+            }
         }
 
         public bool Update(Reaction reaction)
