@@ -80,6 +80,16 @@ namespace ProftaakEyeCT
             {
                 lbOnSite.Items.Add(account);
             }
+            lbAccesAllUsers.Items.Clear();
+            foreach (Account account in accountrepo.GetAllAccounts())
+            {
+                lbAccesAllUsers.Items.Add(account);
+            }
+            lbOutside.Items.Clear();
+            foreach (Account account in accessrepo.GetAllOutside())
+            {
+                lbOutside.Items.Add(account);
+            }
         }
 
 
@@ -217,10 +227,7 @@ namespace ProftaakEyeCT
             }
         }
 
-        private void btnOnSiteReload_Click(object sender, EventArgs e)
-        {
-            UpdateControls();
-        }
+
 
         private void btnAddReservation_Click(object sender, EventArgs e)
         {
@@ -285,6 +292,34 @@ namespace ProftaakEyeCT
         private void btnRefresh_Click(object sender, EventArgs e)
         {
             UpdateControls();
+        }
+
+        private void btnSelGoOutside_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Account A = (Account)lbOnSite.SelectedItem;
+                accessrepo.UpdateInside(A, false);
+                UpdateControls();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is iets misgegaan" + ex.Message);
+            }
+        }
+
+        private void btnSelGoOnSite_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Account A = (Account)lbOutside.SelectedItem;
+                accessrepo.UpdateInside(A, true);
+                UpdateControls();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Er is iets misgegaan" + ex.Message);
+            }
         }
     }
 }
