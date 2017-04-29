@@ -45,7 +45,7 @@
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pbMedia = new System.Windows.Forms.PictureBox();
             this.btnLoadMedia = new System.Windows.Forms.Button();
-            this.axShockwaveFlash1 = new AxShockwaveFlashObjects.AxShockwaveFlash();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -53,7 +53,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMediaVerwijderen
@@ -217,14 +216,13 @@
             this.btnLoadMedia.UseVisualStyleBackColor = true;
             this.btnLoadMedia.Click += new System.EventHandler(this.btnLoadMedia_Click);
             // 
-            // axShockwaveFlash1
+            // webBrowser1
             // 
-            this.axShockwaveFlash1.Enabled = true;
-            this.axShockwaveFlash1.Location = new System.Drawing.Point(341, 335);
-            this.axShockwaveFlash1.Name = "axShockwaveFlash1";
-            this.axShockwaveFlash1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axShockwaveFlash1.OcxState")));
-            this.axShockwaveFlash1.Size = new System.Drawing.Size(244, 173);
-            this.axShockwaveFlash1.TabIndex = 29;
+            this.webBrowser1.Location = new System.Drawing.Point(341, 336);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(218, 172);
+            this.webBrowser1.TabIndex = 29;
             // 
             // MediaPlatform
             // 
@@ -232,8 +230,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(805, 446);
-            this.Controls.Add(this.axShockwaveFlash1);
+            this.ClientSize = new System.Drawing.Size(805, 595);
+            this.Controls.Add(this.webBrowser1);
             this.Controls.Add(this.btnLoadMedia);
             this.Controls.Add(this.pbMedia);
             this.Controls.Add(this.pictureBox5);
@@ -262,7 +260,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.axShockwaveFlash1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -284,6 +281,6 @@
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pbMedia;
         private System.Windows.Forms.Button btnLoadMedia;
-        private AxShockwaveFlashObjects.AxShockwaveFlash axShockwaveFlash1;
+        private System.Windows.Forms.WebBrowser webBrowser1;
     }
 }
