@@ -21,5 +21,7 @@ namespace ProftaakEyeCT.DAL
         bool GainAccess(bool accessBool, Account acc);
 
         bool UpdateInside(Account acc, bool accessbool);
+
+        List<Account> GetAllOutside();
     }
 }

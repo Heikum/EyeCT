@@ -91,7 +91,28 @@ namespace ProftaakEyeCT.DAL
             List<Account> accounts = new List<Account>();
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Account WHERE ID IN (SELECT AccountId FROM Access WHERE InsideStatus = 1)";
+                string query = "SELECT * FROM Account WHERE ID IN (SELECT AccountId FROM Access WHERE InsideStatus = 1 AND AccessStatus = 1)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            accounts.Add(CreateAccountFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return accounts;
+        }
+
+        public List<Account> GetAllOutside()
+        {
+            List<Account> accounts = new List<Account>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Account WHERE ID IN (SELECT AccountId FROM Access WHERE InsideStatus = 0 AND AccessStatus = 1)";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
