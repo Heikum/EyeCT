@@ -59,17 +59,17 @@ namespace ProftaakEyeCT
 
                 if (result[6].StartsWith("https://www.youtube.com/"))
                 {
-                //    axShockwaveFlash1.Show();
-                //    string[] id = result[6].Split('=');
-                //    string urlBase = "http://www.youtube.com/v/";
-                //    axShockwaveFlash1.Movie = urlBase + id[1];
-                //    pbMedia.Hide();
+                    webBrowser1.Show();
+                    string[] id = result[6].Split('=');
+                    string urlBase = "http://www.youtube.com/v/";
+                    webBrowser1.Navigate(urlBase + id[1]);
+                    pbMedia.Hide();
                 }
                 else
                 {
                     pbMedia.Show();
                     pbMedia.ImageLocation = result[6];
-                    axShockwaveFlash1.Hide();
+                    webBrowser1.Hide();
                 }
               
                 
