@@ -136,6 +136,12 @@
     <Compile Include="Presentation Layer\Registerform.Designer.cs">
       <DependentUpon>Registerform.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentation Layer\Reportform.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Reportform.Designer.cs">
+      <DependentUpon>Reportform.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentation Layer\Reservation group.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -169,6 +175,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\ReactionPlatform.resx">
       <DependentUpon>ReactionPlatform.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Reportform.resx">
+      <DependentUpon>Reportform.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentation Layer\Reservation group.resx">
       <DependentUpon>Reservation group.cs</DependentUpon>

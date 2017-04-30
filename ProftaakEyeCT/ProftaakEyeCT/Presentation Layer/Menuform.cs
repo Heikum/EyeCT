@@ -321,5 +321,11 @@ namespace ProftaakEyeCT
                 MessageBox.Show("Er is iets misgegaan" + ex.Message);
             }
         }
+
+        private void btnReportPage_Click(object sender, EventArgs e)
+        {
+            Reportform reportform = new Reportform();
+            reportform.Show();
+        }
     }
 }

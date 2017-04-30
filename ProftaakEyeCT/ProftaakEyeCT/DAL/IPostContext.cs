@@ -15,6 +15,8 @@ namespace ProftaakEyeCT.DAL
         bool Delete(int id);
         List<Post> GetByUsername(string username);
         bool UpdatePost(Post post);
+        List<Post> GetAllReportedPosts();
+        string GetReportPostComplaint(Post post);
 
     }
 }

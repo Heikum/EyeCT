@@ -37,22 +37,22 @@
             this.btnMediaAanpassen = new System.Windows.Forms.Button();
             this.btnMediaReageren = new System.Windows.Forms.Button();
             this.btnOpenPostPlatform = new System.Windows.Forms.Button();
+            this.btnLoadMedia = new System.Windows.Forms.Button();
+            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            this.pbMedia = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.pbMedia = new System.Windows.Forms.PictureBox();
-            this.btnLoadMedia = new System.Windows.Forms.Button();
-            this.webBrowser1 = new System.Windows.Forms.WebBrowser();
+            ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
             this.SuspendLayout();
             // 
             // btnMediaVerwijderen
@@ -131,6 +131,44 @@
             this.btnOpenPostPlatform.UseVisualStyleBackColor = true;
             this.btnOpenPostPlatform.Click += new System.EventHandler(this.btnOpenPostPlatform_Click);
             // 
+            // btnLoadMedia
+            // 
+            this.btnLoadMedia.Location = new System.Drawing.Point(341, 126);
+            this.btnLoadMedia.Name = "btnLoadMedia";
+            this.btnLoadMedia.Size = new System.Drawing.Size(75, 23);
+            this.btnLoadMedia.TabIndex = 28;
+            this.btnLoadMedia.Text = "Load Media";
+            this.btnLoadMedia.UseVisualStyleBackColor = true;
+            this.btnLoadMedia.Click += new System.EventHandler(this.btnLoadMedia_Click);
+            // 
+            // webBrowser1
+            // 
+            this.webBrowser1.Location = new System.Drawing.Point(341, 336);
+            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
+            this.webBrowser1.Name = "webBrowser1";
+            this.webBrowser1.Size = new System.Drawing.Size(218, 172);
+            this.webBrowser1.TabIndex = 29;
+            // 
+            // pbMedia
+            // 
+            this.pbMedia.Location = new System.Drawing.Point(341, 155);
+            this.pbMedia.Name = "pbMedia";
+            this.pbMedia.Size = new System.Drawing.Size(244, 178);
+            this.pbMedia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
+            this.pbMedia.TabIndex = 26;
+            this.pbMedia.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
+            this.pictureBox5.Location = new System.Drawing.Point(660, 6);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(62, 63);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox5.TabIndex = 25;
+            this.pictureBox5.TabStop = false;
+            // 
             // pictureBox4
             // 
             this.pictureBox4.Image = global::ProftaakEyeCT.Properties.Resources.reactions;
@@ -186,44 +224,6 @@
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
             // 
-            // pictureBox5
-            // 
-            this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
-            this.pictureBox5.Location = new System.Drawing.Point(660, 6);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(62, 63);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox5.TabIndex = 25;
-            this.pictureBox5.TabStop = false;
-            // 
-            // pbMedia
-            // 
-            this.pbMedia.Location = new System.Drawing.Point(341, 155);
-            this.pbMedia.Name = "pbMedia";
-            this.pbMedia.Size = new System.Drawing.Size(244, 178);
-            this.pbMedia.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pbMedia.TabIndex = 26;
-            this.pbMedia.TabStop = false;
-            // 
-            // btnLoadMedia
-            // 
-            this.btnLoadMedia.Location = new System.Drawing.Point(341, 126);
-            this.btnLoadMedia.Name = "btnLoadMedia";
-            this.btnLoadMedia.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadMedia.TabIndex = 28;
-            this.btnLoadMedia.Text = "Load Media";
-            this.btnLoadMedia.UseVisualStyleBackColor = true;
-            this.btnLoadMedia.Click += new System.EventHandler(this.btnLoadMedia_Click);
-            // 
-            // webBrowser1
-            // 
-            this.webBrowser1.Location = new System.Drawing.Point(341, 336);
-            this.webBrowser1.MinimumSize = new System.Drawing.Size(20, 20);
-            this.webBrowser1.Name = "webBrowser1";
-            this.webBrowser1.Size = new System.Drawing.Size(218, 172);
-            this.webBrowser1.TabIndex = 29;
-            // 
             // MediaPlatform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -253,13 +253,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Media Platform";
             this.Load += new System.EventHandler(this.MediaPlatform_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).EndInit();
             this.ResumeLayout(false);
 
         }

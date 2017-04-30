@@ -42,5 +42,13 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetById(id);
         }
+        public List<Post> GetAllReportedPosts()
+        {
+            return context.GetAllReportedPosts();
+        }
+        public string GetReportPostComplaint(Post post)
+        {
+            return context.GetReportPostComplaint(post);
+        }
     }
 }
