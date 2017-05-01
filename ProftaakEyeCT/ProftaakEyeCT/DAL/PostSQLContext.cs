@@ -353,6 +353,34 @@ namespace ProftaakEyeCT.DAL
                 }
             }
         }
+        public void InsertReportedPost(Post post)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO PostReport (ID, PostID, Complaint)" +
+                    "VALUES (@mediaid, @text, @postdatetime, @accountid)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@mediaid", post.MediaID);
+                    command.Parameters.AddWithValue("@text", post.Text);
+                    command.Parameters.AddWithValue("@postdatetime", post.Postdatetime);
+                    command.Parameters.AddWithValue("@accountid", post.AccountID);
+
+                    try
+                    {
+                        command.ExecuteNonQuery();
+                    }
+                    catch (SqlException e)
+                    {
+                        MessageBox.Show(Convert.ToString(e));
+                    }
+
+
+                }
+
+            }
+        }
 
         private Post CreatePostFromReader(SqlDataReader reader)
         {

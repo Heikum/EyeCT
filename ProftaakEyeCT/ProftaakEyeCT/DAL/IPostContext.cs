@@ -17,6 +17,7 @@ namespace ProftaakEyeCT.DAL
         bool UpdatePost(Post post);
         List<Post> GetAllReportedPosts();
         string GetReportPostComplaint(Post post);
+        void InsertReportedPost(Post post);
 
     }
 }
