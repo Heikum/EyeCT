@@ -17,6 +17,7 @@ namespace ProftaakEyectEvents.DAL
         void InsertAccountReservation(Account account, int resid);
 
         void UpdateReservation(Reservation reservation);
+        bool InsertMaterialReservation(int resID, int materialID);
 
         void DeleteReservation(Reservation reservation);
         List<Reservation> GetByAccountID(int accountid);

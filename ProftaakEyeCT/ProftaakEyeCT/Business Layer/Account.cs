@@ -8,8 +8,6 @@ namespace ProftaakEyectEvents
 {
     public class Account
     {
-
-
         private int id;
         private string kind;
         private int personid;
@@ -64,7 +62,7 @@ namespace ProftaakEyectEvents
         }
         public override string ToString()
         {
-            return username + " " + password + " " + emailadress;
+            return Username + " ";
         }
     }
 

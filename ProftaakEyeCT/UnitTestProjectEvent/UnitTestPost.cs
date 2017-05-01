@@ -11,7 +11,7 @@ namespace UnitTestProjectEvent
         [TestInitialize]
         public void TestInitialize()
         {
-            this.post = new Post(3, 4, "Hallo", DateTime.Today);
+            //this.post = new Post(3, 4, "Hallo", DateTime.Today);
         }
         [TestMethod]
         public void TestConstructorPost()
