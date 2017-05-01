@@ -26,6 +26,12 @@ namespace ProftaakEyeCT.Presentation_Layer
             return context.InsertReservation(reservation);
 
         }
+
+        public bool InsertMaterialReservation(int resid, int materialid)
+        {
+            context.InsertMaterialReservation(resid, materialid);
+            return true;
+        }
         public void InsertAccountReservation(Account account, int resid)
         {
             context.InsertAccountReservation(account, resid);
