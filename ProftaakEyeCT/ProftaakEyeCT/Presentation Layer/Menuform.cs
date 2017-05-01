@@ -439,6 +439,7 @@ namespace ProftaakEyeCT
             }
         }
 
+
         private void btnAddMaterial_Click_1(object sender, EventArgs e)
         {
             Material item = new Material(1, txtMaterialName.Text, updownpriceitem.Value, Convert.ToInt32(nudMaterialStock.Value));
