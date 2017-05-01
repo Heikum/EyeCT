@@ -34,6 +34,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetByID(eventid, campingspotsid);
         }
+        public List<Reservation> GetByAccountID(int accountid)
+        {
+            return context.GetByAccountID(accountid);
+        }
 
     }
 }

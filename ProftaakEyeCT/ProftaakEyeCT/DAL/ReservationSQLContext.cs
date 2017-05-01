@@ -8,8 +8,9 @@ using System.Windows.Forms;
 
 namespace ProftaakEyectEvents.DAL
 {
-    class ReservationSQLContext:IReservationContext
+    public class ReservationSQLContext:IReservationContext
     {
+        private List<Reservation> reservations = new List<Reservation>();
         
         public List<Reservation> GetAll()
         {
@@ -53,6 +54,26 @@ namespace ProftaakEyectEvents.DAL
                 }
             }
             return null;
+        }
+        public List<Reservation> GetByAccountID(int accountid)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT R.* FROM Reservation R LEFT JOIN AccountReservation on R.ID = AccountReservation.ReservationID Where AccountID = @accountid";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("accountid", accountid);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            reservations.Add(CreateReservationFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return reservations;
         }
 
         public Reservation InsertReservation(Reservation reservation)

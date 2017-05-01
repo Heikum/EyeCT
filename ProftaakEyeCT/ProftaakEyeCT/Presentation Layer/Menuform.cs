@@ -143,6 +143,19 @@ namespace ProftaakEyeCT
         {
             string LoggedInUser = mainloginform.LoggedInUser;
             txtReservationAccountName.Text = LoggedInUser;
+            updateAccount = accountrepo.GetAccountByUsername(LoggedInUser);
+            txtCurrenctUsername.Text = updateAccount.Username;
+            txtCurrentPassword.Text = updateAccount.Password;
+            txtCurrentEmail.Text = updateAccount.Emailadress;
+            updatePerson = personrepo.GetById(updateAccount.Personid);
+            txtCurrentName.Text = updatePerson.Name;
+            txtCurrentZipcode.Text = updatePerson.Zipcode;
+            txtCurrentCity.Text = updatePerson.City;
+            txtCurrentStreet.Text = updatePerson.Street;
+            txtCurrentPhonenumber.Text = updatePerson.Phonenumber;
+            nudCurrentHousenumber.Value = updatePerson.Number;
+            lbReservations.DataSource = reservationrepo.GetByAccountID(updateAccount.Id);
+
             
         }
 
@@ -327,6 +340,17 @@ namespace ProftaakEyeCT
         {
             Reportform reportform = new Reportform();
             reportform.Show();
+        }
+
+        private void lbReservations_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateReservation = (Reservation)lbReservations.SelectedItem;
+            updateEvent = eventrepo.GetById(updateReservation.Eventid);
+            txtCurrentPlaceReservation.Text = updateEvent.location;
+            nudCampingspot.Value = updateReservation.Campingspotid;
+            dtpCurrentDateReservation.Value = updateReservation.Reservationdate;
+            txtEventNaam.Text = updateEvent.name;
+
         }
     }
 }

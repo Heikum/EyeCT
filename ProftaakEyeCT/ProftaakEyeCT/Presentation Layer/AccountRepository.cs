@@ -50,6 +50,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.DeleteAccount(id);
         }
+        public Account GetAccountByUsername(string username)
+        {
+            return context.GetAccountByUsername(username);
+        }
 
     }
 }
