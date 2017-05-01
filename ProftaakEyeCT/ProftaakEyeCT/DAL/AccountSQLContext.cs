@@ -132,9 +132,31 @@ namespace ProftaakEyectEvents.DAL
             return account;
                 
             }
-        
 
+        public Account GetAccountRights(string username)
+        {
 
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Account WHERE Username = @username";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+
+                    command.Parameters.AddWithValue("@username", username);
+
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            account = CreateAccountFromReader(reader);
+                        }
+                    }
+                }
+
+            }
+            return account;
+
+        }
 
         public bool DeleteAccount(int id)
         {
@@ -271,8 +293,6 @@ namespace ProftaakEyectEvents.DAL
                  Convert.ToString(reader["Emailadress"]),
                  Convert.ToString(reader["Password"]),
                  Convert.ToBoolean(reader["Rights"]));
-
-            
         }
     }
 }

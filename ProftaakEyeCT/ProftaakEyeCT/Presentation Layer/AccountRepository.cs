@@ -36,6 +36,11 @@ namespace ProftaakEyeCT.Presentation_Layer
             return context.GetAccountIDByUsername(gebruikersnaam);
         }
 
+        public Account GetAccountRights(string username)
+        {
+            return context.GetAccountRights(username); 
+        }
+
         public bool UpdateAccount(Account account)
         {
             return context.UpdateAccount(account);
