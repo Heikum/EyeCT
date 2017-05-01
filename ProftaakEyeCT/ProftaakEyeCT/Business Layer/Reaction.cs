@@ -27,6 +27,15 @@ namespace ProftaakEyectEvents
             this.postId = postId;
         }
 
+        public Reaction(string text, int reactionId, DateTime reactionDateTime, int accountId, int postId)
+        {
+            this.text = text;
+            this.reactionId = reactionId;
+            this.reactionDateTime = reactionDateTime;
+            this.accountId = accountId;
+            this.postId = postId;
+        }
+
         public Reaction(int postId, string text, DateTime reactionDateTime)
         {
             this.postId = postId;
