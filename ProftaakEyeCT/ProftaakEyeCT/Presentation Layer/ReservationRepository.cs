@@ -49,5 +49,9 @@ namespace ProftaakEyeCT.Presentation_Layer
             context.DeleteReservation(reservation);
         }
 
+        public int GetID()
+        {
+            return context.GetID();
+        }
     }
 }

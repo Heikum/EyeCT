@@ -246,14 +246,13 @@ namespace ProftaakEyeCT
 
         private void btnCheckStat_Click(object sender, EventArgs e)
         {
-            if (accessrepo.GetStatus(tbAccUsername.Text))
+            if (accessrepo.GetStatus(tbAccUsername.Text) && )
             {
                 btnCheck.BackColor = Color.Green;
             }
             else
             {
                 btnCheck.BackColor = Color.Red;
-
             }
         }
 
@@ -268,6 +267,9 @@ namespace ProftaakEyeCT
                 reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, (int)nudReservationCampingspot.Value));
                 campingspotrepo.UpdateCampingspot(updateEvent.id, (int)nudReservationCampingspot.Value, false);
                 updateReservation = reservationrepo.GetById(updateEvent.id, (int)nudReservationCampingspot.Value);
+
+                accessrepo.ReservationUpdate(reservationrepo.GetID(), Convert.ToInt32(accountrepo.GetAccountIDByUsername(txtReservationAccountName.Text)));
+                UpdateControls();
 
                 ReservationID = updateReservation.Id;
                 Reservation_group rg = new Reservation_group();
@@ -374,6 +376,21 @@ namespace ProftaakEyeCT
             updateReservation = (Reservation)lbReservations.SelectedItem;
             campingspotrepo.UpdateCampingspot(updateReservation.Eventid, updateReservation.Campingspotid, true);
             reservationrepo.DeleteReservation(updateReservation);
+        }
+
+        private void lbOnSite_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                Account A = (Account)lbOnSite.SelectedItem;
+                string EventByUser = accessrepo.EventReservationAccess(Convert.ToInt32(accountrepo.GetAccountIDByUsername(A.Username)));
+                lblEventUser.Text = EventByUser;
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Er ging iets mis");
+            }
+            
         }
     }
 }

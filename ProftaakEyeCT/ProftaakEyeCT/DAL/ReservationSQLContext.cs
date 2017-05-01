@@ -111,6 +111,23 @@ namespace ProftaakEyectEvents.DAL
             }
         }
 
+
+        public int GetID()
+        {
+            int resid;
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT TOP 1 ID FROM Reservation ORDER BY ID DESC";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    resid = Convert.ToInt32(command.ExecuteScalar());
+                    return resid;
+                }
+            }
+        }
+
+        public bool InsertMaterial(int reserveid, int materialid)
+
         public bool InsertMaterialReservation(int reserveid, int materialid)
         {
             using (SqlConnection connection = Database.Connection)
