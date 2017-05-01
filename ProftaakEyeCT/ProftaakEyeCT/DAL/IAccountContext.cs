@@ -16,7 +16,9 @@ namespace ProftaakEyectEvents.DAL
 
         Account InsertAccount(Account account, Person person);
 
-        bool Login(string gebruikersnaam, string wachtwoord); 
+        bool Login(string gebruikersnaam, string wachtwoord);
+
+        Account GetAccountRights(string username); 
 
         bool DeleteAccount(int id);
 

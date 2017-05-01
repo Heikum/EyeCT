@@ -47,7 +47,13 @@ namespace ProftaakEyeCT
             eventrepo = new EventRepository(new EventSQLContext());
             accessrepo = new AccessRepository(new AccessSQLContext());
             reservationrepo = new ReservationRepository(new ReservationSQLContext());
-            UpdateControls(); 
+            UpdateControls();
+            bool rights = AccountRights();
+            if (rights == false)
+            {
+                tcCamping.TabPages.Remove(tpAccess);
+                tcCamping.TabPages.Remove(tpAccountDetails);
+            }
         }
 
         //code voor person
@@ -90,6 +96,16 @@ namespace ProftaakEyeCT
             {
                 lbOutside.Items.Add(account);
             }
+        }
+
+        private bool AccountRights()
+        {
+            Account acc = accountrepo.GetAccountRights(mainloginform.tbUsername.Text);
+            if (acc.Rights == true)
+            {
+                return true; 
+            }
+            return false; 
         }
 
 
