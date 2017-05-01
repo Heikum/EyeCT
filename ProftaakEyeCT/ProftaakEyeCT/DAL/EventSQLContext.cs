@@ -186,17 +186,34 @@ namespace ProftaakEyectEvents.DAL
 
             }
 
-        public DateTime getStart()
+        public DateTime getStart(string EvName)
         {
-            DateTime tijd;
+            DateTime Starttijd;
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT * FROM Event Where ID=@id";
+                string query = "SELECT EventStartDate FROM Event WHERE Name = @name";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    tijd = 
-                    return tijd;
+                    command.Parameters.AddWithValue("@name", EvName);
+                    Starttijd = Convert.ToDateTime(command.ExecuteScalar());
+                    return Starttijd;
+                }
+            }
+        }
+
+        public DateTime getEnd(string EvName)
+        {
+            DateTime Eindtijd;
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT EventEndDate FROM Event WHERE Name = @name";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@name", EvName);
+                    Eindtijd = Convert.ToDateTime(command.ExecuteScalar());
+                    return Eindtijd;
                 }
             }
         }

@@ -126,7 +126,7 @@ namespace ProftaakEyectEvents.DAL
             }
         }
 
-        public bool InsertMaterial(int reserveid, int materialid)
+        //public bool InsertMaterial(int reserveid, int materialid);
 
         public bool InsertMaterialReservation(int reserveid, int materialid)
         {
