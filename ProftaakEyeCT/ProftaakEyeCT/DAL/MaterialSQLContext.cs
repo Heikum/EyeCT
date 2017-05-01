@@ -11,6 +11,7 @@ namespace ProftaakEyeCT.DAL
 {
     public class MaterialSQLContext : IMaterialContext
     {
+
         public bool DeleteMaterial(int id)
         {
             throw new NotImplementedException();
@@ -37,7 +38,7 @@ namespace ProftaakEyeCT.DAL
             return materials;
         }
 
-        public Material InsertMaterial(Material material)
+        public bool Insert(Material material)
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -48,21 +49,26 @@ namespace ProftaakEyeCT.DAL
                     command.Parameters.AddWithValue("@name", material.Name);
                     command.Parameters.AddWithValue("@price", material.Price);
                     command.Parameters.AddWithValue("@stock", material.Stock);
-                    
+                    command.ExecuteNonQuery();
+                    return true;
+                }
+                }
+        }
 
-                    try
-                    {
-                        command.ExecuteNonQuery();
-                    }
-                    catch (SqlException e)
-                    {
-                        MessageBox.Show("Error:" + e.Message);
-                        return null;
+        public bool DeleteMaterialReservation(int resID)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "DELETE FROM MaterialReservation WHERE ReservationID =@reservationID";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@reservationID", resID);
+                    command.ExecuteNonQuery();
                     }
                 }
-                return material;
+                return true;
             }
-        }
+        
 
         public bool UpdateMaterial(Material material)
         {
@@ -77,21 +83,12 @@ namespace ProftaakEyeCT.DAL
                     command.Parameters.AddWithValue("name", material.Name);
                     command.Parameters.AddWithValue("price", material.Price);
                     command.Parameters.AddWithValue("stock", material.Stock);
-                    try
-                    {
                         if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
                         {
                             return true;
                         }
-                    }
-                    catch (SqlException e)
-                    {
-                        MessageBox.Show(e.Message);
-                    }
-
                 }
             }
-
             return false;
         }
 
@@ -105,3 +102,5 @@ namespace ProftaakEyeCT.DAL
         }
     }
 }
+
+

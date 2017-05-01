@@ -176,10 +176,19 @@ namespace ProftaakEyeCT
             txtCurrentStreet.Text = updatePerson.Street;
             txtCurrentPhonenumber.Text = updatePerson.Phonenumber;
             nudCurrentHousenumber.Value = updatePerson.Number;
-            lbReservations.DataSource = reservationrepo.GetByAccountID(updateAccount.Id);
-
+            //lbReservations.DataSource = reservationrepo.GetByAccountID(updateAccount.Id);
+            GetEvents();
             
         }
+
+        private void GetEvents()
+        {
+            foreach (Reservation reservatie in reservationrepo.GetByAccountID(updateAccount.Id))
+            {
+                lbReservations.Items.Add(reservatie); 
+            }
+        }
+
 
 
         private void lbAllPersons_SelectedIndexChanged(object sender, EventArgs e)
@@ -206,7 +215,7 @@ namespace ProftaakEyeCT
 
         private void InsertMaterial()
         {
-            materialrepo.Insert(new Material(txtMaterialName.Text, Convert.ToDecimal(txtMaterialPrice.Text), Convert.ToInt32(nudMaterialStock.Value)));
+            materialrepo.Insert(new Material(txtMaterialName.Text, Convert.ToDecimal(updownpriceitem.Value), Convert.ToInt32(nudMaterialStock.Value)));
             UpdateControls();
 
         }
@@ -392,6 +401,9 @@ namespace ProftaakEyeCT
             updateReservation = (Reservation)lbReservations.SelectedItem;
             campingspotrepo.UpdateCampingspot(updateReservation.Eventid, updateReservation.Campingspotid, true);
             reservationrepo.DeleteReservation(updateReservation);
+            lbReservations.Items.Clear();
+            GetEvents();
+            MessageBox.Show("Reservation Deleted!");
         }
 
         private void lbOnSite_SelectedIndexChanged(object sender, EventArgs e)
@@ -407,6 +419,31 @@ namespace ProftaakEyeCT
                 MessageBox.Show("Er ging iets mis");
             }
             
+        }
+
+        private void btreturnitems_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Reservation local = lbReservations.SelectedItem as Reservation;
+                //label22.Text = local.id.ToString();
+                bool msg = materialrepo.DeleteMaterialReservation(local.Id);
+                if (msg == true)
+                {
+                    MessageBox.Show("Items returned.");
+                }
+            }
+            catch (Exception exception)
+            {
+                MessageBox.Show("Failed to return items." + exception);
+            }
+        }
+
+        private void btnAddMaterial_Click_1(object sender, EventArgs e)
+        {
+            Material item = new Material(1, txtMaterialName.Text, updownpriceitem.Value, Convert.ToInt32(nudMaterialStock.Value));
+            materialrepo.Insert(item);
+            MessageBox.Show("Material Added!"); 
         }
     }
 }

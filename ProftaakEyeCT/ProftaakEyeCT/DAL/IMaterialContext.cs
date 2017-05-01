@@ -11,12 +11,12 @@ namespace ProftaakEyeCT.DAL
     {
         List<Material> GetAll();
 
-        Material InsertMaterial(Material material);
+        bool Insert(Material material);
 
         bool UpdateMaterial(Material material);
 
         bool DeleteMaterial(int id);
-
+        bool DeleteMaterialReservation(int resID); 
 
     }
 }

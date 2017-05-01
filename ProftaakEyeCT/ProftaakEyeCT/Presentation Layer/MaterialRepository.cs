@@ -16,11 +16,14 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             this.context = context;
         }
-        public Material Insert(Material material)
+        public bool Insert(Material material)
         {
+            return context.Insert(material); 
+        }
 
-            return context.InsertMaterial(material);
-
+        public bool DeleteMaterialReservation(int resID)
+        {
+            return context.DeleteMaterialReservation(resID);
         }
         public List<Material> GetAll()
         {
