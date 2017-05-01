@@ -62,15 +62,13 @@ namespace ProftaakEyeCT.DAL
                     command.Parameters.AddWithValue("@ReactionDateTime", reaction.ReactionDateTime);
                     command.Parameters.AddWithValue("@AccountID", reaction.AccountId);
                     command.Parameters.AddWithValue("@PostID", reaction.PostId);
-
-
                     try
                     {
                         command.ExecuteNonQuery();
                     }
                     catch (SqlException e)
                     {
-
+                        return null;
                     }
                 }
                 return reaction;

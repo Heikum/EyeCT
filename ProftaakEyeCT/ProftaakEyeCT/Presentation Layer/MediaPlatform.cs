@@ -18,6 +18,7 @@ namespace ProftaakEyeCT
     {
         private PostRepository postrepo;
         private ReactionRepository reactionrepo;
+        public int selectedPostID;
         public MediaPlatform()
         {
             InitializeComponent();
@@ -56,14 +57,14 @@ namespace ProftaakEyeCT
                 string text = lbMediaPosts.GetItemText(lbMediaPosts.SelectedItem);
                 string[] result = text.Split('-');
 
-
+                //dit kan voor een freeze zorgen
                 if (result[6].StartsWith("https://www.youtube.com/"))
                 {
-                    webBrowser1.Show();
-                    string[] id = result[6].Split('=');
-                    string urlBase = "http://www.youtube.com/v/";
-                    webBrowser1.Navigate(urlBase + id[1]);
-                    pbMedia.Hide();
+                    //webBrowser1.Show();
+                    //string[] id = result[6].Split('=');
+                    //string urlBase = "http://www.youtube.com/v/";
+                    //webBrowser1.Navigate(urlBase + id[1]);
+                    //pbMedia.Hide();
                 }
                 else
                 {
@@ -121,6 +122,8 @@ namespace ProftaakEyeCT
 
         private void btnMediaReageren_Click(object sender, EventArgs e)
         {
+            var SelectedPostID = lbMediaPosts.SelectedItem as Post;
+            selectedPostID = SelectedPostID.PostID;
             ReactionPlatform reactionPlatForm = new ReactionPlatform();
             reactionPlatForm.Show();
             

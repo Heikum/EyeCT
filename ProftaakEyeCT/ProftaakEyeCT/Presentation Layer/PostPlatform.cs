@@ -23,6 +23,8 @@ namespace ProftaakEyeCT.Presentation_Layer
         Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
         private string DummyImageLink = "http://dummyimage.com/";
         private string YoutubeLink = "https://www.youtube.com/";
+        
+        
 
         public PostPlatform()
         {
@@ -30,6 +32,7 @@ namespace ProftaakEyeCT.Presentation_Layer
             postrepo = new PostRepository(new PostSQLContext());
             mediarepo = new MediaRepository(new MediaSQLContext());
             UpdatePostControls();
+            
         }
 
         private void UpdatePostControls()
