@@ -185,6 +185,21 @@ namespace ProftaakEyectEvents.DAL
                     Convert.ToDateTime(reader["EventEndDate"]));
 
             }
+
+        public DateTime getStart()
+        {
+            DateTime tijd;
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Event Where ID=@id";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    tijd = 
+                    return tijd;
+                }
+            }
         }
+    }
     }
 

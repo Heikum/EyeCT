@@ -63,10 +63,10 @@ namespace ProftaakEyeCT.DAL
             using (SqlConnection connection = Database.Connection)
             {
                 string query = "SELECT Event.Name FROM Account" +
-                                    "INNER JOIN Access ON Access.AccountID = Account.ID" +
-                                    "INNER JOIN Reservation ON Reservation.ID = Access.ReservationID" +
-                                    "INNER JOIN Event ON Event.ID = Reservation.EventID" +
-                                    "WHERE Access.AccessStatus = 1 AND Access.AccountID = @accID; ";
+                                    " INNER JOIN Access ON Access.AccountID = Account.ID" +
+                                    " INNER JOIN Reservation ON Reservation.ID = Access.ReservationID" +
+                                    " INNER JOIN Event ON Event.ID = Reservation.EventID" +
+                                    " WHERE Access.AccessStatus = 1 AND Account.ID = @accID; ";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@accID", AccountID);
@@ -150,7 +150,7 @@ namespace ProftaakEyeCT.DAL
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT AccessStatus FROM Access WHERE ID IN (SELECT AccountID FROM Account WHERE Username=@username)";
+                string query = "SELECT AccessStatus FROM Access WHERE AccountID IN (SELECT ID FROM Account WHERE Username=@username)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("username", acc);
@@ -158,10 +158,9 @@ namespace ProftaakEyeCT.DAL
                     {
                         return true;
                     }
+                    else return false;
                 }
             }
-
-            return false;
         }
 
         public bool RemoveRFID(int id)
@@ -186,8 +185,8 @@ namespace ProftaakEyeCT.DAL
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "UPDATE Access SET Access.ReservationID = @resID AND Access.AccessStatus = 1" +
-                               "WHERE Access.AccountID = @accID)";
+                string query = "UPDATE Access SET Access.ReservationID = @resID , Access.AccessStatus = 1" +
+                               "WHERE Access.AccountID = @accID";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@resID", ReservationID);
