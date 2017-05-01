@@ -46,7 +46,7 @@ namespace ProftaakEyeCT.Presentation_Layer
             if (lbReportedPosts.SelectedIndex != -1)
             {
                 var selectedpost = lbReportedPosts.SelectedItem as Post;
-                txtReportedPostComplaint.Text = postrepo.GetReportPostComplaint(selectedpost);
+                lbComplaints.DataSource = postrepo.GetReportPostComplaint(selectedpost);
                 string text = lbReportedPosts.GetItemText(lbReportedPosts.SelectedItem);
                 string[] result = text.Split('-');
 
@@ -74,6 +74,12 @@ namespace ProftaakEyeCT.Presentation_Layer
         private void btnRemoveComplaint_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnReportedPostRemove_Click(object sender, EventArgs e)
+        {
+            var selectedpost = lbReportedPosts.SelectedItem as Post;
+            postrepo.Delete(selectedpost.PostID);
         }
     }
 }

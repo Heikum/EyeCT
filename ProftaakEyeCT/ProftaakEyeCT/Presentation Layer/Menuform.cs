@@ -142,7 +142,8 @@ namespace ProftaakEyeCT
         private void Menuform_Load(object sender, EventArgs e)
         {
             string LoggedInUser = mainloginform.LoggedInUser;
-            txtReservationAccountName.Text = LoggedInUser; 
+            txtReservationAccountName.Text = LoggedInUser;
+            
         }
 
 

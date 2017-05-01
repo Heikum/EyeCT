@@ -19,6 +19,7 @@ namespace ProftaakEyeCT
         private PostRepository postrepo;
         private ReactionRepository reactionrepo;
         public int selectedPostID;
+        public Post reportingpost;
         public MediaPlatform()
         {
             InitializeComponent();
@@ -131,8 +132,10 @@ namespace ProftaakEyeCT
 
         private void btnMediaRapporteren_Click(object sender, EventArgs e)
         {
-            var selectedpost = lbMediaPosts.SelectedItem as Post;
-            lbMediaReactions.DataSource = reactionrepo.GetByPost(selectedpost);
+            var selectedpost = lbMediaPosts.SelectedItem as Post;   
+            reportingpost = selectedpost;
+            ReportComplaint reportcomplaint = new ReportComplaint();
+            reportcomplaint.Show();
 
         }
     }

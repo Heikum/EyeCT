@@ -264,10 +264,10 @@ namespace ProftaakEyeCT.DAL
 
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "SELECT P.*, M.*, A.*" +
+                string query = "SELECT DISTINCT P.*, M.*, A.*" +
                 " FROM post p INNER JOIN Media M ON P.MediaID = M.ID" +
                 " INNER JOIN Account A on P.AccountID = A.ID" +
-                " WHERE P.ID IN (SELECT PostID FROM PostReport)";
+                " RIGHT JOIN PostReport PR on p.ID = PR.PostID ";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
@@ -339,33 +339,40 @@ namespace ProftaakEyeCT.DAL
             }
             return posts;
         }
-        public string GetReportPostComplaint(Post post)
+        public List<string> GetReportPostComplaint(Post post)
         {
-            string complaint;
+            List<string> complaint = new List<string>();
             using (SqlConnection connection = Database.Connection)
             {
                 string query = "SELECT Complaint FROM PostReport WHERE PostID=@postid";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("postid", post.PostID);
-                    complaint = Convert.ToString(command.ExecuteScalar());
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            complaint.Add(reader.GetString(0));
+                        }
+                        
+                    }
                     return complaint;
+
                 }
             }
         }
-        public void InsertReportedPost(Post post)
+        public void InsertReportedPost(Post post, string complaint)
         {
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "INSERT INTO PostReport (ID, PostID, Complaint)" +
-                    "VALUES (@mediaid, @text, @postdatetime, @accountid)";
+                string query = "INSERT INTO PostReport (PostID, Complaint)" +
+                    "VALUES (@postid, @complaint)";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
 
-                    command.Parameters.AddWithValue("@mediaid", post.MediaID);
-                    command.Parameters.AddWithValue("@text", post.Text);
-                    command.Parameters.AddWithValue("@postdatetime", post.Postdatetime);
-                    command.Parameters.AddWithValue("@accountid", post.AccountID);
+                    command.Parameters.AddWithValue("@postid", post.PostID);
+                    command.Parameters.AddWithValue("@complaint", complaint);
+                 
 
                     try
                     {

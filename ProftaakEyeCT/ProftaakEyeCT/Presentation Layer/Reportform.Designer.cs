@@ -34,8 +34,8 @@
             this.wbVideo = new System.Windows.Forms.WebBrowser();
             this.pbMedia = new System.Windows.Forms.PictureBox();
             this.lbReportedPostReactions = new System.Windows.Forms.ListBox();
-            this.txtReportedPostComplaint = new System.Windows.Forms.TextBox();
             this.btnRemoveComplaint = new System.Windows.Forms.Button();
+            this.lbComplaints = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +65,7 @@
             this.btnReportedPostRemove.TabIndex = 2;
             this.btnReportedPostRemove.Text = "Remove Post";
             this.btnReportedPostRemove.UseVisualStyleBackColor = true;
+            this.btnReportedPostRemove.Click += new System.EventHandler(this.btnReportedPostRemove_Click);
             // 
             // wbVideo
             // 
@@ -91,14 +92,6 @@
             this.lbReportedPostReactions.Size = new System.Drawing.Size(213, 303);
             this.lbReportedPostReactions.TabIndex = 33;
             // 
-            // txtReportedPostComplaint
-            // 
-            this.txtReportedPostComplaint.Location = new System.Drawing.Point(29, 376);
-            this.txtReportedPostComplaint.Multiline = true;
-            this.txtReportedPostComplaint.Name = "txtReportedPostComplaint";
-            this.txtReportedPostComplaint.Size = new System.Drawing.Size(213, 61);
-            this.txtReportedPostComplaint.TabIndex = 34;
-            // 
             // btnRemoveComplaint
             // 
             this.btnRemoveComplaint.Location = new System.Drawing.Point(257, 438);
@@ -109,13 +102,21 @@
             this.btnRemoveComplaint.UseVisualStyleBackColor = true;
             this.btnRemoveComplaint.Click += new System.EventHandler(this.btnRemoveComplaint_Click);
             // 
+            // lbComplaints
+            // 
+            this.lbComplaints.FormattingEnabled = true;
+            this.lbComplaints.Location = new System.Drawing.Point(29, 376);
+            this.lbComplaints.Name = "lbComplaints";
+            this.lbComplaints.Size = new System.Drawing.Size(213, 95);
+            this.lbComplaints.TabIndex = 36;
+            // 
             // Reportform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(727, 473);
+            this.Controls.Add(this.lbComplaints);
             this.Controls.Add(this.btnRemoveComplaint);
-            this.Controls.Add(this.txtReportedPostComplaint);
             this.Controls.Add(this.lbReportedPostReactions);
             this.Controls.Add(this.wbVideo);
             this.Controls.Add(this.pbMedia);
@@ -138,7 +139,7 @@
         private System.Windows.Forms.WebBrowser wbVideo;
         private System.Windows.Forms.PictureBox pbMedia;
         private System.Windows.Forms.ListBox lbReportedPostReactions;
-        private System.Windows.Forms.TextBox txtReportedPostComplaint;
         private System.Windows.Forms.Button btnRemoveComplaint;
+        private System.Windows.Forms.ListBox lbComplaints;
     }
 }
