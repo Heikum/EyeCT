@@ -22,16 +22,14 @@ namespace ProftaakEyeCT.Presentation_Layer
         private ReservationRepository reservationrepo;
         private Reservation updateReservation;
         private MaterialRepository materialrepo;
+        private Material insertmaterial;
+
         public Reservation_group()
         {
             InitializeComponent();
             accountrepo = new AccountRepository(new AccountSQLContext());
             reservationrepo = new ReservationRepository(new ReservationSQLContext());
             materialrepo = new MaterialRepository(new MaterialSQLContext());
-            foreach (Material material in materialrepo.GetAll())
-            {
-                lbReservationMaterial.Items.Add(material);
-            }
             UpdateControls();
             
         }
@@ -41,6 +39,12 @@ namespace ProftaakEyeCT.Presentation_Layer
             foreach (Account account in accountrepo.GetAllAccounts())
             {
                 lbReservationPerson.Items.Add(account);
+            }
+
+            lbReservationMaterial.Items.Clear();
+            foreach (Material material in materialrepo.GetAll())
+            {
+                lbReservationMaterial.Items.Add(material);
             }
         }
         private void lbReservationPerson_SelectedIndexChanged(object sender, EventArgs e)
@@ -61,6 +65,28 @@ namespace ProftaakEyeCT.Presentation_Layer
             Menuform menuform = new Menuform();
             menuform.Show();
             this.Hide();
+
+        }
+
+        private void lbReservationMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            insertmaterial = lbReservationMaterial.SelectedItem as Material;
+        }
+
+        private void addmaterial_Click(object sender, EventArgs e)
+        {
+            insertmaterial = lbReservationMaterial.SelectedItem as Material;
+            int resid = Menuform.ReservationID;
+            residlabel.Text = resid.ToString(); 
+
+            int materialid = insertmaterial.Id;
+            materiallabel.Text = materialid.ToString();
+
+            bool msgbox = reservationrepo.InsertMaterialReservation(resid, materialid);
+            if (msgbox == true)
+            {
+                MessageBox.Show("Material Reserved.");
+            }
 
         }
     }

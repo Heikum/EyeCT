@@ -119,6 +119,7 @@ namespace ProftaakEyectEvents
             return reserved;
         }
 
+
         public bool availabilty(string naam)
         {
             //haal voor item met de naam die wordt meegegeven de hoeveelheid available op
@@ -137,7 +138,7 @@ namespace ProftaakEyectEvents
 
         public override string ToString()
         {
-            return name + " " + price + " " + stock; 
+            return name + " " + price + " " + stock + "ID: " + Id; 
         }
     }
 }

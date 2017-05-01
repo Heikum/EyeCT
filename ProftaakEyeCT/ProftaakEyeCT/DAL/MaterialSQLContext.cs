@@ -102,10 +102,6 @@ namespace ProftaakEyeCT.DAL
                 Convert.ToString(reader["Name"]),
                 Convert.ToDecimal(reader["Price"]),
                 Convert.ToInt32(reader["Stock"]));
-                
-
         }
-
-        
     }
 }

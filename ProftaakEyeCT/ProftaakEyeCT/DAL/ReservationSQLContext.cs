@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace ProftaakEyectEvents.DAL
 {
-    public class ReservationSQLContext:IReservationContext
+    public class ReservationSQLContext: IReservationContext
     {
         private List<Reservation> reservations = new List<Reservation>();
         
@@ -111,7 +111,7 @@ namespace ProftaakEyectEvents.DAL
             }
         }
 
-        public bool InsertMaterial(int reserveid, int materialid)
+        public bool InsertMaterialReservation(int reserveid, int materialid)
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -122,15 +122,7 @@ namespace ProftaakEyectEvents.DAL
                 {
                     command.Parameters.AddWithValue("@reservationid", reserveid);
                     command.Parameters.AddWithValue("@mterialid", materialid);
-                    try
-                    {
-                        command.ExecuteNonQuery();
-
-                    }
-                    catch (SqlException e)
-                    {
-                        // Unexpected error: rethrow to let the caller handle it
-                    }
+                    command.ExecuteNonQuery();
                 }
                 return true;
             }

@@ -8,8 +8,6 @@ namespace ProftaakEyectEvents
 {
     public class Account
     {
-
-
         private int id;
         private string kind;
         private int personid;
