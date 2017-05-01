@@ -27,5 +27,6 @@ namespace ProftaakEyectEvents.DAL
         bool UpdateAccount(Account account);
 
         List<Account> GetAllAccountInformation();
+        Account GetAccountByUsername(string username);
     }
 }

@@ -44,6 +44,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetByName(eventname);
         }
+        public Event GetById(int id)
+        {
+            return context.GetById(id);
+        }
 
     }
 }

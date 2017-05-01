@@ -51,6 +51,10 @@ namespace ProftaakEyectEvents
         {
             return true;
         }
+        public override string ToString()
+        {
+            return reservationdate + " " + paymentstatus + " " + eventid + " " + campingspotid ;
+        }
     }
 }
 

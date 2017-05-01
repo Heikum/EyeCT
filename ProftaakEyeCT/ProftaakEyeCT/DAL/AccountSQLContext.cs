@@ -11,6 +11,8 @@ namespace ProftaakEyectEvents.DAL
 {
     public class AccountSQLContext : IAccountContext
     {
+
+        private Account account;
         //Get all the students
         public List<Account> GetAllAccounts()
         {
@@ -106,8 +108,33 @@ namespace ProftaakEyectEvents.DAL
                 
             }
         }
+        public Account GetAccountByUsername(string username)
+        {
+            
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Account WHERE Username = @username";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
 
+                    command.Parameters.AddWithValue("@username", username);
+
+                        using (SqlDataReader reader = command.ExecuteReader())
+                        {
+                            if (reader.Read())
+                            {
+                                account = CreateAccountFromReader(reader);
+                            }
+                        }
+                    }
+                
+                }
+            return account;
+                
+            }
         
+
+
 
         public bool DeleteAccount(int id)
         {

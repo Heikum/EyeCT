@@ -51,8 +51,28 @@ namespace ProftaakEyectEvents.DAL
             }
             return null;
         }
+        public Event GetById(int id)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT * FROM Event Where ID=@id";
 
-            public Event InsertEvent(Event events)
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@id", id);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return CreateEventFromReader(reader);
+                        }
+                    }
+                }
+            }
+            return null;
+        }
+
+        public Event InsertEvent(Event events)
             {
                 using (SqlConnection connection = Database.Connection)
                 {
