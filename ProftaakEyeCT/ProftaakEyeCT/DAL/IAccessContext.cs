@@ -23,5 +23,9 @@ namespace ProftaakEyeCT.DAL
         bool UpdateInside(Account acc, bool accessbool);
 
         List<Account> GetAllOutside();
+
+        bool ReservationUpdate(int ReservationID, int AccountID);
+
+        string EventReservationAccess(int AccountID);
     }
 }
