@@ -77,7 +77,7 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             insertmaterial = lbReservationMaterial.SelectedItem as Material;
             int resid = Menuform.ReservationID;
-            residlabel.Text = resid.ToString(); 
+            residlabel.Text = resid.ToString();
 
             int materialid = insertmaterial.Id;
             materiallabel.Text = materialid.ToString();

@@ -121,7 +121,7 @@ namespace ProftaakEyectEvents.DAL
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
                     command.Parameters.AddWithValue("@reservationid", reserveid);
-                    command.Parameters.AddWithValue("@mterialid", materialid);
+                    command.Parameters.AddWithValue("@materialid", materialid);
                     command.ExecuteNonQuery();
                 }
                 return true;

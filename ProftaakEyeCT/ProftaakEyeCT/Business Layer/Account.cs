@@ -62,7 +62,7 @@ namespace ProftaakEyectEvents
         }
         public override string ToString()
         {
-            return username + " " + password + " " + emailadress;
+            return Username + " ";
         }
     }
 
