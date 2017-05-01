@@ -38,6 +38,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetByAccountID(accountid);
         }
+        public void DeleteReservation(Reservation reservation)
+        {
+            context.DeleteReservation(reservation);
+        }
 
     }
 }

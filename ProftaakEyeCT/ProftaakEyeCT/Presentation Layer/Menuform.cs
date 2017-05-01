@@ -250,7 +250,7 @@ namespace ProftaakEyeCT
             if (updateEvent != null && nudReservationCampingspot.Value != 0)
             {
                 reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, (int)nudReservationCampingspot.Value));
-                campingspotrepo.UpdateCampingspot(updateEvent.id, (int)nudReservationCampingspot.Value);
+                campingspotrepo.UpdateCampingspot(updateEvent.id, (int)nudReservationCampingspot.Value, false);
                 updateReservation = reservationrepo.GetById(updateEvent.id, (int)nudReservationCampingspot.Value);
 
                 ReservationID = updateReservation.Id;
@@ -351,6 +351,13 @@ namespace ProftaakEyeCT
             dtpCurrentDateReservation.Value = updateReservation.Reservationdate;
             txtEventNaam.Text = updateEvent.name;
 
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            updateReservation = (Reservation)lbReservations.SelectedItem;
+            campingspotrepo.UpdateCampingspot(updateReservation.Eventid, updateReservation.Campingspotid, true);
+            reservationrepo.DeleteReservation(updateReservation);
         }
     }
 }
