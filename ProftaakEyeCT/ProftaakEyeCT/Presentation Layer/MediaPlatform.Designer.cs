@@ -101,6 +101,7 @@
             this.btnMediaRapporteren.TabIndex = 3;
             this.btnMediaRapporteren.Text = "Rapporteren";
             this.btnMediaRapporteren.UseVisualStyleBackColor = true;
+            this.btnMediaRapporteren.Click += new System.EventHandler(this.btnMediaRapporteren_Click);
             // 
             // btnMediaAanpassen
             // 

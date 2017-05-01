@@ -128,5 +128,12 @@ namespace ProftaakEyeCT
             reactionPlatForm.Show();
             
         }
+
+        private void btnMediaRapporteren_Click(object sender, EventArgs e)
+        {
+            var selectedpost = lbMediaPosts.SelectedItem as Post;
+            lbMediaReactions.DataSource = reactionrepo.GetByPost(selectedpost);
+
+        }
     }
 }
