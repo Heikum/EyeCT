@@ -87,11 +87,34 @@ namespace ProftaakEyectEvents.DAL
                 }
 
                 return reservation;
-                   
-
-
             }
         }
+
+        public bool InsertMaterial(int reserveid, int materialid)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "INSERT INTO MaterialReservation (ReservationID, MaterialID)" +
+                    " VALUES (@reservationid, @materialid)";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@reservationid", reserveid);
+                    command.Parameters.AddWithValue("@mterialid", materialid);
+                    try
+                    {
+                        command.ExecuteNonQuery();
+
+                    }
+                    catch (SqlException e)
+                    {
+                        // Unexpected error: rethrow to let the caller handle it
+                    }
+                }
+                return true;
+            }
+        }
+
         public void InsertAccountReservation(Account account, int resid)
         {
             using (SqlConnection connection = Database.Connection)

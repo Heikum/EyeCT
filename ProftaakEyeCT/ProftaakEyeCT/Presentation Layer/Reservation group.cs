@@ -9,6 +9,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProftaakEyeCT.Presentation_Layer;
+using ProftaakEyeCT.DAL;
 
 namespace ProftaakEyeCT.Presentation_Layer
 {
@@ -19,11 +21,17 @@ namespace ProftaakEyeCT.Presentation_Layer
         private Account updateAccount;
         private ReservationRepository reservationrepo;
         private Reservation updateReservation;
+        private MaterialRepository materialrepo;
         public Reservation_group()
         {
             InitializeComponent();
             accountrepo = new AccountRepository(new AccountSQLContext());
             reservationrepo = new ReservationRepository(new ReservationSQLContext());
+            materialrepo = new MaterialRepository(new MaterialSQLContext());
+            foreach (Material material in materialrepo.GetAll())
+            {
+                lbReservationMaterial.Items.Add(material);
+            }
             UpdateControls();
             
         }
@@ -46,9 +54,6 @@ namespace ProftaakEyeCT.Presentation_Layer
             int resid = Menuform.ReservationID;
             updateAccount = (Account)lbReservationPerson.SelectedItem;
             reservationrepo.InsertAccountReservation(updateAccount, resid);
-
-
-        
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)
