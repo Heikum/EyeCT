@@ -56,7 +56,25 @@ namespace ProftaakEyeCT.DAL
                     return true;
                 }
             }
-        
+
+        public string EventReservationAccess(int AccountID)
+        {
+            string EventString;
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT Event.Name FROM Account" +
+                                    "INNER JOIN Access ON Access.AccountID = Account.ID" +
+                                    "INNER JOIN Reservation ON Reservation.ID = Access.ReservationID" +
+                                    "INNER JOIN Event ON Event.ID = Reservation.EventID" +
+                                    "WHERE Access.AccessStatus = 1 AND Access.AccountID = @accID; ";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@accID", AccountID);
+                    EventString = Convert.ToString(command.ExecuteScalar());
+                }
+            }
+            return EventString;
+        }
 
         public bool GainAccess(bool accessBool,/* Access access,*/ Account acc)
         {
@@ -164,6 +182,34 @@ namespace ProftaakEyeCT.DAL
             return false;
         }
 
+        public bool ReservationUpdate(int ReservationID, int AccountID)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "UPDATE Access SET Access.ReservationID = @resID AND Access.AccessStatus = 1" +
+                               "WHERE Access.AccountID = @accID)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@resID", ReservationID);
+                    command.Parameters.AddWithValue("@accID", AccountID);
+                    command.ExecuteNonQuery();
+                    try
+                    {
+                        if (Convert.ToInt32(command.ExecuteNonQuery()) > 0)
+                        {
+                            return true;
+                        }
+                    }
+                    catch (SqlException e)
+                    {
+                        return false;
+                    }
+
+                }
+            }
+            return false;
+        }
+
         public bool UpdateInside(Account acc, bool access)
         {
             using (SqlConnection connection = Database.Connection)
@@ -191,6 +237,8 @@ namespace ProftaakEyeCT.DAL
 
             return false;
         }
+
+
 
         private Access CreateAccessFromReader(SqlDataReader reader)
         {

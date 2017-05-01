@@ -56,5 +56,15 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetAllOutside();
         }
+
+        public bool ReservationUpdate(int ReservationID, int AccountID)
+        {
+            return context.ReservationUpdate(ReservationID, AccountID);
+        }
+
+        public string EventReservationAccess(int AccountID)
+        {
+            return context.EventReservationAccess(AccountID);
+        }
     }
 }

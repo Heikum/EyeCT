@@ -27,6 +27,8 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         private void btnComplaintSend_Click(object sender, EventArgs e)
         {
+
+            //post = mediaplatform.;
             post = mediaplatform.reportingpost;
             if(post != null && txtReportComplaint.Text != null)
             {
@@ -38,7 +40,6 @@ namespace ProftaakEyeCT.Presentation_Layer
                 MessageBox.Show("First fill in your complaint");
             }
             
-
         }
     }
 }
