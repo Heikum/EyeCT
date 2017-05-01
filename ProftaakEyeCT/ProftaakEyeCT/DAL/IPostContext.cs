@@ -16,8 +16,9 @@ namespace ProftaakEyeCT.DAL
         List<Post> GetByUsername(string username);
         bool UpdatePost(Post post);
         List<Post> GetAllReportedPosts();
-        string GetReportPostComplaint(Post post);
-        void InsertReportedPost(Post post);
+        List<string> GetReportPostComplaint(Post post);
+        void InsertReportedPost(Post post, string complaint);
+
 
     }
 }

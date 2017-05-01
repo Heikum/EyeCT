@@ -76,7 +76,7 @@ namespace ProftaakEyeCT.DAL
             }
             return 0;
         }
-        public bool UpdateCampingspot(int eventid, int campingspotid)
+        public bool UpdateCampingspot(int eventid, int campingspotid, bool status)
         {
             using (SqlConnection connection = Database.Connection)
             {
@@ -85,7 +85,7 @@ namespace ProftaakEyeCT.DAL
                     " WHERE CampingSpotsID=@campingspotsid AND EventID =@eventid";
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
-                    command.Parameters.AddWithValue("status", false);
+                    command.Parameters.AddWithValue("status", status);
                     command.Parameters.AddWithValue("campingspotsid", campingspotid);
                     command.Parameters.AddWithValue("eventid", eventid);
 

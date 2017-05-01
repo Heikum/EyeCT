@@ -19,5 +19,7 @@ namespace ProftaakEyectEvents.DAL
         void UpdateReservation(Reservation reservation);
 
         void DeleteReservation(Reservation reservation);
+        List<Reservation> GetByAccountID(int accountid);
+        
     }
 }

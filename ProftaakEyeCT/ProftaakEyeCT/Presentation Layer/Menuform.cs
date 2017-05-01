@@ -142,7 +142,21 @@ namespace ProftaakEyeCT
         private void Menuform_Load(object sender, EventArgs e)
         {
             string LoggedInUser = mainloginform.LoggedInUser;
-            txtReservationAccountName.Text = LoggedInUser; 
+            txtReservationAccountName.Text = LoggedInUser;
+            updateAccount = accountrepo.GetAccountByUsername(LoggedInUser);
+            txtCurrenctUsername.Text = updateAccount.Username;
+            txtCurrentPassword.Text = updateAccount.Password;
+            txtCurrentEmail.Text = updateAccount.Emailadress;
+            updatePerson = personrepo.GetById(updateAccount.Personid);
+            txtCurrentName.Text = updatePerson.Name;
+            txtCurrentZipcode.Text = updatePerson.Zipcode;
+            txtCurrentCity.Text = updatePerson.City;
+            txtCurrentStreet.Text = updatePerson.Street;
+            txtCurrentPhonenumber.Text = updatePerson.Phonenumber;
+            nudCurrentHousenumber.Value = updatePerson.Number;
+            lbReservations.DataSource = reservationrepo.GetByAccountID(updateAccount.Id);
+
+            
         }
 
 
@@ -236,7 +250,7 @@ namespace ProftaakEyeCT
             if (updateEvent != null && nudReservationCampingspot.Value != 0)
             {
                 reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, (int)nudReservationCampingspot.Value));
-                campingspotrepo.UpdateCampingspot(updateEvent.id, (int)nudReservationCampingspot.Value);
+                campingspotrepo.UpdateCampingspot(updateEvent.id, (int)nudReservationCampingspot.Value, false);
                 updateReservation = reservationrepo.GetById(updateEvent.id, (int)nudReservationCampingspot.Value);
 
                 ReservationID = updateReservation.Id;
@@ -326,6 +340,24 @@ namespace ProftaakEyeCT
         {
             Reportform reportform = new Reportform();
             reportform.Show();
+        }
+
+        private void lbReservations_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateReservation = (Reservation)lbReservations.SelectedItem;
+            updateEvent = eventrepo.GetById(updateReservation.Eventid);
+            txtCurrentPlaceReservation.Text = updateEvent.location;
+            nudCampingspot.Value = updateReservation.Campingspotid;
+            dtpCurrentDateReservation.Value = updateReservation.Reservationdate;
+            txtEventNaam.Text = updateEvent.name;
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            updateReservation = (Reservation)lbReservations.SelectedItem;
+            campingspotrepo.UpdateCampingspot(updateReservation.Eventid, updateReservation.Campingspotid, true);
+            reservationrepo.DeleteReservation(updateReservation);
         }
     }
 }

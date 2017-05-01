@@ -37,6 +37,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tpMedia = new System.Windows.Forms.TabPage();
+            this.btnReportPage = new System.Windows.Forms.Button();
             this.btnMedia = new System.Windows.Forms.Button();
             this.tpAccountDetails = new System.Windows.Forms.TabPage();
             this.pictureBox13 = new System.Windows.Forms.PictureBox();
@@ -69,36 +70,32 @@
             this.btnPersonEdit = new System.Windows.Forms.Button();
             this.tpManage = new System.Windows.Forms.TabPage();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
-            this.lblEventName = new System.Windows.Forms.Label();
-            this.btnChange = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.lblGroupSize = new System.Windows.Forms.Label();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.tbEventName = new System.Windows.Forms.TextBox();
-            this.tbPlaceOfReservation = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.dtpCurrentDateReservation = new System.Windows.Forms.DateTimePicker();
+            this.lblCampingspot = new System.Windows.Forms.Label();
+            this.txtCurrentPlaceReservation = new System.Windows.Forms.TextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPhonenumber = new System.Windows.Forms.TextBox();
+            this.nudCurrentHousenumber = new System.Windows.Forms.NumericUpDown();
+            this.txtCurrentStreet = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCurrentCity = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCurrentZipcode = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtCurrentName = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.txtCurrentPassword = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.txtCurrentEmail = new System.Windows.Forms.TextBox();
+            this.txtCurrenctUsername = new System.Windows.Forms.TextBox();
             this.pictureBox12 = new System.Windows.Forms.PictureBox();
             this.pictureBox11 = new System.Windows.Forms.PictureBox();
             this.pictureBox10 = new System.Windows.Forms.PictureBox();
@@ -162,7 +159,10 @@
             this.lbOnSite = new System.Windows.Forms.ListBox();
             this.tbEvent = new System.Windows.Forms.TabPage();
             this.btnEventPlatform = new System.Windows.Forms.Button();
-            this.btnReportPage = new System.Windows.Forms.Button();
+            this.lbReservations = new System.Windows.Forms.ListBox();
+            this.nudCampingspot = new System.Windows.Forms.NumericUpDown();
+            this.label17 = new System.Windows.Forms.Label();
+            this.txtEventNaam = new System.Windows.Forms.TextBox();
             this.tcCamping.SuspendLayout();
             this.tbWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -181,7 +181,7 @@
             this.tpManage.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentHousenumber)).BeginInit();
             this.groupBox6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox11)).BeginInit();
@@ -200,6 +200,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tbEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCampingspot)).BeginInit();
             this.SuspendLayout();
             // 
             // tcCamping
@@ -226,7 +227,7 @@
             this.tbWelcome.Controls.Add(this.pictureBox1);
             this.tbWelcome.Controls.Add(this.pictureBox2);
             this.tbWelcome.Location = new System.Drawing.Point(4, 22);
-            this.tbWelcome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbWelcome.Margin = new System.Windows.Forms.Padding(2);
             this.tbWelcome.Name = "tbWelcome";
             this.tbWelcome.Size = new System.Drawing.Size(810, 516);
             this.tbWelcome.TabIndex = 11;
@@ -237,7 +238,7 @@
             // 
             this.pictureBox14.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
             this.pictureBox14.Location = new System.Drawing.Point(376, 341);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(112, 116);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -260,7 +261,7 @@
             // 
             this.pictureBox3.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox3.Location = new System.Drawing.Point(3, 460);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(796, 19);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -271,7 +272,7 @@
             // 
             this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox1.Location = new System.Drawing.Point(3, 94);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(796, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -282,7 +283,7 @@
             // 
             this.pictureBox2.Image = global::ProftaakEyeCT.Properties.Resources.welcome;
             this.pictureBox2.Location = new System.Drawing.Point(294, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(269, 75);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -296,10 +297,20 @@
             this.tpMedia.Controls.Add(this.btnMedia);
             this.tpMedia.Location = new System.Drawing.Point(4, 22);
             this.tpMedia.Name = "tpMedia";
-            this.tpMedia.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpMedia.Padding = new System.Windows.Forms.Padding(3);
             this.tpMedia.Size = new System.Drawing.Size(810, 516);
             this.tpMedia.TabIndex = 0;
             this.tpMedia.Text = "Media";
+            // 
+            // btnReportPage
+            // 
+            this.btnReportPage.Location = new System.Drawing.Point(444, 213);
+            this.btnReportPage.Name = "btnReportPage";
+            this.btnReportPage.Size = new System.Drawing.Size(152, 57);
+            this.btnReportPage.TabIndex = 3;
+            this.btnReportPage.Text = "ReportPage";
+            this.btnReportPage.UseVisualStyleBackColor = true;
+            this.btnReportPage.Click += new System.EventHandler(this.btnReportPage_Click);
             // 
             // btnMedia
             // 
@@ -330,7 +341,7 @@
             // 
             this.pictureBox13.Image = global::ProftaakEyeCT.Properties.Resources.accountdetails;
             this.pictureBox13.Location = new System.Drawing.Point(202, 0);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(453, 74);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -341,7 +352,7 @@
             // 
             this.pictureBox9.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox9.Location = new System.Drawing.Point(0, 460);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(796, 19);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -352,7 +363,7 @@
             // 
             this.pictureBox8.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox8.Location = new System.Drawing.Point(0, 77);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(796, 19);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -374,9 +385,9 @@
             this.groupBox4.Controls.Add(this.lblPersonHousenumber);
             this.groupBox4.Controls.Add(this.lblPersonPhonenumber);
             this.groupBox4.Location = new System.Drawing.Point(224, 111);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(132, 290);
             this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
@@ -492,9 +503,9 @@
             this.groupBox3.Controls.Add(this.txtAccountEmail);
             this.groupBox3.Controls.Add(this.txtAccountUsername);
             this.groupBox3.Location = new System.Drawing.Point(17, 111);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(188, 152);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
@@ -609,56 +620,47 @@
             this.tpManage.Controls.Add(this.pictureBox10);
             this.tpManage.Location = new System.Drawing.Point(4, 22);
             this.tpManage.Name = "tpManage";
-            this.tpManage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpManage.Padding = new System.Windows.Forms.Padding(3);
             this.tpManage.Size = new System.Drawing.Size(810, 516);
             this.tpManage.TabIndex = 1;
             this.tpManage.Text = "Person details";
             // 
             // groupBox7
             // 
-            this.groupBox7.Controls.Add(this.lblEventName);
-            this.groupBox7.Controls.Add(this.btnChange);
+            this.groupBox7.Controls.Add(this.txtEventNaam);
+            this.groupBox7.Controls.Add(this.label17);
+            this.groupBox7.Controls.Add(this.nudCampingspot);
+            this.groupBox7.Controls.Add(this.lbReservations);
+            this.groupBox7.Controls.Add(this.btnDelete);
             this.groupBox7.Controls.Add(this.label6);
             this.groupBox7.Controls.Add(this.label7);
-            this.groupBox7.Controls.Add(this.dateTimePicker1);
-            this.groupBox7.Controls.Add(this.lblGroupSize);
-            this.groupBox7.Controls.Add(this.btnAdd);
-            this.groupBox7.Controls.Add(this.tbEventName);
-            this.groupBox7.Controls.Add(this.tbPlaceOfReservation);
-            this.groupBox7.Controls.Add(this.textBox1);
+            this.groupBox7.Controls.Add(this.dtpCurrentDateReservation);
+            this.groupBox7.Controls.Add(this.lblCampingspot);
+            this.groupBox7.Controls.Add(this.txtCurrentPlaceReservation);
             this.groupBox7.Location = new System.Drawing.Point(451, 120);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.groupBox7.Size = new System.Drawing.Size(351, 190);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox7.Size = new System.Drawing.Size(351, 327);
             this.groupBox7.TabIndex = 48;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Reservation";
             // 
-            // lblEventName
+            // btnDelete
             // 
-            this.lblEventName.AutoSize = true;
-            this.lblEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEventName.Location = new System.Drawing.Point(4, 16);
-            this.lblEventName.Name = "lblEventName";
-            this.lblEventName.Size = new System.Drawing.Size(87, 17);
-            this.lblEventName.TabIndex = 22;
-            this.lblEventName.Text = "Event name:";
-            // 
-            // btnChange
-            // 
-            this.btnChange.Location = new System.Drawing.Point(146, 153);
-            this.btnChange.Name = "btnChange";
-            this.btnChange.Size = new System.Drawing.Size(87, 23);
-            this.btnChange.TabIndex = 9;
-            this.btnChange.Text = "Change";
-            this.btnChange.UseVisualStyleBackColor = true;
+            this.btnDelete.Location = new System.Drawing.Point(259, 299);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(87, 23);
+            this.btnDelete.TabIndex = 9;
+            this.btnDelete.Text = "Delete";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(4, 59);
+            this.label6.Location = new System.Drawing.Point(-1, 216);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(138, 17);
             this.label6.TabIndex = 15;
@@ -668,77 +670,54 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(4, 101);
+            this.label7.Location = new System.Drawing.Point(1, 247);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(133, 17);
             this.label7.TabIndex = 16;
             this.label7.Text = "Date of reservation:";
             // 
-            // dateTimePicker1
+            // dtpCurrentDateReservation
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(146, 97);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(205, 20);
-            this.dateTimePicker1.TabIndex = 17;
+            this.dtpCurrentDateReservation.Location = new System.Drawing.Point(143, 243);
+            this.dtpCurrentDateReservation.Name = "dtpCurrentDateReservation";
+            this.dtpCurrentDateReservation.Size = new System.Drawing.Size(205, 20);
+            this.dtpCurrentDateReservation.TabIndex = 17;
             // 
-            // lblGroupSize
+            // lblCampingspot
             // 
-            this.lblGroupSize.AutoSize = true;
-            this.lblGroupSize.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGroupSize.Location = new System.Drawing.Point(4, 127);
-            this.lblGroupSize.Name = "lblGroupSize";
-            this.lblGroupSize.Size = new System.Drawing.Size(81, 17);
-            this.lblGroupSize.TabIndex = 19;
-            this.lblGroupSize.Text = "Group size:";
+            this.lblCampingspot.AutoSize = true;
+            this.lblCampingspot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCampingspot.Location = new System.Drawing.Point(1, 273);
+            this.lblCampingspot.Name = "lblCampingspot";
+            this.lblCampingspot.Size = new System.Drawing.Size(94, 17);
+            this.lblCampingspot.TabIndex = 19;
+            this.lblCampingspot.Text = "Campingspot:";
             // 
-            // btnAdd
+            // txtCurrentPlaceReservation
             // 
-            this.btnAdd.Location = new System.Drawing.Point(260, 154);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(87, 23);
-            this.btnAdd.TabIndex = 18;
-            this.btnAdd.Text = "Add";
-            this.btnAdd.UseVisualStyleBackColor = true;
-            // 
-            // tbEventName
-            // 
-            this.tbEventName.Location = new System.Drawing.Point(146, 17);
-            this.tbEventName.Name = "tbEventName";
-            this.tbEventName.Size = new System.Drawing.Size(205, 20);
-            this.tbEventName.TabIndex = 23;
-            // 
-            // tbPlaceOfReservation
-            // 
-            this.tbPlaceOfReservation.Location = new System.Drawing.Point(144, 58);
-            this.tbPlaceOfReservation.Name = "tbPlaceOfReservation";
-            this.tbPlaceOfReservation.Size = new System.Drawing.Size(205, 20);
-            this.tbPlaceOfReservation.TabIndex = 8;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(146, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(205, 20);
-            this.textBox1.TabIndex = 20;
+            this.txtCurrentPlaceReservation.Location = new System.Drawing.Point(139, 215);
+            this.txtCurrentPlaceReservation.Name = "txtCurrentPlaceReservation";
+            this.txtCurrentPlaceReservation.Size = new System.Drawing.Size(205, 20);
+            this.txtCurrentPlaceReservation.TabIndex = 8;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.label1);
-            this.groupBox5.Controls.Add(this.textBox2);
-            this.groupBox5.Controls.Add(this.numericUpDown1);
-            this.groupBox5.Controls.Add(this.textBox4);
+            this.groupBox5.Controls.Add(this.txtCurrentPhonenumber);
+            this.groupBox5.Controls.Add(this.nudCurrentHousenumber);
+            this.groupBox5.Controls.Add(this.txtCurrentStreet);
             this.groupBox5.Controls.Add(this.label2);
-            this.groupBox5.Controls.Add(this.textBox5);
+            this.groupBox5.Controls.Add(this.txtCurrentCity);
             this.groupBox5.Controls.Add(this.label3);
-            this.groupBox5.Controls.Add(this.textBox6);
+            this.groupBox5.Controls.Add(this.txtCurrentZipcode);
             this.groupBox5.Controls.Add(this.label4);
-            this.groupBox5.Controls.Add(this.textBox7);
+            this.groupBox5.Controls.Add(this.txtCurrentName);
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Location = new System.Drawing.Point(258, 115);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(132, 290);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
@@ -753,31 +732,31 @@
             this.label1.TabIndex = 6;
             this.label1.Text = "Name:";
             // 
-            // textBox2
+            // txtCurrentPhonenumber
             // 
-            this.textBox2.Location = new System.Drawing.Point(5, 264);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(120, 20);
-            this.textBox2.TabIndex = 23;
+            this.txtCurrentPhonenumber.Location = new System.Drawing.Point(5, 264);
+            this.txtCurrentPhonenumber.Name = "txtCurrentPhonenumber";
+            this.txtCurrentPhonenumber.Size = new System.Drawing.Size(120, 20);
+            this.txtCurrentPhonenumber.TabIndex = 23;
             // 
-            // numericUpDown1
+            // nudCurrentHousenumber
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(5, 221);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.nudCurrentHousenumber.Location = new System.Drawing.Point(5, 221);
+            this.nudCurrentHousenumber.Maximum = new decimal(new int[] {
             10000000,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
-            this.numericUpDown1.TabIndex = 4;
+            this.nudCurrentHousenumber.Name = "nudCurrentHousenumber";
+            this.nudCurrentHousenumber.Size = new System.Drawing.Size(120, 20);
+            this.nudCurrentHousenumber.TabIndex = 4;
             // 
-            // textBox4
+            // txtCurrentStreet
             // 
-            this.textBox4.Location = new System.Drawing.Point(5, 174);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(120, 20);
-            this.textBox4.TabIndex = 3;
+            this.txtCurrentStreet.Location = new System.Drawing.Point(5, 174);
+            this.txtCurrentStreet.Name = "txtCurrentStreet";
+            this.txtCurrentStreet.Size = new System.Drawing.Size(120, 20);
+            this.txtCurrentStreet.TabIndex = 3;
             // 
             // label2
             // 
@@ -788,12 +767,12 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Zipcode:";
             // 
-            // textBox5
+            // txtCurrentCity
             // 
-            this.textBox5.Location = new System.Drawing.Point(5, 127);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(120, 20);
-            this.textBox5.TabIndex = 2;
+            this.txtCurrentCity.Location = new System.Drawing.Point(5, 127);
+            this.txtCurrentCity.Name = "txtCurrentCity";
+            this.txtCurrentCity.Size = new System.Drawing.Size(120, 20);
+            this.txtCurrentCity.TabIndex = 2;
             // 
             // label3
             // 
@@ -804,12 +783,12 @@
             this.label3.TabIndex = 8;
             this.label3.Text = "City:";
             // 
-            // textBox6
+            // txtCurrentZipcode
             // 
-            this.textBox6.Location = new System.Drawing.Point(5, 83);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(120, 20);
-            this.textBox6.TabIndex = 1;
+            this.txtCurrentZipcode.Location = new System.Drawing.Point(5, 83);
+            this.txtCurrentZipcode.Name = "txtCurrentZipcode";
+            this.txtCurrentZipcode.Size = new System.Drawing.Size(120, 20);
+            this.txtCurrentZipcode.TabIndex = 1;
             // 
             // label4
             // 
@@ -820,12 +799,12 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "Street:";
             // 
-            // textBox7
+            // txtCurrentName
             // 
-            this.textBox7.Location = new System.Drawing.Point(5, 41);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(120, 20);
-            this.textBox7.TabIndex = 0;
+            this.txtCurrentName.Location = new System.Drawing.Point(5, 41);
+            this.txtCurrentName.Name = "txtCurrentName";
+            this.txtCurrentName.Size = new System.Drawing.Size(120, 20);
+            this.txtCurrentName.TabIndex = 0;
             // 
             // label5
             // 
@@ -849,14 +828,14 @@
             // 
             this.groupBox6.Controls.Add(this.label12);
             this.groupBox6.Controls.Add(this.label13);
-            this.groupBox6.Controls.Add(this.textBox8);
+            this.groupBox6.Controls.Add(this.txtCurrentPassword);
             this.groupBox6.Controls.Add(this.label14);
-            this.groupBox6.Controls.Add(this.textBox9);
-            this.groupBox6.Controls.Add(this.textBox10);
+            this.groupBox6.Controls.Add(this.txtCurrentEmail);
+            this.groupBox6.Controls.Add(this.txtCurrenctUsername);
             this.groupBox6.Location = new System.Drawing.Point(13, 115);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(188, 152);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
@@ -880,12 +859,12 @@
             this.label13.TabIndex = 21;
             this.label13.Text = "Password:";
             // 
-            // textBox8
+            // txtCurrentPassword
             // 
-            this.textBox8.Location = new System.Drawing.Point(8, 130);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(175, 20);
-            this.textBox8.TabIndex = 19;
+            this.txtCurrentPassword.Location = new System.Drawing.Point(8, 130);
+            this.txtCurrentPassword.Name = "txtCurrentPassword";
+            this.txtCurrentPassword.Size = new System.Drawing.Size(175, 20);
+            this.txtCurrentPassword.TabIndex = 19;
             // 
             // label14
             // 
@@ -896,26 +875,26 @@
             this.label14.TabIndex = 22;
             this.label14.Text = "Email:";
             // 
-            // textBox9
+            // txtCurrentEmail
             // 
-            this.textBox9.Location = new System.Drawing.Point(8, 87);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(175, 20);
-            this.textBox9.TabIndex = 18;
+            this.txtCurrentEmail.Location = new System.Drawing.Point(8, 87);
+            this.txtCurrentEmail.Name = "txtCurrentEmail";
+            this.txtCurrentEmail.Size = new System.Drawing.Size(175, 20);
+            this.txtCurrentEmail.TabIndex = 18;
             // 
-            // textBox10
+            // txtCurrenctUsername
             // 
-            this.textBox10.Enabled = false;
-            this.textBox10.Location = new System.Drawing.Point(8, 44);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(175, 20);
-            this.textBox10.TabIndex = 17;
+            this.txtCurrenctUsername.Enabled = false;
+            this.txtCurrenctUsername.Location = new System.Drawing.Point(8, 44);
+            this.txtCurrenctUsername.Name = "txtCurrenctUsername";
+            this.txtCurrenctUsername.Size = new System.Drawing.Size(175, 20);
+            this.txtCurrenctUsername.TabIndex = 17;
             // 
             // pictureBox12
             // 
             this.pictureBox12.Image = global::ProftaakEyeCT.Properties.Resources.accountdetails;
             this.pictureBox12.Location = new System.Drawing.Point(208, 0);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(453, 74);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -926,7 +905,7 @@
             // 
             this.pictureBox11.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox11.Location = new System.Drawing.Point(2, 460);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(800, 19);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -937,7 +916,7 @@
             // 
             this.pictureBox10.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox10.Location = new System.Drawing.Point(2, 77);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(803, 19);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -974,7 +953,7 @@
             // 
             this.pictureBox15.Image = global::ProftaakEyeCT.Properties.Resources.reservations;
             this.pictureBox15.Location = new System.Drawing.Point(240, 2);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(374, 72);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -985,7 +964,7 @@
             // 
             this.pictureBox7.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox7.Location = new System.Drawing.Point(4, 495);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(796, 19);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -996,7 +975,7 @@
             // 
             this.pictureBox6.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox6.Location = new System.Drawing.Point(4, 76);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(796, 19);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1378,7 +1357,7 @@
             // btnSelGoOnSite
             // 
             this.btnSelGoOnSite.Location = new System.Drawing.Point(555, 424);
-            this.btnSelGoOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelGoOnSite.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelGoOnSite.Name = "btnSelGoOnSite";
             this.btnSelGoOnSite.Size = new System.Drawing.Size(236, 30);
             this.btnSelGoOnSite.TabIndex = 52;
@@ -1400,7 +1379,7 @@
             // 
             this.lbOutside.FormattingEnabled = true;
             this.lbOutside.Location = new System.Drawing.Point(555, 119);
-            this.lbOutside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOutside.Margin = new System.Windows.Forms.Padding(2);
             this.lbOutside.Name = "lbOutside";
             this.lbOutside.Size = new System.Drawing.Size(238, 303);
             this.lbOutside.TabIndex = 50;
@@ -1409,7 +1388,7 @@
             // 
             this.pictureBox16.Image = global::ProftaakEyeCT.Properties.Resources.access;
             this.pictureBox16.Location = new System.Drawing.Point(266, 2);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(290, 67);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1450,9 +1429,9 @@
             this.groupBox2.Controls.Add(this.tbAccUsername);
             this.groupBox2.Controls.Add(this.btnCheckStat);
             this.groupBox2.Location = new System.Drawing.Point(16, 119);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(232, 166);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
@@ -1487,7 +1466,7 @@
             // btnCheckStat
             // 
             this.btnCheckStat.Location = new System.Drawing.Point(9, 127);
-            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckStat.Name = "btnCheckStat";
             this.btnCheckStat.Size = new System.Drawing.Size(216, 30);
             this.btnCheckStat.TabIndex = 39;
@@ -1498,7 +1477,7 @@
             // btnSelGoOutside
             // 
             this.btnSelGoOutside.Location = new System.Drawing.Point(266, 424);
-            this.btnSelGoOutside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelGoOutside.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelGoOutside.Name = "btnSelGoOutside";
             this.btnSelGoOutside.Size = new System.Drawing.Size(283, 30);
             this.btnSelGoOutside.TabIndex = 42;
@@ -1520,7 +1499,7 @@
             // 
             this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox5.Location = new System.Drawing.Point(2, 474);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(796, 19);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1531,7 +1510,7 @@
             // 
             this.pictureBox4.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox4.Location = new System.Drawing.Point(-4, 72);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(796, 19);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1542,7 +1521,7 @@
             // 
             this.lbOnSite.FormattingEnabled = true;
             this.lbOnSite.Location = new System.Drawing.Point(266, 119);
-            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2);
             this.lbOnSite.Name = "lbOnSite";
             this.lbOnSite.Size = new System.Drawing.Size(285, 303);
             this.lbOnSite.TabIndex = 40;
@@ -1551,7 +1530,7 @@
             // 
             this.tbEvent.Controls.Add(this.btnEventPlatform);
             this.tbEvent.Location = new System.Drawing.Point(4, 22);
-            this.tbEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEvent.Margin = new System.Windows.Forms.Padding(2);
             this.tbEvent.Name = "tbEvent";
             this.tbEvent.Size = new System.Drawing.Size(810, 516);
             this.tbEvent.TabIndex = 10;
@@ -1568,15 +1547,37 @@
             this.btnEventPlatform.UseVisualStyleBackColor = true;
             this.btnEventPlatform.Click += new System.EventHandler(this.EventPlatormShow_Click);
             // 
-            // btnReportPage
+            // lbReservations
             // 
-            this.btnReportPage.Location = new System.Drawing.Point(444, 213);
-            this.btnReportPage.Name = "btnReportPage";
-            this.btnReportPage.Size = new System.Drawing.Size(152, 57);
-            this.btnReportPage.TabIndex = 3;
-            this.btnReportPage.Text = "ReportPage";
-            this.btnReportPage.UseVisualStyleBackColor = true;
-            this.btnReportPage.Click += new System.EventHandler(this.btnReportPage_Click);
+            this.lbReservations.FormattingEnabled = true;
+            this.lbReservations.Location = new System.Drawing.Point(5, 18);
+            this.lbReservations.Name = "lbReservations";
+            this.lbReservations.Size = new System.Drawing.Size(343, 160);
+            this.lbReservations.TabIndex = 21;
+            this.lbReservations.SelectedIndexChanged += new System.EventHandler(this.lbReservations_SelectedIndexChanged);
+            // 
+            // nudCampingspot
+            // 
+            this.nudCampingspot.Location = new System.Drawing.Point(141, 273);
+            this.nudCampingspot.Name = "nudCampingspot";
+            this.nudCampingspot.Size = new System.Drawing.Size(207, 20);
+            this.nudCampingspot.TabIndex = 22;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(2, 197);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(67, 13);
+            this.label17.TabIndex = 23;
+            this.label17.Text = "Event name:";
+            // 
+            // txtEventNaam
+            // 
+            this.txtEventNaam.Location = new System.Drawing.Point(139, 190);
+            this.txtEventNaam.Name = "txtEventNaam";
+            this.txtEventNaam.Size = new System.Drawing.Size(207, 20);
+            this.txtEventNaam.TabIndex = 24;
             // 
             // Menuform
             // 
@@ -1615,7 +1616,7 @@
             this.groupBox7.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentHousenumber)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox12)).EndInit();
@@ -1639,6 +1640,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tbEvent.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.nudCampingspot)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1673,16 +1675,12 @@
         private System.Windows.Forms.Label lblPersonName;
         private System.Windows.Forms.NumericUpDown nudPersonHousenumber;
         private System.Windows.Forms.TabPage tpManage;
-        private System.Windows.Forms.TextBox tbEventName;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox tbPlaceOfReservation;
-        private System.Windows.Forms.Label lblEventName;
-        private System.Windows.Forms.Label lblGroupSize;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.TextBox txtCurrentPlaceReservation;
+        private System.Windows.Forms.Label lblCampingspot;
+        private System.Windows.Forms.DateTimePicker dtpCurrentDateReservation;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Button btnChange;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.TabPage tpReserve;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Label lblAvailable;
@@ -1750,24 +1748,24 @@
         private System.Windows.Forms.PictureBox pictureBox10;
         private System.Windows.Forms.GroupBox groupBox5;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCurrentPhonenumber;
+        private System.Windows.Forms.NumericUpDown nudCurrentHousenumber;
+        private System.Windows.Forms.TextBox txtCurrentStreet;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCurrentCity;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.TextBox txtCurrentZipcode;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtCurrentName;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.GroupBox groupBox6;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox txtCurrentPassword;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.TextBox txtCurrentEmail;
+        private System.Windows.Forms.TextBox txtCurrenctUsername;
         private System.Windows.Forms.PictureBox pictureBox13;
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.PictureBox pictureBox14;
@@ -1779,5 +1777,9 @@
         private System.Windows.Forms.ListBox lbOutside;
         private System.Windows.Forms.Button btnSelGoOnSite;
         private System.Windows.Forms.Button btnReportPage;
+        private System.Windows.Forms.ListBox lbReservations;
+        private System.Windows.Forms.NumericUpDown nudCampingspot;
+        private System.Windows.Forms.TextBox txtEventNaam;
+        private System.Windows.Forms.Label label17;
     }
 }

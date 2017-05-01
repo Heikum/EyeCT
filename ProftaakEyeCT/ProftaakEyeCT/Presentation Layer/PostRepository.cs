@@ -46,9 +46,13 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetAllReportedPosts();
         }
-        public string GetReportPostComplaint(Post post)
+        public List<string> GetReportPostComplaint(Post post)
         {
             return context.GetReportPostComplaint(post);
+        }
+        public void InsertReportedPost(Post post, string complaint)
+        {
+            context.InsertReportedPost(post, complaint);
         }
     }
 }
