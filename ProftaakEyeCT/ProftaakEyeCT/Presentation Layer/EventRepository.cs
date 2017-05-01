@@ -49,5 +49,14 @@ namespace ProftaakEyeCT.Presentation_Layer
             return context.GetById(id);
         }
 
+        public DateTime getStart(string EvName)
+        {
+            return context.getStart(EvName);
+        }
+
+        public DateTime getEnd(string EvName)
+        {
+            return context.getEnd(EvName);
+        }
     }
 }

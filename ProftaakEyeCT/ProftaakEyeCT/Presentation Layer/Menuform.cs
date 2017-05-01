@@ -96,6 +96,12 @@ namespace ProftaakEyeCT
             {
                 lbOutside.Items.Add(account);
             }
+            cbEvents.Items.Clear();
+            foreach (var item in eventrepo.GetAllEvents())
+            {
+                cbEvents.Items.Add(item.name);
+            }
+            
         }
 
         private bool AccountRights()
@@ -246,14 +252,24 @@ namespace ProftaakEyeCT
 
         private void btnCheckStat_Click(object sender, EventArgs e)
         {
-            if (accessrepo.GetStatus(tbAccUsername.Text) && )
+            if (accessrepo.GetStatus(tbAccUsername.Text) && DatumCheck(eventrepo.getStart(Convert.ToString(cbEvents.SelectedValue)), eventrepo.getEnd(Convert.ToString(cbEvents.SelectedValue))))
             {
                 btnCheck.BackColor = Color.Green;
             }
             else
             {
                 btnCheck.BackColor = Color.Red;
+                MessageBox.Show("De gebruiker heeft geen Access of het event is al afgelopen.");
             }
+        }
+
+        private bool DatumCheck(DateTime Begin, DateTime End)
+        {
+            if (Begin > DateTime.Now && End < DateTime.Now)
+            {
+                return true;
+            }
+            return false;
         }
 
 

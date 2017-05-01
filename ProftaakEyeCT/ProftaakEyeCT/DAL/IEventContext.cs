@@ -20,6 +20,8 @@ namespace ProftaakEyeCT.DAL
         Event GetByName(string eventname);
         Event GetById(int id);
 
-        DateTime getStart();
+        DateTime getStart(string EvName);
+
+        DateTime getEnd(string EvName);
     }
 }
