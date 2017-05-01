@@ -135,6 +135,7 @@ namespace ProftaakEyectEvents.DAL
                 return true;
             }
         }
+        
 
         public void InsertAccountReservation(Account account, int resid)
         {
