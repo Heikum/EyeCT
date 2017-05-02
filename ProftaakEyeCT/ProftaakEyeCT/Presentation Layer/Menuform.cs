@@ -268,7 +268,7 @@ namespace ProftaakEyeCT
 
         private void btnCheckStat_Click(object sender, EventArgs e)
         {
-            if (accessrepo.GetStatus(tbAccUsername.Text) && DatumCheck(eventrepo.getStart(Convert.ToString(cbEvents.SelectedValue)), eventrepo.getEnd(Convert.ToString(cbEvents.SelectedValue))))
+            if (accessrepo.GetStatus(tbAccUsername.Text) && DatumCheck(eventrepo.getStart(Convert.ToString(cbEvents.SelectedItem)), eventrepo.getEnd(Convert.ToString(cbEvents.SelectedItem))))
             {
                 btnCheck.BackColor = Color.Green;
             }
@@ -281,7 +281,7 @@ namespace ProftaakEyeCT
 
         private bool DatumCheck(DateTime Begin, DateTime End)
         {
-            if (Begin > DateTime.Now && End < DateTime.Now)
+            if (Begin < DateTime.Now && End > DateTime.Now)
             {
                 return true;
             }
