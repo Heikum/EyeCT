@@ -1,6 +1,7 @@
 ﻿using ProftaakEyeCT.DAL;
 using ProftaakEyeCT.Presentation_Layer;
 using ProftaakEyectEvents;
+using ProftaakEyectEvents.DAL;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,16 +17,26 @@ namespace ProftaakEyeCT
 {
     public partial class MediaPlatform : Form
     {
+        Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
         private PostRepository postrepo;
         private ReactionRepository reactionrepo;
+        private AccountRepository accountrepo;
         public int selectedPostID;
         public Post reportingpost;
+
+
         public MediaPlatform()
         {
             InitializeComponent();
             postrepo = new PostRepository(new PostSQLContext());
             reactionrepo = new ReactionRepository(new ReactionSQLContext());
+            accountrepo = new AccountRepository(new AccountSQLContext());
             UpdatePosts();
+            bool rights = AccountRights();
+            if (rights == false)
+            {
+                btnMediaVerwijderen.Hide();
+            }
 
         }
 
@@ -41,6 +52,16 @@ namespace ProftaakEyeCT
             var selectedpost = lbMediaPosts.SelectedItem as Post;
             lbMediaReactions.DataSource = reactionrepo.GetByPost(selectedpost);
             
+        }
+
+        private bool AccountRights()
+        {
+            Account acc = accountrepo.GetAccountRights(mainloginform.tbUsername.Text);
+            if (acc.Rights == true)
+            {
+                return true;
+            }
+            return false;
         }
 
         private void MediaPlatform_Load(object sender, EventArgs e)

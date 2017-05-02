@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data.Sql;
 using System.Windows.Forms;
+using System.Data;
 
 namespace ProftaakEyectEvents.DAL
 {
@@ -210,26 +211,32 @@ namespace ProftaakEyectEvents.DAL
 
         public bool Login(string gebruikersnaam, string wachtwoord)
         {
-            using (SqlConnection connection = Database.Connection)
+            SqlConnection connection = Database.Connection;
+            ConnectionState conState = connection.State;
+            if (conState == ConnectionState.Open)
             {
-                SqlCommand cmd = new SqlCommand(@"SELECT Count(*) FROM [Account] 
-                                        WHERE Username=@uname and 
-                                        Password=@pass", connection);
-                cmd.Parameters.AddWithValue("@uname", gebruikersnaam);
-                cmd.Parameters.AddWithValue("@pass", wachtwoord);
-                var result = (int)cmd.ExecuteScalar();
-                if (result > 0)
+                using (connection)
                 {
-                    return true;
-                }
-                else
-                {
-                    connection.Close();
-                    return false;
-                    ;
+                    SqlCommand cmd = new SqlCommand(@"SELECT Count(*) FROM [Account] 
+                                        WHERE Username=@uname and Password=@pass", connection);
+                    cmd.Parameters.AddWithValue("@uname", gebruikersnaam);
+                    cmd.Parameters.AddWithValue("@pass", wachtwoord);
+                    var result = (int)cmd.ExecuteScalar();
+                    if (result > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        connection.Close();
+                        return false;
+                    }
                 }
             }
+            return false;
+
         }
+
         public int GetID()
         {
             int userid; 

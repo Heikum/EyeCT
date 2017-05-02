@@ -8,6 +8,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -115,6 +116,8 @@ namespace ProftaakEyeCT.Presentation_Layer
             {
                 txtImageName.Enabled = false;
                 txtImageLink.Enabled = false;
+                txtImageName.Clear();
+                txtImageLink.Clear();
             }
             else if (rbVideoMedia.Checked == false)
 
@@ -133,6 +136,8 @@ namespace ProftaakEyeCT.Presentation_Layer
             {
                 txtVideoName.Enabled = false;
                 txtVideoLink.Enabled = false;
+                txtVideoName.Clear();
+                txtVideoLink.Clear();
             }
 
             else if (rbImageMedia.Checked == false)
@@ -154,6 +159,10 @@ namespace ProftaakEyeCT.Presentation_Layer
                 txtVideoLink.Enabled = false;
                 txtImageName.Enabled = false;
                 txtImageLink.Enabled = false;
+                txtVideoName.Clear();
+                txtVideoLink.Clear();
+                txtImageName.Clear();
+                txtImageLink.Clear();
             }
             else if (rbImageMedia.Checked)
             {
@@ -175,6 +184,33 @@ namespace ProftaakEyeCT.Presentation_Layer
         private void InsertMedia()
         {
 
+        }
+
+        private void txtImageLink_Leave(object sender, EventArgs e)
+        {
+            if (txtImageLink.Text.EndsWith(".jpg"))
+            {
+                MessageBox.Show("That is a valid image link");
+            }
+            else
+            {
+                MessageBox.Show("invalid image link");
+                txtImageLink.Clear();
+            }
+        }
+
+        private void txtVideoLink_Leave(object sender, EventArgs e)
+        {
+
+            if (txtVideoLink.Text.StartsWith("https://www.youtube.com/watch?v="))
+            {
+                MessageBox.Show("This is a valid video link");
+            }
+            else
+            {
+                MessageBox.Show("invalid video link, make sure its from Youtube");
+                txtVideoLink.Clear();
+            }
         }
     }
 }
