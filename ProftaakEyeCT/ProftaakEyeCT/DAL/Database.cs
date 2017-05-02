@@ -23,15 +23,27 @@ namespace ProftaakEyectEvents
         /// Creates a new database connection and directly opens it. The caller
         /// is resposible for properly closing the connection.
         /// </summary>
-        public static SqlConnection Connection
-        {
-            get
+        /// 
+
+        
+            public static SqlConnection Connection
             {
-                SqlConnection connection = new SqlConnection(connectionString);
-                connection.Open();
+                
+                get{
+                    SqlConnection connection = new SqlConnection(connectionString);
+                try
+                {
+                    connection.Open();
+                    
+                }
+                catch(Exception e)
+                {
+                    MessageBox.Show("De connectie naar de database is gesloten");
+                    connection.Close();
+                }
                 return connection;
             }
-        }
+            }
 
         /// <summary>
         /// Create a new database if it doesn't exist, and fill it with some

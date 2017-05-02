@@ -54,7 +54,6 @@ namespace ProftaakEyeCT
             {
                 tcCamping.TabPages.Remove(tpAccess);
                 tcCamping.TabPages.Remove(tpAccountDetails);
-                tcCamping.TabPages.Remove(tpMaterials);
             }
         }
 
