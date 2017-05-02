@@ -16,7 +16,8 @@ namespace ProftaakEyeCT.DAL
         bool UpdateMaterial(Material material);
 
         bool DeleteMaterial(int id);
-        bool DeleteMaterialReservation(int resID); 
+        bool DeleteMaterialReservation(int resID);
+        void InsertMaterialEvent(Event events, Material material, int ammount);
 
     }
 }

@@ -38,6 +38,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.DeleteMaterial(id);
         }
+        public void InsertMaterialEvent(Event events, Material material, int ammount)
+        {
+            context.InsertMaterialEvent(events, material, ammount);
+        }
 
 
     }
