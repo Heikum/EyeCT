@@ -91,6 +91,24 @@ namespace ProftaakEyeCT.DAL
             }
             return false;
         }
+        public void InsertMaterialEvent(Event events, Material material, int ammount)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "Insert INTO EventMaterial (EventID, MaterialID, Amount)" +
+                    "VALUES (@eventid,@materialid,@amount)";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("eventid", events.id);
+                    command.Parameters.AddWithValue("materialid", material.Id);
+                    command.Parameters.AddWithValue("amount", ammount);
+                    
+                    command.ExecuteNonQuery();
+                    
+                }
+            }
+            
+        }
 
         private Material CreateMaterialFromReader(SqlDataReader reader)
         {
@@ -100,6 +118,8 @@ namespace ProftaakEyeCT.DAL
                 Convert.ToDecimal(reader["Price"]),
                 Convert.ToInt32(reader["Stock"]));
         }
+
+        
     }
 }
 

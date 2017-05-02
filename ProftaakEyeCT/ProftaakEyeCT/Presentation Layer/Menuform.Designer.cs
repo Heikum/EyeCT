@@ -37,6 +37,8 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.tpMedia = new System.Windows.Forms.TabPage();
+            this.pictureBox18 = new System.Windows.Forms.PictureBox();
+            this.pictureBox17 = new System.Windows.Forms.PictureBox();
             this.btnReportPage = new System.Windows.Forms.Button();
             this.btnMedia = new System.Windows.Forms.Button();
             this.tpAccountDetails = new System.Windows.Forms.TabPage();
@@ -69,7 +71,9 @@
             this.btnPersonUpdate = new System.Windows.Forms.Button();
             this.btnPersonEdit = new System.Windows.Forms.Button();
             this.tpManage = new System.Windows.Forms.TabPage();
+            this.label22 = new System.Windows.Forms.Label();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
+            this.btreturnitems = new System.Windows.Forms.Button();
             this.txtEventNaam = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
             this.nudCampingspot = new System.Windows.Forms.NumericUpDown();
@@ -121,6 +125,9 @@
             this.lblAvailable = new System.Windows.Forms.Label();
             this.lbReservationCampingspot = new System.Windows.Forms.ListBox();
             this.tpMaterials = new System.Windows.Forms.TabPage();
+            this.updownpriceitem = new System.Windows.Forms.NumericUpDown();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox19 = new System.Windows.Forms.PictureBox();
             this.txtMaterialName = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -152,13 +159,10 @@
             this.lbOnSite = new System.Windows.Forms.ListBox();
             this.tbEvent = new System.Windows.Forms.TabPage();
             this.btnEventPlatform = new System.Windows.Forms.Button();
-            this.pictureBox17 = new System.Windows.Forms.PictureBox();
-            this.pictureBox18 = new System.Windows.Forms.PictureBox();
-            this.pictureBox19 = new System.Windows.Forms.PictureBox();
-            this.pictureBox20 = new System.Windows.Forms.PictureBox();
-            this.btreturnitems = new System.Windows.Forms.Button();
-            this.label22 = new System.Windows.Forms.Label();
-            this.updownpriceitem = new System.Windows.Forms.NumericUpDown();
+            this.lbAllEvents = new System.Windows.Forms.ListBox();
+            this.txtEventName = new System.Windows.Forms.TextBox();
+            this.lblEventName = new System.Windows.Forms.Label();
+            this.btnAddToEvent = new System.Windows.Forms.Button();
             this.tcCamping.SuspendLayout();
             this.tbWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -166,6 +170,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tpMedia.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
             this.tpAccountDetails.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).BeginInit();
@@ -190,6 +196,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.nudReservationCampingspot)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCampingFoto)).BeginInit();
             this.tpMaterials.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.updownpriceitem)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaterialStock)).BeginInit();
             this.tpAccess.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox16)).BeginInit();
@@ -197,11 +206,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tbEvent.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updownpriceitem)).BeginInit();
             this.SuspendLayout();
             // 
             // tcCamping
@@ -228,7 +232,7 @@
             this.tbWelcome.Controls.Add(this.pictureBox1);
             this.tbWelcome.Controls.Add(this.pictureBox2);
             this.tbWelcome.Location = new System.Drawing.Point(4, 22);
-            this.tbWelcome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbWelcome.Margin = new System.Windows.Forms.Padding(2);
             this.tbWelcome.Name = "tbWelcome";
             this.tbWelcome.Size = new System.Drawing.Size(810, 516);
             this.tbWelcome.TabIndex = 11;
@@ -239,7 +243,7 @@
             // 
             this.pictureBox14.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
             this.pictureBox14.Location = new System.Drawing.Point(358, 357);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(112, 116);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -262,7 +266,7 @@
             // 
             this.pictureBox3.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox3.Location = new System.Drawing.Point(2, 488);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(796, 19);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -273,7 +277,7 @@
             // 
             this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox1.Location = new System.Drawing.Point(3, 94);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(796, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -284,7 +288,7 @@
             // 
             this.pictureBox2.Image = global::ProftaakEyeCT.Properties.Resources.welcome;
             this.pictureBox2.Location = new System.Drawing.Point(294, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(269, 75);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -300,10 +304,32 @@
             this.tpMedia.Controls.Add(this.btnMedia);
             this.tpMedia.Location = new System.Drawing.Point(4, 22);
             this.tpMedia.Name = "tpMedia";
-            this.tpMedia.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpMedia.Padding = new System.Windows.Forms.Padding(3);
             this.tpMedia.Size = new System.Drawing.Size(810, 516);
             this.tpMedia.TabIndex = 0;
             this.tpMedia.Text = "Media";
+            // 
+            // pictureBox18
+            // 
+            this.pictureBox18.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox18.Location = new System.Drawing.Point(9, 495);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox18.Name = "pictureBox18";
+            this.pictureBox18.Size = new System.Drawing.Size(796, 19);
+            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox18.TabIndex = 5;
+            this.pictureBox18.TabStop = false;
+            // 
+            // pictureBox17
+            // 
+            this.pictureBox17.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox17.Location = new System.Drawing.Point(9, 19);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox17.Name = "pictureBox17";
+            this.pictureBox17.Size = new System.Drawing.Size(796, 19);
+            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox17.TabIndex = 4;
+            this.pictureBox17.TabStop = false;
             // 
             // btnReportPage
             // 
@@ -344,7 +370,7 @@
             // 
             this.pictureBox13.Image = global::ProftaakEyeCT.Properties.Resources.accountdetails;
             this.pictureBox13.Location = new System.Drawing.Point(202, 0);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(453, 74);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -355,7 +381,7 @@
             // 
             this.pictureBox9.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox9.Location = new System.Drawing.Point(2, 495);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(796, 19);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -366,7 +392,7 @@
             // 
             this.pictureBox8.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox8.Location = new System.Drawing.Point(0, 77);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(796, 19);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -388,9 +414,9 @@
             this.groupBox4.Controls.Add(this.lblPersonHousenumber);
             this.groupBox4.Controls.Add(this.lblPersonPhonenumber);
             this.groupBox4.Location = new System.Drawing.Point(224, 111);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(132, 290);
             this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
@@ -506,9 +532,9 @@
             this.groupBox3.Controls.Add(this.txtAccountEmail);
             this.groupBox3.Controls.Add(this.txtAccountUsername);
             this.groupBox3.Location = new System.Drawing.Point(17, 111);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(188, 152);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
@@ -624,10 +650,19 @@
             this.tpManage.Controls.Add(this.pictureBox10);
             this.tpManage.Location = new System.Drawing.Point(4, 22);
             this.tpManage.Name = "tpManage";
-            this.tpManage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpManage.Padding = new System.Windows.Forms.Padding(3);
             this.tpManage.Size = new System.Drawing.Size(810, 516);
             this.tpManage.TabIndex = 1;
             this.tpManage.Text = "Person details";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(352, 439);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(41, 13);
+            this.label22.TabIndex = 49;
+            this.label22.Text = "label22";
             // 
             // groupBox7
             // 
@@ -643,13 +678,23 @@
             this.groupBox7.Controls.Add(this.lblCampingspot);
             this.groupBox7.Controls.Add(this.txtCurrentPlaceReservation);
             this.groupBox7.Location = new System.Drawing.Point(451, 120);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox7.Size = new System.Drawing.Size(351, 368);
             this.groupBox7.TabIndex = 48;
             this.groupBox7.TabStop = false;
             this.groupBox7.Text = "Reservation";
+            // 
+            // btreturnitems
+            // 
+            this.btreturnitems.Location = new System.Drawing.Point(5, 331);
+            this.btreturnitems.Name = "btreturnitems";
+            this.btreturnitems.Size = new System.Drawing.Size(339, 32);
+            this.btreturnitems.TabIndex = 25;
+            this.btreturnitems.Text = "Return Items";
+            this.btreturnitems.UseVisualStyleBackColor = true;
+            this.btreturnitems.Click += new System.EventHandler(this.btreturnitems_Click);
             // 
             // txtEventNaam
             // 
@@ -752,9 +797,9 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Location = new System.Drawing.Point(258, 115);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(132, 290);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
@@ -870,9 +915,9 @@
             this.groupBox6.Controls.Add(this.txtCurrentEmail);
             this.groupBox6.Controls.Add(this.txtCurrenctUsername);
             this.groupBox6.Location = new System.Drawing.Point(13, 115);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(188, 152);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
@@ -931,7 +976,7 @@
             // 
             this.pictureBox12.Image = global::ProftaakEyeCT.Properties.Resources.accountdetails;
             this.pictureBox12.Location = new System.Drawing.Point(208, 0);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(453, 74);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -942,7 +987,7 @@
             // 
             this.pictureBox11.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox11.Location = new System.Drawing.Point(5, 492);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(800, 19);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -953,7 +998,7 @@
             // 
             this.pictureBox10.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox10.Location = new System.Drawing.Point(2, 77);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(803, 19);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -990,7 +1035,7 @@
             // 
             this.pictureBox15.Image = global::ProftaakEyeCT.Properties.Resources.reservations;
             this.pictureBox15.Location = new System.Drawing.Point(240, 2);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(374, 72);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1001,7 +1046,7 @@
             // 
             this.pictureBox7.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox7.Location = new System.Drawing.Point(4, 495);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(796, 19);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1012,7 +1057,7 @@
             // 
             this.pictureBox6.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox6.Location = new System.Drawing.Point(4, 76);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(796, 19);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1153,6 +1198,10 @@
             // tpMaterials
             // 
             this.tpMaterials.BackColor = System.Drawing.Color.White;
+            this.tpMaterials.Controls.Add(this.btnAddToEvent);
+            this.tpMaterials.Controls.Add(this.lblEventName);
+            this.tpMaterials.Controls.Add(this.txtEventName);
+            this.tpMaterials.Controls.Add(this.lbAllEvents);
             this.tpMaterials.Controls.Add(this.updownpriceitem);
             this.tpMaterials.Controls.Add(this.pictureBox20);
             this.tpMaterials.Controls.Add(this.pictureBox19);
@@ -1168,6 +1217,35 @@
             this.tpMaterials.Size = new System.Drawing.Size(810, 516);
             this.tpMaterials.TabIndex = 5;
             this.tpMaterials.Text = "Materials";
+            // 
+            // updownpriceitem
+            // 
+            this.updownpriceitem.Location = new System.Drawing.Point(347, 73);
+            this.updownpriceitem.Name = "updownpriceitem";
+            this.updownpriceitem.Size = new System.Drawing.Size(200, 20);
+            this.updownpriceitem.TabIndex = 27;
+            // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox20.Location = new System.Drawing.Point(2, 12);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(796, 19);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 26;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox19
+            // 
+            this.pictureBox19.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox19.Location = new System.Drawing.Point(2, 495);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox19.Name = "pictureBox19";
+            this.pictureBox19.Size = new System.Drawing.Size(796, 19);
+            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox19.TabIndex = 25;
+            this.pictureBox19.TabStop = false;
             // 
             // txtMaterialName
             // 
@@ -1208,8 +1286,9 @@
             this.lbAllMaterials.FormattingEnabled = true;
             this.lbAllMaterials.Location = new System.Drawing.Point(6, 50);
             this.lbAllMaterials.Name = "lbAllMaterials";
-            this.lbAllMaterials.Size = new System.Drawing.Size(159, 251);
+            this.lbAllMaterials.Size = new System.Drawing.Size(159, 186);
             this.lbAllMaterials.TabIndex = 6;
+            this.lbAllMaterials.SelectedIndexChanged += new System.EventHandler(this.lbAllMaterials_SelectedIndexChanged);
             // 
             // btnAddMaterial
             // 
@@ -1278,7 +1357,7 @@
             // btnSelGoOnSite
             // 
             this.btnSelGoOnSite.Location = new System.Drawing.Point(555, 424);
-            this.btnSelGoOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelGoOnSite.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelGoOnSite.Name = "btnSelGoOnSite";
             this.btnSelGoOnSite.Size = new System.Drawing.Size(236, 30);
             this.btnSelGoOnSite.TabIndex = 52;
@@ -1300,7 +1379,7 @@
             // 
             this.lbOutside.FormattingEnabled = true;
             this.lbOutside.Location = new System.Drawing.Point(555, 119);
-            this.lbOutside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOutside.Margin = new System.Windows.Forms.Padding(2);
             this.lbOutside.Name = "lbOutside";
             this.lbOutside.Size = new System.Drawing.Size(238, 264);
             this.lbOutside.TabIndex = 50;
@@ -1309,7 +1388,7 @@
             // 
             this.pictureBox16.Image = global::ProftaakEyeCT.Properties.Resources.access;
             this.pictureBox16.Location = new System.Drawing.Point(266, 2);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(290, 67);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1352,9 +1431,9 @@
             this.groupBox2.Controls.Add(this.tbAccUsername);
             this.groupBox2.Controls.Add(this.btnCheckStat);
             this.groupBox2.Location = new System.Drawing.Point(16, 119);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(232, 166);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
@@ -1363,7 +1442,7 @@
             // 
             this.cbEvents.FormattingEnabled = true;
             this.cbEvents.Location = new System.Drawing.Point(160, 16);
-            this.cbEvents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEvents.Margin = new System.Windows.Forms.Padding(2);
             this.cbEvents.Name = "cbEvents";
             this.cbEvents.Size = new System.Drawing.Size(62, 21);
             this.cbEvents.TabIndex = 41;
@@ -1372,7 +1451,7 @@
             // 
             this.datePickerAccess.Enabled = false;
             this.datePickerAccess.Location = new System.Drawing.Point(9, 16);
-            this.datePickerAccess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datePickerAccess.Margin = new System.Windows.Forms.Padding(2);
             this.datePickerAccess.Name = "datePickerAccess";
             this.datePickerAccess.Size = new System.Drawing.Size(146, 20);
             this.datePickerAccess.TabIndex = 40;
@@ -1407,7 +1486,7 @@
             // btnCheckStat
             // 
             this.btnCheckStat.Location = new System.Drawing.Point(9, 127);
-            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckStat.Name = "btnCheckStat";
             this.btnCheckStat.Size = new System.Drawing.Size(216, 30);
             this.btnCheckStat.TabIndex = 39;
@@ -1418,7 +1497,7 @@
             // btnSelGoOutside
             // 
             this.btnSelGoOutside.Location = new System.Drawing.Point(266, 424);
-            this.btnSelGoOutside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelGoOutside.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelGoOutside.Name = "btnSelGoOutside";
             this.btnSelGoOutside.Size = new System.Drawing.Size(283, 30);
             this.btnSelGoOutside.TabIndex = 42;
@@ -1440,7 +1519,7 @@
             // 
             this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox5.Location = new System.Drawing.Point(2, 474);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(796, 19);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1451,7 +1530,7 @@
             // 
             this.pictureBox4.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox4.Location = new System.Drawing.Point(-4, 72);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(796, 19);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1462,7 +1541,7 @@
             // 
             this.lbOnSite.FormattingEnabled = true;
             this.lbOnSite.Location = new System.Drawing.Point(266, 119);
-            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2);
             this.lbOnSite.Name = "lbOnSite";
             this.lbOnSite.Size = new System.Drawing.Size(285, 264);
             this.lbOnSite.TabIndex = 40;
@@ -1472,7 +1551,7 @@
             // 
             this.tbEvent.Controls.Add(this.btnEventPlatform);
             this.tbEvent.Location = new System.Drawing.Point(4, 22);
-            this.tbEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbEvent.Margin = new System.Windows.Forms.Padding(2);
             this.tbEvent.Name = "tbEvent";
             this.tbEvent.Size = new System.Drawing.Size(810, 516);
             this.tbEvent.TabIndex = 10;
@@ -1489,75 +1568,42 @@
             this.btnEventPlatform.UseVisualStyleBackColor = true;
             this.btnEventPlatform.Click += new System.EventHandler(this.EventPlatormShow_Click);
             // 
-            // pictureBox17
+            // lbAllEvents
             // 
-            this.pictureBox17.Image = global::ProftaakEyeCT.Properties.Resources.bar;
-            this.pictureBox17.Location = new System.Drawing.Point(9, 19);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox17.Name = "pictureBox17";
-            this.pictureBox17.Size = new System.Drawing.Size(796, 19);
-            this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox17.TabIndex = 4;
-            this.pictureBox17.TabStop = false;
+            this.lbAllEvents.FormattingEnabled = true;
+            this.lbAllEvents.Location = new System.Drawing.Point(6, 278);
+            this.lbAllEvents.Name = "lbAllEvents";
+            this.lbAllEvents.Size = new System.Drawing.Size(159, 212);
+            this.lbAllEvents.TabIndex = 28;
+            this.lbAllEvents.SelectedIndexChanged += new System.EventHandler(this.lbAllEvents_SelectedIndexChanged);
             // 
-            // pictureBox18
+            // txtEventName
             // 
-            this.pictureBox18.Image = global::ProftaakEyeCT.Properties.Resources.bar;
-            this.pictureBox18.Location = new System.Drawing.Point(9, 495);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox18.Name = "pictureBox18";
-            this.pictureBox18.Size = new System.Drawing.Size(796, 19);
-            this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox18.TabIndex = 5;
-            this.pictureBox18.TabStop = false;
+            this.txtEventName.Enabled = false;
+            this.txtEventName.Location = new System.Drawing.Point(347, 278);
+            this.txtEventName.Name = "txtEventName";
+            this.txtEventName.Size = new System.Drawing.Size(200, 20);
+            this.txtEventName.TabIndex = 29;
             // 
-            // pictureBox19
+            // lblEventName
             // 
-            this.pictureBox19.Image = global::ProftaakEyeCT.Properties.Resources.bar;
-            this.pictureBox19.Location = new System.Drawing.Point(2, 495);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox19.Name = "pictureBox19";
-            this.pictureBox19.Size = new System.Drawing.Size(796, 19);
-            this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox19.TabIndex = 25;
-            this.pictureBox19.TabStop = false;
+            this.lblEventName.AutoSize = true;
+            this.lblEventName.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.lblEventName.Location = new System.Drawing.Point(177, 281);
+            this.lblEventName.Name = "lblEventName";
+            this.lblEventName.Size = new System.Drawing.Size(87, 17);
+            this.lblEventName.TabIndex = 30;
+            this.lblEventName.Text = "Event name:";
             // 
-            // pictureBox20
+            // btnAddToEvent
             // 
-            this.pictureBox20.Image = global::ProftaakEyeCT.Properties.Resources.bar;
-            this.pictureBox20.Location = new System.Drawing.Point(2, 12);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
-            this.pictureBox20.Name = "pictureBox20";
-            this.pictureBox20.Size = new System.Drawing.Size(796, 19);
-            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox20.TabIndex = 26;
-            this.pictureBox20.TabStop = false;
-            // 
-            // btreturnitems
-            // 
-            this.btreturnitems.Location = new System.Drawing.Point(5, 331);
-            this.btreturnitems.Name = "btreturnitems";
-            this.btreturnitems.Size = new System.Drawing.Size(339, 32);
-            this.btreturnitems.TabIndex = 25;
-            this.btreturnitems.Text = "Return Items";
-            this.btreturnitems.UseVisualStyleBackColor = true;
-            this.btreturnitems.Click += new System.EventHandler(this.btreturnitems_Click);
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(352, 439);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(41, 13);
-            this.label22.TabIndex = 49;
-            this.label22.Text = "label22";
-            // 
-            // updownpriceitem
-            // 
-            this.updownpriceitem.Location = new System.Drawing.Point(347, 73);
-            this.updownpriceitem.Name = "updownpriceitem";
-            this.updownpriceitem.Size = new System.Drawing.Size(200, 20);
-            this.updownpriceitem.TabIndex = 27;
+            this.btnAddToEvent.Location = new System.Drawing.Point(347, 304);
+            this.btnAddToEvent.Name = "btnAddToEvent";
+            this.btnAddToEvent.Size = new System.Drawing.Size(200, 23);
+            this.btnAddToEvent.TabIndex = 31;
+            this.btnAddToEvent.Text = "Add to event";
+            this.btnAddToEvent.UseVisualStyleBackColor = true;
+            this.btnAddToEvent.Click += new System.EventHandler(this.btnAddToEvent_Click);
             // 
             // Menuform
             // 
@@ -1581,6 +1627,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tpMedia.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
             this.tpAccountDetails.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox13)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox9)).EndInit();
@@ -1613,6 +1661,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbCampingFoto)).EndInit();
             this.tpMaterials.ResumeLayout(false);
             this.tpMaterials.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.updownpriceitem)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMaterialStock)).EndInit();
             this.tpAccess.ResumeLayout(false);
             this.tpAccess.PerformLayout();
@@ -1622,11 +1673,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tbEvent.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox17)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox19)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.updownpriceitem)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1763,5 +1809,9 @@
         private System.Windows.Forms.PictureBox pictureBox19;
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.NumericUpDown updownpriceitem;
+        private System.Windows.Forms.Label lblEventName;
+        private System.Windows.Forms.TextBox txtEventName;
+        private System.Windows.Forms.ListBox lbAllEvents;
+        private System.Windows.Forms.Button btnAddToEvent;
     }
 }

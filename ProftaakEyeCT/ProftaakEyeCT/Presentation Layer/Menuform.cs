@@ -26,6 +26,7 @@ namespace ProftaakEyeCT
         private MediaRepository mediarepo;
         private Media updateMedia;
         private MaterialRepository materialrepo;
+        private Material updateMaterial;
         private CampingSpot updateCampingspot;
         private CampingspotRepository campingspotrepo;
         private EventRepository eventrepo;
@@ -53,7 +54,6 @@ namespace ProftaakEyeCT
             {
                 tcCamping.TabPages.Remove(tpAccess);
                 tcCamping.TabPages.Remove(tpAccountDetails);
-
             }
         }
 
@@ -101,6 +101,11 @@ namespace ProftaakEyeCT
             foreach (var item in eventrepo.GetAllEvents())
             {
                 cbEvents.Items.Add(item.name);
+            }
+            lbAllEvents.Items.Clear();
+            foreach (var item in eventrepo.GetAllEvents())
+            {
+                lbAllEvents.Items.Add(item);
             }
             
         }
@@ -262,7 +267,7 @@ namespace ProftaakEyeCT
 
         private void btnCheckStat_Click(object sender, EventArgs e)
         {
-            if (accessrepo.GetStatus(tbAccUsername.Text) && DatumCheck(eventrepo.getStart(Convert.ToString(cbEvents.SelectedValue)), eventrepo.getEnd(Convert.ToString(cbEvents.SelectedValue))))
+            if (accessrepo.GetStatus(tbAccUsername.Text) && DatumCheck(eventrepo.getStart(Convert.ToString(cbEvents.SelectedItem)), eventrepo.getEnd(Convert.ToString(cbEvents.SelectedItem))))
             {
                 btnCheck.BackColor = Color.Green;
             }
@@ -275,7 +280,7 @@ namespace ProftaakEyeCT
 
         private bool DatumCheck(DateTime Begin, DateTime End)
         {
-            if (Begin > DateTime.Now && End < DateTime.Now)
+            if (Begin < DateTime.Now && End > DateTime.Now)
             {
                 return true;
             }
@@ -446,6 +451,37 @@ namespace ProftaakEyeCT
             Material item = new Material(1, txtMaterialName.Text, updownpriceitem.Value, Convert.ToInt32(nudMaterialStock.Value));
             materialrepo.Insert(item);
             MessageBox.Show("Material Added!"); 
+        }
+
+        private void lbAllEvents_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateEvent = (Event)lbAllEvents.SelectedItem;
+            txtEventName.Text = updateEvent.name;
+        }
+
+        private void lbAllMaterials_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateMaterial = (Material)lbAllMaterials.SelectedItem;
+            txtMaterialName.Text = updateMaterial.Name;
+            updownpriceitem.Value = updateMaterial.Price;
+            nudMaterialStock.Value = updateMaterial.Stock;
+            
+
+        }
+
+        private void btnAddToEvent_Click(object sender, EventArgs e)
+        {
+            updateEvent = (Event)lbAllEvents.SelectedItem;
+            updateMaterial = (Material)lbAllMaterials.SelectedItem;
+            int ammount = (int)nudMaterialStock.Value;
+            if (updateEvent != null && updateMaterial != null && ammount != null)
+            {
+                materialrepo.InsertMaterialEvent(updateEvent, updateMaterial, ammount);
+            }
+            else
+            {
+                MessageBox.Show("Please fill all fields in");
+            }
         }
     }
 }
