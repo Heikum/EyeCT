@@ -37,7 +37,6 @@
             this.btnMediaAanpassen = new System.Windows.Forms.Button();
             this.btnMediaReageren = new System.Windows.Forms.Button();
             this.btnOpenPostPlatform = new System.Windows.Forms.Button();
-            this.btnLoadMedia = new System.Windows.Forms.Button();
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.pbMedia = new System.Windows.Forms.PictureBox();
             this.pictureBox5 = new System.Windows.Forms.PictureBox();
@@ -46,6 +45,7 @@
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.lbReactionOnReaction = new System.Windows.Forms.ListBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
@@ -132,16 +132,6 @@
             this.btnOpenPostPlatform.UseVisualStyleBackColor = true;
             this.btnOpenPostPlatform.Click += new System.EventHandler(this.btnOpenPostPlatform_Click);
             // 
-            // btnLoadMedia
-            // 
-            this.btnLoadMedia.Location = new System.Drawing.Point(341, 126);
-            this.btnLoadMedia.Name = "btnLoadMedia";
-            this.btnLoadMedia.Size = new System.Drawing.Size(75, 23);
-            this.btnLoadMedia.TabIndex = 28;
-            this.btnLoadMedia.Text = "Load Media";
-            this.btnLoadMedia.UseVisualStyleBackColor = true;
-            this.btnLoadMedia.Click += new System.EventHandler(this.btnLoadMedia_Click);
-            // 
             // webBrowser1
             // 
             this.webBrowser1.Location = new System.Drawing.Point(341, 336);
@@ -162,7 +152,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
-            this.pictureBox5.Location = new System.Drawing.Point(660, 6);
+            this.pictureBox5.Location = new System.Drawing.Point(732, 6);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(62, 63);
@@ -195,7 +185,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = global::ProftaakEyeCT.Properties.Resources.mediaplatform;
-            this.pictureBox2.Location = new System.Drawing.Point(228, -11);
+            this.pictureBox2.Location = new System.Drawing.Point(307, -15);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(412, 84);
@@ -209,7 +199,7 @@
             this.pictureBox1.Location = new System.Drawing.Point(6, 73);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(796, 19);
+            this.pictureBox1.Size = new System.Drawing.Size(1005, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 21;
             this.pictureBox1.TabStop = false;
@@ -225,15 +215,23 @@
             this.pictureBox7.TabIndex = 20;
             this.pictureBox7.TabStop = false;
             // 
+            // lbReactionOnReaction
+            // 
+            this.lbReactionOnReaction.FormattingEnabled = true;
+            this.lbReactionOnReaction.Location = new System.Drawing.Point(800, 155);
+            this.lbReactionOnReaction.Name = "lbReactionOnReaction";
+            this.lbReactionOnReaction.Size = new System.Drawing.Size(203, 355);
+            this.lbReactionOnReaction.TabIndex = 30;
+            // 
             // MediaPlatform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(805, 595);
+            this.ClientSize = new System.Drawing.Size(1014, 595);
+            this.Controls.Add(this.lbReactionOnReaction);
             this.Controls.Add(this.webBrowser1);
-            this.Controls.Add(this.btnLoadMedia);
             this.Controls.Add(this.pbMedia);
             this.Controls.Add(this.pictureBox5);
             this.Controls.Add(this.pictureBox4);
@@ -281,7 +279,7 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.PictureBox pbMedia;
-        private System.Windows.Forms.Button btnLoadMedia;
         private System.Windows.Forms.WebBrowser webBrowser1;
+        private System.Windows.Forms.ListBox lbReactionOnReaction;
     }
 }

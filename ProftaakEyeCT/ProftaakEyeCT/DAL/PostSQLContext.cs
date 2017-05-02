@@ -103,7 +103,7 @@ namespace ProftaakEyeCT.DAL
             {
                 string query = "SELECT P.*, M.*, A.*" +
                 " FROM post p INNER JOIN Media M ON P.MediaID = M.ID" +
-                " INNER JOIN Account A on P.AccountID = A.ID";
+                " INNER JOIN Account A on P.AccountID = A.ID ORDER BY P.PostDateTime DESC";
 
                 using (SqlCommand command = new SqlCommand(query, connection))
                 {
