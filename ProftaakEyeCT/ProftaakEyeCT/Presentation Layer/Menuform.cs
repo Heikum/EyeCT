@@ -328,7 +328,7 @@ namespace ProftaakEyeCT
 
         private void btnPersonRemove_Click_1(object sender, EventArgs e)
         {
-            personrepo.Delete(((Person)lbAllAccounts.SelectedItem).Id);
+            accountrepo.DeleteAccount(((Account)lbAllAccounts.SelectedItem).Id);
             UpdateControls();
         }
 
