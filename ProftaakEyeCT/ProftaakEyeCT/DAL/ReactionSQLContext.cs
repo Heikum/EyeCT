@@ -24,9 +24,10 @@ namespace ProftaakEyeCT.DAL
         public List<Reaction> GetByPost(Post post)
         {
             List<Reaction> reactions = new List<Reaction>();
+            
             using (SqlConnection connection = Database.Connection)
             {
-                string query = "select distinct r.text, r.reactiondatetime, r.postid from reaction r, post where r.postid = @id";
+                string query = "select distinct A.Username, A.Kind, r.* from reaction r INNER JOIN Account A on r.AccountID = A.ID where r.postid = @id";
                 using (SqlCommand command = new SqlCommand(query, Database.Connection))
                 {
 
@@ -36,9 +37,36 @@ namespace ProftaakEyeCT.DAL
 
                         while (reader.Read())
                         {
-                            reactions.Add(CreateReactionFromReader(reader));
+                            Reaction reaction = this.CreateReactionFromReader(reader);
+                            if (reaction!=null)
+                            {
+                                Student student = null;
+                                Admin admin = null;
+                                if (reader["AccountID"] != DBNull.Value)
+                                {
+
+                                    switch (Convert.ToString(reader["Kind"]))
+                                    {
+                                        case "Student":
+                                            student = new Student(
+                                            Convert.ToString(reader["Username"]));
+                                            reaction.AddStudent(student);
+                                            break;
+
+                                        case "Admin":
+                                            admin = new Admin(
+                                            Convert.ToString(reader["Username"]));
+                                            reaction.AddAdmin(admin);
+                                            break;
+                                    }
+
+                                    reactions.Add(reaction);
+                                }
+                            }
+                           
 
                         }
+                        
                     }
                     
                 }
@@ -83,9 +111,11 @@ namespace ProftaakEyeCT.DAL
         private Reaction CreateReactionFromReader(SqlDataReader reader)
         {
             return new Reaction(
-                Convert.ToInt32(reader["PostId"]),
+                Convert.ToInt32(reader["ID"]),
                 Convert.ToString(reader["Text"]),
-                Convert.ToDateTime(reader["ReactionDateTime"]));
+                Convert.ToDateTime(reader["ReactionDateTime"]),
+                Convert.ToInt32(reader["AccountID"]),
+                Convert.ToInt32(reader["PostID"]));
 
         }
     }

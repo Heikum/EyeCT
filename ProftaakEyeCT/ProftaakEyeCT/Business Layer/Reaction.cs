@@ -17,11 +17,11 @@ namespace ProftaakEyectEvents
         private Student postedByStudent;
         private Admin postedByAdmin;
 
-        public Reaction(int id, string text, int reactionId, DateTime reactionDateTime, int accountId, int postId)
+        public Reaction(int id, string text, DateTime reactionDateTime, int accountId, int postId)
         {
             this.id = id;
             this.text = text;
-            this.reactionId = reactionId;
+            
             this.reactionDateTime = reactionDateTime;
             this.accountId = accountId;
             this.postId = postId;
@@ -143,7 +143,7 @@ namespace ProftaakEyectEvents
 
         public override string ToString()
         {
-            return postedByStudent + "" + postedByAdmin + text + " geplaatst op: " + reactionDateTime;
+            return postedByStudent + "" + postedByAdmin + " " + text + " geplaatst op: " + reactionDateTime;
         }
     }
 }
