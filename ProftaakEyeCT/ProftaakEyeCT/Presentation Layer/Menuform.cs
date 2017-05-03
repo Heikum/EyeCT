@@ -19,6 +19,7 @@ namespace ProftaakEyeCT
     {
         Loginform mainloginform = (Loginform)Application.OpenForms["Loginform"];
         public int ReservationID;
+        public int EventID;
         private PersonRepository personrepo;
         private Person updatePerson;
         private AccountRepository accountrepo;
@@ -54,6 +55,8 @@ namespace ProftaakEyeCT
             {
                 tcCamping.TabPages.Remove(tpAccess);
                 tcCamping.TabPages.Remove(tpAccountDetails);
+                tcCamping.TabPages.Remove(tpEvent);
+                btnReportPage.Visible = false;
             }
         }
 
@@ -107,7 +110,12 @@ namespace ProftaakEyeCT
             {
                 lbAllEvents.Items.Add(item);
             }
-            
+            lbReservations.Items.Clear();
+            foreach (Reservation reservatie in reservationrepo.GetByAccountID(mainloginform.accountid))
+            {
+                lbReservations.Items.Add(reservatie);
+            }
+
         }
 
         private bool AccountRights()
@@ -298,11 +306,13 @@ namespace ProftaakEyeCT
                 reservationrepo.InsertReservation(new Reservation(DateTime.Now, false, updateEvent.id, (int)nudReservationCampingspot.Value));
                 campingspotrepo.UpdateCampingspot(updateEvent.id, (int)nudReservationCampingspot.Value, false);
                 updateReservation = reservationrepo.GetById(updateEvent.id, (int)nudReservationCampingspot.Value);
-
+                updateAccount = accountrepo.GetAccountByUsername(mainloginform.LoggedInUser);
+                reservationrepo.InsertAccountReservation(updateAccount, updateReservation.Id);
                 accessrepo.ReservationUpdate(reservationrepo.GetID(), Convert.ToInt32(accountrepo.GetAccountIDByUsername(txtReservationAccountName.Text)));
                 UpdateControls();
 
                 ReservationID = updateReservation.Id;
+                EventID = updateReservation.Eventid;
                 Reservation_group rg = new Reservation_group();
                 rg.Show();
             }
@@ -410,6 +420,7 @@ namespace ProftaakEyeCT
             lbReservations.Items.Clear();
             GetEvents();
             MessageBox.Show("Reservation Deleted!");
+            UpdateControls();
         }
 
         private void lbOnSite_SelectedIndexChanged(object sender, EventArgs e)
@@ -484,6 +495,22 @@ namespace ProftaakEyeCT
             {
                 MessageBox.Show("Please fill all fields in");
             }
+        }
+
+        private void btnLogOut_Click(object sender, EventArgs e)
+        {
+
+            Application.Restart();
+            
+        }
+
+        private void btnUpdatePersonDetails_Click(object sender, EventArgs e)
+        {
+            updatePerson = personrepo.GetById(updateAccount.Personid);
+            updateAccount = accountrepo.GetAccountByUsername(mainloginform.LoggedInUser);
+            UpdatePerson();
+            UpdateAccount();
+            UpdateControls();
         }
     }
 }

@@ -37,6 +37,27 @@ namespace ProftaakEyeCT.DAL
             }
             return materials;
         }
+        public List<Material> GetMaterialByEvent(int id)
+        {
+            List<Material> materials = new List<Material>();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT m.*, e.* FROM Material m INNER JOIN EventMaterial em on m.ID= em.MaterialID " +
+                                "INNER JOIN Event e on em.EventID = e.ID WHERE e.ID = em.EventID";
+
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            materials.Add(CreateMaterialFromReader(reader));
+                        }
+                    }
+                }
+            }
+            return materials;
+        }
 
         public bool Insert(Material material)
         {

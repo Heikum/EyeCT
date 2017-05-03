@@ -42,7 +42,7 @@ namespace ProftaakEyeCT.Presentation_Layer
             }
 
             lbReservationMaterial.Items.Clear();
-            foreach (Material material in materialrepo.GetAll())
+            foreach (Material material in materialrepo.GetMaterialByEvent(Menuform.EventID))
             {
                 lbReservationMaterial.Items.Add(material);
             }
@@ -50,7 +50,7 @@ namespace ProftaakEyeCT.Presentation_Layer
         private void lbReservationPerson_SelectedIndexChanged(object sender, EventArgs e)
         {
             updateAccount = (Account)lbReservationPerson.SelectedItem;
-            txtReservationName.Text = updateAccount.Username;
+            
         }
 
         private void AddPerson_Click(object sender, EventArgs e)
@@ -58,6 +58,18 @@ namespace ProftaakEyeCT.Presentation_Layer
             int resid = Menuform.ReservationID;
             updateAccount = (Account)lbReservationPerson.SelectedItem;
             reservationrepo.InsertAccountReservation(updateAccount, resid);
+            foreach (Account account in lbReservationPerson.Items)
+            {
+                if(account == updateAccount)
+                {
+                    lbReservationPerson.Items.Remove(account);
+                    break;
+                    
+                }
+                
+            }
+        
+            
         }
 
         private void btnConfirm_Click(object sender, EventArgs e)

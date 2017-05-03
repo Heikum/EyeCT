@@ -93,6 +93,7 @@ namespace ProftaakEyeCT
                     pbMedia.Show();
                     pbMedia.ImageLocation = result[6];
                     webBrowser1.Hide();
+                    
                 }
               
                 
