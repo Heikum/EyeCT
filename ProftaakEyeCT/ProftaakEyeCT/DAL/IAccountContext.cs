@@ -30,5 +30,7 @@ namespace ProftaakEyectEvents.DAL
 
         List<Account> GetAllAccountInformation();
         Account GetAccountByUsername(string username);
+
+        string GetTelNr(string username);
     }
 }
