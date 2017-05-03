@@ -42,6 +42,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             context.InsertMaterialEvent(events, material, ammount);
         }
+        public List<Material> GetMaterialByEvent(int id)
+        {
+            return context.GetMaterialByEvent(id);
+        }
 
 
     }

@@ -87,7 +87,7 @@ namespace ProftaakEyeCT.Presentation_Layer
             }
             if (rbVideoMedia.Checked)
             {
-                mediarepo.Insert(new Video(mediaId, txtVideoLink.Text, txtVideoName.Text));
+                mediarepo.Insert(new Video(mediaId, txtVideoName.Text, txtVideoLink.Text));
                 postrepo.InsertPost(new Post(mediarepo.GetId() -1, txtPostPlatformText.Text, DateTime.Now, mainloginform.accountid));
                 MessageBox.Show("Post added");
                 this.Close();
@@ -211,6 +211,13 @@ namespace ProftaakEyeCT.Presentation_Layer
                 MessageBox.Show("invalid video link, make sure its from Youtube");
                 txtVideoLink.Clear();
             }
+        }
+
+        private void btnRemovePost_Click(object sender, EventArgs e)
+        {
+            updatePost = (Post)lbPostPlatformPosts.SelectedItem;
+            postrepo.Delete(updatePost.PostID);
+            UpdatePostControls();
         }
     }
 }
