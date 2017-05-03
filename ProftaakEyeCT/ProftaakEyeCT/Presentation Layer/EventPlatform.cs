@@ -58,7 +58,7 @@ namespace ProftaakEyeCT.Presentation_Layer
                 for (int i = 1; i < 11; i++)
                 {
 
-                    eventrepo.InsertCampingspot(updateEvent, i, false);
+                    eventrepo.InsertCampingspot(updateEvent, i, true);
                 }
                 UpdateControls();
                 txtEventDescription.Text = "";

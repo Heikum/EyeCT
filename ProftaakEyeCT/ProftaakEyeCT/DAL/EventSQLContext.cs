@@ -128,7 +128,7 @@ namespace ProftaakEyectEvents.DAL
                 using (SqlConnection connection = Database.Connection)
                 {
                     string query = "UPDATE Event" +
-                        " SET Name=@name, Description=@description, Name=@name, Location=@location, EventStartDate=@eventstartdate, EventEndDate=@eventenddate" +
+                        " SET Name=@name, Description=@description, Location=@location, EventStartDate=@eventstartdate, EventEndDate=@eventenddate" +
                         " WHERE ID=@id";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
