@@ -290,6 +290,21 @@ namespace ProftaakEyectEvents.DAL
             return accounts;
         }
 
+        public string GetTelNr(string username)
+        {
+            string Telnr;
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "SELECT Person.Phonenumber FROM Account INNER JOIN Person ON Person.ID = Account.PersonID WHERE Account.Username = @acc";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@acc", username);
+                    Telnr = Convert.ToString(command.ExecuteScalar());
+                }
+            }
+            return Telnr;
+        }
+
         private Account CreateAccountFromReader(SqlDataReader reader)
         {
             return new Account(

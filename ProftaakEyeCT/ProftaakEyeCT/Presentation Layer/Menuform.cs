@@ -418,7 +418,9 @@ namespace ProftaakEyeCT
             {
                 Account A = (Account)lbOnSite.SelectedItem;
                 string EventByUser = accessrepo.EventReservationAccess(Convert.ToInt32(accountrepo.GetAccountIDByUsername(A.Username)));
+                string TelnrUser = accountrepo.GetTelNr(A.Username);
                 lblEventUser.Text = EventByUser;
+                lblTelNr.Text = TelnrUser;
             }
             catch (Exception)
             {

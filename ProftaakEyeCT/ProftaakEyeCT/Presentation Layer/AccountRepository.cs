@@ -59,6 +59,9 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetAccountByUsername(username);
         }
-
+        public string GetTelNr(string username)
+        {
+            return context.GetTelNr(username);
+        }
     }
 }
