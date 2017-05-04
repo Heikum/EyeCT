@@ -66,5 +66,9 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.EventReservationAccess(AccountID);
         }
+        public bool CheckStatusForEvent(string eventname, string username)
+        {
+            return context.CheckStatusForEvent(eventname, username);
+        }
     }
 }

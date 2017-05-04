@@ -27,5 +27,6 @@ namespace ProftaakEyeCT.DAL
         bool ReservationUpdate(int ReservationID, int AccountID);
 
         string EventReservationAccess(int AccountID);
+        bool CheckStatusForEvent(string eventname, string username);
     }
 }
