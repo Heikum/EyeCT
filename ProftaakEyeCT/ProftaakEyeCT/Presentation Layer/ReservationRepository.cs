@@ -20,6 +20,10 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             return context.GetAll();
         }
+        public List<Reservation> GetAll()
+        {
+            return context.GetAll();
+        }
         public Reservation InsertReservation(Reservation reservation)
         {
 

@@ -14,7 +14,20 @@ namespace ProftaakEyeCT.DAL
 
         public bool DeleteMaterial(int id)
         {
-            throw new NotImplementedException();
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "DELETE FROM Material WHERE ID=@id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", id);
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
         }
 
         public List<Material> GetAll()

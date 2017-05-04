@@ -54,5 +54,9 @@ namespace ProftaakEyeCT.Presentation_Layer
         {
             context.InsertReportedPost(post, complaint);
         }
+        public bool RemoveComplaint(int id)
+        {
+            return context.RemoveComplaint(id);
+        }
     }
 }

@@ -44,7 +44,6 @@
             this.dtpEventStartDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEventEndDate = new System.Windows.Forms.DateTimePicker();
             this.lblEventEndDate = new System.Windows.Forms.Label();
-            this.btnTest = new System.Windows.Forms.Button();
             this.btnEventAdd = new System.Windows.Forms.Button();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -171,7 +170,7 @@
             // 
             this.dtpEventStartDate.Checked = false;
             this.dtpEventStartDate.Location = new System.Drawing.Point(30, 309);
-            this.dtpEventStartDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEventStartDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEventStartDate.Name = "dtpEventStartDate";
             this.dtpEventStartDate.Size = new System.Drawing.Size(169, 20);
             this.dtpEventStartDate.TabIndex = 17;
@@ -180,7 +179,7 @@
             // 
             this.dtpEventEndDate.Checked = false;
             this.dtpEventEndDate.Location = new System.Drawing.Point(30, 355);
-            this.dtpEventEndDate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtpEventEndDate.Margin = new System.Windows.Forms.Padding(2);
             this.dtpEventEndDate.Name = "dtpEventEndDate";
             this.dtpEventEndDate.Size = new System.Drawing.Size(169, 20);
             this.dtpEventEndDate.TabIndex = 36;
@@ -193,17 +192,6 @@
             this.lblEventEndDate.Size = new System.Drawing.Size(55, 13);
             this.lblEventEndDate.TabIndex = 37;
             this.lblEventEndDate.Text = "End Date:";
-            // 
-            // btnTest
-            // 
-            this.btnTest.Location = new System.Drawing.Point(30, 428);
-            this.btnTest.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.btnTest.Name = "btnTest";
-            this.btnTest.Size = new System.Drawing.Size(167, 19);
-            this.btnTest.TabIndex = 38;
-            this.btnTest.Text = "Test";
-            this.btnTest.UseVisualStyleBackColor = true;
-            this.btnTest.Click += new System.EventHandler(this.btnTest_Click);
             // 
             // btnEventAdd
             // 
@@ -219,7 +207,7 @@
             // 
             this.pictureBox2.Image = global::ProftaakEyeCT.Properties.Resources.events;
             this.pictureBox2.Location = new System.Drawing.Point(212, 8);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(293, 70);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -230,7 +218,7 @@
             // 
             this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox1.Location = new System.Drawing.Point(-2, 498);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(704, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -241,7 +229,7 @@
             // 
             this.pictureBox6.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox6.Location = new System.Drawing.Point(-2, 81);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(704, 19);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -258,7 +246,6 @@
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.pictureBox6);
             this.Controls.Add(this.btnEventAdd);
-            this.Controls.Add(this.btnTest);
             this.Controls.Add(this.dtpEventEndDate);
             this.Controls.Add(this.lblEventEndDate);
             this.Controls.Add(this.dtpEventStartDate);
@@ -272,7 +259,7 @@
             this.Controls.Add(this.txtEventDescription);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "EventPlatform";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Event Platform";
@@ -301,7 +288,6 @@
         private System.Windows.Forms.DateTimePicker dtpEventStartDate;
         private System.Windows.Forms.DateTimePicker dtpEventEndDate;
         private System.Windows.Forms.Label lblEventEndDate;
-        private System.Windows.Forms.Button btnTest;
         private System.Windows.Forms.Button btnEventAdd;
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.PictureBox pictureBox1;

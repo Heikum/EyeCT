@@ -71,6 +71,7 @@
             this.btnPersonUpdate = new System.Windows.Forms.Button();
             this.btnPersonEdit = new System.Windows.Forms.Button();
             this.tpManage = new System.Windows.Forms.TabPage();
+            this.btnUpdatePersonDetails = new System.Windows.Forms.Button();
             this.groupBox7 = new System.Windows.Forms.GroupBox();
             this.btreturnitems = new System.Windows.Forms.Button();
             this.txtEventNaam = new System.Windows.Forms.TextBox();
@@ -148,7 +149,6 @@
             this.lbOutside = new System.Windows.Forms.ListBox();
             this.pictureBox16 = new System.Windows.Forms.PictureBox();
             this.lbAccesAllUsers = new System.Windows.Forms.ListBox();
-            this.btnAddOnSite = new System.Windows.Forms.Button();
             this.label9 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.cbEvents = new System.Windows.Forms.ComboBox();
@@ -166,7 +166,21 @@
             this.btnEventPlatform = new System.Windows.Forms.Button();
             this.tpLogout = new System.Windows.Forms.TabPage();
             this.btnLogOut = new System.Windows.Forms.Button();
-            this.btnUpdatePersonDetails = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.tbReserveManage = new System.Windows.Forms.TabPage();
+            this.lbAllReservationsMade = new System.Windows.Forms.ListBox();
+            this.txtCurrentEvent = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.nudCurrentCampingEvent = new System.Windows.Forms.NumericUpDown();
+            this.btnEventRemove = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.dtpCurrentDateEvent = new System.Windows.Forms.DateTimePicker();
+            this.label30 = new System.Windows.Forms.Label();
+            this.txtCurrentPlaceEvent = new System.Windows.Forms.TextBox();
+            this.pictureBox21 = new System.Windows.Forms.PictureBox();
+            this.pictureBox22 = new System.Windows.Forms.PictureBox();
+            this.btnUpdateMaterial = new System.Windows.Forms.Button();
             this.tcCamping.SuspendLayout();
             this.tbWelcome.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox14)).BeginInit();
@@ -211,6 +225,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.tpEvent.SuspendLayout();
             this.tpLogout.SuspendLayout();
+            this.tbReserveManage.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentCampingEvent)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).BeginInit();
             this.SuspendLayout();
             // 
             // tcCamping
@@ -220,6 +238,7 @@
             this.tcCamping.Controls.Add(this.tpAccountDetails);
             this.tcCamping.Controls.Add(this.tpManage);
             this.tcCamping.Controls.Add(this.tpReserve);
+            this.tcCamping.Controls.Add(this.tbReserveManage);
             this.tcCamping.Controls.Add(this.tpMaterials);
             this.tcCamping.Controls.Add(this.tpAccess);
             this.tcCamping.Controls.Add(this.tpEvent);
@@ -238,7 +257,7 @@
             this.tbWelcome.Controls.Add(this.pictureBox1);
             this.tbWelcome.Controls.Add(this.pictureBox2);
             this.tbWelcome.Location = new System.Drawing.Point(4, 22);
-            this.tbWelcome.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbWelcome.Margin = new System.Windows.Forms.Padding(2);
             this.tbWelcome.Name = "tbWelcome";
             this.tbWelcome.Size = new System.Drawing.Size(810, 516);
             this.tbWelcome.TabIndex = 11;
@@ -249,7 +268,7 @@
             // 
             this.pictureBox14.Image = global::ProftaakEyeCT.Properties.Resources.logo1;
             this.pictureBox14.Location = new System.Drawing.Point(358, 357);
-            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox14.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(112, 116);
             this.pictureBox14.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -272,7 +291,7 @@
             // 
             this.pictureBox3.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox3.Location = new System.Drawing.Point(2, 488);
-            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox3.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(796, 19);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -283,7 +302,7 @@
             // 
             this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox1.Location = new System.Drawing.Point(3, 94);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(796, 19);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -294,7 +313,7 @@
             // 
             this.pictureBox2.Image = global::ProftaakEyeCT.Properties.Resources.welcome;
             this.pictureBox2.Location = new System.Drawing.Point(294, 15);
-            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox2.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(269, 75);
             this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -310,7 +329,7 @@
             this.tpMedia.Controls.Add(this.btnMedia);
             this.tpMedia.Location = new System.Drawing.Point(4, 22);
             this.tpMedia.Name = "tpMedia";
-            this.tpMedia.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpMedia.Padding = new System.Windows.Forms.Padding(3);
             this.tpMedia.Size = new System.Drawing.Size(810, 516);
             this.tpMedia.TabIndex = 0;
             this.tpMedia.Text = "Media";
@@ -319,7 +338,7 @@
             // 
             this.pictureBox18.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox18.Location = new System.Drawing.Point(9, 495);
-            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox18.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(796, 19);
             this.pictureBox18.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -330,7 +349,7 @@
             // 
             this.pictureBox17.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox17.Location = new System.Drawing.Point(9, 19);
-            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox17.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(796, 19);
             this.pictureBox17.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -376,7 +395,7 @@
             // 
             this.pictureBox13.Image = global::ProftaakEyeCT.Properties.Resources.accountdetails;
             this.pictureBox13.Location = new System.Drawing.Point(202, 0);
-            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox13.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(453, 74);
             this.pictureBox13.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -387,7 +406,7 @@
             // 
             this.pictureBox9.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox9.Location = new System.Drawing.Point(2, 495);
-            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox9.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(796, 19);
             this.pictureBox9.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -398,7 +417,7 @@
             // 
             this.pictureBox8.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox8.Location = new System.Drawing.Point(0, 77);
-            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox8.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(796, 19);
             this.pictureBox8.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -420,9 +439,9 @@
             this.groupBox4.Controls.Add(this.lblPersonHousenumber);
             this.groupBox4.Controls.Add(this.lblPersonPhonenumber);
             this.groupBox4.Location = new System.Drawing.Point(224, 111);
-            this.groupBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox4.Size = new System.Drawing.Size(132, 290);
             this.groupBox4.TabIndex = 25;
             this.groupBox4.TabStop = false;
@@ -538,9 +557,9 @@
             this.groupBox3.Controls.Add(this.txtAccountEmail);
             this.groupBox3.Controls.Add(this.txtAccountUsername);
             this.groupBox3.Location = new System.Drawing.Point(17, 111);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox3.Size = new System.Drawing.Size(188, 152);
             this.groupBox3.TabIndex = 24;
             this.groupBox3.TabStop = false;
@@ -656,10 +675,20 @@
             this.tpManage.Controls.Add(this.pictureBox10);
             this.tpManage.Location = new System.Drawing.Point(4, 22);
             this.tpManage.Name = "tpManage";
-            this.tpManage.Padding = new System.Windows.Forms.Padding(3, 3, 3, 3);
+            this.tpManage.Padding = new System.Windows.Forms.Padding(3);
             this.tpManage.Size = new System.Drawing.Size(810, 516);
             this.tpManage.TabIndex = 1;
             this.tpManage.Text = "Person details";
+            // 
+            // btnUpdatePersonDetails
+            // 
+            this.btnUpdatePersonDetails.Location = new System.Drawing.Point(263, 421);
+            this.btnUpdatePersonDetails.Name = "btnUpdatePersonDetails";
+            this.btnUpdatePersonDetails.Size = new System.Drawing.Size(120, 23);
+            this.btnUpdatePersonDetails.TabIndex = 49;
+            this.btnUpdatePersonDetails.Text = "Update";
+            this.btnUpdatePersonDetails.UseVisualStyleBackColor = true;
+            this.btnUpdatePersonDetails.Click += new System.EventHandler(this.btnUpdatePersonDetails_Click);
             // 
             // groupBox7
             // 
@@ -675,9 +704,9 @@
             this.groupBox7.Controls.Add(this.lblCampingspot);
             this.groupBox7.Controls.Add(this.txtCurrentPlaceReservation);
             this.groupBox7.Location = new System.Drawing.Point(451, 120);
-            this.groupBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox7.Name = "groupBox7";
-            this.groupBox7.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox7.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox7.Size = new System.Drawing.Size(351, 368);
             this.groupBox7.TabIndex = 48;
             this.groupBox7.TabStop = false;
@@ -794,9 +823,9 @@
             this.groupBox5.Controls.Add(this.label5);
             this.groupBox5.Controls.Add(this.label11);
             this.groupBox5.Location = new System.Drawing.Point(258, 115);
-            this.groupBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox5.Size = new System.Drawing.Size(132, 290);
             this.groupBox5.TabIndex = 27;
             this.groupBox5.TabStop = false;
@@ -912,9 +941,9 @@
             this.groupBox6.Controls.Add(this.txtCurrentEmail);
             this.groupBox6.Controls.Add(this.txtCurrenctUsername);
             this.groupBox6.Location = new System.Drawing.Point(13, 115);
-            this.groupBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox6.Name = "groupBox6";
-            this.groupBox6.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox6.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox6.Size = new System.Drawing.Size(188, 152);
             this.groupBox6.TabIndex = 26;
             this.groupBox6.TabStop = false;
@@ -973,7 +1002,7 @@
             // 
             this.pictureBox12.Image = global::ProftaakEyeCT.Properties.Resources.accountdetails;
             this.pictureBox12.Location = new System.Drawing.Point(208, 0);
-            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox12.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(453, 74);
             this.pictureBox12.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -984,7 +1013,7 @@
             // 
             this.pictureBox11.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox11.Location = new System.Drawing.Point(5, 492);
-            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox11.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(800, 19);
             this.pictureBox11.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -995,7 +1024,7 @@
             // 
             this.pictureBox10.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox10.Location = new System.Drawing.Point(2, 77);
-            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox10.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(803, 19);
             this.pictureBox10.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1032,7 +1061,7 @@
             // 
             this.pictureBox15.Image = global::ProftaakEyeCT.Properties.Resources.reservations;
             this.pictureBox15.Location = new System.Drawing.Point(240, 2);
-            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox15.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(374, 72);
             this.pictureBox15.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1043,7 +1072,7 @@
             // 
             this.pictureBox7.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox7.Location = new System.Drawing.Point(4, 495);
-            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox7.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(796, 19);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1054,7 +1083,7 @@
             // 
             this.pictureBox6.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox6.Location = new System.Drawing.Point(4, 76);
-            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox6.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(796, 19);
             this.pictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1195,6 +1224,8 @@
             // tpMaterials
             // 
             this.tpMaterials.BackColor = System.Drawing.Color.White;
+            this.tpMaterials.Controls.Add(this.btnUpdateMaterial);
+            this.tpMaterials.Controls.Add(this.button1);
             this.tpMaterials.Controls.Add(this.btnAddToEvent);
             this.tpMaterials.Controls.Add(this.lblEventName);
             this.tpMaterials.Controls.Add(this.txtEventName);
@@ -1263,7 +1294,7 @@
             // 
             this.pictureBox20.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox20.Location = new System.Drawing.Point(2, 12);
-            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox20.Name = "pictureBox20";
             this.pictureBox20.Size = new System.Drawing.Size(796, 19);
             this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1274,7 +1305,7 @@
             // 
             this.pictureBox19.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox19.Location = new System.Drawing.Point(2, 495);
-            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox19.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox19.Name = "pictureBox19";
             this.pictureBox19.Size = new System.Drawing.Size(796, 19);
             this.pictureBox19.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1326,9 +1357,9 @@
             // 
             // btnAddMaterial
             // 
-            this.btnAddMaterial.Location = new System.Drawing.Point(347, 125);
+            this.btnAddMaterial.Location = new System.Drawing.Point(333, 125);
             this.btnAddMaterial.Name = "btnAddMaterial";
-            this.btnAddMaterial.Size = new System.Drawing.Size(200, 23);
+            this.btnAddMaterial.Size = new System.Drawing.Size(119, 23);
             this.btnAddMaterial.TabIndex = 5;
             this.btnAddMaterial.Text = "Add Material ";
             this.btnAddMaterial.UseVisualStyleBackColor = true;
@@ -1356,7 +1387,6 @@
             this.tpAccess.Controls.Add(this.lbOutside);
             this.tpAccess.Controls.Add(this.pictureBox16);
             this.tpAccess.Controls.Add(this.lbAccesAllUsers);
-            this.tpAccess.Controls.Add(this.btnAddOnSite);
             this.tpAccess.Controls.Add(this.label9);
             this.tpAccess.Controls.Add(this.groupBox2);
             this.tpAccess.Controls.Add(this.btnSelGoOutside);
@@ -1413,7 +1443,7 @@
             // btnSelGoOnSite
             // 
             this.btnSelGoOnSite.Location = new System.Drawing.Point(555, 424);
-            this.btnSelGoOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelGoOnSite.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelGoOnSite.Name = "btnSelGoOnSite";
             this.btnSelGoOnSite.Size = new System.Drawing.Size(236, 30);
             this.btnSelGoOnSite.TabIndex = 52;
@@ -1435,7 +1465,7 @@
             // 
             this.lbOutside.FormattingEnabled = true;
             this.lbOutside.Location = new System.Drawing.Point(555, 119);
-            this.lbOutside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOutside.Margin = new System.Windows.Forms.Padding(2);
             this.lbOutside.Name = "lbOutside";
             this.lbOutside.Size = new System.Drawing.Size(238, 264);
             this.lbOutside.TabIndex = 50;
@@ -1444,7 +1474,7 @@
             // 
             this.pictureBox16.Image = global::ProftaakEyeCT.Properties.Resources.access;
             this.pictureBox16.Location = new System.Drawing.Point(266, 2);
-            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox16.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(290, 67);
             this.pictureBox16.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1456,17 +1486,8 @@
             this.lbAccesAllUsers.FormattingEnabled = true;
             this.lbAccesAllUsers.Location = new System.Drawing.Point(16, 301);
             this.lbAccesAllUsers.Name = "lbAccesAllUsers";
-            this.lbAccesAllUsers.Size = new System.Drawing.Size(233, 121);
+            this.lbAccesAllUsers.Size = new System.Drawing.Size(233, 147);
             this.lbAccesAllUsers.TabIndex = 48;
-            // 
-            // btnAddOnSite
-            // 
-            this.btnAddOnSite.Location = new System.Drawing.Point(16, 424);
-            this.btnAddOnSite.Name = "btnAddOnSite";
-            this.btnAddOnSite.Size = new System.Drawing.Size(232, 30);
-            this.btnAddOnSite.TabIndex = 47;
-            this.btnAddOnSite.Text = "Give Access";
-            this.btnAddOnSite.UseVisualStyleBackColor = true;
             // 
             // label9
             // 
@@ -1487,9 +1508,9 @@
             this.groupBox2.Controls.Add(this.tbAccUsername);
             this.groupBox2.Controls.Add(this.btnCheckStat);
             this.groupBox2.Location = new System.Drawing.Point(16, 119);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
             this.groupBox2.Size = new System.Drawing.Size(232, 166);
             this.groupBox2.TabIndex = 45;
             this.groupBox2.TabStop = false;
@@ -1498,7 +1519,7 @@
             // 
             this.cbEvents.FormattingEnabled = true;
             this.cbEvents.Location = new System.Drawing.Point(160, 16);
-            this.cbEvents.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEvents.Margin = new System.Windows.Forms.Padding(2);
             this.cbEvents.Name = "cbEvents";
             this.cbEvents.Size = new System.Drawing.Size(62, 21);
             this.cbEvents.TabIndex = 41;
@@ -1507,7 +1528,7 @@
             // 
             this.datePickerAccess.Enabled = false;
             this.datePickerAccess.Location = new System.Drawing.Point(9, 16);
-            this.datePickerAccess.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.datePickerAccess.Margin = new System.Windows.Forms.Padding(2);
             this.datePickerAccess.Name = "datePickerAccess";
             this.datePickerAccess.Size = new System.Drawing.Size(146, 20);
             this.datePickerAccess.TabIndex = 40;
@@ -1542,7 +1563,7 @@
             // btnCheckStat
             // 
             this.btnCheckStat.Location = new System.Drawing.Point(9, 127);
-            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCheckStat.Margin = new System.Windows.Forms.Padding(2);
             this.btnCheckStat.Name = "btnCheckStat";
             this.btnCheckStat.Size = new System.Drawing.Size(216, 30);
             this.btnCheckStat.TabIndex = 39;
@@ -1553,7 +1574,7 @@
             // btnSelGoOutside
             // 
             this.btnSelGoOutside.Location = new System.Drawing.Point(266, 424);
-            this.btnSelGoOutside.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelGoOutside.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelGoOutside.Name = "btnSelGoOutside";
             this.btnSelGoOutside.Size = new System.Drawing.Size(283, 30);
             this.btnSelGoOutside.TabIndex = 42;
@@ -1575,7 +1596,7 @@
             // 
             this.pictureBox5.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox5.Location = new System.Drawing.Point(2, 474);
-            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox5.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(796, 19);
             this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1586,7 +1607,7 @@
             // 
             this.pictureBox4.Image = global::ProftaakEyeCT.Properties.Resources.bar;
             this.pictureBox4.Location = new System.Drawing.Point(-4, 72);
-            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pictureBox4.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(796, 19);
             this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -1597,7 +1618,7 @@
             // 
             this.lbOnSite.FormattingEnabled = true;
             this.lbOnSite.Location = new System.Drawing.Point(266, 119);
-            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.lbOnSite.Margin = new System.Windows.Forms.Padding(2);
             this.lbOnSite.Name = "lbOnSite";
             this.lbOnSite.Size = new System.Drawing.Size(285, 264);
             this.lbOnSite.TabIndex = 40;
@@ -1607,7 +1628,7 @@
             // 
             this.tpEvent.Controls.Add(this.btnEventPlatform);
             this.tpEvent.Location = new System.Drawing.Point(4, 22);
-            this.tpEvent.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tpEvent.Margin = new System.Windows.Forms.Padding(2);
             this.tpEvent.Name = "tpEvent";
             this.tpEvent.Size = new System.Drawing.Size(810, 516);
             this.tpEvent.TabIndex = 10;
@@ -1644,15 +1665,155 @@
             this.btnLogOut.UseVisualStyleBackColor = true;
             this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
             // 
-            // btnUpdatePersonDetails
+            // button1
             // 
-            this.btnUpdatePersonDetails.Location = new System.Drawing.Point(263, 421);
-            this.btnUpdatePersonDetails.Name = "btnUpdatePersonDetails";
-            this.btnUpdatePersonDetails.Size = new System.Drawing.Size(120, 23);
-            this.btnUpdatePersonDetails.TabIndex = 49;
-            this.btnUpdatePersonDetails.Text = "Update";
-            this.btnUpdatePersonDetails.UseVisualStyleBackColor = true;
-            this.btnUpdatePersonDetails.Click += new System.EventHandler(this.btnUpdatePersonDetails_Click);
+            this.button1.Location = new System.Drawing.Point(458, 125);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.TabIndex = 32;
+            this.button1.Text = "Remove Material";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // tbReserveManage
+            // 
+            this.tbReserveManage.Controls.Add(this.pictureBox22);
+            this.tbReserveManage.Controls.Add(this.pictureBox21);
+            this.tbReserveManage.Controls.Add(this.txtCurrentEvent);
+            this.tbReserveManage.Controls.Add(this.label22);
+            this.tbReserveManage.Controls.Add(this.nudCurrentCampingEvent);
+            this.tbReserveManage.Controls.Add(this.btnEventRemove);
+            this.tbReserveManage.Controls.Add(this.label23);
+            this.tbReserveManage.Controls.Add(this.label25);
+            this.tbReserveManage.Controls.Add(this.dtpCurrentDateEvent);
+            this.tbReserveManage.Controls.Add(this.label30);
+            this.tbReserveManage.Controls.Add(this.txtCurrentPlaceEvent);
+            this.tbReserveManage.Controls.Add(this.lbAllReservationsMade);
+            this.tbReserveManage.Location = new System.Drawing.Point(4, 22);
+            this.tbReserveManage.Name = "tbReserveManage";
+            this.tbReserveManage.Size = new System.Drawing.Size(810, 516);
+            this.tbReserveManage.TabIndex = 13;
+            this.tbReserveManage.Text = "Reserve Manage";
+            this.tbReserveManage.UseVisualStyleBackColor = true;
+            // 
+            // lbAllReservationsMade
+            // 
+            this.lbAllReservationsMade.FormattingEnabled = true;
+            this.lbAllReservationsMade.Location = new System.Drawing.Point(17, 33);
+            this.lbAllReservationsMade.Name = "lbAllReservationsMade";
+            this.lbAllReservationsMade.Size = new System.Drawing.Size(343, 446);
+            this.lbAllReservationsMade.TabIndex = 21;
+            this.lbAllReservationsMade.SelectedIndexChanged += new System.EventHandler(this.lbAllReservationsMade_SelectedIndexChanged);
+            // 
+            // txtCurrentEvent
+            // 
+            this.txtCurrentEvent.Location = new System.Drawing.Point(549, 185);
+            this.txtCurrentEvent.Name = "txtCurrentEvent";
+            this.txtCurrentEvent.Size = new System.Drawing.Size(207, 20);
+            this.txtCurrentEvent.TabIndex = 33;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.label22.Location = new System.Drawing.Point(409, 194);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(87, 17);
+            this.label22.TabIndex = 32;
+            this.label22.Text = "Event name:";
+            // 
+            // nudCurrentCampingEvent
+            // 
+            this.nudCurrentCampingEvent.Location = new System.Drawing.Point(551, 268);
+            this.nudCurrentCampingEvent.Name = "nudCurrentCampingEvent";
+            this.nudCurrentCampingEvent.Size = new System.Drawing.Size(207, 20);
+            this.nudCurrentCampingEvent.TabIndex = 31;
+            // 
+            // btnEventRemove
+            // 
+            this.btnEventRemove.Location = new System.Drawing.Point(669, 294);
+            this.btnEventRemove.Name = "btnEventRemove";
+            this.btnEventRemove.Size = new System.Drawing.Size(87, 26);
+            this.btnEventRemove.TabIndex = 26;
+            this.btnEventRemove.Text = "Delete";
+            this.btnEventRemove.UseVisualStyleBackColor = true;
+            this.btnEventRemove.Click += new System.EventHandler(this.btnEventRemove_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.Location = new System.Drawing.Point(409, 211);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(138, 17);
+            this.label23.TabIndex = 27;
+            this.label23.Text = "Place of reservation:";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label25.Location = new System.Drawing.Point(409, 238);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(133, 17);
+            this.label25.TabIndex = 28;
+            this.label25.Text = "Date of reservation:";
+            // 
+            // dtpCurrentDateEvent
+            // 
+            this.dtpCurrentDateEvent.Location = new System.Drawing.Point(553, 238);
+            this.dtpCurrentDateEvent.Name = "dtpCurrentDateEvent";
+            this.dtpCurrentDateEvent.Size = new System.Drawing.Size(205, 20);
+            this.dtpCurrentDateEvent.TabIndex = 29;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label30.Location = new System.Drawing.Point(409, 268);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(94, 17);
+            this.label30.TabIndex = 30;
+            this.label30.Text = "Campingspot:";
+            // 
+            // txtCurrentPlaceEvent
+            // 
+            this.txtCurrentPlaceEvent.Location = new System.Drawing.Point(549, 210);
+            this.txtCurrentPlaceEvent.Name = "txtCurrentPlaceEvent";
+            this.txtCurrentPlaceEvent.Size = new System.Drawing.Size(205, 20);
+            this.txtCurrentPlaceEvent.TabIndex = 25;
+            // 
+            // pictureBox21
+            // 
+            this.pictureBox21.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox21.Location = new System.Drawing.Point(6, 0);
+            this.pictureBox21.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox21.Name = "pictureBox21";
+            this.pictureBox21.Size = new System.Drawing.Size(796, 19);
+            this.pictureBox21.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox21.TabIndex = 34;
+            this.pictureBox21.TabStop = false;
+            // 
+            // pictureBox22
+            // 
+            this.pictureBox22.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox22.Location = new System.Drawing.Point(6, 495);
+            this.pictureBox22.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox22.Name = "pictureBox22";
+            this.pictureBox22.Size = new System.Drawing.Size(796, 19);
+            this.pictureBox22.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox22.TabIndex = 35;
+            this.pictureBox22.TabStop = false;
+            // 
+            // btnUpdateMaterial
+            // 
+            this.btnUpdateMaterial.Location = new System.Drawing.Point(394, 154);
+            this.btnUpdateMaterial.Name = "btnUpdateMaterial";
+            this.btnUpdateMaterial.Size = new System.Drawing.Size(128, 23);
+            this.btnUpdateMaterial.TabIndex = 33;
+            this.btnUpdateMaterial.Text = "Update Material";
+            this.btnUpdateMaterial.UseVisualStyleBackColor = true;
+            this.btnUpdateMaterial.Click += new System.EventHandler(this.btnUpdateMaterial_Click);
             // 
             // Menuform
             // 
@@ -1722,6 +1883,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.tpEvent.ResumeLayout(false);
             this.tpLogout.ResumeLayout(false);
+            this.tbReserveManage.ResumeLayout(false);
+            this.tbReserveManage.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.nudCurrentCampingEvent)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox21)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox22)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1836,7 +2002,6 @@
         private System.Windows.Forms.GroupBox groupBox7;
         private System.Windows.Forms.PictureBox pictureBox14;
         private System.Windows.Forms.ListBox lbAccesAllUsers;
-        private System.Windows.Forms.Button btnAddOnSite;
         private System.Windows.Forms.PictureBox pictureBox15;
         private System.Windows.Forms.PictureBox pictureBox16;
         private System.Windows.Forms.Label label15;
@@ -1866,5 +2031,20 @@
         private System.Windows.Forms.TabPage tpLogout;
         private System.Windows.Forms.Button btnLogOut;
         private System.Windows.Forms.Button btnUpdatePersonDetails;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TabPage tbReserveManage;
+        private System.Windows.Forms.PictureBox pictureBox22;
+        private System.Windows.Forms.PictureBox pictureBox21;
+        private System.Windows.Forms.TextBox txtCurrentEvent;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.NumericUpDown nudCurrentCampingEvent;
+        private System.Windows.Forms.Button btnEventRemove;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.DateTimePicker dtpCurrentDateEvent;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.TextBox txtCurrentPlaceEvent;
+        private System.Windows.Forms.ListBox lbAllReservationsMade;
+        private System.Windows.Forms.Button btnUpdateMaterial;
     }
 }
