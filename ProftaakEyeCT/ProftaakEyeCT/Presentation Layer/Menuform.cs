@@ -56,6 +56,7 @@ namespace ProftaakEyeCT
                 tcCamping.TabPages.Remove(tpAccess);
                 tcCamping.TabPages.Remove(tpAccountDetails);
                 tcCamping.TabPages.Remove(tpEvent);
+                tcCamping.TabPages.Remove(tpMaterials);
                 btnReportPage.Visible = false;
             }
         }
@@ -191,16 +192,15 @@ namespace ProftaakEyeCT
             txtCurrentPhonenumber.Text = updatePerson.Phonenumber;
             nudCurrentHousenumber.Value = updatePerson.Number;
             //lbReservations.DataSource = reservationrepo.GetByAccountID(updateAccount.Id);
-            GetEvents();
+            //GetEvents();
             
         }
 
         private void GetEvents()
         {
-            foreach (Reservation reservatie in reservationrepo.GetByAccountID(updateAccount.Id))
-            {
-                lbReservations.Items.Add(reservatie); 
-            }
+            lbReservations.DataSource = reservationrepo.GetByAccountID(updateAccount.Id);
+            
+            
         }
 
 
@@ -275,7 +275,10 @@ namespace ProftaakEyeCT
 
         private void btnCheckStat_Click(object sender, EventArgs e)
         {
-            if (accessrepo.GetStatus(tbAccUsername.Text) && DatumCheck(eventrepo.getStart(Convert.ToString(cbEvents.SelectedItem)), eventrepo.getEnd(Convert.ToString(cbEvents.SelectedItem))))
+            updateEvent = eventrepo.GetByName((string)cbEvents.SelectedItem);
+            
+
+            if (accessrepo.GetStatus(tbAccUsername.Text) && accessrepo.CheckStatusForEvent(updateEvent.name,tbAccUsername.Text) && DatumCheck(eventrepo.getStart(Convert.ToString(cbEvents.SelectedItem)), eventrepo.getEnd(Convert.ToString(cbEvents.SelectedItem))))
             {
                 btnCheck.BackColor = Color.Green;
             }

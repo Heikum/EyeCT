@@ -146,6 +146,30 @@ namespace ProftaakEyeCT.DAL
             return accounts;
         }
 
+        public bool CheckStatusForEvent(string eventname, string username)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "select a.username, e.name from account a inner join accountreservation ar on a.id = ar.accountid "+ 
+                                "inner join reservation r on ar.reservationid = r.id " +
+                                "inner join event e on r.eventid = e.id " + 
+                                "where a.username = @username AND e.name = @eventnaam";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("username", username);
+                    command.Parameters.AddWithValue("eventnaam", eventname);
+                    using (SqlDataReader reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return true;
+                        }
+                        else return false;
+                    }
+                }
+            }
+        }
+
         public bool GetStatus(/*Access access, Account acc*/ string acc)
         {
             using (SqlConnection connection = Database.Connection)

@@ -23,6 +23,9 @@ namespace ProftaakEyeCT.Presentation_Layer
         private Reservation updateReservation;
         private MaterialRepository materialrepo;
         private Material insertmaterial;
+        private AccessRepository accessrepo;
+        private Access updateAccess;
+
 
         public Reservation_group()
         {
@@ -30,6 +33,7 @@ namespace ProftaakEyeCT.Presentation_Layer
             accountrepo = new AccountRepository(new AccountSQLContext());
             reservationrepo = new ReservationRepository(new ReservationSQLContext());
             materialrepo = new MaterialRepository(new MaterialSQLContext());
+            accessrepo = new AccessRepository(new AccessSQLContext());
             UpdateControls();
             
         }
@@ -58,6 +62,7 @@ namespace ProftaakEyeCT.Presentation_Layer
             int resid = Menuform.ReservationID;
             updateAccount = (Account)lbReservationPerson.SelectedItem;
             reservationrepo.InsertAccountReservation(updateAccount, resid);
+            accessrepo.ReservationUpdate(resid, Convert.ToInt32(accountrepo.GetAccountIDByUsername(updateAccount.Username)));
             foreach (Account account in lbReservationPerson.Items)
             {
                 if(account == updateAccount)
