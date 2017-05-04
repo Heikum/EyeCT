@@ -361,6 +361,24 @@ namespace ProftaakEyeCT.DAL
                 }
             }
         }
+        public bool RemoveComplaint(int id)
+        {
+            using (SqlConnection connection = Database.Connection)
+            {
+                string query = "DELETE FROM PostReport WHERE PostID=@id";
+                using (SqlCommand command = new SqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("id", id);
+                    if (Convert.ToInt32(command.ExecuteNonQuery()) == 1)
+                    {
+                        return true;
+                    }
+                }
+            }
+
+            return false;
+
+        }
         public void InsertReportedPost(Post post, string complaint)
         {
             using (SqlConnection connection = Database.Connection)

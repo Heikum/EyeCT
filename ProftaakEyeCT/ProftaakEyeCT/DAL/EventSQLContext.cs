@@ -80,7 +80,7 @@ namespace ProftaakEyectEvents.DAL
                         "VALUES (@description, @name, @location, @eventstartdate, @eventenddate)";
                     using (SqlCommand command = new SqlCommand(query, connection))
                     {
-                        command.Parameters.AddWithValue("@description", events.name);
+                        command.Parameters.AddWithValue("@description", events.description);
                         command.Parameters.AddWithValue("@name", events.name);
                         command.Parameters.AddWithValue("@location", events.location);
                         command.Parameters.AddWithValue("@eventstartdate", events.eventstartdate);

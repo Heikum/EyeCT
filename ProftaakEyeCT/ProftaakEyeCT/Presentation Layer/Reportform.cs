@@ -15,6 +15,7 @@ namespace ProftaakEyeCT.Presentation_Layer
     public partial class Reportform : Form
     {
         private PostRepository postrepo;
+        private Post updatePost;
         private ReactionRepository reactionrepo;
         public Reportform()
         {
@@ -73,7 +74,10 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         private void btnRemoveComplaint_Click(object sender, EventArgs e)
         {
-
+            updatePost = (Post)lbReportedPosts.SelectedItem;
+            postrepo.RemoveComplaint(updatePost.PostID);
+            UpdatePosts();
+        
         }
 
         private void btnReportedPostRemove_Click(object sender, EventArgs e)

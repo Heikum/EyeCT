@@ -33,7 +33,7 @@ namespace ProftaakEyeCT.Presentation_Layer
 
         private void btnAddReaction_Click(object sender, EventArgs e)
         {
-            reactionrepo.Insert(new Reaction(txtReactionText.Text, Convert.ToInt32(txtReactionID.Text), DateTime.Now, mainloginform.accountid, platform.selectedPostID));
+            reactionrepo.Insert(new Reaction(txtReactionText.Text, 1, DateTime.Now, mainloginform.accountid, platform.selectedPostID));
             MessageBox.Show("Reaction added");
             this.Close();
         }

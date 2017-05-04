@@ -57,6 +57,7 @@ namespace ProftaakEyeCT
                 tcCamping.TabPages.Remove(tpAccountDetails);
                 tcCamping.TabPages.Remove(tpEvent);
                 tcCamping.TabPages.Remove(tpMaterials);
+                tcCamping.TabPages.Remove(tbReserveManage);
                 btnReportPage.Visible = false;
             }
         }
@@ -116,6 +117,11 @@ namespace ProftaakEyeCT
             {
                 lbReservations.Items.Add(reservatie);
             }
+            lbAllReservationsMade.Items.Clear();
+            foreach (Reservation reservation in reservationrepo.GetAll())
+            {
+                lbAllReservationsMade.Items.Add(reservation);
+            }
 
         }
 
@@ -170,6 +176,25 @@ namespace ProftaakEyeCT
                 txtAccountPassword.Text = "";
                 txtAccountEmail.Text = "";
                 updateAccount = null;
+            }
+            else
+            {
+                MessageBox.Show("Updating account failed. Check if the email address is valid.");
+            }
+        }
+        private void UpdateMaterial()
+        {
+
+            updateMaterial.Name = txtMaterialName.Text;
+            updateMaterial.Price = updownpriceitem.Value;
+            updateMaterial.Stock = (int)nudMaterialStock.Value;
+
+            if (materialrepo.Update(updateMaterial))
+            {
+                txtMaterialName.Text = "";
+                updownpriceitem.Value = 0;
+                nudMaterialStock.Value = 0;
+                updateMaterial = null;
             }
             else
             {
@@ -348,6 +373,8 @@ namespace ProftaakEyeCT
         private void btnPersonRemove_Click_1(object sender, EventArgs e)
         {
             accountrepo.DeleteAccount(((Account)lbAllAccounts.SelectedItem).Id);
+            updatePerson = personrepo.GetById(((Account)lbAllAccounts.SelectedItem).Id);
+            personrepo.Delete(updatePerson.Id);
             UpdateControls();
         }
 
@@ -466,7 +493,8 @@ namespace ProftaakEyeCT
         {
             Material item = new Material(1, txtMaterialName.Text, updownpriceitem.Value, Convert.ToInt32(nudMaterialStock.Value));
             materialrepo.Insert(item);
-            MessageBox.Show("Material Added!"); 
+            MessageBox.Show("Material Added!");
+            UpdateControls();
         }
 
         private void lbAllEvents_SelectedIndexChanged(object sender, EventArgs e)
@@ -513,6 +541,40 @@ namespace ProftaakEyeCT
             updateAccount = accountrepo.GetAccountByUsername(mainloginform.LoggedInUser);
             UpdatePerson();
             UpdateAccount();
+            UpdateControls();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            updateMaterial = (Material)lbAllMaterials.SelectedItem;
+            materialrepo.Delete(updateMaterial.Id);
+            UpdateControls();
+        }
+
+        private void btnEventRemove_Click(object sender, EventArgs e)
+        {
+            updateReservation = (Reservation)lbReservations.SelectedItem;
+            campingspotrepo.UpdateCampingspot(updateReservation.Eventid, updateReservation.Campingspotid, true);
+            reservationrepo.DeleteReservation(updateReservation);
+            lbReservations.Items.Clear();
+            GetEvents();
+            MessageBox.Show("Reservation Deleted!");
+            UpdateControls();
+        }
+
+        private void lbAllReservationsMade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            updateReservation = (Reservation)lbAllReservationsMade.SelectedItem;
+            updateEvent = eventrepo.GetById(updateReservation.Eventid);
+            txtCurrentPlaceEvent.Text = updateEvent.location;
+            nudCurrentCampingEvent.Value = updateReservation.Campingspotid;
+            dtpCurrentDateEvent.Value = updateReservation.Reservationdate;
+            txtCurrentEvent.Text = updateEvent.name;
+        }
+
+        private void btnUpdateMaterial_Click(object sender, EventArgs e)
+        {
+            UpdateMaterial();
             UpdateControls();
         }
     }

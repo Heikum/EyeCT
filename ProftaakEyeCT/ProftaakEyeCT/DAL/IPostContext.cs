@@ -18,7 +18,7 @@ namespace ProftaakEyeCT.DAL
         List<Post> GetAllReportedPosts();
         List<string> GetReportPostComplaint(Post post);
         void InsertReportedPost(Post post, string complaint);
-
+        bool RemoveComplaint(int id);
 
     }
 }

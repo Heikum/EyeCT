@@ -36,7 +36,11 @@
             this.lbReportedPostReactions = new System.Windows.Forms.ListBox();
             this.btnRemoveComplaint = new System.Windows.Forms.Button();
             this.lbComplaints = new System.Windows.Forms.ListBox();
+            this.pictureBox20 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // lbReportedPosts
@@ -110,11 +114,35 @@
             this.lbComplaints.Size = new System.Drawing.Size(213, 95);
             this.lbComplaints.TabIndex = 36;
             // 
+            // pictureBox20
+            // 
+            this.pictureBox20.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox20.Location = new System.Drawing.Point(0, 2);
+            this.pictureBox20.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox20.Name = "pictureBox20";
+            this.pictureBox20.Size = new System.Drawing.Size(728, 19);
+            this.pictureBox20.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox20.TabIndex = 37;
+            this.pictureBox20.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::ProftaakEyeCT.Properties.Resources.bar;
+            this.pictureBox1.Location = new System.Drawing.Point(0, 476);
+            this.pictureBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(728, 19);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 38;
+            this.pictureBox1.TabStop = false;
+            // 
             // Reportform
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(727, 473);
+            this.ClientSize = new System.Drawing.Size(727, 493);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox20);
             this.Controls.Add(this.lbComplaints);
             this.Controls.Add(this.btnRemoveComplaint);
             this.Controls.Add(this.lbReportedPostReactions);
@@ -126,6 +154,8 @@
             this.Name = "Reportform";
             this.Text = "Reportform";
             ((System.ComponentModel.ISupportInitialize)(this.pbMedia)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox20)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -141,5 +171,7 @@
         private System.Windows.Forms.ListBox lbReportedPostReactions;
         private System.Windows.Forms.Button btnRemoveComplaint;
         private System.Windows.Forms.ListBox lbComplaints;
+        private System.Windows.Forms.PictureBox pictureBox20;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
